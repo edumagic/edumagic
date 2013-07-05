@@ -1,8 +1,10 @@
 Важно: использование данного дистрибутива может быть только некоммерческим.
 Important: using this distribution can be non-commercial only.
 
-Этот дистрибутив может распространяться только в пределах стран СНГ.
-This distro is for distribution only in Commonwealth of Independent States.
+Этот дистрибутив может распространяться и использоваться в пределах стран СНГ. Вы можете распространять и использовать дистрибутив в других странах, но предварительно Вы должны убедиться, что Ваши законы позволяют использовать все пакеты этого дистрибутива командой:
+rpm -qa
+This distro is for distribution and using in Commonwealth of Independent States. You can distribute and use the distribution in other countries, but first you have to make sure that your laws allow you to use all packages from this distro by command:
+rpm -qa
 
 Пароль администратора: toor
 Root password: toor
@@ -12,7 +14,7 @@ User password: magos
 В Центре Управления -> Оборудование -> Настройка графического сервера нажмите кнопку Видеокарта, и Вам будет предложено использовать проприетарные драйвера для Вашей видеокарты, если они есть.
 Это даст дополнительные графические возможности, без которых некоторые программы могут не работать или могут работать не совсем корректно.
 
-Далее идёт краткое описание дистрибутива MagOS, что также справедливо для MageiaOS и для EduMageia.
+Далее идёт краткое описание дистрибутива MagOS, что также справедливо для MagicOS и для EduMagic.
 
 Установка.
 

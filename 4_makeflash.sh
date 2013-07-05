@@ -71,14 +71,14 @@ cp -pR files/patches/flash/* "$DESTDIR"/
 cd "$MYPATH"
 echo "Replacing names of iso images"
 echo "Замена названий iso образов"
-sed -i -e 's|CDLABEL="MagOSboot"|CDLABEL="MageiaOSboot"|g' "$DESTDIR"/boot/grub4dos/install.lin/make_boot_iso.sh
-sed -i -e 's|CDLABEL="MagOS"|CDLABEL="MageiaOS"|g' "$DESTDIR"/boot/grub4dos/install.lin/make_iso.sh
-sed -i -e 's|CDLABEL=MagOSboot|CDLABEL=MageiaOSboot|g' "$DESTDIR"/boot/grub4dos/install.win/make_boot_iso.bat
-sed -i -e 's|CDLABEL=MagOS|CDLABEL=MageiaOS|g' "$DESTDIR"/boot/grub4dos/install.win/make_iso.bat
-sed -i -e 's|CDLABEL="MagOSboot"|CDLABEL="MageiaOSboot"|g' "$DESTDIR"/boot/syslinux/install.lin/make_boot_iso.sh
-sed -i -e 's|CDLABEL="MagOS"|CDLABEL="MageiaOS"|g' "$DESTDIR"/boot/syslinux/install.lin/make_iso.sh
-sed -i -e 's|CDLABEL=MagOSboot|CDLABEL=MageiaOSboot|g' "$DESTDIR"/boot/syslinux/install.win/make_boot_iso.bat
-sed -i -e 's|CDLABEL=MagOS|CDLABEL=MageiaOS|g' "$DESTDIR"/boot/syslinux/install.win/make_iso.bat
+sed -i -e 's|CDLABEL="MagOSboot"|CDLABEL="MagicOSboot"|g' "$DESTDIR"/boot/grub4dos/install.lin/make_boot_iso.sh
+sed -i -e 's|CDLABEL="MagOS"|CDLABEL="MagicOS"|g' "$DESTDIR"/boot/grub4dos/install.lin/make_iso.sh
+sed -i -e 's|CDLABEL=MagOSboot|CDLABEL=MagicOSboot|g' "$DESTDIR"/boot/grub4dos/install.win/make_boot_iso.bat
+sed -i -e 's|CDLABEL=MagOS|CDLABEL=MagicOS|g' "$DESTDIR"/boot/grub4dos/install.win/make_iso.bat
+sed -i -e 's|CDLABEL="MagOSboot"|CDLABEL="MagicOSboot"|g' "$DESTDIR"/boot/syslinux/install.lin/make_boot_iso.sh
+sed -i -e 's|CDLABEL="MagOS"|CDLABEL="MagicOS"|g' "$DESTDIR"/boot/syslinux/install.lin/make_iso.sh
+sed -i -e 's|CDLABEL=MagOSboot|CDLABEL=MagicOSboot|g' "$DESTDIR"/boot/syslinux/install.win/make_boot_iso.bat
+sed -i -e 's|CDLABEL=MagOS|CDLABEL=MagicOS|g' "$DESTDIR"/boot/syslinux/install.win/make_iso.bat
 if [ -f "patches/flash/isolinux.cfg" ]
 then
   cp -f patches/flash/isolinux.cfg $MYPATH/$DESTDIR/boot/syslinux/
@@ -247,14 +247,14 @@ then
   cd "$MYPATH"
   echo "Replacing names of iso images"
   echo "Замена названий iso образов"
-  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMageiaboot"|g' "$DESTDIR_EDU"/boot/grub4dos/install.lin/make_boot_iso.sh
-  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMageia"|g' "$DESTDIR_EDU"/boot/grub4dos/install.lin/make_iso.sh
-  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMageiaboot\r|g' "$DESTDIR_EDU"/boot/grub4dos/install.win/make_boot_iso.bat
-  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMageia\r|g' "$DESTDIR_EDU"/boot/grub4dos/install.win/make_iso.bat
-  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMageiaboot"|g' "$DESTDIR_EDU"/boot/syslinux/install.lin/make_boot_iso.sh
-  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMageia"|g' "$DESTDIR_EDU"/boot/syslinux/install.lin/make_iso.sh
-  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMageiaboot\r|g' "$DESTDIR_EDU"/boot/syslinux/install.win/make_boot_iso.bat
-  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMageia\r|g' "$DESTDIR_EDU"/boot/syslinux/install.win/make_iso.bat
+  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagicboot"|g' "$DESTDIR_EDU"/boot/grub4dos/install.lin/make_boot_iso.sh
+  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagic"|g' "$DESTDIR_EDU"/boot/grub4dos/install.lin/make_iso.sh
+  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagicboot\r|g' "$DESTDIR_EDU"/boot/grub4dos/install.win/make_boot_iso.bat
+  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagic\r|g' "$DESTDIR_EDU"/boot/grub4dos/install.win/make_iso.bat
+  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagicboot"|g' "$DESTDIR_EDU"/boot/syslinux/install.lin/make_boot_iso.sh
+  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagic"|g' "$DESTDIR_EDU"/boot/syslinux/install.lin/make_iso.sh
+  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagicboot\r|g' "$DESTDIR_EDU"/boot/syslinux/install.win/make_boot_iso.bat
+  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagic\r|g' "$DESTDIR_EDU"/boot/syslinux/install.win/make_iso.bat
   if [ -f "patches/flash-edu/isolinux.cfg" ]
   then
     cp -f patches/flash-edu/isolinux.cfg $MYPATH/$DESTDIR_EDU/boot/syslinux/
@@ -283,7 +283,7 @@ then
     sed -i -e 's|root=/dev/ram0|root=/dev/ram0 unionfs|g' "$DESTDIR_EDU"/boot/syslinux/syslinux.cfg
     sed -i -e 's|root=/dev/ram0|root=/dev/ram0 unionfs|g' "$DESTDIR_EDU"/boot/syslinux/isolinux.cfg
   fi
-  mv -f $DESTDIR_EDU flash-edu/EduMageia_${VERREL}_${DISTRVERSION}
+  mv -f $DESTDIR_EDU flash-edu/EduMagic_${VERREL}_${DISTRVERSION}
   echo "The script has completed work, there is edu version of system in a directory flash-edu, it's ready for installing :-)"
   echo "Работа скрипта завершена, в папке flash-edu лежит готовая к установке edu версия системы :-)"
 fi

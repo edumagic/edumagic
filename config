@@ -7,7 +7,7 @@ MYPATH="`pwd`"
 
 #Name of flash
 #Название флешки
-FLASHNAME=MageiaOS
+FLASHNAME=MagicOS
 
 #Kind of desired distro edu or noedu
 #Вид собираемого дистрибутива edu или noedu
@@ -57,14 +57,14 @@ FS_KERNEL=unionfs
 #Список репозиториев
 DIST_MIRROR_0=http://mirror.yandex.ru/mageia/distrib/2/i586
 DIST_MIRROR_1=http://packages.mageialinux.ru/mageia2/i586
-DIST_MIRROR_2=http://packages.mageialinux.ru/mageiaos2/i586
+DIST_MIRROR_2=http://packages.mageialinux.ru/magicos2/i586
 
 #Names of additional modules
 #Имена дополнительных модулей
 ADD_MOD_NAME=20-base-locales-man-doc
 ADD_EDU_MOD_NAME=21-edu-locales-man-doc
-MOD_PATCH_MAGEIA=50-patch-mageia
-MOD_PATCH_EDUMAGEIA=51-patch-edumageia
+MOD_PATCH_MAGICOS=50-patch-magicos
+MOD_PATCH_EDUMAGIC=51-patch-edumagic
 MOD_PATCH_URPMI=00-patch-urpmi
 
 #If you want to write to disk directory MagOS-Date, then use full, otherwise use nofull

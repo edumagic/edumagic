@@ -12,37 +12,37 @@ splashimage /boot/grub4dos/boot_xpm.gz
 timeout 10
 default 0
 
-title MageiaOS_Home_profile_LXDE
+title MagicOS_Home_profile_LXDE
 #find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
 kernel /MagOS/vmlinuz  root=/dev/ram0 rw vga=791 quiet changes=MagOS_save1.img desktop=lxde
 initrd /MagOS/initrd.gz
 
-title MageiaOS_Home_profile_Gnome
+title MagicOS_Home_profile_Gnome
 #find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
 kernel /MagOS/vmlinuz root=/dev/ram0 rw vga=788 quiet changes=MagOS_save1.img desktop=gnome
 initrd /MagOS/initrd.gz
 
-title MageiaOS_Home_profile_KDE
+title MagicOS_Home_profile_KDE
 #find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
 kernel /MagOS/vmlinuz  root=/dev/ram0 rw vga=788 quiet changes=MagOS_save1.img desktop=kde
 initrd /MagOS/initrd.gz
 
-title MageiaOS_Clean_LXDE
+title MagicOS_Clean_LXDE
 #find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
 kernel /MagOS/vmlinuz  root=/dev/ram0 rw vga=791 quiet desktop=lxde
 initrd /MagOS/initrd.gz
 
-title MageiaOS_Clean_Gnome
+title MagicOS_Clean_Gnome
 #find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
 kernel /MagOS/vmlinuz root=/dev/ram0 rw vga=788 quiet desktop=gnome
 initrd /MagOS/initrd.gz
 
-title MageiaOS_Clean_KDE
+title MagicOS_Clean_KDE
 #find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
 kernel /MagOS/vmlinuz  root=/dev/ram0 rw vga=788 quiet desktop=kde
 initrd /MagOS/initrd.gz
 
-title MageiaOS_failsafe_LXDE
+title MagicOS_failsafe_LXDE
 #find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
 kernel /MagOS/vmlinuz root=/dev/ram0 rw noapic nolapic acpi=off nopat xdriver=vesa noload=/modules/ desktop=lxde
 initrd /MagOS/initrd.gz

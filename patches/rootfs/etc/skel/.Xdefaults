@@ -1,0 +1,2 @@
+XTerm.*locale:          true
+XTerm*VT100*allowC1Printable: true

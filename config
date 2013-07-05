@@ -1,0 +1,84 @@
+#!/bin/bash
+
+#It is file with parameters for scripts
+#Это файл с параметрами для скриптов
+
+MYPATH="`pwd`"
+
+#Name of flash
+#Название флешки
+FLASHNAME=MageiaOS
+
+#Kind of desired distro edu or noedu
+#Вид собираемого дистрибутива edu или noedu
+DISTR_KIND=edu
+
+#Size in MB for data and system changes for each profile
+#Размер в Мб для данных и изменений системы для каждого профиля
+DATASIZE1=512
+DATASIZE2=256
+
+#Base
+#База
+VERREL=2
+
+#The keys for the command mksquashfs when creating modules
+#Ключи для команды mksquashfs при создании модулей
+MKSQOPT="-b 512K"
+SQFSVER=4
+
+#Directories
+#Директории
+MOD_ROOTFS_DIR=work/${FLASHNAME}_${VERREL}
+MOD_NAMES_DIR=mod_names
+ROOTFS=$MOD_ROOTFS_DIR/rootfs
+MOD_PREV=work/urpmi_root
+RPM_CACHE=cache
+#ROOTFS_INITRD may be equal $ROOTFS - this will speed up the building and take less disk space,
+#but it would not allow to rebuild modules again without already applied patches, and you must start building from the first script
+#ROOTFS_INITRD может быть равно $ROOTFS - это ускорит сборку и займет меньше дискового пространства,
+#но это не позволит пересобрать модули повторно без уже наложенных патчей, и придется начать сборку с самого начала
+#ROOTFS_INITRD=$ROOTFS
+ROOTFS_INITRD=$MOD_ROOTFS_DIR/rootfs_initrd
+
+#Parameters for urpmi
+#Параметры urpmi
+URPMI_PARAM=" --noclean --download-all --auto --no-suggests --resume --no-verify-rpm "
+
+#File system unionfs or aufs
+#Файловая система unionfs или aufs
+FS_ROOTFS=unionfs
+
+#File system for the kernel of building distro: unionfs or aufs
+#Файловая система ядра собираемого дистрибутива: unionfs или aufs
+FS_KERNEL=unionfs
+
+#List of repositories
+#Список репозиториев
+DIST_MIRROR_0=http://mirror.yandex.ru/mageia/distrib/2/i586
+DIST_MIRROR_1=http://packages.mageialinux.ru/mageia2/i586
+DIST_MIRROR_2=http://packages.mageialinux.ru/mageiaos2/i586
+
+#Names of additional modules
+#Имена дополнительных модулей
+ADD_MOD_NAME=20-base-locales-man-doc
+ADD_EDU_MOD_NAME=21-edu-locales-man-doc
+MOD_PATCH_MAGEIA=50-patch-mageia
+MOD_PATCH_EDUMAGEIA=51-patch-edumageia
+MOD_PATCH_URPMI=00-patch-urpmi
+
+#If you want to write to disk directory MagOS-Date, then use full, otherwise use nofull
+#full или nofull в зависимости от того записывать ли на диск директорию MagOS-Data
+FULL_ISO=full
+
+#Preferred packages to be installed first (list them separated by spaces)
+#Предпочитаемые пакеты, ставящиеся в первую очередь (указать через пробел)
+PREFER=""
+
+#Enable or Disable Internet (yes/no) in building distro
+#Включить или выключить Интернет (yes/no) внутри собираемого дистрибутива
+INTERNET="yes"
+
+#Parameter for xvideo= ; parameter must be free or nonfree
+#Выбор значения для xvideo= ; может принимать значения free или nonfree
+XVIDEO="free"

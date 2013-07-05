@@ -1,0 +1,7 @@
+samba-client
+samba-common
+samba-server
+samba-winbind
+system-config-nfs
+system-config-samba
+

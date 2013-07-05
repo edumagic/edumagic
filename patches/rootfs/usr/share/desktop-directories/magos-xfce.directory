@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Directory
+Icon=preferences-desktop
+Name=XFCE-Settings
+Name[ru]=XFCE-Настройки
+Comment=Desktop and system settings applications
+Comment[ru]=XFCE-настройки
+OnlyShowIn=XFCE;

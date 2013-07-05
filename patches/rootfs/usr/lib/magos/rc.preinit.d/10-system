@@ -1,0 +1,234 @@
+#!/bin/bash
+# Initial script for MagOS-Linux Live operating system
+# This script are launching before starting init from linux-live script.
+# Current dir allways must be set to root (/)
+# All system path must be relative, except initrd dirs
+
+export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
+
+ENABLED=yes
+[ "$ENABLED" != "yes" ] && exit 0
+
+. /liblinuxlive
+. etc/sysconfig/MagOS
+
+#Profile updating
+grep -q -f /VERSION etc/magos-release 2>/dev/null || rm -fr /memory/changes/var/lib/rpm  /memory/changes/var/lib/urpmi 2>/dev/null
+cp -f /VERSION etc/magos-release
+
+#Fix bug "no /dev/kmsg for logging" when system is booting
+mknod -m 660 dev/kmsg c 1 11
+
+#Fix urpmi
+sed -i -e 's|urpm::orphans::mark_as_requested($urpm, $state, $test);|#using installed-through-deps.list was deleted in this distro|g' usr/sbin/urpmi
+
+VER=`cat /VERSION|awk '{print $2}'`
+ONCE=`cat etc/once_boot_scripts|grep $(basename $0)-$VER`
+if [ ! "$ONCE" = "" ]
+then
+  exit 0
+fi
+
+#Optimization menu and correction desktop files
+rm -f usr/share/applications/chbg.desktop
+rm -f usr/share/applications/localedrake-user.desktop
+rm -f usr/share/applications/xscreensaver-properties.desktop
+rm -f usr/share/applications/obconf.desktop
+rm -f usr/share/applications/xlockmore.desktop
+rm -f usr/share/applications/lxappearance.desktop
+rm -f usr/share/applications/libfm-pref-apps.desktop
+rm -f usr/share/applications/mdvinput.desktop
+rm -f usr/share/applications/alacarte.desktop
+sed -i -e 's|Icon=remmina|Icon=/usr/share/remmina/icons/hicolor/scalable/apps/remmina.svg|g' usr/share/applications/remmina.desktop
+sed -i -e 's|Icon=gtk-network|Icon=/usr/share/icons/gnome/48x48/places/gtk-network.png|g' usr/share/applications/gigolo.desktop
+sed -i -e 's|Icon=applets-screenshooter|Icon=/usr/share/icons/gnome/48x48/apps/applets-screenshooter.png|g' usr/share/applications/gnome-screenshot.desktop
+sed -i -e 's|Icon=trash-empty|Icon=/usr/share/icons/oxygen/48x48/actions/trash-empty.png|g' usr/share/applications/kde4/sweeper.desktop
+sed -i -e 's|Icon=preferences-desktop-display-randr|Icon=/usr/share/icons/oxygen/48x48/apps/preferences-desktop-display.png|g' usr/share/applications/kde4/krandrtray.desktop
+sed -i -e 's|OnlyShowIn=GNOME;XFCE;|OnlyShowIn=LXDE;GNOME;XFCE;|g' etc/xdg/autostart/parcellite-startup.desktop
+sed -i -e 's|OnlyShowIn=GNOME;XFCE;|OnlyShowIn=LXDE;GNOME;XFCE|g' etc/xdg/autostart/bluetooth-applet.desktop
+sed -i -e 's|Categories=Video;|Categories=AudioVideo;Audio;AudioVideoEditing;GTK;X-MandrivaLinux-CrossDesktop;|g' usr/share/applications/bombono-dvd.desktop
+sed -i -e 's|peazip.desktop|PeaZip|g' usr/share/applications/peazip.desktop
+A=`cat etc/xdg/autostart/blueman.desktop | grep OnlyShowIn=KDE;`
+if [ "$A" = "" ]
+then
+  echo "OnlyShowIn=KDE;" >> etc/xdg/autostart/blueman.desktop
+fi
+A=`cat usr/share/applications/kde4/systemsettings.desktop | grep OnlyShowIn=KDE;`
+if [ "$A" = "" ]
+then
+  echo "OnlyShowIn=KDE;" >> usr/share/applications/kde4/systemsettings.desktop
+fi
+A=`cat usr/share/applications/kde4/kdesystemsettings.desktop | grep OnlyShowIn=KDE;`
+if [ "$A" = "" ]
+then
+  echo "OnlyShowIn=KDE;" >> usr/share/applications/kde4/kdesystemsettings.desktop
+fi
+if [ -f "usr/bin/lxde-control-center" ]
+  then
+  A=`cat usr/share/applications/lxde-control-center.desktop | grep OnlyShowIn=LXDE;`
+  if [ "$A" = "" ]
+  then
+    echo "OnlyShowIn=LXDE;" >> usr/share/applications/lxde-control-center.desktop
+  fi
+fi
+
+sed -i "/OnlyShowIn=/d" usr/share/applications/qt-recordmydesktop.desktop
+sed -i "/OnlyShowIn=/d" usr/share/applications/gedit.desktop
+sed -i "/OnlyShowIn=/d" usr/share/applications/nautilus.desktop
+sed -i "/NotShowIn=/d" usr/share/applications/gnome-dictionary.desktop
+sed -i "/NotShowIn=/d" usr/share/applications/gnome-screenshot.desktop
+sed -i "/NotShowIn=/d" usr/share/applications/gnome-search-tool.desktop
+sed -i "/NotShowIn=/d" usr/share/applications/scim-setup.desktop
+sed -i "/OnlyShowIn=/d" usr/share/applications/kde4/krandrtray.desktop
+sed -i "/OnlyShowIn=/d" usr/share/applications/kde4/kfind.desktop
+
+#Fix MIME for file-roller
+sed -i -e 's|application/x-ms-dos-executable;||g' usr/share/applications/file-roller.desktop
+sed -i -e 's|application/x-rpm;||g' usr/share/applications/file-roller.desktop
+
+#Fix errors for Russian "Рабочий стол"
+#https://bugs.mageia.org/show_bug.cgi?id=8301
+sed -i -e 's|-z $DIR|-z "${DIR}"|g' usr/share/kde4/env/kde4-firstsetup.sh
+
+#Correction mcc
+sed -i -e "s|'Snapshots',|#'Snapshots',|g" usr/sbin/drakconf.real
+sed -i -e 's|"Mageia Update",|#"Mageia Update",|g' usr/sbin/drakconf.real
+sed -i -e 's|"Boot Config",|#"Boot Config",|g' usr/sbin/drakconf.real
+sed -i -e 's|"3D",|#"3D",|g' usr/sbin/drakconf.real
+
+#Correction lxde-control-center
+if [ -f "usr/bin/lxde-control-center" ]
+then
+  sed -i "/drakrpm-update/d" usr/lib/lxde/lxde-control-center/items/programs
+  sed -i "/drakrpm-update/d" usr/lib/lxde/lxde-control-center/items/advanced
+  sed -i -e 's|rpmdrake-mdk.png"},|rpmdrake-mdk.png"}|g' usr/lib/lxde/lxde-control-center/items/programs
+fi
+
+#Correction lxde-ctrl-center
+if [ -f "usr/bin/lxde-ctrl-center" ]
+then
+  sed -i "/drakrpm-update/d" usr/lib/lxde/lxde-ctrl-center/items/x0003x
+  sed -i "/drakrpm-update/d" usr/lib/lxde/lxde-ctrl-center/items/advanced
+  sed -i "/drakedm/d" usr/lib/lxde/lxde-ctrl-center/items/x0005x
+  sed -i "/drakedm/d" usr/lib/lxde/lxde-ctrl-center/items/advanced
+fi
+
+#Stop shorewall
+#rm -f `find etc/rc.d -name ???shorewall`
+
+#Add lxde-ctrl-center to LXPanel
+if [ -f "usr/bin/lxde-ctrl-center" ]
+then
+  sed -i -e 's|id=lxterminal.desktop|id=lxde-ctrl-center.desktop|g' usr/share/lxpanel/profile/LXDE/panels/panel
+fi
+
+#Add lxde-control-center to LXPanel
+if [ -f "usr/bin/lxde-control-center" ]
+then
+  sed -i -e 's|id=lxterminal.desktop|id=lxde-control-center.desktop|g' usr/share/lxpanel/profile/LXDE/panels/panel
+fi
+
+#Change height for LXPanel
+sed -i -e 's|height=26|height=36\n    iconsize=34|g' usr/share/lxpanel/profile/LXDE/panels/panel
+
+#Add keyboard switcher to LXPanel
+A=`cat usr/share/lxpanel/profile/LXDE/panels/panel | grep xkb`
+if [ "$A" = "" ]
+then
+  sed -i -e 's|type = tray|type = tray\n}\n\nPlugin {\n    type = xkb\n    Config {\n        DisplayType=1\n        PerAppLayout=1\n        DefaultGroup=0\n    }|g' usr/share/lxpanel/profile/LXDE/panels/panel
+fi
+
+#Add background for GNOME and LXDE
+rm -f usr/share/mga/backgrounds/Mageia-Default-*
+rm -f usr/share/mga/backgrounds/default.jpg
+ln -s Mageia1600x1200.jpg usr/share/mga/backgrounds/Mageia-Default-1024x600.jpg
+ln -s Mageia1600x1200.png usr/share/mga/backgrounds/Mageia-Default-1024x600.png
+ln -s Mageia1600x1200.jpg usr/share/mga/backgrounds/Mageia-Default-1280x1024.jpg
+ln -s Mageia1600x1200.png usr/share/mga/backgrounds/Mageia-Default-1280x1024.png
+ln -s Mageia1600x1200.jpg usr/share/mga/backgrounds/Mageia-Default-1920x1080.jpg
+ln -s Mageia1600x1200.png usr/share/mga/backgrounds/Mageia-Default-1920x1080.png
+ln -s Mageia1600x1200.jpg usr/share/mga/backgrounds/Mageia-Default-1920x1200.jpg
+ln -s Mageia1600x1200.png usr/share/mga/backgrounds/Mageia-Default-1920x1200.png
+ln -s Mageia1600x1200.jpg usr/share/mga/backgrounds/Mageia-Default-1920x1440.jpg
+ln -s Mageia1600x1200.png usr/share/mga/backgrounds/Mageia-Default-1920x1440.png
+ln -s Mageia1600x1200.jpg usr/share/mga/backgrounds/Mageia-Default-800x480.jpg
+ln -s Mageia1600x1200.png usr/share/mga/backgrounds/Mageia-Default-800x480.png
+ln -s Mageia1600x1200.jpg usr/share/mga/backgrounds/default.jpg
+
+#Add background for KDE
+if [ ! -f "usr/share/mga/backgrounds/default.png" ]
+then
+  ln -s Mageia1600x1200.png usr/share/mga/backgrounds/default.png
+fi
+rm -f usr/share/wallpapers/Mageia/contents/images/800x480.png
+rm -f usr/share/wallpapers/Mageia/contents/images/1024x600.png
+rm -f usr/share/wallpapers/Mageia/contents/images/1280x1024.png
+rm -f usr/share/wallpapers/Mageia/contents/images/1920x1080.png
+rm -f usr/share/wallpapers/Mageia/contents/images/1920x1200.png
+rm -f usr/share/wallpapers/Mageia/contents/images/1920x1440.png
+ln -s /usr/share/mga/backgrounds/default.png usr/share/wallpapers/Mageia/contents/images/800x480.png
+ln -s /usr/share/mga/backgrounds/default.png usr/share/wallpapers/Mageia/contents/images/1024x600.png
+ln -s /usr/share/mga/backgrounds/default.png usr/share/wallpapers/Mageia/contents/images/1280x1024.png
+ln -s /usr/share/mga/backgrounds/default.png usr/share/wallpapers/Mageia/contents/images/1920x1080.png
+ln -s /usr/share/mga/backgrounds/default.png usr/share/wallpapers/Mageia/contents/images/1920x1200.png
+ln -s /usr/share/mga/backgrounds/default.png usr/share/wallpapers/Mageia/contents/images/1920x1440.png
+
+#Add own menu
+rm -f etc/xdg/menus/applications.menu
+ln -s kde-applications.menu etc/xdg/menus/applications.menu
+
+#Correction register.desktop and redirect to MRC
+sed -i -e 's|URL=http://mageia.org/contribute|URL=http://mageialinux.ru|g' usr/share/dist/desktop-files/default/register.desktop
+A=`cat usr/share/dist/desktop-files/default/register.desktop | grep "Сообщество Mageia"`
+if [ "$A" = "" ]
+then
+  echo "Name[ru]=Сообщество Mageia" >> usr/share/dist/desktop-files/default/register.desktop
+fi
+sed -i -e 's|http://start.mageia.org|http://mageialinux.ru|g' usr/share/indexhtml/index.html
+
+#Correction mageia-drakconf.desktop
+A=`cat usr/share/applications/mageia-drakconf.desktop | grep "Центр управления Mageia"`
+if [ "$A" = "" ]
+then
+  echo "Name[ru]=Центр управления Mageia" >> usr/share/applications/mageia-drakconf.desktop
+  echo "Comment[ru]=Центр управления Mageia" >> usr/share/applications/mageia-drakconf.desktop
+fi
+
+#Fix https://bugs.mageia.org/show_bug.cgi?id=4641
+sed -i -e 's|dev.cdrom.autoclose=1|dev.cdrom.autoclose=0|g' etc/sysctl.conf
+
+#Fix lxde-control-center
+if [ -f "usr/bin/lxde-control-center" ]
+then
+  sed -i -e 's|"drakkeyboard"|"beesu drakkeyboard"|g' usr/lib/lxde/lxde-control-center/items/hardware
+  sed -i -e 's|"drakkeyboard"|"beesu drakkeyboard"|g' usr/lib/lxde/lxde-control-center/items/advanced
+  sed -i -e 's|"drakclock"|"beesu drakclock"|g' usr/lib/lxde/lxde-control-center/items/system
+  sed -i -e 's|"drakclock"|"beesu drakclock"|g' usr/lib/lxde/lxde-control-center/items/advanced
+fi
+
+#Fix https://bugs.mageia.org/show_bug.cgi?id=10224
+A=`cat etc/rc.d/rc.local|grep loadkeys|grep ru`
+if [ "$A" = "" ]
+then
+  echo "loadkeys -u ru" >> etc/rc.d/rc.local
+fi
+
+if [ ! -f "usr/bin/x-terminal-emulator" ]
+then
+  if [ -f "usr/bin/lxterminal" ]
+  then
+    ln -s /usr/bin/lxterminal usr/bin/x-terminal-emulator
+  fi
+fi
+if [ ! -f "usr/share/pixmaps/printmgr.png" ]
+then
+  if [ -f "usr/share/icons/gnome/48x48/devices/printer.png" ]
+  then
+    ln -s /usr/share/icons/gnome/48x48/devices/printer.png usr/share/pixmaps/printmgr.png
+  fi
+fi
+
+#update-desktop-database
+#update-mime-database usr/share/mime
+
+echo $(basename $0)-$VER >> etc/once_boot_scripts

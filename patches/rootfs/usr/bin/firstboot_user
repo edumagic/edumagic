@@ -1,0 +1,61 @@
+#!/bin/bash
+
+#Turning on sound for the first found the sound card by 80%
+pactl list | sed -n '/^Sink.*[0-9]$/p' | sed 's/^Sink\ #//g' | pactl set-sink-volume $? 52429
+
+#Remove from autostart to call this script
+rm ~/.config/autostart/firstboot_user.desktop
+
+#fix xterm non-latin locale problem (xterm non-latin font view error)
+#xrdb ~/.Xdefaults
+
+#Copy Desktop from KDE
+DIR=`echo $(kreadconfig --file $HOME/.config/user-dirs.dirs --key XDG_DESKTOP_DIR)|cut -d "\"" --fields=2|cut -d "/" --fields=2`
+if [ ! -f "$DIR/Home2.desktop" ]
+then
+  cp -f /usr/share/applications/kde4/Home2.desktop "$HOME/$DIR/"
+fi
+if [ ! -f "$DIR/register.desktop" ]
+then
+  cp -f /usr/share/dist/desktop-files/default/register.desktop "$HOME/$DIR/"
+fi
+
+#Link for Readme.txt on Desktop
+if [ ! -f "$DIR/Readme.txt" ]
+then
+  if [ -f "/usr/share/magos/Readme.txt" ]
+  then
+    cp -f /usr/share/magos/Readme.txt "$HOME/$DIR/"
+  fi
+fi
+
+#Link for MagCC on Desktop
+if [ ! -f "$DIR/magcc.desktop" ]
+then
+  if [ -f "/usr/share/applications/magcc.desktop" ]
+  then
+    cp -f /usr/share/applications/magcc.desktop "$HOME/$DIR/"
+    chmod a+x "$HOME/$DIR/magcc.desktop"
+  fi
+fi
+
+#Create config for ManSlide
+if [ -f "/usr/bin/manslide" ]
+then
+  LANG0=`echo $LANG|grep ru`
+  if [ "$LANG0" = "" ]
+  then
+    LANG=English
+  else
+    LANG=Russian
+  fi
+  if [ ! -f "~/.manslide.cnf" ]
+  then
+    echo "R8" >> ~/.manslide.cnf
+    echo "$LANG" >> ~/.manslide.cnf
+    echo "2" >> ~/.manslide.cnf
+    echo "/tmp" >> ~/.manslide.cnf
+  fi
+fi
+
+exit 0

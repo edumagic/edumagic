@@ -1,0 +1,8 @@
+# uncomment and set the user 
+USER=user
+#
+# uncomment if you want to run something else than startx
+#EXEC=
+#
+# uncomment to enable autologin, after setting USER
+AUTOLOGIN=yes

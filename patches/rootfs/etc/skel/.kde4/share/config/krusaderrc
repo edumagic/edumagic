@@ -1,0 +1,97 @@
+First Time=false
+Version=2.0.0
+
+[Archives]
+Supported Packers=tar,gzip,bzip2,lzma,unzip,zip,lha,cpio,unrar,arj,unace,dpkg,7z,rpm
+
+[Dependencies]
+7z=/usr/bin/7z
+arj=/usr/bin/arj
+bzip2=/usr/bin/bzip2
+checksum utility=/usr/bin/md5sum
+cpio=/bin/cpio
+diff utility=/usr/bin/kdiff3
+dpkg=/usr/bin/dpkg
+gzip=/bin/gzip
+kdesu=/usr/lib/kde4/libexec/kdesu
+kdiff3=/usr/bin/kdiff3
+kget=/usr/bin/kget
+krename=/usr/bin/krename
+krusader=/usr/bin/krusader
+lha=/usr/bin/lha
+locate=/usr/bin/locate
+lzma=/usr/bin/lzma
+mailer=/usr/bin/thunderbird
+md5sum=/usr/bin/md5sum
+mount=/bin/mount
+rpm=/bin/rpm
+sha1sum=/usr/bin/sha1sum
+sha224sum=/usr/bin/sha224sum
+sha256sum=/usr/bin/sha256sum
+sha384sum=/usr/bin/sha384sum
+sha512sum=/usr/bin/sha512sum
+tar=/bin/tar
+thunderbird=/usr/bin/thunderbird
+umount=/bin/umount
+unace=/usr/bin/unace
+unrar=/usr/bin/unrar
+unzip=/usr/bin/unzip
+updatedb=/usr/bin/updatedb
+zip=/usr/bin/zip
+
+[Konfigurator]
+Window Height=680
+Window Maximized=false
+Window Width=900
+
+[KrDetailedViewLeft]
+ColumnOrder=0,1,2,3,4
+ColumnWidths=241,42,80,99,26
+SortAscending=true
+SortColumn=0
+
+[KrDetailedViewRight]
+ColumnOrder=0,1,2,3,4
+ColumnWidths=240,42,80,99,26
+SortAscending=true
+SortColumn=0
+
+[Look&Feel]
+Show splashscreen=false
+
+[Private]
+Height 768=769
+Left PanelPopup Splitter Sizes=100,100
+Maximized=true
+PopularUrls=
+PopularUrlsRank=
+Right PanelPopup Splitter Sizes=100,100
+Splitter Sizes=511,510
+Start Position=0,0
+Start Size=682,369
+Width 1024=1025
+cmdline history=
+
+[Protocols]
+Handled Protocols=krarc,iso,tar
+Mimes For iso=application/x-iso,application/x-cd-image,application/x-dvd-image
+Mimes For krarc=application/x-7z,application/x-7z-compressed,application/x-ace,application/x-ace-compressed,application/x-arj,application/x-arj-compressed,application/x-bzip2,application/x-cpio,application/x-deb,application/x-debian-package,application/x-gzip,application/x-jar,application/x-lha,application/x-lha-compressed,application/x-rar,application/x-rar-compressed,application/x-rpm,application/zip,application/x-zip,application/x-zip-compressed
+Mimes For tar=application/x-tar,application/x-tarz,application/x-bzip-compressed-tar,application/x-compressed-tar,application/x-tbz,application/x-tgz
+
+[QueueManager]
+Active=0
+Queues=default
+
+[Startup]
+Left Active Tab=0
+Left Panel Popup=0
+Left Side Is Active=false
+Left Tab Bar[$e]=$HOME
+Left Tab Bar Props=0
+Left Tab Bar Types=0
+Right Active Tab=0
+Right Panel Popup=0
+Right Tab Bar[$e]=$HOME
+Right Tab Bar Props=0
+Right Tab Bar Types=0
+Vertical Mode=false

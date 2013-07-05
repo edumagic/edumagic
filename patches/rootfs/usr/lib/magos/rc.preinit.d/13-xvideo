@@ -1,0 +1,46 @@
+#!/bin/bash
+# Initial script for MagOS-Linux Live operating system
+# This script are launching before starting init from linux-live script.
+# Current dir allways must be set to root (/)
+# All system path must be relative, except initrd dirs
+
+export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
+
+ENABLED=yes
+[ "$ENABLED" != "yes" ] && exit 0
+
+. /liblinuxlive
+. etc/sysconfig/MagOS
+
+sed -i s/'is_empty_hash_ref($previous_config); my $force = 1 if $first_run; $'/'is_empty_hash_ref($previous_config);'/ usr/share/harddrake/service_harddrake
+sed -i 's|my $ret; return 1 unless ( -f '\''/var/lock/subsys/local'\'' );$|my $ret;|' usr/lib/libDrakX/do_pkgs.pm
+
+VER=`cat /VERSION|awk '{print $2}'`
+ONCE=`cat etc/once_boot_scripts|grep $(basename $0)-$VER`
+if [ ! "$ONCE" = "" ]
+then
+  exit 0
+fi
+
+grep -q xdriver= proc/cmdline && XORG_DRIVER=$(cat proc/cmdline | awk -F xdriver= '{print $2}' | awk '{print $1}')
+if [ ! "$XORG_DRIVER" = "" ]
+then
+  exit 0
+fi
+
+for a in $(cmdline_value xvideo | tr , " " ) ;do
+   case $a in
+       free)
+#          rm -f etc/sysconfig/harddrake2/previous_hw 2>/dev/null
+          sed -i -e "/Section \"Device\"/!b;:x;n;s/Driver.*/Driver \"-\"/;t;/Section/b;bx" etc/X11/xorg.conf
+       ;;
+       nonfree)
+#          rm -f etc/sysconfig/harddrake2/previous_hw 2>/dev/null
+          sed -i -e "/Section \"Device\"/!b;:x;n;s/Driver.*/Driver \"vesa\"/;t;/Section/b;bx" etc/X11/xorg.conf
+          sed -i s/'is_empty_hash_ref($previous_config);$'/'is_empty_hash_ref($previous_config); my $force = 1 if $first_run; '/ usr/share/harddrake/service_harddrake
+          sed -i 's|my $ret;$|my $ret; return 1 unless ( -f '\''/var/lock/subsys/local'\'' );|' usr/lib/libDrakX/do_pkgs.pm
+       ;;
+   esac
+done
+
+echo $(basename $0)-$VER >> etc/once_boot_scripts

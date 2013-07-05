@@ -1,0 +1,21 @@
+1) Предупреждения при сборке (полный лог сборки http://code.google.com/p/mageiaos/source/browse/trunk/docs/log_urpmi.txt):
+Дополнительная информация о пакете bcm43xx-fwcutter-006-9.mrc.mga2.i586
+You need to extract the firmware from the .sys file provided by your vendor.
+i.e bcm43xx-fwcutter -w /lib/firmware/ bcmwl5.sys 
+WARNING: Activating non-hostonly initrd due to distro upgrade.
+         Your initrd will be larger than needed for compatibility.
+
+         You can disable this by setting DRACUT_SKIP_FORCED_NON_HOSTONLY=1
+2) Не работает активация модулей после выполнения rpmdrake2lzm
+3) Долгое открытие Меню в KDE
+4) Долгая загрузка, загрузка быстрее если указать опцию xdriver=драйвер, опция xvideo=free работает медленнее, а опция xvideo=nonfree совсем медленная
+5) Магея 3 не может быть использована в качестве дистрибутива, в котором производить сборку, так как нет unionfs, aufs, которые нужны сборочным скриптам - баг https://bugs.mageia.org/show_bug.cgi?id=8314 (Thomas Backlund уже работает над этим багом)
+6) Дистрибутив не может быть собран на базе Магеи 3, так как имеются баги:
+https://bugs.mageia.org/show_bug.cgi?id=8314 - готовому дистрибутиву нужна unionfs или aufs (Thomas Backlund уже работает над этим багом)
+https://bugs.mageia.org/show_bug.cgi?id=10103 - не работает VPN OpenL2TP, баг открыт, работа по его исправлению слабая
+7) Использовано ядро 3.3.8, так как имеется баг https://bugs.mageia.org/show_bug.cgi?id=10650 , который не позволяет воспользоваться более новыми ядрами, доступными для Магеи 2
+8) Дистрибутиву нужны *map, но depmod их не создает https://bugs.mageia.org/show_bug.cgi?id=10661 (в качестве временного решения был использован /usr/local/bin/depmod, который создает *map)
+9) Когда идет выключение или перезагрузка имеется баг https://bugs.mageia.org/show_bug.cgi?id=8322 , но никто не захотел его исправить
+10) Не работает опция xres=XxY
+11) Ошибка определения имени пользователя в dir2lzm
+12) Добавить virtualbox и дополнения к нему

@@ -1,0 +1,40 @@
+#!/bin/bash
+# Initial script for MagOS-Linux Live operating system
+# This script are launching before starting init from linux-live script.
+# Current dir allways must be set to root (/)
+# All system path must be relative, except initrd dirs
+
+export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
+
+ENABLED=yes
+[ "$ENABLED" != "yes" ] && exit 0
+
+. /liblinuxlive
+
+rm -f etc/sysconfig/i18n
+ln -s /etc/sysconfig/language/default/i18n etc/sysconfig/i18n
+rm -f etc/sysconfig/keyboard
+ln -s /etc/sysconfig/language/default/keyboard etc/sysconfig/keyboard
+
+for a in $(cmdline_value language | tr , " " ) ;do
+   case $a in
+       english)
+         rm -f etc/sysconfig/i18n
+         ln -s /etc/sysconfig/language/english/i18n etc/sysconfig/i18n
+         rm -f etc/sysconfig/keyboard
+         ln -s /etc/sysconfig/language/english/keyboard etc/sysconfig/keyboard
+       ;;
+       russian)
+         rm -f etc/sysconfig/i18n
+         ln -s /etc/sysconfig/language/russian/i18n etc/sysconfig/i18n
+         rm -f etc/sysconfig/keyboard
+         ln -s /etc/sysconfig/language/russian/keyboard etc/sysconfig/keyboard
+       ;;
+       default)
+         rm -f etc/sysconfig/i18n
+         ln -s /etc/sysconfig/language/default/i18n etc/sysconfig/i18n
+         rm -f etc/sysconfig/keyboard
+         ln -s /etc/sysconfig/language/default/keyboard etc/sysconfig/keyboard
+       ;;
+   esac
+done

@@ -29,6 +29,15 @@ then
   exit 0
 fi
 
+#Boot
+ln -sf $(ls boot/vmlinuz-* | tail -1 | sed 's|boot/||') boot/vmlinuz
+ln -sf $(ls boot/System.map-* | tail -1 | sed 's|boot/||') boot/System.map
+ln -sf $(ls boot/config-* | tail -1 | sed 's|boot/||') boot/config
+ln -sf /mnt/livemedia/MagOS/initrd.gz boot/initrd.gz
+
+#Plymouth
+#sed -i -e "s/^THEME=.*/THEME=text/g" etc/sysconfig/bootsplash
+
 #Optimization menu and correction desktop files
 rm -f usr/share/applications/chbg.desktop
 rm -f usr/share/applications/localedrake-user.desktop

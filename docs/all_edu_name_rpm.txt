@@ -137,6 +137,7 @@ bouncycastle-tsp
 brasero
 bridge-utils
 broadcom-wl-common
+broadcom-wl-kernel-3.3.8-server-2.mga2
 bsf
 bsh
 bsh2
@@ -259,14 +260,7 @@ dirmngr
 djview4
 djvulibre
 dkms
-dkms-broadcom-wl
-dkms-fglrx
 dkms-minimal
-dkms-nvidia173
-dkms-nvidia96xx
-dkms-nvidia-current
-dkms-vboxadditions
-dkms-virtualbox
 dmidecode
 dmraid
 dmraid-events
@@ -351,6 +345,7 @@ felix-shell
 felix-utils
 ffmpeg
 ffmpegthumbs
+fglrx-kernel-3.3.8-server-2.mga2
 file
 filelight
 file-roller
@@ -1596,7 +1591,6 @@ libmicroblog4
 libmikmod3
 libmimic0
 libming1
-libminizip1
 libmission-control-plugins0
 libmjpegtools2.0_0
 libmlt++3
@@ -2442,8 +2436,9 @@ ntfs-3g
 numptyphysics
 nut
 nut-server
+nvidia173-kernel-3.3.8-server-2.mga2
+nvidia96xx-kernel-3.3.8-server-2.mga2
 nvidia-current-kernel-3.3.8-server-2.mga2
-nvidia-current-kernel-server-latest
 obconf
 obexd
 obex-data-server
@@ -3148,6 +3143,7 @@ util-linux
 v4l-utils
 vafer-dependency
 vbetool
+vboxadditions-kernel-3.3.8-server-2.mga2
 vcdimager
 vectorgraphics
 velocity
@@ -3157,6 +3153,7 @@ viewres
 vim-common
 vim-enhanced
 vim-minimal
+virtualbox-kernel-3.3.8-server-2.mga2
 visad
 vlc
 vlc-plugin-common

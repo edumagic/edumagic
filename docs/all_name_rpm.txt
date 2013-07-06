@@ -58,6 +58,7 @@ bootsplash
 brasero
 bridge-utils
 broadcom-wl-common
+broadcom-wl-kernel-3.3.8-server-2.mga2
 btrfs-progs
 busybox-static
 bzip2
@@ -141,14 +142,7 @@ dirmngr
 djview4
 djvulibre
 dkms
-dkms-broadcom-wl
-dkms-fglrx
 dkms-minimal
-dkms-nvidia173
-dkms-nvidia96xx
-dkms-nvidia-current
-dkms-vboxadditions
-dkms-virtualbox
 dmidecode
 dmraid
 dmraid-events
@@ -204,6 +198,7 @@ fbreader-common
 fbreader-gtk
 ffmpeg
 ffmpegthumbs
+fglrx-kernel-3.3.8-server-2.mga2
 file
 filelight
 file-roller
@@ -976,7 +971,6 @@ libmesaopenvg1
 libmetacity-private0
 libmicroblog4
 libmimic0
-libminizip1
 libmission-control-plugins0
 libmjpegtools2.0_0
 libmms0
@@ -1569,8 +1563,9 @@ nss_wins
 ntfs-3g
 nut
 nut-server
+nvidia173-kernel-3.3.8-server-2.mga2
+nvidia96xx-kernel-3.3.8-server-2.mga2
 nvidia-current-kernel-3.3.8-server-2.mga2
-nvidia-current-kernel-server-latest
 obconf
 obexd
 obex-data-server
@@ -1983,11 +1978,13 @@ utempter
 util-linux
 v4l-utils
 vbetool
+vboxadditions-kernel-3.3.8-server-2.mga2
 vcdimager
 viewres
 vim-common
 vim-enhanced
 vim-minimal
+virtualbox-kernel-3.3.8-server-2.mga2
 vlc
 vlc-plugin-common
 vlc-qt

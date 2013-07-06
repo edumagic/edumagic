@@ -4,8 +4,8 @@
 # Лицензия: GPL последней версии
 # Description: Run general scripts step by step
 # Описание: Запуск основных скриптов сразу пошагово
-# Authors: Goroshkin Anton, Alexey Loginov
-# Авторы: Горошкин Антон, Логинов Алексей
+# Author: Alexey Loginov
+# Автор: Логинов Алексей
 
 if [ "`id -u`" != "0" ] ;then
    echo "Need root permissions"

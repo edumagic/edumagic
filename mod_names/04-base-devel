@@ -12,5 +12,5 @@ git
 httpfs
 vim-minimal
 vim-enhanced
-rpm-build
+#rpm-build
 aum

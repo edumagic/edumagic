@@ -1,0 +1,151 @@
+#!/bin/bash
+
+# License: GPL latest version
+# Лицензия: GPL последней версии
+# Description: Create and install kernel modules from dkms
+# Описание: Создает и устанавливает модули ядра из dkms
+# Author: Alexey Loginov
+# Автор: Логинов Алексей
+
+if [ "`id -u`" != "0" ] ;then
+   echo "Need root permissions"
+   echo "Нужны права root"
+   exit 1
+fi
+
+if [ "$1" = "" ]
+then
+  echo "Usage: autokmods make/install/clean/urpme_dkms"
+  echo "Использование: autokmods make/install/clean/urpme_dkms"
+  exit 1
+fi
+
+if [ ! "$1" = "make" ]
+then
+  if [ ! "$1" = "install" ]
+  then
+    if [ ! "$1" = "clean" ]
+    then
+      if [ ! "$1" = "urpme_dkms" ]
+      then
+        echo "Usage: autokmods make/install/clean"
+        echo "Использование: autokmods make/install/clean"
+        exit 1
+      fi
+    fi
+  fi
+fi
+
+echo "Start autokmods for $1"
+echo "Старт autokmods для $1"
+
+TMP_AUTOKMODS=/tmp/autokmods
+mkdir -p $TMP_AUTOKMODS
+
+cd /var/lib/dkms
+MODS=`dir -1 --hide dkms*`
+
+if [ ! "$1" = "install" ]
+then
+  if [ ! "$1" = "clean" ]
+  then
+    if [ "$MODS" = "" ]
+    then
+      echo "No MODS for autokmods in /var/lib/dkms"
+      echo "Не найдено MODS для autokmods в /var/lib/dkms"
+    else
+      echo "The list of MODS for autokmods:"
+      echo "Список MODS для autokmods:"
+      echo "*****************"
+      echo "$MODS"
+      echo "*****************"
+    fi
+  fi
+fi
+
+for MOD in $MODS
+do
+  if [ "$1" = "install" ]
+  then
+    break
+  fi
+  echo "Doing $MOD for $1"
+  echo "Обрабатывается $MOD для $1"
+  cd $MOD
+  VER_MOD=`dir -1 --hide kernel*`
+  if [ "$1" = "make" ]
+  then
+#    rm -rf $VER_MOD/rpm
+#    rm -rf $TMP_AUTOKMODS
+    dkms --rpm_safe_upgrade mkrpm -m $MOD -v $VER_MOD -k `uname -r` || exit 1
+    cp -f $VER_MOD/rpm/* $TMP_AUTOKMODS/
+  fi
+  cd ..
+  if [ -d "$MOD/$VER_MOD/rpm" ]
+  then
+    MOD_RPM=`ls $MOD/$VER_MOD/rpm`
+  else
+    MOD_RPM=""
+  fi
+#  if [ "$1" = "install" ]
+#  then
+#    if [ "$MOD_RPM" = "" ]
+#    then
+#      echo "There is nothing for install $MOD. Run autokmods make the first."
+#      echo "Нет ничего для установки $MOD. Запустите сначала autokmods make."
+#    else
+#      rpm -ivh $MOD/$VER_MOD/rpm/$MOD_RPM || echo "Error while install $MOD_RPM"; echo "Ошибка при установке $MOD_RPM"
+#    fi
+#  fi
+  if [ "$1" = "urpme_dkms" ]
+  then
+    if [ "$MOD" = "" ]
+    then
+      echo "There is nothing for uninstall dkms-$MOD."
+      echo "Нет ничего для удаления dkms-$MOD."
+    else
+      rpm -e --nodeps dkms-$MOD
+    fi
+  fi
+  if [ "$1" = "clean" ]
+  then
+    rm -rf $MOD/$VER_MOD/rpm
+#    rm -rf $TMP_AUTOKMODS
+  fi
+done
+
+if [ "$1" = "clean" ]
+then
+  rm -rf $TMP_AUTOKMODS
+fi
+
+if [ -d "$TMP_AUTOKMODS" ]
+then
+  LIST_TMP_AUTOKMODS=`dir -1 $TMP_AUTOKMODS`
+else
+  LIST_TMP_AUTOKMODS=""
+fi
+
+if [ "$1" = "install" ]
+then
+  if [ "$LIST_TMP_AUTOKMODS" = "" ]
+  then
+    echo "There is nothing for install in $TMP_AUTOKMODS. Run autokmods make the first."
+    echo "Нет ничего для установки в $TMP_AUTOKMODS. Запустите сначала autokmods make."
+  else
+    echo "The list of RPMS for autokmods:"
+    echo "Список RPMS для autokmods:"
+    echo "*****************"
+    echo "$LIST_TMP_AUTOKMODS"
+    echo "*****************"
+    for MOD in $LIST_TMP_AUTOKMODS
+    do
+      rpm -ivh $TMP_AUTOKMODS/$MOD || echo "Error while install $MOD Ошибка при установке $MOD"
+    done
+  fi
+fi
+
+echo "Finish autokmods for $1"
+echo "Окончание autokmods для $1"
+
+exit 0

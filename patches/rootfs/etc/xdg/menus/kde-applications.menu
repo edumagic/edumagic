@@ -1,21 +1,39 @@
 <?xml version='1.0'?>
 <!DOCTYPE Menu PUBLIC '-//freedesktop//DTD Menu 1.0//EN' 'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>
 <Menu>
- <Name>Applications</Name>
- <DefaultLayout inline="true" inline_limit="1">
+<Name>Applications</Name>
+  <Layout>
+    <Menuname inline="false">Internet</Menuname>
+    <Menuname inline="false">Office</Menuname>
+    <Menuname inline="false">Graphics</Menuname>
+    <Menuname inline="false">SoundVideo</Menuname>
+   <Separator/>   
+    <Menuname inline="false">Tools</Menuname>   
+    <Menuname inline="false">Development</Menuname>
+    <Separator/>   
+    <Menuname inline="false">Games</Menuname>
+    <Menuname inline="false">Education</Menuname>
+    <Menuname inline="false">Sciences</Menuname>
+    <Merge type="menus"/>
+    <Menuname inline="false">Other</Menuname>     
+    <Merge type="files"/>   
+   <Separator/>     
+    <Filename>rpmdrake.desktop</Filename>
+  </Layout>
+<DefaultLayout inline="true" inline_limit="1">
   <Merge type="menus"/>
   <Merge type="files"/>
- </DefaultLayout>
- <DefaultMergeDirs/>
- <KDELegacyDirs/>
- <DefaultAppDirs/>
- <DefaultDirectoryDirs/>
- <Directory>mandrivalinux.directory</Directory>
- <Include>
+</DefaultLayout>
+<DefaultMergeDirs/>
+<KDELegacyDirs/>
+<DefaultAppDirs/>
+<DefaultDirectoryDirs/>
+<Directory>mandrivalinux.directory</Directory>
+<Include>
   <Category>X-MandrivaLinux</Category>
   <Filename>rpmdrake.desktop</Filename>
- </Include>
- <Menu>
+</Include>
+<Menu>
   <Name>Internet</Name>
   <Directory>mandriva-internet.directory</Directory>
   <Layout>
@@ -201,8 +219,8 @@
     <Category>RemoteAccess</Category>
    </Include>
   </Menu>
- </Menu>
- <Menu>
+</Menu>
+<Menu>
   <Name>Office</Name>
   <Directory>mandriva-office.directory</Directory>
   <Layout>
@@ -261,7 +279,7 @@
   </Menu>
   <Menu>
    <Name>Editors</Name>
-   <Directory>magos-editors.directory</Directory>
+   <Directory>kde-editors.directory</Directory>
    <Layout>
     <Filename>libreoffice-writer.desktop</Filename>
     <Filename>libreoffice-calc.desktop</Filename>
@@ -375,8 +393,8 @@
     </And>
    </Include>
   </Menu>
- </Menu>
- <Menu>
+</Menu>
+<Menu>
   <Name>Graphics</Name>
   <Directory>mandriva-graphics.directory</Directory>
   <Layout>
@@ -624,8 +642,8 @@
     </And>
    </Include>
   </Menu>
- </Menu>
- <Menu>
+</Menu>
+<Menu>
   <Name>SoundVideo</Name>
   <Directory>mandriva-soundvideo.directory</Directory>
   <Layout>
@@ -758,8 +776,8 @@
     <Category>Mixer</Category>
    </Include>
   </Menu>
- </Menu>
- <Menu>
+</Menu>
+<Menu>
   <Name>Tools</Name>
   <Directory>mandriva-development-tools.directory</Directory>
   <Layout>
@@ -882,6 +900,13 @@
       <Filename>rpmdrake.desktop</Filename>
       <Filename>xfce4-taskmanager.desktop</Filename>
       <Filename>mageia-lxsession-edit.desktop</Filename>
+      <Category>Security</Category>
+      <Category>TerminalEmulator</Category>
+      <Category>DiscBurning</Category>
+      <Category>TextTools</Category>
+      <Category>TextEditor</Category>
+      <Category>Archiving</Category>
+      <Category>Compression</Category>
      </Not>
     </And>
    </Include>
@@ -1192,8 +1217,8 @@
     <Filename>xfce4-taskmanager.desktop</Filename>
    </Include>
   </Menu>
- </Menu>
- <Menu>
+</Menu>
+<Menu>
   <Name>SystemSettings</Name>
   <Directory>magos-settings.directory</Directory>
   <Layout>
@@ -1285,8 +1310,8 @@
     <Category>Accessibility</Category>
    </Include>
   </Menu>
- </Menu>
- <Menu>
+</Menu>
+<Menu>
   <Name>Development</Name>
   <Directory>mandriva-development.directory</Directory>
   <Layout>
@@ -1294,7 +1319,7 @@
    <Menuname inline="false">Development Environment</Menuname>
    <Menuname inline="false">Web Development</Menuname>
    <Menuname inline="false">Interpreters</Menuname>
-   <Menuname inline="false">Tools</Menuname>
+   <Menuname inline="false">More</Menuname>
    <Menuname inline="false">Code Generators</Menuname>
    <Menuname inline="false">Development Environments</Menuname>
    <Menuname inline="false">Editors</Menuname>
@@ -1304,8 +1329,8 @@
    <Merge type="files"/>
   </Layout>
   <Menu>
-   <Name>More</Name>
-   <Directory>mandriva-moreapplications.directory</Directory>
+    <Name>Other</Name>
+    <Directory>mandriva-other.directory</Directory>
    <Include>
     <And>
      <Or>
@@ -1371,8 +1396,8 @@
    </Include>
   </Menu>
   <Menu>
-   <Name>Tools</Name>
-   <Directory>mandriva-development-tools.directory</Directory>
+  <Name>More</Name>
+  <Directory>mandriva-moreapplications.directory</Directory>
    <Include>
     <Or>
      <Category>X-MandrivaLinux-MoreApplications-Development-Other</Category>
@@ -1404,13 +1429,13 @@
   </Menu>
   <Menu>
    <Name>Editors</Name>
-   <Directory>magos-editors.directory</Directory>
+   <Directory>kde-editors.directory</Directory>
    <Include>
     <Category>Electronics</Category>
    </Include>
   </Menu>
- </Menu>
- <Menu>
+</Menu>
+<Menu>
   <Name>Games</Name>
   <Directory>mandriva-games.directory</Directory>
   <Layout>
@@ -1532,8 +1557,8 @@
     </Or>
    </Include>
   </Menu>
- </Menu>
- <Menu>
+</Menu>
+<Menu>
   <Name>Education</Name>
   <Directory>mandriva-education.directory</Directory>
   <Layout>
@@ -1681,8 +1706,8 @@
     </Or>
    </Include>
   </Menu>
- </Menu>
- <Menu>
+</Menu>
+<Menu>
   <Name>Sciences</Name>
   <Directory>mandriva-sciences.directory</Directory>
   <Layout>
@@ -1858,16 +1883,16 @@
     <Filename>kojo.desktop</Filename>
    </Exclude>
   </Menu>
- </Menu>
- <Menu>
+</Menu>
+<Menu>
   <Name>Documentation</Name>
   <Directory>mandriva-documentation.directory</Directory>
   <Include>
    <Category>X-MandrivaLinux-MoreApplications-Documentation</Category>
    <Category>Documentation</Category>
   </Include>
- </Menu>
- <!--
+</Menu>
+<!--
   <Menu>
     <Name>Other</Name>
     <Directory>mandriva-other.directory</Directory>
@@ -1880,41 +1905,21 @@
     </Exclude>
   </Menu>
   -->
- <Menu>
+<Menu>
   <Name>.hidden</Name>
   <Directory>mandriva-hidden.directory</Directory>
   <Include>
    <Category>X-MandrivaLinux-.hidden</Category>
   </Include>
- </Menu>
- <Menu>
+</Menu>
+<Menu>
   <Name>Settings</Name>
   <Directory>kde-settings.directory</Directory>
   <MergeFile>/etc/xdg/kde/menus/kde-settings.menu</MergeFile>
- </Menu>
- <MergeFile>applications-kmenuedit.menu</MergeFile>
- <Menu>
+</Menu>
+<MergeFile>applications-kmenuedit.menu</MergeFile>
+<Menu>
   <Name>innovidata-opennx</Name>
   <Deleted/>
- </Menu>
- <Layout>
-  <Merge type="menus"/>
-  <Menuname>Internet</Menuname>
-  <Menuname>Office</Menuname>
-  <Menuname>Graphics</Menuname>
-  <Menuname>SoundVideo</Menuname>
-  <Separator/>
-  <Menuname>Tools</Menuname>
-  <Menuname>Development</Menuname>
-  <Separator/>
-  <Menuname>Games</Menuname>
-  <Menuname>Education</Menuname>
-  <Menuname>Sciences</Menuname>
-  <Menuname>Settings</Menuname>
-  <Menuname>Documentation</Menuname>
-  <Separator/>
-  <Menuname>SystemSettings</Menuname>
-  <Merge type="files"/>
-  <Filename>rpmdrake.desktop</Filename>
- </Layout>
+</Menu>
 </Menu>

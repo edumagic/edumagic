@@ -120,15 +120,15 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
     else
         urpmi $URPMI_PARAM --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
     fi
-    if [ "$(basename $MOD)" = "03-base-kernel-dkms" ]
-    then
-      cp -f ./autokmods $ROOTFS/usr/bin/
-      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-      chroot $ROOTFS autokmods make 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-      chroot $ROOTFS autokmods urpme_dkms 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-      chroot $ROOTFS autokmods install 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-    fi
+#    if [ "$(basename $MOD)" = "03-base-kernel-dkms" ]
+#    then
+#      cp -f ./autokmods $ROOTFS/usr/bin/
+#      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+#      chroot $ROOTFS autokmods make 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+#      chroot $ROOTFS autokmods urpme_dkms 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+#      chroot $ROOTFS autokmods install 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+#      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+#    fi
     echo -ne \\n "---> OK."\\n
 done
 

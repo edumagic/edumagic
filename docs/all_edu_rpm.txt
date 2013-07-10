@@ -100,7 +100,7 @@ avogadro-1.0.3-8.mga2
 avrdude-5.11.1-1.mga2
 avr-libc-1.7.1-3.mga2
 awesfx-0.5.1c-3.mga1
-axis-1.4-6.mga2
+axis-1.4-6.1.mga2
 b43-fwcutter-015-1.mga2
 backport-util-concurrent-3.1-5.mga1
 basesystem-2-6.mga2
@@ -137,7 +137,6 @@ bouncycastle-tsp-1.46-1.mga2
 brasero-3.4.1-1.mga2
 bridge-utils-1.5-1.mga2
 broadcom-wl-common-5.100.82.112-7.mga2.nonfree
-broadcom-wl-kernel-3.3.8-server-2.mga2-5.100.82.112-7.mga2.nonfree
 bsf-2.4.0-3.mga2
 bsh-1.3.0-11.0.9.mga1
 bsh2-2.0b5-4.mga2
@@ -250,6 +249,7 @@ desktop-common-data-2-10.mga2
 desktop-file-utils-0.20-1.1.mga2
 devede-3.21.0-1.mga2
 devhelp-3.4.1-1.mga2
+dev-scripts-0.0.1-1.mrc.mga2
 dhcp-client-4.2.5P1-1.mga2
 dhcp-common-4.2.5P1-1.mga2
 dhcp-server-4.2.5P1-1.mga2
@@ -260,7 +260,14 @@ dirmngr-1.1.0-1.mga1
 djview4-4.8-2.mga2
 djvulibre-3.5.24-1.mga2
 dkms-2.0.19-29.mga2
+dkms-broadcom-wl-5.100.82.112-7.mga2.nonfree
+dkms-fglrx-8.961-2.mga2.nonfree
 dkms-minimal-2.0.19-29.mga2
+dkms-nvidia173-173.14.36-1.mrc.mga2
+dkms-nvidia96xx-96.43.23-2.mrc.mga2
+dkms-nvidia-current-295.71-1.mga2.nonfree
+dkms-vboxadditions-4.1.24-1.mga2
+dkms-virtualbox-4.1.24-1.mga2
 dmidecode-2.11-1.mga1
 dmraid-1.0.0-0.rc16.9.mga2
 dmraid-events-1.0.0-0.rc16.9.mga2
@@ -345,7 +352,6 @@ felix-shell-1.4.2-1.mga2
 felix-utils-1.1.0-3.mga2
 ffmpeg-0.10.7-1.mga2.tainted
 ffmpegthumbs-4.8.5-1.2.mga2
-fglrx-kernel-3.3.8-server-2.mga2-8.961-2.mga2.nonfree
 file-5.11-2.mga2
 filelight-4.8.5-1.1.mga2
 file-roller-3.4.1-1.mga2
@@ -359,7 +365,7 @@ fits-java-1.07.0-1.mga2
 flac-1.2.1-10.mga2
 flac123-0.0.11-6.mrc.mga2
 flamerobin-0.9.2-2.mga2
-flash-player-plugin-11.2.202.291-1.mga2.nonfree
+flash-player-plugin-11.2.202.297-1.mga2.nonfree
 flexdock-0.5.4-1.mga2
 fluidsynth-1.1.5-2.mga2
 folks-i18n-0.6.9-1.mga2
@@ -379,9 +385,9 @@ fop-1.0-2.mga2
 foremost-1.5.7-3.mga2
 fortune-mod-1.99.1-21.mga1
 FoxitReader-1.1.0-3.mrc.mga2
-fpc-2.6.0-1.mga2
-fpc-src-2.6.0-1.mga2
-fp-ide-2.6.0-20.mrc.mga2
+fpc-2.6.2-2.mrc.mga2
+fpc-src-2.6.2-2.mrc.mga2
+fp-ide-2.6.2-3.mrc.mga2
 FreeBASIC-0.24.0-4.mrc.mga2
 freecad-0.12.5284-5.mrc.mga2
 freehep-export-2.1.1-2.mga2
@@ -478,7 +484,7 @@ GConf2-sanity-check-3.2.5-1.mga2
 gcr-3.4.1-1.mga2
 gda2.0-3.1.5-11.mga2
 gda2.0-sqlite-3.1.5-11.mga2
-gdb-7.3.50.20110722-4.mga2
+gdb-7.5.1-0.2.mrc.mga2
 gdbm-1.10-1.mga2
 gdisk-0.8.1-2.mga2
 gdk-pixbuf2.0-2.26.1-1.mga2
@@ -720,7 +726,7 @@ jackit-1.9.8-3.mga2
 jackit-example-clients-1.9.8-3.mga2
 jacorb-2.3.0-2.mga2
 jakarta-commons-fileupload-1.2.1-2.0.7.mga2
-jakarta-commons-httpclient-3.1-3.mga1
+jakarta-commons-httpclient-3.1-3.1.mga2
 jakarta-oro-2.0.8-3.0.6.mga1
 jakarta-taglibs-standard-1.1.2-7.mga1
 jama-1.0.2-4.mga1
@@ -2436,9 +2442,6 @@ ntfs-3g-2012.1.15-1.mga2
 numptyphysics-0.2-0.svn.157.2.mga2
 nut-2.6.1-1.1.mga2
 nut-server-2.6.1-1.1.mga2
-nvidia173-kernel-3.3.8-server-2.mga2-173.14.36-1.mrc.mga2
-nvidia96xx-kernel-3.3.8-server-2.mga2-96.43.23-2.mrc.mga2
-nvidia-current-kernel-3.3.8-server-2.mga2-295.71-1.mga2.nonfree
 obconf-2.0.3-9.mga2
 obexd-0.45-1.mga2
 obex-data-server-0.4.6-1.mga1
@@ -2467,7 +2470,7 @@ openssh-askpass-5.9p1-5.1.mga2
 openssh-askpass-common-5.9p1-5.1.mga2
 openssh-clients-5.9p1-5.1.mga2
 openssl-1.0.0k-1.mga2
-opera-12.15-1.mga2.nonfree
+opera-12.16-1.mga2.nonfree
 ORBit2-2.14.19-2.mga2
 orc-0.4.16-1.mga2
 ossp-1.3.2-3.mga2
@@ -3143,7 +3146,6 @@ util-linux-2.21.1-1.2.mga2
 v4l-utils-0.8.6-1.mga2
 vafer-dependency-0.4-1.mga2
 vbetool-1.2.2-1.mga2
-vboxadditions-kernel-3.3.8-server-2.mga2-4.1.24-1.mga2
 vcdimager-0.7.24-2.mga2
 vectorgraphics-2.1.1-2.mga2
 velocity-1.6.4-1.mga1
@@ -3153,7 +3155,6 @@ viewres-1.0.3-1.mga1
 vim-common-7.3.444-2.mga2
 vim-enhanced-7.3.444-2.mga2
 vim-minimal-7.3.444-2.mga2
-virtualbox-kernel-3.3.8-server-2.mga2-4.1.24-1.mga2
 visad-2010.08.09-1.mga2
 vlc-2.0.6-0.1.mga2.tainted
 vlc-plugin-common-2.0.6-0.1.mga2.tainted

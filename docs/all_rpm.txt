@@ -58,7 +58,6 @@ bootsplash-3.3.9-1.mga2
 brasero-3.4.1-1.mga2
 bridge-utils-1.5-1.mga2
 broadcom-wl-common-5.100.82.112-7.mga2.nonfree
-broadcom-wl-kernel-3.3.8-server-2.mga2-5.100.82.112-7.mga2.nonfree
 btrfs-progs-0.19-1.20120328.1.mga2
 busybox-static-1.19.3-1.1.mga2
 bzip2-1.0.6-1.mga2
@@ -133,6 +132,7 @@ Default-kde4-config-2-0.20120531.1.mga2
 desktop-common-data-2-10.mga2
 desktop-file-utils-0.20-1.1.mga2
 devede-3.21.0-1.mga2
+dev-scripts-0.0.1-1.mrc.mga2
 dhcp-client-4.2.5P1-1.mga2
 dhcp-common-4.2.5P1-1.mga2
 dhcp-server-4.2.5P1-1.mga2
@@ -142,7 +142,14 @@ dirmngr-1.1.0-1.mga1
 djview4-4.8-2.mga2
 djvulibre-3.5.24-1.mga2
 dkms-2.0.19-29.mga2
+dkms-broadcom-wl-5.100.82.112-7.mga2.nonfree
+dkms-fglrx-8.961-2.mga2.nonfree
 dkms-minimal-2.0.19-29.mga2
+dkms-nvidia173-173.14.36-1.mrc.mga2
+dkms-nvidia96xx-96.43.23-2.mrc.mga2
+dkms-nvidia-current-295.71-1.mga2.nonfree
+dkms-vboxadditions-4.1.24-1.mga2
+dkms-virtualbox-4.1.24-1.mga2
 dmidecode-2.11-1.mga1
 dmraid-1.0.0-0.rc16.9.mga2
 dmraid-events-1.0.0-0.rc16.9.mga2
@@ -198,7 +205,6 @@ fbreader-common-0.12.10-5.mga1
 fbreader-gtk-0.12.10-5.mga1
 ffmpeg-0.10.7-1.mga2.tainted
 ffmpegthumbs-4.8.5-1.2.mga2
-fglrx-kernel-3.3.8-server-2.mga2-8.961-2.mga2.nonfree
 file-5.11-2.mga2
 filelight-4.8.5-1.1.mga2
 file-roller-3.4.1-1.mga2
@@ -209,7 +215,7 @@ firefox-17.0.7-1.mga2
 firefox-ru-17.0.7-1.mga2
 flac-1.2.1-10.mga2
 flac123-0.0.11-6.mrc.mga2
-flash-player-plugin-11.2.202.291-1.mga2.nonfree
+flash-player-plugin-11.2.202.297-1.mga2.nonfree
 folks-i18n-0.6.9-1.mga2
 fontconfig-2.8.0-6.mga2
 fontpackages-filesystem-1.44-4.mga1
@@ -1563,9 +1569,6 @@ nss_wins-3.6.5-2.2.mga2
 ntfs-3g-2012.1.15-1.mga2
 nut-2.6.1-1.1.mga2
 nut-server-2.6.1-1.1.mga2
-nvidia173-kernel-3.3.8-server-2.mga2-173.14.36-1.mrc.mga2
-nvidia96xx-kernel-3.3.8-server-2.mga2-96.43.23-2.mrc.mga2
-nvidia-current-kernel-3.3.8-server-2.mga2-295.71-1.mga2.nonfree
 obconf-2.0.3-9.mga2
 obexd-0.45-1.mga2
 obex-data-server-0.4.6-1.mga1
@@ -1978,13 +1981,11 @@ utempter-0.5.5-12.mga1
 util-linux-2.21.1-1.2.mga2
 v4l-utils-0.8.6-1.mga2
 vbetool-1.2.2-1.mga2
-vboxadditions-kernel-3.3.8-server-2.mga2-4.1.24-1.mga2
 vcdimager-0.7.24-2.mga2
 viewres-1.0.3-1.mga1
 vim-common-7.3.444-2.mga2
 vim-enhanced-7.3.444-2.mga2
 vim-minimal-7.3.444-2.mga2
-virtualbox-kernel-3.3.8-server-2.mga2-4.1.24-1.mga2
 vlc-2.0.6-0.1.mga2.tainted
 vlc-plugin-common-2.0.6-0.1.mga2.tainted
 vlc-qt-0.8.0-1.mrc.mga2

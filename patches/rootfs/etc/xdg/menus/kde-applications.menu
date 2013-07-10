@@ -728,7 +728,7 @@
   </Menu>
   <Menu>
    <Name>Players</Name>
-   <Directory>magos-viewing.directory</Directory>
+   <Directory>kde-multimedia.directory</Directory>
    <Layout>
     <Filename>mplayer.desktop</Filename>
     <Filename>vlc.desktop</Filename>
@@ -1220,7 +1220,7 @@
 </Menu>
 <Menu>
   <Name>SystemSettings</Name>
-  <Directory>magos-settings.directory</Directory>
+  <Directory>kde-settingsmenu.directory</Directory>
   <Layout>
    <Menuname inline="false">Hardware</Menuname>
    <Menuname inline="false">Printing</Menuname>

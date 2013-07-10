@@ -17,3 +17,4 @@ lsof
 cpufreq
 at
 rpm-build
+dev-scripts

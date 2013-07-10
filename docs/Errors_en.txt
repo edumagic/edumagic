@@ -14,5 +14,5 @@ https://bugs.mageia.org/show_bug.cgi?id=10103 - VPN OpenL2TP does not work, bug 
 *) *map files are needed for distro, but depmod does not create *map: https://bugs.mageia.org/show_bug.cgi?id=10661 - bug is open, no fix (as a temporary solution has been used /usr/local/bin/depmod, which create *map)
 *) When a shutdown or reboot, then there is a bug https://bugs.mageia.org/show_bug.cgi?id=8322 , but nobody wanted to fix it
 *) Parameter xres=XxY don't work for free video drivers
-*) Error with determine user's name in dir2lzm
 *) To add virtualbox and addons
+*) "mageia" can not be disabled while KDE is starting

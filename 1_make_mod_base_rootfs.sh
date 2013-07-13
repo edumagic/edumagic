@@ -122,11 +122,11 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
     fi
     if [ "$(basename $MOD)" = "03-base-kernel-dkms" ]
     then
-#      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-#      chroot $ROOTFS autokmods make 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-#      chroot $ROOTFS autokmods urpme_dkms 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-#      chroot $ROOTFS autokmods install 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-#      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+      chroot $ROOTFS autokmods make 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+      chroot $ROOTFS autokmods urpme_dkms 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+      chroot $ROOTFS autokmods install 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
       chroot $ROOTFS auto_gl_conf 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
     fi
     echo -ne \\n "---> OK."\\n

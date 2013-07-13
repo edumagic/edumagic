@@ -9,6 +9,9 @@ export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
 ENABLED=yes
 [ "$ENABLED" != "yes" ] && exit 0
 
+. /liblinuxlive
+. etc/sysconfig/MagOS
+
 VER=`cat /VERSION|awk '{print $2}'`
 ONCE=`cat etc/once_boot_scripts|grep $(basename $0)-$VER`
 if [ ! "$ONCE" = "" ]
@@ -16,43 +19,56 @@ then
   exit 0
 fi
 
-. /liblinuxlive
-. etc/sysconfig/MagOS
-
 mkdir -p proc
 mount -o rbind /proc proc
-if [ -x bin/systemd ] ;then
-chroot . systemctl disable NetworkManager.service || chroot . chkconfig --del NetworkManager
-    else
-chroot . chkconfig --del NetworkManager
-    fi
-if [ -x bin/systemd ] ;then
-chroot . systemctl disable squid.service || chroot . chkconfig --del squid
-    else
-chroot . chkconfig --del squid
-    fi
-if [ -x bin/systemd ] ;then
-chroot . systemctl disable dansguardian.service || chroot . chkconfig --del dansguardian
-    else
-chroot . chkconfig --del dansguardian
-    fi
-if [ -x bin/systemd ] ;then
-chroot . systemctl disable freshclam.service || chroot . chkconfig --del freshclam
-    else
-chroot . chkconfig --del freshclam
-    fi
-chroot . systemctl disable nfs-server.service || chroot . chkconfig --del nfs-server
-    else
-chroot . chkconfig --del nfs-server
-    fi
-chroot . systemctl disable postfix.service || chroot . chkconfig --del postfix
-    else
-chroot . chkconfig --del postfix
-    fi
-chroot . systemctl disable msec.service || chroot . chkconfig --del msec
-    else
-chroot . chkconfig --del msec
-    fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable NetworkManager.service || chroot . chkconfig --del NetworkManager
+else
+  chroot . chkconfig --del NetworkManager
+fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable squid.service || chroot . chkconfig --del squid
+else
+  chroot . chkconfig --del squid
+fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable dansguardian.service || chroot . chkconfig --del dansguardian
+else
+  chroot . chkconfig --del dansguardian
+fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable freshclam.service || chroot . chkconfig --del freshclam
+else
+  chroot . chkconfig --del freshclam
+fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable nfs-server.service || chroot . chkconfig --del nfs-server
+else
+  chroot . chkconfig --del nfs-server
+fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable postfix.service || chroot . chkconfig --del postfix
+else
+  chroot . chkconfig --del postfix
+fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable msec.service || chroot . chkconfig --del msec
+else
+  chroot . chkconfig --del msec
+fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable upowerd.service || chroot . chkconfig --del upowerd
+else
+  chroot . chkconfig --del upowerd
+fi
 umount proc
 
 echo $(basename $0)-$VER >> etc/once_boot_scripts

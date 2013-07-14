@@ -1,4 +1,4 @@
-*) Warnings when building (full build log http://code.google.com/p/mageiaos/source/browse/trunk/docs/log_urpmi.txt):
+*) Warnings when building (full build log http://code.google.com/p/magicos/source/browse/trunk/docs/log_urpmi.txt):
 Additional information about package bcm43xx-fwcutter-006-9.mrc.mga2.i586
 You need to extract the firmware from the .sys file provided by your vendor.
 i.e bcm43xx-fwcutter -w /lib/firmware/ bcmwl5.sys
@@ -16,3 +16,4 @@ https://bugs.mageia.org/show_bug.cgi?id=10103 - VPN OpenL2TP does not work, bug 
 *) Parameter xres=XxY don't work for free video drivers
 *) To add virtualbox and addons
 *) "mageia" can not be disabled while KDE is starting
+*) Display turn off: http://forum.mageialinux.ru/viewtopic.php?id=656

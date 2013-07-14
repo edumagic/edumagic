@@ -1,4 +1,4 @@
-*) Предупреждения при сборке (полный лог сборки http://code.google.com/p/mageiaos/source/browse/trunk/docs/log_urpmi.txt):
+*) Предупреждения при сборке (полный лог сборки http://code.google.com/p/magicos/source/browse/trunk/docs/log_urpmi.txt):
 Дополнительная информация о пакете bcm43xx-fwcutter-006-9.mrc.mga2.i586
 You need to extract the firmware from the .sys file provided by your vendor.
 i.e bcm43xx-fwcutter -w /lib/firmware/ bcmwl5.sys 
@@ -17,3 +17,4 @@ https://bugs.mageia.org/show_bug.cgi?id=10103 - не работает VPN OpenL2
 *) Не работает опция xres=XxY при свободных видео драйверах
 *) Добавить virtualbox и дополнения к нему
 *) "mageia" не отключается при загрузке KDE
+*) Отключается экран: http://forum.mageialinux.ru/viewtopic.php?id=656

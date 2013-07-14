@@ -63,12 +63,12 @@ then
 else
   chroot . chkconfig --del msec
 fi
-if [ -x bin/systemd ]
-then
-  chroot . systemctl disable upowerd.service || chroot . chkconfig --del upowerd
-else
-  chroot . chkconfig --del upowerd
-fi
+#if [ -x bin/systemd ]
+#then
+#  chroot . systemctl disable upowerd.service || chroot . chkconfig --del upowerd
+#else
+#  chroot . chkconfig --del upowerd
+#fi
 umount proc
 
 echo $(basename $0)-$VER >> etc/once_boot_scripts

@@ -25,6 +25,7 @@ sed -i -e 's|Icon=evolution|Icon=/usr/share/icons/hicolor/48x48/apps/evolution.p
 sed -i -e 's|Icon=evolution|Icon=/usr/share/icons/hicolor/48x48/apps/evolution.png|g' usr/share/applications/evolution.desktop
 sed -i -e 's|Icon=thunderbird|Icon=/usr/share/icons/hicolor/48x48/apps/thunderbird.png|g' usr/share/applications/thunderbird.desktop
 sed -i -e 's|Categories=Office|Categories=Office;X-MandrivaLinux-Office-Wordprocessors;|g' usr/share/applications/rodovid.desktop
+sed -i -e 's|Categories=GTK;Office;Science;|Categories=Office;X-MandrivaLinux-Office-Wordprocessors;|g' usr/share/applications/gramps.desktop
 #sed -i -e 's|Icon=cantor|Icon=/usr/share/icons/hicolor/48x48/apps/cantor.png|g' usr/share/applications/kde4/cantor.desktop
 #Fix bug https://bugs.mageia.org/show_bug.cgi?id=10649
 sed -i -e 's|  ||g' usr/share/applications/zhu3d.desktop

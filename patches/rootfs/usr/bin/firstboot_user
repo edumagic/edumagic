@@ -20,12 +20,12 @@ then
   cp -f /usr/share/dist/desktop-files/default/register.desktop "$HOME/$DIR/"
 fi
 
-#Link for Readme.txt on Desktop
-if [ ! -f "$DIR/Readme.txt" ]
+#Link for Readme.odt on Desktop
+if [ ! -f "$DIR/Readme.odt" ]
 then
-  if [ -f "/usr/share/magos/Readme.txt" ]
+  if [ -f "/usr/share/magos/Readme.odt" ]
   then
-    cp -f /usr/share/magos/Readme.txt "$HOME/$DIR/"
+    cp -f /usr/share/magos/Readme.odt "$HOME/$DIR/"
   fi
 fi
 

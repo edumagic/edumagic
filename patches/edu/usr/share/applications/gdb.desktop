@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Gdb
+Comment=The GNU debugger
+Comment[ru]=Отладчик GNU
+Exec=gdb --tui
+Icon=development_section
+Terminal=true
+Type=Application
+Categories=Development;Debugger;ConsoleOnly;

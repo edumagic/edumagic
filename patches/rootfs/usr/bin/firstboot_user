@@ -39,22 +39,36 @@ then
   fi
 fi
 
+LANG0=`echo $LANG|grep ru`
+if [ "$LANG0" = "" ]
+then
+  LANG=English
+else
+  LANG=Russian
+fi
+
 #Create config for ManSlide
 if [ -f "/usr/bin/manslide" ]
 then
-  LANG0=`echo $LANG|grep ru`
-  if [ "$LANG0" = "" ]
-  then
-    LANG=English
-  else
-    LANG=Russian
-  fi
   if [ ! -f "~/.manslide.cnf" ]
   then
     echo "R8" >> ~/.manslide.cnf
     echo "$LANG" >> ~/.manslide.cnf
     echo "2" >> ~/.manslide.cnf
     echo "/tmp" >> ~/.manslide.cnf
+  fi
+fi
+
+#Create config for Bluej
+if [ "$LANG" = "Russian" ]
+then
+  if [ -f "/usr/bin/bluej" ]
+  then
+    if [ ! -f "~/.bluej/bluej.properties" ]
+    then
+      mkdir -p ~/.bluej
+      echo "bluej.language=russian" >> ~/.bluej/bluej.properties
+    fi
   fi
 fi
 

@@ -28,6 +28,13 @@ then
   exit 1
 fi
 
+if [ ! -d "$MOD_PREV" ]
+then
+  echo "$MOD_PREV does not exists. Run script 0_urpmi_root.sh first"
+  echo "$MOD_PREV не существует. Запустите сначала скрипт 0_urpmi_root.sh"
+  exit 1
+fi
+
 DEPS_DIR=deps
 mkdir -p $DEPS_DIR
 
@@ -37,7 +44,7 @@ echo "Генерация файла зависимостей для модуля
 #--------------
      [ -f $DEPS_DIR/deps_$(basename $mod) ] && rm $DEPS_DIR/deps_$(basename $mod)
 
-     urpmq -d --no-suggests --urpmi-root=$MOD_PREV --root=$MOD_PREV `cat $mod` |sort -u > $DEPS_DIR/deps_$(basename $mod)
+     urpmq -d --no-suggests --urpmi-root=$MOD_PREV --root=$MOD_PREV `cat $mod|grep -v "#"` |sort -u > $DEPS_DIR/deps_$(basename $mod)
 #--------------
     echo -ne \\n "---> OK."\\n
 done

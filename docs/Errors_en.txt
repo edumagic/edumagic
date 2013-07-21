@@ -17,5 +17,4 @@ https://bugs.mageia.org/show_bug.cgi?id=10103 - VPN OpenL2TP does not work, bug 
 *) To add virtualbox and addons
 *) "mageia" can not be disabled while KDE is starting
 *) Display turn off: http://forum.mageialinux.ru/viewtopic.php?id=656
-*) save2module does not work
 *) conv4mod: format don't work

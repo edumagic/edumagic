@@ -23,7 +23,7 @@
     14/19: bluez-firmware        #########################################################################################################
     15/19: speedtouch-firmware   #########################################################################################################
     16/19: radeon-firmware       #########################################################################################################
-/var/tmp/rpm-tmp.0PT2Fo: line 2: /usr/sbin/bootloader-config: No such file or directory
+/var/tmp/rpm-tmp.LPSmGv: line 2: /usr/sbin/bootloader-config: No such file or directory
 
 
 устанавливается kernel-firmware-nonfree-20121030-1.mga2.nonfree.noarch.rpm bcm43xx-fwcutter-006-9.mrc.mga2.i586.rpm iwlwifi-agn-ucode-20121030-1.mga2.nonfree.noarch.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
@@ -519,7 +519,7 @@ I: *** Including module: shutdown ***
 I: Skipping program kexec as it cannot be found and is flagged to be optional
 I: *** Including modules done ***
 I: Wrote /boot/initrd-3.3.8-server-2.mga2.img:
-I: -rw------- 1 root root 14651779 Jul 20 10:14 /boot/initrd-3.3.8-server-2.mga2.img
+I: -rw------- 1 root root 14651775 Jul 20 22:40 /boot/initrd-3.3.8-server-2.mga2.img
 perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:
 	LANGUAGE = "ru_RU.UTF-8:ru",
@@ -602,7 +602,7 @@ I: *** Including module: shutdown ***
 I: Skipping program kexec as it cannot be found and is flagged to be optional
 I: *** Including modules done ***
 I: Wrote /boot/initrd-3.3.8-server-2.mga2.img:
-I: -rw------- 1 root root 15799871 Jul 20 10:14 /boot/initrd-3.3.8-server-2.mga2.img
+I: -rw------- 1 root root 15800148 Jul 20 22:40 /boot/initrd-3.3.8-server-2.mga2.img
 perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:
 	LANGUAGE = "ru_RU.UTF-8:ru",
@@ -878,7 +878,7 @@ perl: warning: Falling back to the standard locale ("C").
     22/57: gdk-pixbuf2.0         #########################################################################################################
     23/57: libgdk_pixbuf2.0_0-loaders-png15
                                  #########################################################################################################
-/var/tmp/rpm-tmp.CYfncO: line 1: /usr/lib/gdk-pixbuf-2.0/bin/gdk-pixbuf-query-loaders: Нет такого файла или каталога
+/var/tmp/rpm-tmp.uGLX4R: line 1: /usr/lib/gdk-pixbuf-2.0/bin/gdk-pixbuf-query-loaders: Нет такого файла или каталога
 предупреждение: %post(libgdk_pixbuf2.0_0-loaders-png15-2.26.1-1.mga2.i586) scriptlet failed, exit status 127
     24/57: libgdk_pixbuf2.0_0    #########################################################################################################
     25/57: libcups2              #########################################################################################################
@@ -1314,246 +1314,6 @@ Wrote: /var/lib/dkms/virtualbox/4.1.24-1.mga2/rpm/virtualbox-kernel-3.3.8-server
 DKMS: mkrpm Completed.
 Finish autokmods for make
 Окончание autokmods для make
-Start autokmods for urpme_dkms
-Старт autokmods для urpme_dkms
-The list of MODS for autokmods:
-Список MODS для autokmods:
-*****************
-broadcom-wl
-fglrx
-nvidia173
-nvidia96xx
-nvidia-current
-vboxadditions
-virtualbox
-*****************
-Doing broadcom-wl for urpme_dkms
-Обрабатывается broadcom-wl для urpme_dkms
-+ /usr/sbin/dkms --rpm_safe_upgrade remove -m broadcom-wl -v 5.100.82.112-7.mga2.nonfree --all
-
--------- Uninstall Beginning --------
-Module:  broadcom-wl
-Version: 5.100.82.112-7.mga2.nonfree
-Kernel:  3.3.8-server-2.mga2 (i586)
--------------------------------------
-
-Status: Before uninstall, this module version was ACTIVE on this kernel.
-
-wl.ko.xz:
- - Uninstallation
-   - Deleting from: /lib/modules/3.3.8-server-2.mga2/dkms/3rdparty/broadcom-wl/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-depmod............
-
-DKMS: uninstall Completed.
-
-------------------------------
-Deleting module version: 5.100.82.112-7.mga2.nonfree
-completely from the DKMS tree.
-------------------------------
-Done.
-Doing fglrx for urpme_dkms
-Обрабатывается fglrx для urpme_dkms
-
--------- Uninstall Beginning --------
-Module:  fglrx
-Version: 8.961-2.mga2.nonfree
-Kernel:  3.3.8-server-2.mga2 (i586)
--------------------------------------
-
-Status: Before uninstall, this module version was ACTIVE on this kernel.
-
-fglrx.ko.xz:
- - Uninstallation
-   - Deleting from: /lib/modules/3.3.8-server-2.mga2/dkms/drivers/char/drm/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-depmod............
-
-DKMS: uninstall Completed.
-
-------------------------------
-Deleting module version: 8.961-2.mga2.nonfree
-completely from the DKMS tree.
-------------------------------
-Done.
-Doing nvidia173 for urpme_dkms
-Обрабатывается nvidia173 для urpme_dkms
-
--------- Uninstall Beginning --------
-Module:  nvidia173
-Version: 173.14.36-1.mrc.mga2
-Kernel:  3.3.8-server-2.mga2 (i586)
--------------------------------------
-
-Status: Before uninstall, this module version was ACTIVE on this kernel.
-
-nvidia173.ko.xz:
- - Uninstallation
-   - Deleting from: /lib/modules/3.3.8-server-2.mga2/dkms/drivers/char/drm/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-depmod............
-
-DKMS: uninstall Completed.
-
-------------------------------
-Deleting module version: 173.14.36-1.mrc.mga2
-completely from the DKMS tree.
-------------------------------
-Done.
-Doing nvidia96xx for urpme_dkms
-Обрабатывается nvidia96xx для urpme_dkms
-
--------- Uninstall Beginning --------
-Module:  nvidia96xx
-Version: 96.43.23-2.mrc.mga2
-Kernel:  3.3.8-server-2.mga2 (i586)
--------------------------------------
-
-Status: Before uninstall, this module version was ACTIVE on this kernel.
-
-nvidia96xx.ko.xz:
- - Uninstallation
-   - Deleting from: /lib/modules/3.3.8-server-2.mga2/dkms/drivers/char/drm/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-depmod...........
-
-DKMS: uninstall Completed.
-
-------------------------------
-Deleting module version: 96.43.23-2.mrc.mga2
-completely from the DKMS tree.
-------------------------------
-Done.
-Doing nvidia-current for urpme_dkms
-Обрабатывается nvidia-current для urpme_dkms
-
--------- Uninstall Beginning --------
-Module:  nvidia-current
-Version: 295.71-1.mga2.nonfree
-Kernel:  3.3.8-server-2.mga2 (i586)
--------------------------------------
-
-Status: Before uninstall, this module version was ACTIVE on this kernel.
-
-nvidia-current.ko.xz:
- - Uninstallation
-   - Deleting from: /lib/modules/3.3.8-server-2.mga2/dkms/drivers/char/drm/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-depmod...........
-
-DKMS: uninstall Completed.
-
-------------------------------
-Deleting module version: 295.71-1.mga2.nonfree
-completely from the DKMS tree.
-------------------------------
-Done.
-Doing vboxadditions for urpme_dkms
-Обрабатывается vboxadditions для urpme_dkms
-+ /usr/sbin/dkms --rpm_safe_upgrade remove -m vboxadditions -v 4.1.24-1.mga2 --all
-
--------- Uninstall Beginning --------
-Module:  vboxadditions
-Version: 4.1.24-1.mga2
-Kernel:  3.3.8-server-2.mga2 (i586)
--------------------------------------
-
-Status: Before uninstall, this module version was ACTIVE on this kernel.
-
-vboxguest.ko.xz:
- - Uninstallation
-   - Deleting from: /lib/modules/3.3.8-server-2.mga2/dkms/3rdparty/vbox/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-
-vboxsf.ko.xz:
- - Uninstallation
-   - Deleting from: /lib/modules/3.3.8-server-2.mga2/dkms/3rdparty/vbox/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-
-vboxvideo.ko.xz:
- - Uninstallation
-   - Deleting from: /lib/modules/3.3.8-server-2.mga2/dkms/3rdparty/vbox/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-depmod...........
-
-DKMS: uninstall Completed.
-
-------------------------------
-Deleting module version: 4.1.24-1.mga2
-completely from the DKMS tree.
-------------------------------
-Done.
-+ :
-Doing virtualbox for urpme_dkms
-Обрабатывается virtualbox для urpme_dkms
-+ /usr/sbin/dkms --rpm_safe_upgrade remove -m virtualbox -v 4.1.24-1.mga2 --all
-
--------- Uninstall Beginning --------
-Module:  virtualbox
-Version: 4.1.24-1.mga2
-Kernel:  3.3.8-server-2.mga2 (i586)
--------------------------------------
-
-Status: Before uninstall, this module version was ACTIVE on this kernel.
-
-vboxdrv.ko.xz:
- - Uninstallation
-   - Deleting from: /lib/modules/3.3.8-server-2.mga2/dkms/3rdparty/vbox/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-
-vboxnetflt.ko.xz:
- - Uninstallation
-   - Deleting from: /lib/modules/3.3.8-server-2.mga2/dkms/3rdparty/vbox/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-
-vboxnetadp.ko.xz:
- - Uninstallation
-   - Deleting from: /lib/modules/3.3.8-server-2.mga2/dkms/3rdparty/vbox/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-depmod...........
-
-DKMS: uninstall Completed.
-
-------------------------------
-Deleting module version: 4.1.24-1.mga2
-completely from the DKMS tree.
-------------------------------
-Done.
-Finish autokmods for urpme_dkms
-Окончание autokmods для urpme_dkms
 Start autokmods for install
 Старт autokmods для install
 The list of RPMS for autokmods:
@@ -1574,9 +1334,10 @@ wl.ko.xz:
  - Installation
    - Installing to /lib/modules/3.3.8-server-2.mga2/dkms-binary/3rdparty/broadcom-wl/
 
-depmod...........
+depmod............
 
 DKMS: install Completed.
+broadcom-wl, 5.100.82.112-7.mga2.nonfree, 3.3.8-server-2.mga2, i586: installed 
 broadcom-wl, 5.100.82.112-7.mga2.nonfree, 3.3.8-server-2.mga2, i586: installed-binary from 3.3.8-server-2.mga2
 Подготовка...     ##################################################
 fglrx-kernel-3.3.8-server-2.##################################################
@@ -1585,9 +1346,10 @@ fglrx.ko.xz:
  - Installation
    - Installing to /lib/modules/3.3.8-server-2.mga2/dkms-binary/drivers/char/drm/
 
-depmod...........
+depmod............
 
 DKMS: install Completed.
+fglrx, 8.961-2.mga2.nonfree, 3.3.8-server-2.mga2, i586: installed 
 fglrx, 8.961-2.mga2.nonfree, 3.3.8-server-2.mga2, i586: installed-binary from 3.3.8-server-2.mga2
 Подготовка...     ##################################################
 nvidia173-kernel-3.3.8-serve##################################################
@@ -1596,9 +1358,10 @@ nvidia173.ko.xz:
  - Installation
    - Installing to /lib/modules/3.3.8-server-2.mga2/dkms-binary/drivers/char/drm/
 
-depmod...........
+depmod............
 
 DKMS: install Completed.
+nvidia173, 173.14.36-1.mrc.mga2, 3.3.8-server-2.mga2, i586: installed 
 nvidia173, 173.14.36-1.mrc.mga2, 3.3.8-server-2.mga2, i586: installed-binary from 3.3.8-server-2.mga2
 Подготовка...     ##################################################
 nvidia96xx-kernel-3.3.8-serv##################################################
@@ -1610,6 +1373,7 @@ nvidia96xx.ko.xz:
 depmod............
 
 DKMS: install Completed.
+nvidia96xx, 96.43.23-2.mrc.mga2, 3.3.8-server-2.mga2, i586: installed 
 nvidia96xx, 96.43.23-2.mrc.mga2, 3.3.8-server-2.mga2, i586: installed-binary from 3.3.8-server-2.mga2
 Подготовка...     ##################################################
 nvidia-current-kernel-3.3.8-##################################################
@@ -1621,6 +1385,7 @@ nvidia-current.ko.xz:
 depmod............
 
 DKMS: install Completed.
+nvidia-current, 295.71-1.mga2.nonfree, 3.3.8-server-2.mga2, i586: installed 
 nvidia-current, 295.71-1.mga2.nonfree, 3.3.8-server-2.mga2, i586: installed-binary from 3.3.8-server-2.mga2
 Подготовка...     ##################################################
 vboxadditions-kernel-3.3.8-s##################################################
@@ -1640,6 +1405,7 @@ vboxvideo.ko.xz:
 depmod............
 
 DKMS: install Completed.
+vboxadditions, 4.1.24-1.mga2, 3.3.8-server-2.mga2, i586: installed 
 vboxadditions, 4.1.24-1.mga2, 3.3.8-server-2.mga2, i586: installed-binary from 3.3.8-server-2.mga2
 Подготовка...     ##################################################
 virtualbox-kernel-3.3.8-serv##################################################
@@ -1659,11 +1425,26 @@ vboxnetadp.ko.xz:
 depmod............
 
 DKMS: install Completed.
+virtualbox, 4.1.24-1.mga2, 3.3.8-server-2.mga2, i586: installed 
 virtualbox, 4.1.24-1.mga2, 3.3.8-server-2.mga2, i586: installed-binary from 3.3.8-server-2.mga2
 Finish autokmods for install
 Окончание autokmods для install
 Start autokmods for clean
 Старт autokmods для clean
+Doing broadcom-wl for clean
+Обрабатывается broadcom-wl для clean
+Doing fglrx for clean
+Обрабатывается fglrx для clean
+Doing nvidia173 for clean
+Обрабатывается nvidia173 для clean
+Doing nvidia96xx for clean
+Обрабатывается nvidia96xx для clean
+Doing nvidia-current for clean
+Обрабатывается nvidia-current для clean
+Doing vboxadditions for clean
+Обрабатывается vboxadditions для clean
+Doing virtualbox for clean
+Обрабатывается virtualbox для clean
 Finish autokmods for clean
 Окончание autokmods для clean
 Starting auto_gl_conf...
@@ -3097,12 +2878,12 @@ Failed to open connection to "system" message bus: Failed to connect to socket /
                                  #########################################################################################################
    96/270: libgnome2-schemas     #########################################################################################################
 
-(gconftool-2:13750): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+(gconftool-2:9695): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
 Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
 Ошибка установки значения: Служба D-BUS не запущена
 
 
-(gconftool-2:13751): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+(gconftool-2:9696): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
 Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
 Ошибка установки значения: Служба D-BUS не запущена
 
@@ -4406,7 +4187,7 @@ the EULA, available at http://www.adobe.com/products/eulas/players/flash/
 Downloading from http://fpdownload.macromedia.com/get/flashplayer/pdc/11.2.202.297/flash-plugin-11.2.202.297-release.i386.rpm:
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  2 6741k    2  184k    0     0   328k      0  0:00:20 --:--:--  0:00:20  383k 24 6741k   24 1623k    0     0  1048k      0  0:00:06  0:00:01  0:00:05 1106k 41 6741k   41 2768k    0     0  1082k      0  0:00:06  0:00:02  0:00:04 1117k 58 6741k   58 3947k    0     0  1108k      0  0:00:06  0:00:03  0:00:03 1134k 77 6741k   77 5227k    0     0  1151k      0  0:00:05  0:00:04  0:00:01 1172k 97 6741k   97 6565k    0     0  1181k      0  0:00:05  0:00:05 --:--:-- 1277k100 6741k  100 6741k    0     0  1193k      0  0:00:05  0:00:05 --:--:-- 1247k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 6741k    0 44635    0     0   135k      0  0:00:49 --:--:--  0:00:49  180k 15 6741k   15 1023k    0     0   802k      0  0:00:08  0:00:01  0:00:07  856k 27 6741k   27 1840k    0     0   812k      0  0:00:08  0:00:02  0:00:06  842k 39 6741k   39 2662k    0     0   815k      0  0:00:08  0:00:03  0:00:05  835k 52 6741k   52 3558k    0     0   832k      0  0:00:08  0:00:04  0:00:04  848k 66 6741k   66 4454k    0     0   844k      0  0:00:07  0:00:05  0:00:02  890k 84 6741k   84 5665k    0     0   900k      0  0:00:07  0:00:06  0:00:01  925k100 6741k  100 6741k    0     0   936k      0  0:00:07  0:00:07 --:--:--  993k
     31/32: flash-player-plugin   #########################################################################################################
 Adobe Flash Player installation successful.
     32/32: chromium-browser-stable
@@ -4771,320 +4552,314 @@ Operation failed: No such file or directory
 
 устанавливается python-pygoocanvas-0.14.1-3.mga1.i586.rpm goocanvas-i18n-1.0.0-1.mga2.i586.rpm libskgbasemodeler1-1.2.0-1.mga2.i586.rpm dvgrab-3.5-4.mga1.i586.rpm libavc1394_0-0.5.4-1.mga2.i586.rpm libgoocanvas3-1.0.0-1.mga2.i586.rpm gnonlin-0.10.17-3.mga2.i586.rpm gdb-7.5.1-0.2.mrc.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-    1/200: libavc1394_0          #########################################################################################################
-    2/200: goocanvas-i18n        #########################################################################################################
-    3/200: libgoocanvas3         #########################################################################################################
-    4/200: python-pygoocanvas    #########################################################################################################
-    5/200: dvgrab                #########################################################################################################
-    6/200: gdb                   #########################################################################################################
-    7/200: gnonlin               #########################################################################################################
-    8/200: libskgbasemodeler1    #########################################################################################################
+    1/198: libavc1394_0          #########################################################################################################
+    2/198: goocanvas-i18n        #########################################################################################################
+    3/198: libgoocanvas3         #########################################################################################################
+    4/198: python-pygoocanvas    #########################################################################################################
+    5/198: dvgrab                #########################################################################################################
+    6/198: gdb                   #########################################################################################################
+    7/198: gnonlin               #########################################################################################################
+    8/198: libskgbasemodeler1    #########################################################################################################
 
 
 устанавливается perl-Crypt-SSLeay-0.580.0-7.mga2.i586.rpm perl-HTML-Element-Extended-1.180.0-1.mga2.noarch.rpm perl-HTML-TableExtract-2.110.0-1.mga2.noarch.rpm libopencv_legacy2-2.3.1-3.mga2.i586.rpm perl-HTML-Tree-4.200.0-1.mga1.noarch.rpm perl-Finance-Quote-1.170.0-2.mga2.noarch.rpm libopencv_video2-2.3.1-3.mga2.i586.rpm libOpenSP5-1.5.2-8.mga1.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-    9/200: perl-HTML-Tree        #########################################################################################################
-   10/200: perl-HTML-Element-Extended
+    9/198: perl-HTML-Tree        #########################################################################################################
+   10/198: perl-HTML-Element-Extended
                                  #########################################################################################################
-   11/200: perl-HTML-TableExtract
+   11/198: perl-HTML-TableExtract
                                  #########################################################################################################
-   12/200: libopencv_video2      #########################################################################################################
-   13/200: perl-Crypt-SSLeay     #########################################################################################################
-   14/200: perl-Finance-Quote    #########################################################################################################
-   15/200: libopencv_legacy2     #########################################################################################################
-   16/200: libOpenSP5            #########################################################################################################
+   12/198: libopencv_video2      #########################################################################################################
+   13/198: perl-Crypt-SSLeay     #########################################################################################################
+   14/198: perl-Finance-Quote    #########################################################################################################
+   15/198: libopencv_legacy2     #########################################################################################################
+   16/198: libOpenSP5            #########################################################################################################
 
 
 устанавливается libaqhbci20-5.0.22-2.mga2.i586.rpm aqbanking-5.0.22-2.mga2.i586.rpm libktoblzcheck1-1.33-1.mga2.i586.rpm libgwenhywfar60-4.3.1-1.mga2.i586.rpm gwenhywfar-4.3.1-1.mga2.i586.rpm libofx5-0.9.5-3.mga2.i586.rpm aqhbci-5.0.22-2.mga2.i586.rpm x11-font-adobe-100dpi-1.0.3-1.mga1.noarch.rpm libofx-0.9.5-3.mga2.i586.rpm libaqbanking33-5.0.22-2.mga2.i586.rpm ktoblzcheck-1.33-1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-   17/200: gwenhywfar            #########################################################################################################
-   18/200: libgwenhywfar60       #########################################################################################################
-   19/200: ktoblzcheck           #########################################################################################################
-   20/200: libktoblzcheck1       #########################################################################################################
-   21/200: libaqbanking33        #########################################################################################################
-   22/200: aqbanking             #########################################################################################################
-   23/200: aqhbci                #########################################################################################################
-   24/200: libaqhbci20           #########################################################################################################
-   25/200: libofx                #########################################################################################################
-   26/200: libofx5               #########################################################################################################
-   27/200: x11-font-adobe-100dpi #########################################################################################################
+   17/198: gwenhywfar            #########################################################################################################
+   18/198: libgwenhywfar60       #########################################################################################################
+   19/198: ktoblzcheck           #########################################################################################################
+   20/198: libktoblzcheck1       #########################################################################################################
+   21/198: libaqbanking33        #########################################################################################################
+   22/198: aqbanking             #########################################################################################################
+   23/198: aqhbci                #########################################################################################################
+   24/198: libaqhbci20           #########################################################################################################
+   25/198: libofx                #########################################################################################################
+   26/198: libofx5               #########################################################################################################
+   27/198: x11-font-adobe-100dpi #########################################################################################################
 
 
 устанавливается libgdiplus0-2.10-3.1.mga2.i586.rpm mono-extras-2.10.9-1.mga2.i586.rpm mono-web-2.10.9-1.mga2.i586.rpm mono-data-sqlite-2.10.9-1.mga2.i586.rpm mono-wcf-2.10.9-1.mga2.i586.rpm libsqlite0-2.8.17-16.mga2.i586.rpm mono-winforms-2.10.9-1.mga2.i586.rpm libmono0-2.10.9-1.mga2.i586.rpm mono-2.10.9-1.mga2.i586.rpm libmono2.0_1-2.10.9-1.mga2.i586.rpm mono-data-2.10.9-1.mga2.i586.rpm libgwengui-qt4_0-4.3.1-1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-   28/200: libmono2.0_1          #########################################################################################################
-   29/200: libmono0              #########################################################################################################
-   30/200: libsqlite0            #########################################################################################################
-   31/200: libgdiplus0           #########################################################################################################
-   32/200: mono                  #########################################################################################################
-   33/200: mono-data-sqlite      #########################################################################################################
-   34/200: mono-extras           #########################################################################################################
-   35/200: mono-wcf              #########################################################################################################
-   36/200: mono-data             #########################################################################################################
-   37/200: mono-web              #########################################################################################################
-   38/200: mono-winforms         #########################################################################################################
-   39/200: libgwengui-qt4_0      #########################################################################################################
+   28/198: libmono2.0_1          #########################################################################################################
+   29/198: libmono0              #########################################################################################################
+   30/198: libsqlite0            #########################################################################################################
+   31/198: libgdiplus0           #########################################################################################################
+   32/198: mono                  #########################################################################################################
+   33/198: mono-data-sqlite      #########################################################################################################
+   34/198: mono-extras           #########################################################################################################
+   35/198: mono-wcf              #########################################################################################################
+   36/198: mono-data             #########################################################################################################
+   37/198: mono-web              #########################################################################################################
+   38/198: mono-winforms         #########################################################################################################
+   39/198: libgwengui-qt4_0      #########################################################################################################
 
 
 устанавливается kdenlive-0.8.2.1-1.mga2.i586.rpm libmlt++3-0.7.8-2.1.mga2.i586.rpm libqjson0-0.7.1-5.mga1.i586.rpm libcfitsio0-3.290-1.mga2.i586.rpm indilib-0.9-1.mga2.i586.rpm libmlt4-0.7.8-2.1.mga2.i586.rpm libaio1-0.3.109-2.mga1.i586.rpm mlt-0.7.8-2.1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-   40/200: libmlt4               #########################################################################################################
-   41/200: libmlt++3             #########################################################################################################
-   42/200: mlt                   #########################################################################################################
-   43/200: libcfitsio0           #########################################################################################################
-   44/200: libqjson0             #########################################################################################################
-   45/200: kdenlive              #########################################################################################################
-   46/200: indilib               #########################################################################################################
-   47/200: libaio1               #########################################################################################################
+   40/198: libmlt4               #########################################################################################################
+   41/198: libmlt++3             #########################################################################################################
+   42/198: mlt                   #########################################################################################################
+   43/198: libcfitsio0           #########################################################################################################
+   44/198: libqjson0             #########################################################################################################
+   45/198: kdenlive              #########################################################################################################
+   46/198: indilib               #########################################################################################################
+   47/198: libaio1               #########################################################################################################
 
 
 устанавливается libindi0-0.9-1.mga2.i586.rpm libgdither1-0.6-1.mga2.i586.rpm libavogadro1-1.0.3-8.mga2.i586.rpm libgavl1-1.2.0-1.mga2.i586.rpm libopenbabel4-2.3.1-1.mga2.i586.rpm libinchi0-2.3.1-1.mga2.i586.rpm libkmm_widgets4-4.6.2-2.mga2.i586.rpm libboost_python1.48.0-1.48.0-9.2.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-   48/200: libboost_python1.48.0 #########################################################################################################
-   49/200: libopenbabel4         #########################################################################################################
-   50/200: libgdither1           #########################################################################################################
-   51/200: libgavl1              #########################################################################################################
-   52/200: libavogadro1          #########################################################################################################
-   53/200: libkmm_widgets4       #########################################################################################################
-   54/200: libinchi0             #########################################################################################################
-   55/200: libindi0              #########################################################################################################
+   48/198: libboost_python1.48.0 #########################################################################################################
+   49/198: libopenbabel4         #########################################################################################################
+   50/198: libgdither1           #########################################################################################################
+   51/198: libgavl1              #########################################################################################################
+   52/198: libavogadro1          #########################################################################################################
+   53/198: libkmm_widgets4       #########################################################################################################
+   54/198: libinchi0             #########################################################################################################
+   55/198: libindi0              #########################################################################################################
 
 
 устанавливается qca2-plugin-openssl-2.0.3-2.1.mga2.i586.rpm skrooge-1.2.0-1.mga2.i586.rpm sj-fonts-common-2.0.2-1.mga2.noarch.rpm libskgbankmodeler1-1.2.0-1.mga2.i586.rpm libgrantlee_core0-0.2.0-1.1.mga2.i586.rpm libskgbasegui1-1.2.0-1.mga2.i586.rpm qt4-database-plugin-sqlite-4.8.4-1.1.mga2.i586.rpm libskgbankgui1-1.2.0-1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-   56/200: libskgbasegui1        #########################################################################################################
-   57/200: libskgbankmodeler1    #########################################################################################################
-   58/200: libskgbankgui1        #########################################################################################################
-   59/200: qt4-database-plugin-sqlite
+   56/198: libskgbasegui1        #########################################################################################################
+   57/198: libskgbankmodeler1    #########################################################################################################
+   58/198: libskgbankgui1        #########################################################################################################
+   59/198: qt4-database-plugin-sqlite
                                  #########################################################################################################
-   60/200: libgrantlee_core0     #########################################################################################################
-   61/200: qca2-plugin-openssl   #########################################################################################################
-   62/200: skrooge               #########################################################################################################
-   63/200: sj-fonts-common       #########################################################################################################
+   60/198: libgrantlee_core0     #########################################################################################################
+   61/198: qca2-plugin-openssl   #########################################################################################################
+   62/198: skrooge               #########################################################################################################
+   63/198: sj-fonts-common       #########################################################################################################
 
 
 устанавливается sj-stevehand-fonts-2.0.2-1.mga2.noarch.rpm cmake-2.8.7-5.mga2.i586.rpm R-base-2.14.2-2.mga2.i586.rpm rkward-0.5.7-5.mga2.i586.rpm cvs-1.12.13-19.mga2.i586.rpm libkmm_kdchart4-4.6.2-2.mga2.i586.rpm libgvpr2-2.28.0-4.mga2.i586.rpm libcgraph6-2.28.0-4.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-   64/200: libcgraph6            #########################################################################################################
-   65/200: R-base                #########################################################################################################
-   66/200: rkward                #########################################################################################################
-   67/200: libgvpr2              #########################################################################################################
-   68/200: libkmm_kdchart4       #########################################################################################################
-   69/200: cvs                   #########################################################################################################
-   70/200: cmake                 #########################################################################################################
-   71/200: sj-stevehand-fonts    #########################################################################################################
+   64/198: libcgraph6            #########################################################################################################
+   65/198: R-base                #########################################################################################################
+   66/198: rkward                #########################################################################################################
+   67/198: libgvpr2              #########################################################################################################
+   68/198: libkmm_kdchart4       #########################################################################################################
+   69/198: cvs                   #########################################################################################################
+   70/198: cmake                 #########################################################################################################
+   71/198: sj-stevehand-fonts    #########################################################################################################
 
 
 устанавливается libkmm_mymoney4-4.6.2-2.mga2.i586.rpm libalkimia4-4.3.2-1.mga2.i586.rpm libmsn0.3-4.2.1-1.mga2.i586.rpm python-virtualenv-1.7-1.mga2.noarch.rpm libpython-devel-2.7.3-2.3.mga2.i586.rpm libkmm_plugin4-4.6.2-2.mga2.i586.rpm kmymoney-4.6.2-2.mga2.i586.rpm python-zope-interface-3.7.0-1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-   72/200: libalkimia4           #########################################################################################################
-   73/200: libkmm_mymoney4       #########################################################################################################
-   74/200: libkmm_plugin4        #########################################################################################################
-   75/200: libpython-devel       #########################################################################################################
-   76/200: python-virtualenv     #########################################################################################################
-   77/200: python-zope-interface #########################################################################################################
-   78/200: kmymoney              #########################################################################################################
-   79/200: libmsn0.3             #########################################################################################################
+   72/198: libalkimia4           #########################################################################################################
+   73/198: libkmm_mymoney4       #########################################################################################################
+   74/198: libkmm_plugin4        #########################################################################################################
+   75/198: libpython-devel       #########################################################################################################
+   76/198: python-virtualenv     #########################################################################################################
+   77/198: python-zope-interface #########################################################################################################
+   78/198: kmymoney              #########################################################################################################
+   79/198: libmsn0.3             #########################################################################################################
 
 
 устанавливается graphviz-2.28.0-4.mga2.i586.rpm mariadb-common-5.5.25-2.8.mga2.i586.rpm openbabel-2.3.1-1.mga2.i586.rpm mariadb-client-5.5.25-2.8.mga2.i586.rpm mariadb-common-core-5.5.25-2.8.mga2.i586.rpm libboost_program_options1.48.0-1.48.0-9.2.mga2.i586.rpm jasper-1.900.1-13.mga2.i586.rpm qt4-database-plugin-mysql-4.8.4-1.1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-   80/200: mariadb-common-core   #########################################################################################################
-   81/200: mariadb-client        #########################################################################################################
-   82/200: mariadb-common        #########################################################################################################
-   83/200: qt4-database-plugin-mysql
+   80/198: mariadb-common-core   #########################################################################################################
+   81/198: mariadb-client        #########################################################################################################
+   82/198: mariadb-common        #########################################################################################################
+   83/198: qt4-database-plugin-mysql
                                  #########################################################################################################
-   84/200: jasper                #########################################################################################################
-   85/200: libboost_program_options1.48.0
+   84/198: jasper                #########################################################################################################
+   85/198: libboost_program_options1.48.0
                                  #########################################################################################################
-   86/200: openbabel             #########################################################################################################
-   87/200: graphviz              #########################################################################################################
+   86/198: openbabel             #########################################################################################################
+   87/198: graphviz              #########################################################################################################
 
 
 устанавливается libmeanwhile1-1.0.2-7.mga2.i586.rpm mariadb-core-5.5.25-2.8.mga2.i586.rpm frei0r-1.3-3.mga2.i586.rpm kaption-0.0.9-1.mga1.i586.rpm avogadro-1.0.3-8.mga2.i586.rpm libpgf4-6.11.42-1.mga2.i586.rpm pitivi-0.15.1-1.mga2.noarch.rpm akonadi-1.7.2-1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-   88/200: frei0r                #########################################################################################################
-   89/200: mariadb-core          #########################################################################################################
-   90/200: akonadi               #########################################################################################################
-   91/200: pitivi                #########################################################################################################
-   92/200: libpgf4               #########################################################################################################
-   93/200: avogadro              #########################################################################################################
-   94/200: kaption               #########################################################################################################
-   95/200: libmeanwhile1         #########################################################################################################
+   88/198: frei0r                #########################################################################################################
+   89/198: mariadb-core          #########################################################################################################
+   90/198: akonadi               #########################################################################################################
+   91/198: pitivi                #########################################################################################################
+   92/198: libpgf4               #########################################################################################################
+   93/198: avogadro              #########################################################################################################
+   94/198: kaption               #########################################################################################################
+   95/198: libmeanwhile1         #########################################################################################################
 
 
 устанавливается libgadu3-1.11.1-1.mga2.i586.rpm kstars-4.8.5-1.1.mga2.i586.rpm python-mwclient-0.6.5-1.mga2.noarch.rpm semantik-0.7.3-3.mga1.i586.rpm libmarblewidget13-4.8.5-1.1.mga2.i586.rpm libotr2-3.2.0-5.2.mga2.i586.rpm librocslib4-4.8.5-1.1.mga2.i586.rpm marble-common-4.8.5-1.1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-   96/200: libmarblewidget13     #########################################################################################################
-   97/200: marble-common         #########################################################################################################
-   98/200: librocslib4           #########################################################################################################
-   99/200: libotr2               #########################################################################################################
-  100/200: semantik              #########################################################################################################
-  101/200: python-mwclient       #########################################################################################################
-  102/200: kstars                #########################################################################################################
-  103/200: libgadu3              #########################################################################################################
+   96/198: libmarblewidget13     #########################################################################################################
+   97/198: marble-common         #########################################################################################################
+   98/198: librocslib4           #########################################################################################################
+   99/198: libotr2               #########################################################################################################
+  100/198: semantik              #########################################################################################################
+  101/198: python-mwclient       #########################################################################################################
+  102/198: kstars                #########################################################################################################
+  103/198: libgadu3              #########################################################################################################
 
 
 устанавливается libokteta1gui0-4.8.5-1.1.mga2.i586.rpm libkasten1okteta1core0-4.8.5-1.1.mga2.i586.rpm libboost_regex1.48.0-1.48.0-9.2.mga2.i586.rpm libkasten1core0-4.8.5-1.1.mga2.i586.rpm rocs-4.8.5-1.1.mga2.i586.rpm libkasten1gui0-4.8.5-1.1.mga2.i586.rpm libokteta1core0-4.8.5-1.1.mga2.i586.rpm libboost_graph1.48.0-1.48.0-9.2.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-  104/200: libokteta1core0       #########################################################################################################
-  105/200: libkasten1core0       #########################################################################################################
-  106/200: libboost_regex1.48.0  #########################################################################################################
-  107/200: libboost_graph1.48.0  #########################################################################################################
-  108/200: rocs                  #########################################################################################################
-  109/200: libkasten1okteta1core0
+  104/198: libokteta1core0       #########################################################################################################
+  105/198: libkasten1core0       #########################################################################################################
+  106/198: libboost_regex1.48.0  #########################################################################################################
+  107/198: libboost_graph1.48.0  #########################################################################################################
+  108/198: rocs                  #########################################################################################################
+  109/198: libkasten1okteta1core0
                                  #########################################################################################################
-  110/200: libkasten1gui0        #########################################################################################################
-  111/200: libokteta1gui0        #########################################################################################################
+  110/198: libkasten1gui0        #########################################################################################################
+  111/198: libokteta1gui0        #########################################################################################################
 
 
 устанавливается libkopete_videodevice4-4.8.5-1.1.mga2.i586.rpm libkopete4-4.8.5-1.1.mga2.i586.rpm libkasten1okteta1gui0-4.8.5-1.1.mga2.i586.rpm kdesdk4-core-4.8.5-1.1.mga2.i586.rpm cervisia-4.8.5-1.1.mga2.i586.rpm libcompoundviewer4-4.8.5-1.1.mga2.i586.rpm libkasten1okteta1controllers0-4.8.5-1.1.mga2.i586.rpm blinken-4.8.5-1.1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-  112/200: kdesdk4-core          #########################################################################################################
-  113/200: libkasten1okteta1gui0 #########################################################################################################
-  114/200: libkopete_videodevice4
+  112/198: kdesdk4-core          #########################################################################################################
+  113/198: libkasten1okteta1gui0 #########################################################################################################
+  114/198: libkopete_videodevice4
                                  #########################################################################################################
-  115/200: libkopete4            #########################################################################################################
-  116/200: libkasten1okteta1controllers0
+  115/198: libkopete4            #########################################################################################################
+  116/198: libkasten1okteta1controllers0
                                  #########################################################################################################
-  117/200: cervisia              #########################################################################################################
-  118/200: blinken               #########################################################################################################
-  119/200: libcompoundviewer4    #########################################################################################################
+  117/198: cervisia              #########################################################################################################
+  118/198: blinken               #########################################################################################################
+  119/198: libcompoundviewer4    #########################################################################################################
 
 
 устанавливается libkunitconversion4-4.8.5-1.7.mga2.i586.rpm libkopeteprivacy1-4.8.5-1.1.mga2.i586.rpm ktouch-4.8.5-1.1.mga2.i586.rpm kalgebra-4.8.5-1.1.mga2.i586.rpm libanalitzagui4-4.8.5-1.1.mga2.i586.rpm libanalitza4-4.8.5-1.1.mga2.i586.rpm kturtle-4.8.5-1.1.mga2.i586.rpm libscience4-4.8.5-1.1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-  120/200: libanalitza4          #########################################################################################################
-  121/200: libanalitzagui4       #########################################################################################################
-  122/200: libkunitconversion4   #########################################################################################################
-  123/200: libscience4           #########################################################################################################
-  124/200: kalgebra              #########################################################################################################
-  125/200: kturtle               #########################################################################################################
-  126/200: ktouch                #########################################################################################################
-  127/200: libkopeteprivacy1     #########################################################################################################
+  120/198: libanalitza4          #########################################################################################################
+  121/198: libanalitzagui4       #########################################################################################################
+  122/198: libkunitconversion4   #########################################################################################################
+  123/198: libscience4           #########################################################################################################
+  124/198: kalgebra              #########################################################################################################
+  125/198: kturtle               #########################################################################################################
+  126/198: ktouch                #########################################################################################################
+  127/198: libkopeteprivacy1     #########################################################################################################
 
 
-устанавливается libkpimtextedit4-4.8.5-1.1.mga2.i586.rpm libkeduvocdocument4-4.8.5-1.1.mga2.i586.rpm liboscar1-4.8.5-1.1.mga2.i586.rpm libkommandercore4-4.8.5-1.1.mga2.i586.rpm libkcal4-4.8.5-1.1.mga2.i586.rpm step-4.8.5-1.1.mga2.i586.rpm libkpimidentities4-4.8.5-1.1.mga2.i586.rpm libkdegames5-4.8.5-1.1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
+устанавливается libkpimtextedit4-4.8.5-1.1.mga2.i586.rpm libkeduvocdocument4-4.8.5-1.1.mga2.i586.rpm liboscar1-4.8.5-1.1.mga2.i586.rpm libkopete_oscar4-4.8.5-1.1.mga2.i586.rpm libkcal4-4.8.5-1.1.mga2.i586.rpm step-4.8.5-1.1.mga2.i586.rpm libkpimidentities4-4.8.5-1.1.mga2.i586.rpm libkdegames5-4.8.5-1.1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-  128/200: libkpimtextedit4      #########################################################################################################
-  129/200: libkpimidentities4    #########################################################################################################
-  130/200: libkdegames5          #########################################################################################################
-  131/200: step                  #########################################################################################################
-  132/200: libkcal4              #########################################################################################################
-  133/200: libkommandercore4     #########################################################################################################
-  134/200: liboscar1             #########################################################################################################
-  135/200: libkeduvocdocument4   #########################################################################################################
+  128/198: liboscar1             #########################################################################################################
+  129/198: libkpimtextedit4      #########################################################################################################
+  130/198: libkpimidentities4    #########################################################################################################
+  131/198: libkopete_oscar4      #########################################################################################################
+  132/198: libkdegames5          #########################################################################################################
+  133/198: step                  #########################################################################################################
+  134/198: libkcal4              #########################################################################################################
+  135/198: libkeduvocdocument4   #########################################################################################################
 
 
-устанавливается kwordquiz-4.8.5-1.1.mga2.i586.rpm marble-4.8.5-1.1.mga2.i586.rpm kmplot-4.8.5-1.1.mga2.i586.rpm libkopete_oscar4-4.8.5-1.1.mga2.i586.rpm libkdeedu-common-4.8.5-1.1.mga2.noarch.rpm libkabc_file_core4-4.8.5-1.1.mga2.i586.rpm kalzium-4.8.5-1.1.mga2.i586.rpm libkopetecontactlist1-4.8.5-1.1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
+устанавливается libmailtransport4-4.8.5-1.1.mga2.i586.rpm kwordquiz-4.8.5-1.1.mga2.i586.rpm marble-4.8.5-1.1.mga2.i586.rpm kmplot-4.8.5-1.1.mga2.i586.rpm libkdeedu-common-4.8.5-1.1.mga2.noarch.rpm libkabc_file_core4-4.8.5-1.1.mga2.i586.rpm kalzium-4.8.5-1.1.mga2.i586.rpm libkopetecontactlist1-4.8.5-1.1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-  136/200: libkdeedu-common      #########################################################################################################
-  137/200: kwordquiz             #########################################################################################################
-  138/200: marble                #########################################################################################################
-  139/200: kalzium               #########################################################################################################
-  140/200: libkopetecontactlist1 #########################################################################################################
-  141/200: libkabc_file_core4    #########################################################################################################
-  142/200: libkopete_oscar4      #########################################################################################################
-  143/200: kmplot                #########################################################################################################
+  136/198: libkdeedu-common      #########################################################################################################
+  137/198: kwordquiz             #########################################################################################################
+  138/198: marble                #########################################################################################################
+  139/198: kalzium               #########################################################################################################
+  140/198: libkopetecontactlist1 #########################################################################################################
+  141/198: libkabc_file_core4    #########################################################################################################
+  142/198: kmplot                #########################################################################################################
+  143/198: libmailtransport4     #########################################################################################################
 
 
-устанавливается libkopetestatusmenu1-4.8.5-1.1.mga2.i586.rpm libkyahoo1-4.8.5-1.1.mga2.i586.rpm libmailtransport4-4.8.5-1.1.mga2.i586.rpm libkdcraw20-4.8.5-1.1.mga2.i586.rpm parley-4.8.5-1.1.mga2.i586.rpm libkexiv2_10-4.8.5-1.1.mga2.i586.rpm kdepimlibs4-core-4.8.5-1.1.mga2.i586.rpm kbruch-4.8.5-1.1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
+устанавливается libkopetestatusmenu1-4.8.5-1.1.mga2.i586.rpm libkyahoo1-4.8.5-1.1.mga2.i586.rpm libkdcraw20-4.8.5-1.1.mga2.i586.rpm parley-4.8.5-1.1.mga2.i586.rpm libkexiv2_10-4.8.5-1.1.mga2.i586.rpm libcantorlibs0-4.8.5-1.1.mga2.i586.rpm kdepimlibs4-core-4.8.5-1.1.mga2.i586.rpm kbruch-4.8.5-1.1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-  144/200: libmailtransport4     #########################################################################################################
-  145/200: kdepimlibs4-core      #########################################################################################################
-  146/200: kbruch                #########################################################################################################
-  147/200: libkexiv2_10          #########################################################################################################
-  148/200: parley                #########################################################################################################
-  149/200: libkdcraw20           #########################################################################################################
-  150/200: libkyahoo1            #########################################################################################################
-  151/200: libkopetestatusmenu1  #########################################################################################################
+  144/198: kbruch                #########################################################################################################
+  145/198: kdepimlibs4-core      #########################################################################################################
+  146/198: libcantorlibs0        #########################################################################################################
+  147/198: libkexiv2_10          #########################################################################################################
+  148/198: parley                #########################################################################################################
+  149/198: libkdcraw20           #########################################################################################################
+  150/198: libkyahoo1            #########################################################################################################
+  151/198: libkopetestatusmenu1  #########################################################################################################
 
 
-устанавливается libkasten1controllers0-4.8.5-1.1.mga2.i586.rpm libkopeteaddaccountwizard1-4.8.5-1.1.mga2.i586.rpm libkopetechatwindow_shared1-4.8.5-1.1.mga2.i586.rpm libkopete_otr_shared1-4.8.5-1.1.mga2.i586.rpm libcantorlibs0-4.8.5-1.1.mga2.i586.rpm libknewstuff2_4-4.8.5-1.7.mga2.i586.rpm libkopeteidentity1-4.8.5-1.1.mga2.i586.rpm kdegames4-core-4.8.5-1.1.mga2.noarch.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
+устанавливается libkasten1controllers0-4.8.5-1.1.mga2.i586.rpm libkopeteaddaccountwizard1-4.8.5-1.1.mga2.i586.rpm kopete-4.8.5-1.1.mga2.i586.rpm libkopetechatwindow_shared1-4.8.5-1.1.mga2.i586.rpm libkopete_otr_shared1-4.8.5-1.1.mga2.i586.rpm libknewstuff2_4-4.8.5-1.7.mga2.i586.rpm libkopeteidentity1-4.8.5-1.1.mga2.i586.rpm kdegames4-core-4.8.5-1.1.mga2.noarch.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-  152/200: libkopeteaddaccountwizard1
+  152/198: libkopeteaddaccountwizard1
                                  #########################################################################################################
-  153/200: libkopeteidentity1    #########################################################################################################
-  154/200: kdegames4-core        #########################################################################################################
-  155/200: libknewstuff2_4       #########################################################################################################
-  156/200: libcantorlibs0        #########################################################################################################
-  157/200: libkopete_otr_shared1 #########################################################################################################
-  158/200: libkopetechatwindow_shared1
+  153/198: libkopeteidentity1    #########################################################################################################
+  154/198: libknewstuff2_4       #########################################################################################################
+  155/198: libkopete_otr_shared1 #########################################################################################################
+  156/198: libkopetechatwindow_shared1
                                  #########################################################################################################
-  159/200: libkasten1controllers0
+  157/198: kopete                #########################################################################################################
+  158/198: kdegames4-core        #########################################################################################################
+  159/198: libkasten1controllers0
                                  #########################################################################################################
 
 
-устанавливается klettres-4.8.5-1.1.mga2.i586.rpm kopete-4.8.5-1.1.mga2.i586.rpm knetwalk-4.8.5-1.1.mga2.i586.rpm umbrello-4.8.5-1.1.mga2.i586.rpm cantor-4.8.5-1.1.mga2.i586.rpm kamera-4.8.5-1.1.mga2.i586.rpm kig-4.8.5-1.1.mga2.i586.rpm libkdcraw-common-4.8.5-1.1.mga2.noarch.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
+устанавливается klettres-4.8.5-1.1.mga2.i586.rpm kanagram-4.8.5-1.1.mga2.i586.rpm knetwalk-4.8.5-1.1.mga2.i586.rpm umbrello-4.8.5-1.1.mga2.i586.rpm cantor-4.8.5-1.1.mga2.i586.rpm kamera-4.8.5-1.1.mga2.i586.rpm kig-4.8.5-1.1.mga2.i586.rpm libkdcraw-common-4.8.5-1.1.mga2.noarch.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-  160/200: libkdcraw-common      #########################################################################################################
-  161/200: kig                   #########################################################################################################
-  162/200: kamera                #########################################################################################################
-  163/200: cantor                #########################################################################################################
-  164/200: umbrello              #########################################################################################################
-  165/200: knetwalk              #########################################################################################################
-  166/200: kopete                #########################################################################################################
-  167/200: klettres              #########################################################################################################
+  160/198: libkdcraw-common      #########################################################################################################
+  161/198: kig                   #########################################################################################################
+  162/198: kamera                #########################################################################################################
+  163/198: cantor                #########################################################################################################
+  164/198: umbrello              #########################################################################################################
+  165/198: knetwalk              #########################################################################################################
+  166/198: kanagram              #########################################################################################################
+  167/198: klettres              #########################################################################################################
 
 
-устанавливается pairs-4.9.90-1.mrc.mga2.i586.rpm kgeography-4.8.5-1.1.mga2.i586.rpm kanagram-4.8.5-1.1.mga2.i586.rpm zhu3d-4.2.6-2.mrc.mga2.i586.rpm khangman-4.8.5-1.1.mga2.i586.rpm ktuberling-4.8.5-1.1.mga2.i586.rpm kommander-4.8.5-1.1.mga2.i586.rpm libkdevplatformutil6-1.4.0-1.mrc.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
+устанавливается pairs-4.9.90-1.mrc.mga2.i586.rpm kgeography-4.8.5-1.1.mga2.i586.rpm zhu3d-4.2.6-2.mrc.mga2.i586.rpm khangman-4.8.5-1.1.mga2.i586.rpm libkdevplatformlanguage6-1.4.0-1.mrc.mga2.i586.rpm ktuberling-4.8.5-1.1.mga2.i586.rpm libkdevplatforminterfaces6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatformutil6-1.4.0-1.mrc.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
 предупреждение: libkdevplatformutil6-4:1.4.0-1.mrc.mga2.i586: Заголовок V4 RSA/SHA1 Signature, key ID af85c592: NOKEY
-  168/200: libkdevplatformutil6  #########################################################################################################
-  169/200: kommander             #########################################################################################################
-  170/200: ktuberling            #########################################################################################################
-  171/200: khangman              #########################################################################################################
-  172/200: zhu3d                 #########################################################################################################
-  173/200: kanagram              #########################################################################################################
-  174/200: kgeography            #########################################################################################################
-  175/200: pairs                 #########################################################################################################
+  168/198: libkdevplatformutil6  #########################################################################################################
+  169/198: libkdevplatforminterfaces6
+                                 #########################################################################################################
+  170/198: libkdevplatformlanguage6
+                                 #########################################################################################################
+  171/198: ktuberling            #########################################################################################################
+  172/198: khangman              #########################################################################################################
+  173/198: zhu3d                 #########################################################################################################
+  174/198: kgeography            #########################################################################################################
+  175/198: pairs                 #########################################################################################################
 
 
-устанавливается libsublime6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatformvcs6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatformdocumentation6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatformproject6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatformoutputview6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatformdebugger6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatformlanguage6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatforminterfaces6-1.4.0-1.mrc.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
+устанавливается libsublime6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatformvcs6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatformdocumentation6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatformproject6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatformoutputview6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatformshell6-1.4.0-1.mrc.mga2.i586.rpm libkdevplatformdebugger6-1.4.0-1.mrc.mga2.i586.rpm kdevplatform4-1.4.0-1.mrc.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-  176/200: libkdevplatforminterfaces6
+  176/198: libkdevplatformproject6
                                  #########################################################################################################
-  177/200: libkdevplatformlanguage6
+  177/198: libkdevplatformoutputview6
                                  #########################################################################################################
-  178/200: libkdevplatformproject6
+  178/198: libkdevplatformvcs6   #########################################################################################################
+  179/198: libsublime6           #########################################################################################################
+  180/198: libkdevplatformdebugger6
                                  #########################################################################################################
-  179/200: libkdevplatformoutputview6
+  181/198: libkdevplatformdocumentation6
                                  #########################################################################################################
-  180/200: libkdevplatformvcs6   #########################################################################################################
-  181/200: libkdevplatformdocumentation6
-                                 #########################################################################################################
-  182/200: libkdevplatformdebugger6
-                                 #########################################################################################################
-  183/200: libsublime6           #########################################################################################################
+  182/198: libkdevplatformshell6 #########################################################################################################
+  183/198: kdevplatform4         #########################################################################################################
 
 
-устанавливается libkgeomap-common-2.9.0-1.mrc.mga2.noarch.rpm kipi-plugins-2.9.0-1.mrc.mga2.noarch.rpm libkdevplatformshell6-1.4.0-1.mrc.mga2.i586.rpm libkface1-2.9.0-1.mrc.mga2.i586.rpm libkgeomap1-2.9.0-1.mrc.mga2.i586.rpm libkface-common-2.9.0-1.mrc.mga2.noarch.rpm kdevplatform4-1.4.0-1.mrc.mga2.i586.rpm libdigikamcore2-2.9.0-1.mrc.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
+устанавливается libkgeomap-common-2.9.0-1.mrc.mga2.noarch.rpm digikam-2.9.0-1.mrc.mga2.i586.rpm kipi-plugins-2.9.0-1.mrc.mga2.noarch.rpm libkface1-2.9.0-1.mrc.mga2.i586.rpm libkgeomap1-2.9.0-1.mrc.mga2.i586.rpm libkface-common-2.9.0-1.mrc.mga2.noarch.rpm libdigikamdatabase2-2.9.0-1.mrc.mga2.i586.rpm libdigikamcore2-2.9.0-1.mrc.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-  184/200: libkgeomap1           #########################################################################################################
-  185/200: libkdevplatformshell6 #########################################################################################################
-  186/200: kdevplatform4         #########################################################################################################
-  187/200: libdigikamcore2       #########################################################################################################
-  188/200: libkface-common       #########################################################################################################
-  189/200: libkface1             #########################################################################################################
-  190/200: kipi-plugins          #########################################################################################################
-  191/200: libkgeomap-common     #########################################################################################################
+  184/198: libkgeomap1           #########################################################################################################
+  185/198: libdigikamcore2       #########################################################################################################
+  186/198: libdigikamdatabase2   #########################################################################################################
+  187/198: libkface-common       #########################################################################################################
+  188/198: libkface1             #########################################################################################################
+  189/198: kipi-plugins          #########################################################################################################
+  190/198: libkgeomap-common     #########################################################################################################
+  191/198: digikam               #########################################################################################################
 
 
-устанавливается shelk-test-1.5.2-1.mrc.mga2.i586.rpm libsvnqt4_7-1.6.0-1.mrc.mga2.i586.rpm digikam-2.9.0-1.mrc.mga2.i586.rpm klest-crossword-1.2.3-1.mrc.mga2.i586.rpm kdesvn-1.6.0-1.mrc.mga2.i586.rpm qaquarelle-0.0.4-9.mrc.mga2.i586.rpm libdigikamdatabase2-2.9.0-1.mrc.mga2.i586.rpm smathstudio-0.89-1.mrc.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
+устанавливается qaquarelle-0.0.4-9.mrc.mga2.i586.rpm shelk-test-1.5.2-1.mrc.mga2.i586.rpm libsvnqt4_7-1.6.0-1.mrc.mga2.i586.rpm klest-crossword-1.2.3-1.mrc.mga2.i586.rpm smathstudio-0.89-1.mrc.mga2.i586.rpm kdesvn-1.6.0-1.mrc.mga2.i586.rpm kdevelop4-4.4.0-1.mrc.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
-  192/200: libdigikamdatabase2   #########################################################################################################
-  193/200: libsvnqt4_7           #########################################################################################################
-  194/200: kdesvn                #########################################################################################################
-  195/200: digikam               #########################################################################################################
-  196/200: smathstudio           #########################################################################################################
-  197/200: qaquarelle            #########################################################################################################
-  198/200: klest-crossword       #########################################################################################################
-  199/200: shelk-test            #########################################################################################################
-
-
-устанавливается kdevelop4-4.4.0-1.mrc.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
-Подготовка...                    #########################################################################################################
-  200/200: kdevelop4             #########################################################################################################
+  192/198: libsvnqt4_7           #########################################################################################################
+  193/198: kdesvn                #########################################################################################################
+  194/198: kdevelop4             #########################################################################################################
+  195/198: smathstudio           #########################################################################################################
+  196/198: klest-crossword       #########################################################################################################
+  197/198: shelk-test            #########################################################################################################
+  198/198: qaquarelle            #########################################################################################################
 
 
 устанавливается timezone-java-2012c-1.mga2.i586.rpm rootcerts-java-20121229.00-2.mga2.i586.rpm rhino-1.7-1.mga2.noarch.rpm libgcj12-base-4.6.3-2.mga2.i586.rpm java-access-bridge-1.26.2-4.mga2.i586.rpm java-1.7.0-openjdk-1.7.0.25-2.3.10.1.mga2.i586.rpm libgcj12-4.6.3-2.mga2.i586.rpm java-1.6.0-openjdk-1.6.0.0-42.b24.1.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
@@ -5946,8 +5721,8 @@ Executing /sbin/chkconfig freshclam on
                                  #########################################################################################################
   541/651: squid                 #########################################################################################################
 Generating a 1024 bit RSA private key
-....................................................++++++
-................++++++
+...............++++++
+............................................++++++
 writing new private key to '/etc/pki/tls/private/squid.pem'
 -----
 squid.service is not a native service, redirecting to /sbin/chkconfig.
@@ -6697,7 +6472,7 @@ Compiling codetoolscfgscript.pas
 Compiling ctxmlfixfragment.pas
 Compiling codetoolsfpcmsgs.pas
 Compiling unitdictionary.pas
-115969 lines compiled, 3.5 sec 
+115969 lines compiled, 3.6 sec 
 4 warning(s) issued
 Действие "Компиляция пакета CodeTools 1.0.1" завершено
 TPkgManager.CheckCompileNeedDueToDependencies  State file of LazUtils 1.0 is newer than state file of Пакет: LCLBase 1.0.1
@@ -6886,7 +6661,7 @@ customdrawn_android.pas(504,3) Note: Local variable "lDPI" not used
 customdrawn_android.pas(582,3) Note: Local variable "lColor" not used
 customdrawn_android.pas(24,5) Note: Private field "TCDDrawerAndroid.bmpCheckbox" is never used
 customdrawn_android.pas(24,18) Note: Private field "TCDDrawerAndroid.bmpCheckboxChecked" is never used
-199115 lines compiled, 6.6 sec 
+199115 lines compiled, 6.8 sec 
 13 warning(s) issued
 34 note(s) issued
 Действие "Компиляция пакета LCLBase 1.0.1" завершено
@@ -8196,7 +7971,7 @@ alllclintfunits.pas(32,8) Hint: Unit "Gtk2WSPrivate" not used in AllLCLIntfUnits
 alllclintfunits.pas(33,8) Hint: Unit "Gtk2WSSpin" not used in AllLCLIntfUnits
 alllclintfunits.pas(34,8) Hint: Unit "Gtk2WSStdCtrls" not used in AllLCLIntfUnits
 lcl.pas(10,3) Hint: Unit "AllLCLIntfUnits" not used in LCL
-58679 lines compiled, 1.10 sec 
+58679 lines compiled, 2.1 sec 
 1 warning(s) issued
 1256 hint(s) issued
 2 note(s) issued
@@ -8335,7 +8110,7 @@ Compiling extendednotebook.pas
 Compiling listfilteredit.pas
 Compiling treefilteredit.pas
 treefilteredit.pas(74,35) Hint: Parameter "Sender" not used
-1665 lines compiled, 0.4 sec 
+1665 lines compiled, 0.3 sec 
 3 hint(s) issued
 Действие "Компиляция пакета LazControls 1.0.1" завершено
 TPkgManager.CheckCompileNeedDueToDependencies  State file of LCL 1.0.1 is newer than state file of Пакет: IDEIntf 1.0
@@ -8495,7 +8270,7 @@ tachartlazaruspkg.pas(14,19) Hint: Unit "TADrawerSVG" not used in TAChartLazarus
 tachartlazaruspkg.pas(14,51) Hint: Unit "TAChartAxisUtils" not used in TAChartLazarusPkg
 tachartlazaruspkg.pas(15,19) Hint: Unit "TAEnumerators" not used in TAChartLazarusPkg
 tachartlazaruspkg.pas(16,18) Hint: Unit "TAMath" not used in TAChartLazarusPkg
-27289 lines compiled, 1.5 sec 
+27289 lines compiled, 1.6 sec 
 2 warning(s) issued
 38 hint(s) issued
 9 note(s) issued
@@ -9103,7 +8878,7 @@ Compiling projectwizarddlg.pas
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-272298 lines compiled, 23.10 sec 
+272298 lines compiled, 23.6 sec 
 5 warning(s) issued
 1 note(s) issued
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
@@ -9245,7 +9020,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-205 lines compiled, 7.7 sec 
+205 lines compiled, 7.9 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -9358,7 +9133,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-206 lines compiled, 8.1 sec 
+206 lines compiled, 8.2 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -9508,7 +9283,7 @@ bgrabitmappack.pas(15,3) Hint: Unit "BGRAPhongTypes" not used in bgrabitmappack
 bgrabitmappack.pas(15,40) Hint: Unit "BGRAMatrix3D" not used in bgrabitmappack
 bgrabitmappack.pas(15,54) Hint: Unit "BGRAColorInt" not used in bgrabitmappack
 bgrabitmappack.pas(16,3) Hint: Unit "BGRACoordPool3D" not used in bgrabitmappack
-59307 lines compiled, 2.5 sec 
+59307 lines compiled, 2.4 sec 
 1 warning(s) issued
 33 hint(s) issued
 Действие "Компиляция пакета bgrabitmappack 6.0" завершено
@@ -9595,7 +9370,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-208 lines compiled, 8.4 sec 
+208 lines compiled, 8.3 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -10481,7 +10256,7 @@ ZDbcPooled.pas(90,46) Hint: Parameter "Value" not used
 ZDbcPooled.pas(843,82) Hint: Converting the operands to "Int64" before doing the multiply could prevent overflow errors.
 ZDbcPooled.pas(17,3) Hint: Unit "types" not used in ZDbcPooled
 ZDbcPooled.pas(25,3) Hint: Unit "ZMessages" not used in ZDbcPooled
-98305 lines compiled, 2.2 sec 
+98305 lines compiled, 2.1 sec 
 13 warning(s) issued
 354 hint(s) issued
 4 note(s) issued
@@ -10643,7 +10418,7 @@ ZPgEventAlerter.pas(59,3) Hint: Unit "ZDataset" not used in ZPgEventAlerter
 zcomponent.pas(10,20) Hint: Unit "ZConnection" not used in zcomponent
 zcomponent.pas(11,3) Hint: Unit "ZConnectionGroup" not used in zcomponent
 zcomponent.pas(11,21) Hint: Unit "ZGroupedConnection" not used in zcomponent
-29688 lines compiled, 0.9 sec 
+29688 lines compiled, 0.10 sec 
 11 warning(s) issued
 109 hint(s) issued
 6 note(s) issued
@@ -10665,7 +10440,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-209 lines compiled, 9.1 sec 
+209 lines compiled, 8.6 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -11230,7 +11005,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-210 lines compiled, 9.3 sec 
+210 lines compiled, 8.4 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -11365,7 +11140,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-211 lines compiled, 8.9 sec 
+211 lines compiled, 8.7 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -11868,7 +11643,7 @@ Compiling ./lib/common/kernel/mseconsts_id.pas
 Compiling ./lib/common/regcomponents/regunitgroups.pas
 Linking apps/ide/mseide
 /usr/bin/ld: warning: link.res contains output sections; did you forget -T?
-471859 lines compiled, 12.10 sec 
+471859 lines compiled, 13.3 sec 
 Free Pascal Compiler version 2.6.2 [2013/07/07] for i386
 Copyright (c) 1993-2012 by Florian Klaempfl and others
 Target OS: Linux for i386
@@ -12454,8 +12229,8 @@ allowed to use iTALC.
   246/307: scilab                #########################################################################################################
   247/307: postfix               #########################################################################################################
 Generating a 1024 bit RSA private key
-......................++++++
-......++++++
+..++++++
+.......................++++++
 writing new private key to '/etc/pki/tls/private/postfix.pem'
 -----
 postfix.service is not a native service, redirecting to /sbin/chkconfig.

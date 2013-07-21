@@ -144,7 +144,14 @@ dirmngr-1.1.0-1.mga1
 djview4-4.8-2.mga2
 djvulibre-3.5.24-1.mga2
 dkms-2.0.19-29.mga2
+dkms-broadcom-wl-5.100.82.112-7.mga2.nonfree
+dkms-fglrx-8.961-2.mga2.nonfree
 dkms-minimal-2.0.19-29.mga2
+dkms-nvidia173-173.14.36-1.mrc.mga2
+dkms-nvidia96xx-96.43.23-2.mrc.mga2
+dkms-nvidia-current-295.71-1.mga2.nonfree
+dkms-vboxadditions-4.1.24-1.mga2
+dkms-virtualbox-4.1.24-1.mga2
 dmidecode-2.11-1.mga1
 dmraid-1.0.0-0.rc16.9.mga2
 dmraid-events-1.0.0-0.rc16.9.mga2

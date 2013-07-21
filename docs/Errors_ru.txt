@@ -18,5 +18,4 @@ https://bugs.mageia.org/show_bug.cgi?id=10103 - не работает VPN OpenL2
 *) Добавить virtualbox и дополнения к нему
 *) "mageia" не отключается при загрузке KDE
 *) Отключается экран: http://forum.mageialinux.ru/viewtopic.php?id=656
-*) Не работает save2module
 *) Не работает выбор формата в conv4mod

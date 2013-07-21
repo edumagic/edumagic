@@ -277,7 +277,14 @@ dirmngr-1.1.0-1.mga1
 djview4-4.8-2.mga2
 djvulibre-3.5.24-1.mga2
 dkms-2.0.19-29.mga2
+dkms-broadcom-wl-5.100.82.112-7.mga2.nonfree
+dkms-fglrx-8.961-2.mga2.nonfree
 dkms-minimal-2.0.19-29.mga2
+dkms-nvidia173-173.14.36-1.mrc.mga2
+dkms-nvidia96xx-96.43.23-2.mrc.mga2
+dkms-nvidia-current-295.71-1.mga2.nonfree
+dkms-vboxadditions-4.1.24-1.mga2
+dkms-virtualbox-4.1.24-1.mga2
 dmidecode-2.11-1.mga1
 dmraid-1.0.0-0.rc16.9.mga2
 dmraid-events-1.0.0-0.rc16.9.mga2
@@ -905,7 +912,6 @@ kmymoney-4.6.2-2.mga2
 knetwalk-4.8.5-1.1.mga2
 kojo-250512-2.mrc.mga2
 kolourpaint-4.8.5-1.1.mga2
-kommander-4.8.5-1.1.mga2
 kompozer-0.8-0.b3.1.mga2
 kompozer-l10n-ru-0.8-0.b3.6.mrc.mga2
 kompozer-myspell-ru-0.8-0.b3.8.mrc.mga2
@@ -1545,7 +1551,6 @@ libknewstuff3_4-4.8.5-1.7.mga2
 libknotifyconfig4-4.8.5-1.7.mga2
 libkntlm4-4.8.5-1.7.mga2
 libkolourpaint_lgpl4-4.8.5-1.1.mga2
-libkommandercore4-4.8.5-1.1.mga2
 libkonq5-4.8.5-1.1.mga2
 libkonqsidebarplugin4-4.8.5-1.1.mga2
 libkonquerorprivate4-4.8.5-1.1.mga2

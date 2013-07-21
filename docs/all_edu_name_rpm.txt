@@ -277,7 +277,14 @@ dirmngr
 djview4
 djvulibre
 dkms
+dkms-broadcom-wl
+dkms-fglrx
 dkms-minimal
+dkms-nvidia173
+dkms-nvidia96xx
+dkms-nvidia-current
+dkms-vboxadditions
+dkms-virtualbox
 dmidecode
 dmraid
 dmraid-events
@@ -905,7 +912,6 @@ kmymoney
 knetwalk
 kojo
 kolourpaint
-kommander
 kompozer
 kompozer-l10n-ru
 kompozer-myspell-ru
@@ -1545,7 +1551,6 @@ libknewstuff3_4
 libknotifyconfig4
 libkntlm4
 libkolourpaint_lgpl4
-libkommandercore4
 libkonq5
 libkonqsidebarplugin4
 libkonquerorprivate4

@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# /usr/lib/magos/scripts/conv4mod
+#
+# Description: Convert modules 
+# Author : Anton Goroshkin <http://magos-linux.ru>
+
+
+if [ "$(id -un)" != "root" ] ;then
+   beesu -l "/bin/bash '$0' $@"
+   exit 0
+fi
+
+export PATH=/usr/lib/magos/scripts:$PATH
+
+mod_dir=/mnt/live/memory/images
+
+mdialog --msgbox "Выберите директорию для сохранения модулей"
+dir_name=$(mdialog --getexistingdirectory /mnt/livemedia/ )
+if [ "$dir_name" = "" ]
+then
+  exit 0
+fi
+format=$(mdialog --menu Формат_модулей xzm XZM nolzm XZM_nocompression)
+if [ "$format" = "" ]
+then
+  exit 0
+fi
+mask=$(mdialog --inputbox "Введите маску модулей" "??-")
+if [ "$mask" = "" ]
+then
+  exit 0
+fi
+xterm -e dir2mod $format $mod_dir $dir_name $mask

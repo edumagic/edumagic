@@ -69,6 +69,18 @@ fi
 #else
 #  chroot . chkconfig --del upowerd
 #fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable lm_sensors.service || chroot . chkconfig --del lm_sensors
+else
+  chroot . chkconfig --del lm_sensors
+fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable proftpd.service || chroot . chkconfig --del proftpd
+else
+  chroot . chkconfig --del proftpd
+fi
 umount proc
 
 echo $(basename $0)-$VER >> etc/once_boot_scripts

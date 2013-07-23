@@ -16,5 +16,3 @@ https://bugs.mageia.org/show_bug.cgi?id=10103 - VPN OpenL2TP does not work, bug 
 *) Parameter xres=XxY don't work for free video drivers
 *) To add virtualbox and addons
 *) "mageia" can not be disabled while KDE is starting
-*) Display turn off: http://forum.mageialinux.ru/viewtopic.php?id=656
-*) conv4mod: format don't work

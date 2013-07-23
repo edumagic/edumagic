@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Adobe Flash Player EULA
-Name[ru]=Лицензия на Adobe Flash Player
-Exec=xdg-open /usr/lib/flash-plugin/LICENSE.txt
-Icon=flash-player-properties
-Terminal=false
-Type=Application
-Categories=Documentation;

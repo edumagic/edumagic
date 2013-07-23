@@ -84,7 +84,7 @@ done
 #dir2lzm $mod_br/var/lib/rpm $1_rpmbase.$MODULEFORMAT
 
 #rm -rf $mod_br/var/lib/rpm
-rm -rf $mod_br/tmp $mod_br/var/lib/urpmi $mod_br/var/lib/rpm $mod_br/var/cache/urpmi $mod_br/.wh* $mod_br/etc/urpmi $mod_br/var/cache/ldconfig/*cache
+rm -rf $mod_br/tmp $mod_br/var/lib/urpmi $mod_br/var/lib/rpm $mod_br/var/cache/urpmi $mod_br/.wh* $mod_br/etc/urpmi
 find $mod_br -name .wh* -delete
 
 cd /mnt/livemedia/MagOS-Data/optional

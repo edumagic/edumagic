@@ -24,4 +24,13 @@ if [  "$MONITOR" != "" ] ;then
 fi
 if echo $DPMS | egrep -qi 'no|off|false' ;then
    sed -i s/'.*Option .DPMS..*'/'    Option "DPMS" "false"'/ /etc/X11/xorg.conf
+   echo "#!/bin/bash" > /usr/bin/xset_disable
+   echo "xset dpms 0 0 0" >> /usr/bin/xset_disable
+   echo "xset -dpms" >> /usr/bin/xset_disable
+   echo "xset s off" >> /usr/bin/xset_disable
+   echo "xset s 0 0" >> /usr/bin/xset_disable
+   chmod a+x /usr/bin/xset_disable
+else
+   echo "#!/bin/bash" > /usr/bin/xset_disable
+   chmod a+x /usr/bin/xset_disable
 fi

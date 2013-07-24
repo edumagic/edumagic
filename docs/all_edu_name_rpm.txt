@@ -385,6 +385,7 @@ flac
 flac123
 flamerobin
 flash-player-plugin
+flash-player-plugin-eula
 flexdock
 fluidsynth
 folks-i18n
@@ -2822,6 +2823,7 @@ printer-testpages
 printer-tools
 printer-utils
 procps
+proftpd
 projectlibre
 protobuf-java
 proxymngr
@@ -3187,6 +3189,7 @@ tuxpaint
 tuxpaint-stamps
 tuxtype
 tuxwordsmith
+tv-fonts
 tvtime
 twolame
 uClibc
@@ -3361,6 +3364,8 @@ xapool
 XaraLX
 xarchiver
 xauth
+xawtv
+xawtv-common
 xbean
 xbiff
 xbindkeys

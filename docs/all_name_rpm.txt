@@ -220,6 +220,7 @@ firefox-ru
 flac
 flac123
 flash-player-plugin
+flash-player-plugin-eula
 folks-i18n
 fontconfig
 fontpackages-filesystem
@@ -1787,6 +1788,7 @@ printer-testpages
 printer-tools
 printer-utils
 procps
+proftpd
 proxymngr
 psmisc
 psutils
@@ -2000,6 +2002,7 @@ traceroute
 transcode
 transfugdrake
 ttmkfdir
+tv-fonts
 tvtime
 twolame
 uClibc
@@ -2152,6 +2155,8 @@ x125
 x264
 xarchiver
 xauth
+xawtv
+xawtv-common
 xbiff
 xbindkeys
 xcalc

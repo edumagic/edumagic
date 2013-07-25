@@ -111,6 +111,12 @@ then
 else
   chroot . chkconfig --del upsmon
 fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable mysqld.service || chroot . chkconfig --del mysqld
+else
+  chroot . chkconfig --del mysqld
+fi
 umount proc
 
 echo $(basename $0)-$VER >> etc/once_boot_scripts

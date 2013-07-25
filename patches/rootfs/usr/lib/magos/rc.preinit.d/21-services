@@ -63,12 +63,6 @@ then
 else
   chroot . chkconfig --del msec
 fi
-#if [ -x bin/systemd ]
-#then
-#  chroot . systemctl disable upowerd.service || chroot . chkconfig --del upowerd
-#else
-#  chroot . chkconfig --del upowerd
-#fi
 if [ -x bin/systemd ]
 then
   chroot . systemctl disable lm_sensors.service || chroot . chkconfig --del lm_sensors
@@ -80,6 +74,42 @@ then
   chroot . systemctl disable proftpd.service || chroot . chkconfig --del proftpd
 else
   chroot . chkconfig --del proftpd
+fi
+#if [ -x bin/systemd ]
+#then
+#  chroot . systemctl disable reboot.service || chroot . chkconfig --del reboot
+#else
+#  chroot . chkconfig --del reboot
+#fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable systemd-readahead-collect.service || chroot . chkconfig --del systemd-readahead-collect
+else
+  chroot . chkconfig --del systemd-readahead-collect
+fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable systemd-readahead-replay.service || chroot . chkconfig --del systemd-readahead-replay
+else
+  chroot . chkconfig --del systemd-readahead-replay
+fi
+#if [ -x bin/systemd ]
+#then
+#  chroot . systemctl disable halt.service || chroot . chkconfig --del halt
+#else
+#  chroot . chkconfig --del halt
+#fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable upsd.service || chroot . chkconfig --del upsd
+else
+  chroot . chkconfig --del upsd
+fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable upsmon.service || chroot . chkconfig --del upsmon
+else
+  chroot . chkconfig --del upsmon
 fi
 umount proc
 

@@ -4,7 +4,10 @@
 pactl list | sed -n '/^Sink.*[0-9]$/p' | sed 's/^Sink\ #//g' | pactl set-sink-volume $? 52429
 
 #Remove from autostart to call this script
-rm ~/.config/autostart/firstboot_user.desktop
+if [ -f "~/.config/autostart/firstboot_user.desktop" ]
+then
+  rm -f ~/.config/autostart/firstboot_user.desktop
+fi
 
 #fix xterm non-latin locale problem (xterm non-latin font view error)
 #xrdb ~/.Xdefaults
@@ -68,6 +71,100 @@ then
     then
       mkdir -p ~/.bluej
       echo "bluej.language=russian" >> ~/.bluej/bluej.properties
+    fi
+  fi
+fi
+
+#Create config for qBittorrent
+if [ "$LANG" = "Russian" ]
+then
+  if [ -f "/usr/bin/qbittorrent" ]
+  then
+    if [ ! -f "~/.config/qBittorrent/qBittorrent.conf" ]
+    then
+      mkdir -p ~/.config/qBittorrent
+      echo "[Preferences]" >> ~/.config/qBittorrent/qBittorrent.conf
+      echo "General\Locale=ru_RU" >> ~/.config/qBittorrent/qBittorrent.conf
+    fi
+  fi
+fi
+
+#Create config for RawTherapee
+if [ "$LANG" = "Russian" ]
+then
+  if [ -f "/usr/bin/rawtherapee" ]
+  then
+    if [ ! -f "~/.config/RawTherapee/options" ]
+    then
+      mkdir -p ~/.config/RawTherapee
+      echo "[General]" >> ~/.config/RawTherapee/options
+      echo "Language=$LANG" >> ~/.config/RawTherapee/options
+    fi
+  fi
+fi
+
+#Create config for Netemul
+if [ "$LANG" = "Russian" ]
+then
+  if [ -f "/usr/bin/netemul" ]
+  then
+    if [ ! -f "~/.config/FROST/netemul.conf" ]
+    then
+      mkdir -p ~/.config/FROST
+      echo "[main]" >> ~/.config/FROST/netemul.conf
+      echo "language=1" >> ~/.config/FROST/netemul.conf
+    fi
+  fi
+fi
+
+#Create config for Phun
+if [ "$LANG" = "Russian" ]
+then
+  if [ -f "/opt/phun/config.cfg" ]
+  then
+    A=`cat /opt/phun/config.cfg|grep $LANG`
+    if [ "$A" = "" ]
+    then
+      echo "" >> /opt/phun/config.cfg
+      echo "App -> {" >> /opt/phun/config.cfg
+      echo "    language = \"$LANG\";" >> /opt/phun/config.cfg
+      echo "    };" >> /opt/phun/config.cfg
+    fi
+  fi
+fi
+
+#Create config for exe
+if [ "$LANG" = "Russian" ]
+then
+  if [ -f "/usr/bin/exe" ]
+  then
+    if [ ! -f "~/.exe/exe.conf" ]
+    then
+      mkdir -p ~/.exe
+      echo "[user]" >> ~/.exe/exe.conf
+      echo "locale = ru" >> ~/.exe/exe.conf
+    fi
+  fi
+fi
+
+#Create config for geometria
+if [ "$LANG" = "Russian" ]
+then
+  if [ -f "/usr/bin/geometria" ]
+  then
+    if [ ! -f "~/.geometria/options.xml" ]
+    then
+      mkdir -p ~/.geometria
+      echo '<?xml version="1.0" encoding="UTF-8"?>' >> ~/.geometria/options.xml
+      echo '<options xmlns="http://geocentral.net">' >> ~/.geometria/options.xml
+      echo '<version>3.1</version>' >> ~/.geometria/options.xml
+      echo '<font>' >> ~/.geometria/options.xml
+      echo '<name>Sans-serif</name>' >> ~/.geometria/options.xml
+      echo '<style>bold</style>' >> ~/.geometria/options.xml
+      echo '<size>12</size>' >> ~/.geometria/options.xml
+      echo '</font>' >> ~/.geometria/options.xml
+      echo '<language>ru</language>' >> ~/.geometria/options.xml
+      echo '</options>' >> ~/.geometria/options.xml
     fi
   fi
 fi

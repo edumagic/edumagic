@@ -7,6 +7,10 @@ edugraphe
 lybniz
 xaos
 librecad
+librecad-data
+librecad-doc
+librecad-parts
+librecad-plugins
 sweethome3d
 qcad
 kicad
@@ -36,7 +40,7 @@ gcad3d
 gamine
 projectlibre
 pitivi
-anjuta
+task-anjuta
 XaraLX
 gnome-paint
 kiosktool

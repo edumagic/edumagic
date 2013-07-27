@@ -19,6 +19,7 @@ alsa-plugins-pulse-config
 alsa-utils
 animal-sniffer
 anjuta
+anjuta-extras
 ant
 ant-antlr
 ant-junit
@@ -493,6 +494,7 @@ gcc
 gcc-c++
 gcc-cpp
 gcc-gfortran
+gcc-java
 gchemcalc
 gchempaint
 gchemtable
@@ -988,6 +990,7 @@ libamd2.2.2
 libanalitza4
 libanalitzagui4
 libanjuta3_0
+libanjuta3-devel
 libao4
 libapm1
 libapr1_0
@@ -1008,6 +1011,7 @@ libatk1.0_0
 libatk1.0-devel
 libatk-gir1.0
 libatkmm1.6_1
+libatkmm1.6-devel
 libatlas3-sse
 libatm1
 libattica0
@@ -1059,6 +1063,7 @@ libcairo2
 libcairo-devel
 libcairo-gir1.0
 libcairomm1.0_1
+libcairomm1.0-devel
 libcal3d12
 libcamd2.2.2
 libcamel33
@@ -1250,6 +1255,7 @@ libgchempaint0.14_0
 libgcj12
 libgcj12-base
 libgcj_bc1
+libgcj-devel
 libgck1_0
 libgck-gir0
 libGConf2_4
@@ -1276,6 +1282,7 @@ libgdk_pixbuf2.0_0-loaders-png15
 libgdk_pixbuf2.0-devel
 libgdk_pixbuf-gir2.0
 libgdl3_2
+libgdl-devel
 libgdmgreeter1
 libgdmgreeter-gir1.0
 libgedit0
@@ -1314,6 +1321,7 @@ libglib2.0_0
 libglib2.0-devel
 libglib-gir2.0
 libglibmm2.4_1
+libglibmm2.4-devel
 libglib-networking
 libgme0
 libgmenu-gir3.0
@@ -1385,6 +1393,7 @@ libgstvdp0.10_0
 libgtk+2.0_0
 libgtk+2.0-devel
 libgtk+3_0
+libgtk+3.0-devel
 libgtkdatabox0.9.1_3
 libgtk-engines2
 libgtk-gir2.0
@@ -1397,6 +1406,7 @@ libgtkimageview0
 libgtkmathview0
 libgtkmm2.4_1
 libgtkmm3.0_1
+libgtkmm3.0-devel
 libgtksourceview-2.0_0
 libgtksourceview3.0_0
 libgtksourceview-gir3.0
@@ -1783,6 +1793,7 @@ libpango1.0_0-modules
 libpango1.0-devel
 libpango-gir1.0
 libpangomm2.4_1
+libpangomm2.4-devel
 libpaper1
 libparted1
 libparted-devel
@@ -1924,6 +1935,10 @@ libraw5
 libreadline6
 libreadline-java
 librecad
+librecad-data
+librecad-doc
+librecad-parts
+librecad-plugins
 librecode0
 libredland0
 libreiser4progs-1.0_4
@@ -1978,6 +1993,7 @@ libselinux1
 libsgutils2
 libshout3
 libsigc++2.0_0
+libsigc++2.0-devel
 libsigsegv2
 libskgbankgui1
 libskgbankmodeler1
@@ -2414,6 +2430,7 @@ mkxauth
 ml85p
 mlocate
 mlt
+mm-common
 mobile-broadband-provider-info
 mockobjects
 modello
@@ -3124,6 +3141,7 @@ tango-icon-theme
 tano
 tanukiwrapper
 tar
+task-anjuta
 task-codecs
 task-gambas3
 task-gnome
@@ -3217,6 +3235,7 @@ utempter
 util-linux
 v4l-utils
 vafer-dependency
+vala
 vbetool
 vboxadditions-kernel-3.3.8-server-2.mga2
 vcdimager

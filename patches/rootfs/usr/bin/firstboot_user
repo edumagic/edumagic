@@ -166,4 +166,40 @@ then
   fi
 fi
 
+#Create config for QCad
+if [ "$LANG" = "Russian" ]
+then
+  if [ -f "/usr/bin/qcad" ]
+  then
+    if [ ! -f "~/.qt/qcadrc" ]
+    then
+      mkdir -p ~/.qt
+      echo "[Appearance]" >> ~/.qt/qcadrc
+      echo "Language=ru" >> ~/.qt/qcadrc
+      echo "LanguageCmd=ru" >> ~/.qt/qcadrc
+      echo "" >> ~/.qt/qcadrc
+      echo "[Defaults]" >> ~/.qt/qcadrc
+      echo "Unit=Millimeter" >> ~/.qt/qcadrc
+    fi
+  fi
+fi
+
+#Create config for LibreCad
+if [ "$LANG" = "Russian" ]
+then
+  if [ -f "/usr/bin/librecad" ]
+  then
+    if [ ! -f "~/.config/LibreCAD/LibreCAD.conf" ]
+    then
+      mkdir -p ~/.config/LibreCAD
+      echo "[Appearance]" >> ~/.config/LibreCAD/LibreCAD.conf
+      echo "Language=ru_RU" >> ~/.config/LibreCAD/LibreCAD.conf
+      echo "LanguageCmd=ru_RU" >> ~/.config/LibreCAD/LibreCAD.conf
+      echo "" >> ~/.config/LibreCAD/LibreCAD.conf
+      echo "[Defaults]" >> ~/.config/LibreCAD/LibreCAD.conf
+      echo "Unit=Millimeter" >> ~/.config/LibreCAD/LibreCAD.conf
+    fi
+  fi
+fi
+
 exit 0

@@ -4,10 +4,7 @@
 pactl list | sed -n '/^Sink.*[0-9]$/p' | sed 's/^Sink\ #//g' | pactl set-sink-volume $? 52429
 
 #Remove from autostart to call this script
-if [ -f "~/.config/autostart/firstboot_user.desktop" ]
-then
-  rm -f ~/.config/autostart/firstboot_user.desktop
-fi
+rm ~/.config/autostart/firstboot_user.desktop
 
 #fix xterm non-latin locale problem (xterm non-latin font view error)
 #xrdb ~/.Xdefaults

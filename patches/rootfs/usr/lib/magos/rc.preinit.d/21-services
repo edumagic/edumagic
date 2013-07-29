@@ -117,6 +117,12 @@ then
 else
   chroot . chkconfig --del mysqld
 fi
+#if [ -x bin/systemd ]
+#then
+#  chroot . systemctl disable network-up.service || chroot . chkconfig --del network-up
+#else
+#  chroot . chkconfig --del network-up
+#fi
 umount proc
 
 echo $(basename $0)-$VER >> etc/once_boot_scripts

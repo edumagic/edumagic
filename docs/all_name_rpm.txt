@@ -251,7 +251,6 @@ gcc-cpp
 GConf2
 GConf2-sanity-check
 gcr
-gdbm
 gdisk
 gdk-pixbuf2.0
 gecko-mediaplayer

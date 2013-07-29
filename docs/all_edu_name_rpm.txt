@@ -508,7 +508,6 @@ gcr
 gda2.0
 gda2.0-sqlite
 gdb
-gdbm
 gdisk
 gdk-pixbuf2.0
 gdl-i18n

@@ -251,7 +251,6 @@ gcc-cpp-4.6.3-2.mga2
 GConf2-3.2.5-1.mga2
 GConf2-sanity-check-3.2.5-1.mga2
 gcr-3.4.1-1.mga2
-gdbm-1.10-1.mga2
 gdisk-0.8.1-2.mga2
 gdk-pixbuf2.0-2.26.1-1.mga2
 gecko-mediaplayer-1.0.6-1.mga2
@@ -1563,8 +1562,8 @@ mkxauth-1.7-19.mga1
 ml85p-0.2.0-9.mga1
 mlocate-0.25-2.mga2
 mobile-broadband-provider-info-20110511-2.git20120114.2.mga2
-modemmanager-0.6.0.0-3.mrc.mga2
-modem-manager-gui-0.0.15.4-3.mrc.mga2
+modemmanager-0.6.0.0-4.mrc.mga2
+modem-manager-gui-0.0.16-3.mrc.mga2
 mod_mnger-0.0.1-22.mrc.mga2
 monitor-edid-3.0-2.mga1
 mountloop-0.15.4-8.mga2

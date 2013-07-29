@@ -508,7 +508,6 @@ gcr-3.4.1-1.mga2
 gda2.0-3.1.5-11.mga2
 gda2.0-sqlite-3.1.5-11.mga2
 gdb-7.5.1-0.2.mrc.mga2
-gdbm-1.10-1.mga2
 gdisk-0.8.1-2.mga2
 gdk-pixbuf2.0-2.26.1-1.mga2
 gdl-i18n-3.4.2-1.mga2
@@ -2434,8 +2433,8 @@ mm-common-0.9.5-3.mga2
 mobile-broadband-provider-info-20110511-2.git20120114.2.mga2
 mockobjects-0.09-1.mga2
 modello-1.4.1-3.mga1
-modemmanager-0.6.0.0-3.mrc.mga2
-modem-manager-gui-0.0.15.4-3.mrc.mga2
+modemmanager-0.6.0.0-4.mrc.mga2
+modem-manager-gui-0.0.16-3.mrc.mga2
 mod_mnger-0.0.1-22.mrc.mga2
 mojo-parent-28-4.mga1
 mojo-signatures-1.1-0.4.svn11457.3.mga2

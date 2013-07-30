@@ -12,7 +12,7 @@ ENABLED=yes
 DEFAULTPASSWD='$2a$08$7zaCsmtvyXcGKVC3jRkUkeLnscv6s0mkXJ4GnJfrMzgmcMZzvF2a2'
 DEFAULTROOTPASSWD='$2a$08$6Sd1ei3xkrWq21ypHSlgZOOlViPgyi4u.g7P0hZgpHx43cWwjO/Ji'
 DEFAULTUSER=user
-USERGROUPS=audio,video,usb,vboxusers
+USERGROUPS=audio,video,usb,lp
 
 . /liblinuxlive
 . etc/sysconfig/MagOS

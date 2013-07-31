@@ -3013,6 +3013,7 @@ samba-client
 samba-common
 samba-server
 samba-winbind
+samsung-printscan
 sane-backends
 saned
 sankore

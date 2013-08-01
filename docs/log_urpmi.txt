@@ -21,7 +21,7 @@
     12/19: atmel-firmware        #########################################################################################################
     13/19: iwlwifi-3945-ucode    #########################################################################################################
     14/19: radeon-firmware       #########################################################################################################
-/var/tmp/rpm-tmp.Vt9D6h: line 2: /usr/sbin/bootloader-config: No such file or directory
+/var/tmp/rpm-tmp.oIRziG: line 2: /usr/sbin/bootloader-config: No such file or directory
     15/19: bluez-firmware        #########################################################################################################
     16/19: ipw2200-firmware      #########################################################################################################
 
@@ -520,7 +520,7 @@ I: *** Including module: shutdown ***
 I: Skipping program kexec as it cannot be found and is flagged to be optional
 I: *** Including modules done ***
 I: Wrote /boot/initrd-3.3.8-server-2.mga2.img:
-I: -rw------- 1 root root 14652255 Jul 31 12:16 /boot/initrd-3.3.8-server-2.mga2.img
+I: -rw------- 1 root root 14651933 Aug  1 13:19 /boot/initrd-3.3.8-server-2.mga2.img
 perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:
 	LANGUAGE = "ru_RU.UTF-8:ru",
@@ -603,7 +603,7 @@ I: *** Including module: shutdown ***
 I: Skipping program kexec as it cannot be found and is flagged to be optional
 I: *** Including modules done ***
 I: Wrote /boot/initrd-3.3.8-server-2.mga2.img:
-I: -rw------- 1 root root 15799771 Jul 31 12:16 /boot/initrd-3.3.8-server-2.mga2.img
+I: -rw------- 1 root root 15799758 Aug  1 13:19 /boot/initrd-3.3.8-server-2.mga2.img
 perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:
 	LANGUAGE = "ru_RU.UTF-8:ru",
@@ -1055,7 +1055,7 @@ make prepare....
 
 Building module:
 cleaning build area....
-make KERNELRELEASE=3.3.8-server-2.mga2 SYSSRC=/lib/modules/3.3.8-server-2.mga2/build module.........
+make KERNELRELEASE=3.3.8-server-2.mga2 SYSSRC=/lib/modules/3.3.8-server-2.mga2/build module........
 cleaning build area....
 cleaning kernel tree (make mrproper)....
 
@@ -3720,12 +3720,7 @@ xset:  unable to open display ":0"
   291/293: qmmp-wavpack          #########################################################################################################
   292/293: task-codecs           #########################################################################################################
   293/293: libmp4v2_2            #########################################################################################################
-    ftp://ftp.yandex.ru/mageia/distrib/2/i586/media/core/updates/wireshark-tools-1.6.16-1.1.mga2.i586.rpm
-        0% завершено, скорость = --.-K/s                                                                                                                                                                                                                                 ftp://ftp.yandex.ru/mageia/distrib/2/i586/media/core/updates/wireshark-1.6.16-1.1.mga2.i586.rpm
-        0% завершено, скорость = --.-K/s                                                                                          39% завершено, скорость = 4.01M/s                                                                                         44% завершено, скорость = 1.63M/s                                                                                         70% завершено, скорость = 1.79M/s                                                                                         86% завершено, скорость = 1.77M/s                                                                                         98% завершено, скорость = 1.66M/s                                                                                                                                                                                                                                ftp://ftp.yandex.ru/mageia/distrib/2/i586/media/core/updates/dumpcap-1.6.16-1.1.mga2.i586.rpm
-        0% завершено, скорость = --.-K/s                                                                                                                                                                                                                                 ftp://ftp.yandex.ru/mageia/distrib/2/i586/media/core/updates/libwireshark1-1.6.16-1.1.mga2.i586.rpm
-        0% завершено, скорость = --.-K/s                                                                                          7% завершено, скорость = 2.30M/s                                                                                          15% завершено, скорость = 2.53M/s                                                                                         19% завершено, скорость = 2.10M/s                                                                                         22% завершено, скорость = 1.86M/s                                                                                         26% завершено, скорость = 1.75M/s                                                                                         30% завершено, скорость = 1.68M/s                                                                                         34% завершено, скорость = 1.59M/s                                                                                         37% завершено, скорость = 1.54M/s                                                                                         41% завершено, скорость = 1.52M/s                                                                                         45% завершено, скорость = 1.48M/s                                                                                         49% завершено, скорость = 1.46M/s                                                                                         52% завершено, скорость = 1.43M/s                                                                                         56% завершено, скорость = 1.41M/s                                                                                         60% завершено, скорость = 1.41M/s                                                                                         63% из 6974620 завершено, осталось времени = 2s, скорость = 1.38M/s                                      66% из 6974620 завершено, осталось времени = 2s, скорость = 1.33M/s                                      71% из 6974620 завершено, осталось времени = 2s, скорость = 1.23M/s                                      75% из 6974620 завершено, осталось времени = 2s, скорость = 1.22M/s                                      77% из 6974620 завершено, осталось времени = 2s, скорость = 1.19M/s                                      82% из 6974620 завершено, осталось времени = 1s, скорость = 1.21M/s                                      85% из 6974620 завершено, осталось времени = 1s, скорость = 1.20M/s                                      89% из 6974620 завершено, осталось времени = 1s, скорость = 1.19M/s                                      93% из 6974620 завершено, осталось времени = 1s, скорость = 1.22M/s                                      97% из 6974620 завершено, осталось времени = 1s, скорость = 1.21M/s                                                                                                                                                                             ftp://ftp.yandex.ru/mageia/distrib/2/i586/media/core/updates/bind-utils-9.9.3.P2-1.mga2.i586.rpm
-        0% завершено, скорость = --.-K/s                                                                                          32% завершено, скорость = 2.04M/s                                                                                         69% завершено, скорость = 1.55M/s                                                                                                                                                                                                                            
+
 
 устанавливается comgt-0.32-12.mga1.i586.rpm libsmi2-0.4.8-6.mga1.i586.rpm libsmi-mibs-std-0.4.8-6.mga1.i586.rpm wget-1.13.4-2.mga2.i586.rpm smi-tools-0.4.8-6.mga1.i586.rpm libwxgtkugl2.8_0-2.8.12-9.mga2.i586.rpm net_monitor-0.11-4.mga1.i586.rpm vnstat-1.10-3.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
@@ -4189,7 +4184,7 @@ the EULA, available at http://www.adobe.com/products/eulas/players/flash/
 Downloading from http://fpdownload.macromedia.com/get/flashplayer/pdc/11.2.202.297/flash-plugin-11.2.202.297-release.i386.rpm:
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 6741k    0  1195    0     0   6622      0  0:17:22 --:--:--  0:17:22 14753 18 6741k   18 1263k    0     0  1119k      0  0:00:06  0:00:01  0:00:05 1227k 29 6741k   29 2011k    0     0   945k      0  0:00:07  0:00:02  0:00:05  991k 40 6741k   40 2740k    0     0   875k      0  0:00:07  0:00:03  0:00:04  904k 52 6741k   52 3571k    0     0   864k      0  0:00:07  0:00:04  0:00:03  885k 66 6741k   66 4514k    0     0   875k      0  0:00:07  0:00:05  0:00:02  907k 80 6741k   80 5436k    0     0   884k      0  0:00:07  0:00:06  0:00:01  831k 95 6741k   95 6423k    0     0   900k      0  0:00:07  0:00:07 --:--:--  881k100 6741k  100 6741k    0     0   912k      0  0:00:07  0:00:07 --:--:--  940k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 17 6741k   17 1186k    0     0  1105k      0  0:00:06  0:00:01  0:00:05 1219k 34 6741k   34 2321k    0     0  1121k      0  0:00:06  0:00:02  0:00:04 1178k 53 6741k   53 3594k    0     0  1170k      0  0:00:05  0:00:03  0:00:02 1209k 68 6741k   68 4616k    0     0  1132k      0  0:00:05  0:00:04  0:00:01 1161k 79 6741k   79 5376k    0     0  1061k      0  0:00:06  0:00:05  0:00:01 1082k 92 6741k   92 6203k    0     0  1021k      0  0:00:06  0:00:06 --:--:-- 1003k100 6741k  100 6741k    0     0  1002k      0  0:00:06  0:00:06 --:--:--  949k
     32/34: flash-player-plugin   #########################################################################################################
 Adobe Flash Player installation successful.
 
@@ -4233,8 +4228,7 @@ Adobe Flash Player installation successful.
     18/20: linphone              #########################################################################################################
     19/20: myagent-im            #########################################################################################################
     20/20: task-qutim            #########################################################################################################
-    http://packages.mageialinux.ru/mageia2/RPMS/noarch/samsung-printscan-0.0.2-2.mrc.mga2.noarch.rpm
-        0% завершено, скорость = --.-K/s                                                                                                                                                                                                                             
+
 
 устанавливается gutenprint-foomatic-5.2.7-3.mga2.i586.rpm foomatic-db-4.0-2.20101202.2.mga1.noarch.rpm libnetpbm11-10.57.01-1.mga2.i586.rpm ppmtomd-1.5-11.mga2.i586.rpm foomatic-db-engine-4.0.8-1.mga2.i586.rpm lexmark7000linux-990516-10.mga1.i586.rpm libopenslp1-1.2.1-11.1.mga2.i586.rpm cups-common-1.5.4-1.3.mga2.i586.rpm из /media/VM/magos-linux-neobht-develop-mageia/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
@@ -5837,8 +5831,8 @@ Therefore Mageia has been forced to remove the offending code.
   601/651: opera                 #########################################################################################################
   602/651: squid                 #########################################################################################################
 Generating a 1024 bit RSA private key
-..............++++++
-....................++++++
+.................................................................................++++++
+....++++++
 writing new private key to '/etc/pki/tls/private/squid.pem'
 -----
 squid.service is not a native service, redirecting to /sbin/chkconfig.
@@ -6481,7 +6475,7 @@ Compiling codetoolscfgscript.pas
 Compiling ctxmlfixfragment.pas
 Compiling codetoolsfpcmsgs.pas
 Compiling unitdictionary.pas
-115969 lines compiled, 3.6 sec 
+115969 lines compiled, 3.5 sec 
 4 warning(s) issued
 Действие "Компиляция пакета CodeTools 1.0.1" завершено
 TPkgManager.CheckCompileNeedDueToDependencies  State file of LazUtils 1.0 is newer than state file of Пакет: LCLBase 1.0.1
@@ -6670,7 +6664,7 @@ customdrawn_android.pas(504,3) Note: Local variable "lDPI" not used
 customdrawn_android.pas(582,3) Note: Local variable "lColor" not used
 customdrawn_android.pas(24,5) Note: Private field "TCDDrawerAndroid.bmpCheckbox" is never used
 customdrawn_android.pas(24,18) Note: Private field "TCDDrawerAndroid.bmpCheckboxChecked" is never used
-199115 lines compiled, 6.6 sec 
+199115 lines compiled, 6.7 sec 
 13 warning(s) issued
 34 note(s) issued
 Действие "Компиляция пакета LCLBase 1.0.1" завершено
@@ -8119,7 +8113,7 @@ Compiling extendednotebook.pas
 Compiling listfilteredit.pas
 Compiling treefilteredit.pas
 treefilteredit.pas(74,35) Hint: Parameter "Sender" not used
-1665 lines compiled, 0.4 sec 
+1665 lines compiled, 0.3 sec 
 3 hint(s) issued
 Действие "Компиляция пакета LazControls 1.0.1" завершено
 TPkgManager.CheckCompileNeedDueToDependencies  State file of LCL 1.0.1 is newer than state file of Пакет: IDEIntf 1.0
@@ -8279,7 +8273,7 @@ tachartlazaruspkg.pas(14,19) Hint: Unit "TADrawerSVG" not used in TAChartLazarus
 tachartlazaruspkg.pas(14,51) Hint: Unit "TAChartAxisUtils" not used in TAChartLazarusPkg
 tachartlazaruspkg.pas(15,19) Hint: Unit "TAEnumerators" not used in TAChartLazarusPkg
 tachartlazaruspkg.pas(16,18) Hint: Unit "TAMath" not used in TAChartLazarusPkg
-27289 lines compiled, 1.6 sec 
+27289 lines compiled, 1.5 sec 
 2 warning(s) issued
 38 hint(s) issued
 9 note(s) issued
@@ -8538,7 +8532,7 @@ allsynedit.pas(27,66) Hint: Unit "SynEditMarkupSpecialChar" not used in allsyned
 allsynedit.pas(28,3) Hint: Unit "LazSynEditText" not used in allsynedit
 allsynedit.pas(28,19) Hint: Unit "LazSynTextArea" not used in allsynedit
 allsynedit.pas(28,35) Hint: Unit "LazSynEditMouseCmdsTypes" not used in allsynedit
-105808 lines compiled, 3.7 sec 
+105808 lines compiled, 3.6 sec 
 8 warning(s) issued
 64 hint(s) issued
 Действие "Компиляция пакета SynEdit 1.0" завершено
@@ -8887,7 +8881,7 @@ Compiling projectwizarddlg.pas
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-272298 lines compiled, 24.5 sec 
+272298 lines compiled, 23.8 sec 
 5 warning(s) issued
 1 note(s) issued
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
@@ -9029,7 +9023,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-205 lines compiled, 7.6 sec 
+205 lines compiled, 8.2 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -9140,7 +9134,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-206 lines compiled, 7.7 sec 
+206 lines compiled, 7.5 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -9377,7 +9371,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-208 lines compiled, 7.10 sec 
+208 lines compiled, 8.2 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -10448,7 +10442,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-209 lines compiled, 8.10 sec 
+209 lines compiled, 9.1 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -11010,7 +11004,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-210 lines compiled, 9.7 sec 
+210 lines compiled, 8.5 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -11150,7 +11144,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-211 lines compiled, 8.8 sec 
+211 lines compiled, 9.1 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -11651,7 +11645,7 @@ Compiling ./lib/common/kernel/mseconsts_id.pas
 Compiling ./lib/common/regcomponents/regunitgroups.pas
 Linking apps/ide/mseide
 /usr/bin/ld: warning: link.res contains output sections; did you forget -T?
-471859 lines compiled, 14.6 sec 
+471859 lines compiled, 13.5 sec 
 Free Pascal Compiler version 2.6.2 [2013/07/07] for i386
 Copyright (c) 1993-2012 by Florian Klaempfl and others
 Target OS: Linux for i386
@@ -11730,7 +11724,7 @@ Compiling apps/ide/ru/projecttreeform_mfm.pas
 Compiling apps/ide/ru/msepropertyeditorsmodule_mfm.pas
 Linking apps/ide/ru/libi18n_ru.so
 /usr/bin/ld: warning: link.res contains output sections; did you forget -T?
-33632 lines compiled, 0.9 sec 
+33632 lines compiled, 0.7 sec 
 Free Pascal Compiler version 2.6.2 [2013/07/07] for i386
 Copyright (c) 1993-2012 by Florian Klaempfl and others
 Target OS: Linux for i386
@@ -12264,8 +12258,8 @@ allowed to use iTALC.
   264/326: libgtkmm3.0-devel     #########################################################################################################
   265/326: postfix               #########################################################################################################
 Generating a 1024 bit RSA private key
-.................++++++
-.....................++++++
+..++++++
+...........................................................................++++++
 writing new private key to '/etc/pki/tls/private/postfix.pem'
 -----
 postfix.service is not a native service, redirecting to /sbin/chkconfig.

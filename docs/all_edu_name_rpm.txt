@@ -1,5 +1,4 @@
 a2ps
-a52dec
 abattis-cantarell-fonts
 abiword
 accountsservice
@@ -358,7 +357,6 @@ excalibur-configuration
 exe
 expect
 ext3grep
-faad2
 fbreader-common
 fbreader-gtk
 felix-bundlerepository
@@ -624,7 +622,6 @@ goffice
 goldendict
 goocanvas-i18n
 google-guice
-gpac
 gparted
 gpg-pubkey
 gpicview
@@ -640,42 +637,20 @@ groovy
 grsync
 grub
 gsettings-desktop-schemas
-gstreamer0.10-a52dec
 gstreamer0.10-cdparanoia
-gstreamer0.10-decoders
-gstreamer0.10-decoders-audio
-gstreamer0.10-dts
-gstreamer0.10-dv
 gstreamer0.10-faad
 gstreamer0.10-ffmpeg
-gstreamer0.10-flac
-gstreamer0.10-gsm
-gstreamer0.10-jp2k
-gstreamer0.10-lame
-gstreamer0.10-libass
 gstreamer0.10-mms
-gstreamer0.10-mpeg
-gstreamer0.10-mpeg2enc
-gstreamer0.10-musepack
-gstreamer0.10-neon
 gstreamer0.10-plugins-bad
 gstreamer0.10-plugins-base
 gstreamer0.10-plugins-good
 gstreamer0.10-plugins-ugly
 gstreamer0.10-pulse
 gstreamer0.10-python
-gstreamer0.10-resindvd
-gstreamer0.10-rsvg
-gstreamer0.10-rtmp
 gstreamer0.10-soup
-gstreamer0.10-speex
 gstreamer0.10-tools
-gstreamer0.10-twolame
 gstreamer0.10-voip
 gstreamer0.10-vp8
-gstreamer0.10-wavpack
-gstreamer0.10-x264
-gstreamer0.10-xvid
 gtk+2.0
 gtk+3.0
 gtkdialog
@@ -1204,7 +1179,6 @@ libext2fs-devel
 libexttextcat
 libexttextcat0
 libfaad2
-libfame0.9_1
 libfarstream0.1_0
 libfbclient2
 libfcgi0
@@ -1357,7 +1331,6 @@ libgoa1.0_0
 libgoffice0.10_9
 libgomp1
 libgoocanvas3
-libgpac2
 libgpg-error0
 libgpg-error-common
 libgpgme11
@@ -1388,7 +1361,6 @@ libgstreamer0.10_0
 libgstreamer0.10-devel
 libgstreamer-plugins-base0.10
 libgstreamer-plugins-base0.10-devel
-libgstvdp0.10_0
 libgtk+2.0_0
 libgtk+2.0-devel
 libgtk+3_0
@@ -1675,7 +1647,6 @@ libmono-devel
 libmount1
 libmozjs185_1.0
 libmp4v2_1
-libmp4v2_2
 libmpc2
 libmpcdec5
 libmpeg2dec0
@@ -1875,7 +1846,7 @@ libpyglib2.0_0
 libpyglib-gi2.0_0
 libpython2.7
 libpython3.2
-libpython-devel
+libpython3-devel
 libqalculate5
 libqalculate-data
 libqassistant4
@@ -1916,9 +1887,7 @@ libqtxmlpatterns4
 libquadmath0
 libquadmath-devel
 libquazip1
-libquicktime
 libquicktime0
-libquicktime-dv
 libqutim0
 libqutim-adiumwebview0
 libquvi7
@@ -2201,7 +2170,6 @@ libxcursor1
 libxcursor-devel
 libxdamage1
 libxdamage-devel
-libxdg-basedir1
 libxdmcp6
 libxdmcp6-devel
 libxerces-c3.1
@@ -2218,7 +2186,6 @@ libxft-gir2.0
 libxi6
 libxi-devel
 libxine1
-libxine2
 libxinerama1
 libxinerama1-devel
 libxkbfile1
@@ -2460,7 +2427,6 @@ mono-winfxcore
 mountloop
 mozilla-filesystem
 mpage
-mpeg2dec
 mpg123
 mplayer
 mplayer-gui
@@ -2728,8 +2694,6 @@ pgadmin3
 phet-online
 phonon-devel
 phonon-gstreamer
-phonon-vlc
-phonon-xine
 photorec
 php-cli
 php-ctype
@@ -2862,6 +2826,8 @@ pyogg
 pyorbit
 python
 python3
+python3-pkg-resources
+python3-setuptools
 python-beaker
 python-cairo
 python-chardet
@@ -2932,7 +2898,6 @@ python-sqlalchemy
 python-sqlite2
 python-twisted-core
 python-twisted-web
-python-virtualenv
 python-webkitgtk
 python-xlib
 python-zope-interface
@@ -3142,7 +3107,6 @@ tano
 tanukiwrapper
 tar
 task-anjuta
-task-codecs
 task-gambas3
 task-gnome
 task-gnome-minimal
@@ -3196,7 +3160,6 @@ tomcat6-jsp-2.1-api
 tomcat6-servlet-2.5-api
 totem-pl-parser-i18n
 traceroute
-transcode
 transfig
 transfugdrake
 ttmkfdir
@@ -3251,7 +3214,6 @@ virtualbox-kernel-3.3.8-server-2.mga2
 visad
 vlc
 vlc-plugin-common
-vlc-plugin-pulse
 vlc-qt
 vlc-qt-devel
 vnstat
@@ -3262,7 +3224,6 @@ vte
 vte3
 vym
 wammu
-wavpack
 webkit
 webkit1.0
 webkit3
@@ -3376,7 +3337,6 @@ x11-server-common
 x11-server-xorg
 x11-tools
 x125
-x264
 xalan-j2
 xaos
 xapool
@@ -3412,14 +3372,9 @@ xfwp
 xgamma
 xgc
 xhost
-xine1.2-common
-xine-faad
-xine-flac
 xine-plugins
-xine-pulse
 xinetd
 xine-ui
-xine-wavpack
 xinit
 xinitrc
 xkbcomp

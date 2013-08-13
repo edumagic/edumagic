@@ -1,5 +1,4 @@
 a2ps
-a52dec
 abattis-cantarell-fonts
 accountsservice
 acetoneiso
@@ -203,7 +202,6 @@ evince
 evolution-data-server
 expect
 ext3grep
-faad2
 fbreader-common
 fbreader-gtk
 ffmpeg
@@ -324,7 +322,6 @@ gnome-video-effects
 gnupg
 gnupg2
 gobject-introspection
-gpac
 gparted
 gpg-pubkey
 gpicview
@@ -337,42 +334,19 @@ groff-perl
 grsync
 grub
 gsettings-desktop-schemas
-gstreamer0.10-a52dec
 gstreamer0.10-cdparanoia
-gstreamer0.10-decoders
-gstreamer0.10-decoders-audio
-gstreamer0.10-dts
-gstreamer0.10-dv
 gstreamer0.10-faad
-gstreamer0.10-ffmpeg
-gstreamer0.10-flac
-gstreamer0.10-gsm
-gstreamer0.10-jp2k
-gstreamer0.10-lame
-gstreamer0.10-libass
 gstreamer0.10-mms
-gstreamer0.10-mpeg
-gstreamer0.10-mpeg2enc
-gstreamer0.10-musepack
-gstreamer0.10-neon
 gstreamer0.10-plugins-bad
 gstreamer0.10-plugins-base
 gstreamer0.10-plugins-good
 gstreamer0.10-plugins-ugly
 gstreamer0.10-pulse
 gstreamer0.10-python
-gstreamer0.10-resindvd
-gstreamer0.10-rsvg
-gstreamer0.10-rtmp
 gstreamer0.10-soup
-gstreamer0.10-speex
 gstreamer0.10-tools
-gstreamer0.10-twolame
 gstreamer0.10-voip
 gstreamer0.10-vp8
-gstreamer0.10-wavpack
-gstreamer0.10-x264
-gstreamer0.10-xvid
 gtk+2.0
 gtk+3.0
 gtkdialog
@@ -691,7 +665,6 @@ libext2fs-devel
 libexttextcat
 libexttextcat0
 libfaad2
-libfame0.9_1
 libffado2
 libffi5
 libffi5-devel
@@ -802,7 +775,6 @@ libgnome-vfs2_0
 libgnutls28
 libgoa1.0_0
 libgomp1
-libgpac2
 libgpg-error0
 libgpg-error-common
 libgpgme11
@@ -826,7 +798,6 @@ libgst-gir0.10
 libgstphotography0.10_0
 libgstreamer0.10_0
 libgstreamer-plugins-base0.10
-libgstvdp0.10_0
 libgtk+2.0_0
 libgtk+3_0
 libgtk-engines2
@@ -1018,7 +989,6 @@ libmolletnetwork4
 libmount1
 libmozjs185_1.0
 libmp4v2_1
-libmp4v2_2
 libmpc2
 libmpcdec5
 libmpeg2dec0
@@ -1206,9 +1176,7 @@ libqtwebkit2.2_4
 libqtxml4
 libqtxmlpatterns4
 libquadmath0
-libquicktime
 libquicktime0
-libquicktime-dv
 libqutim0
 libqutim-adiumwebview0
 libquvi7
@@ -1425,7 +1393,6 @@ libxcursor1
 libxcursor-devel
 libxdamage1
 libxdamage-devel
-libxdg-basedir1
 libxdmcp6
 libxdmcp6-devel
 libxext6
@@ -1439,8 +1406,6 @@ libxft2
 libxft-gir2.0
 libxi6
 libxi-devel
-libxine1
-libxine2
 libxinerama1
 libxinerama1-devel
 libxkbfile1
@@ -1568,7 +1533,6 @@ mod_mnger
 monitor-edid
 mountloop
 mpage
-mpeg2dec
 mpg123
 mplayer
 mplayer-gui
@@ -1745,8 +1709,6 @@ perl-YAML-Tiny
 phet-online
 phonon-devel
 phonon-gstreamer
-phonon-vlc
-phonon-xine
 photorec
 pinentry
 pinentry-qt4
@@ -1960,7 +1922,6 @@ t1utils
 taglib-extras
 tano
 tar
-task-codecs
 task-gnome
 task-gnome-minimal
 task-kde4
@@ -1999,7 +1960,6 @@ tolua++
 tomcat6-servlet-2.5-api
 totem-pl-parser-i18n
 traceroute
-transcode
 transfugdrake
 ttmkfdir
 tv-fonts
@@ -2037,7 +1997,6 @@ vim-minimal
 virtualbox-kernel-3.3.8-server-2.mga2
 vlc
 vlc-plugin-common
-vlc-plugin-pulse
 vlc-qt
 vlc-qt-devel
 vnstat
@@ -2047,7 +2006,6 @@ vpnpptp-allde
 vte
 vte3
 wammu
-wavpack
 webkit
 webkit1.0
 webkit3
@@ -2152,7 +2110,6 @@ x11-server-common
 x11-server-xorg
 x11-tools
 x125
-x264
 xarchiver
 xauth
 xawtv
@@ -2182,13 +2139,7 @@ xfwp
 xgamma
 xgc
 xhost
-xine1.2-common
-xine-faad
-xine-flac
-xine-plugins
-xine-pulse
 xinetd
-xine-wavpack
 xinit
 xinitrc
 xkbcomp

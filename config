@@ -38,8 +38,8 @@ RPM_CACHE=cache
 #but it would not allow to rebuild modules again without already applied patches, and you must start building from the first script
 #ROOTFS_INITRD может быть равно $ROOTFS - это ускорит сборку и займет меньше дискового пространства,
 #но это не позволит пересобрать модули повторно без уже наложенных патчей, и придется начать сборку с самого начала
-#ROOTFS_INITRD=$ROOTFS
-ROOTFS_INITRD=$MOD_ROOTFS_DIR/rootfs_initrd
+ROOTFS_INITRD=$ROOTFS
+#ROOTFS_INITRD=$MOD_ROOTFS_DIR/rootfs_initrd
 
 #Parameters for urpmi
 #Параметры urpmi

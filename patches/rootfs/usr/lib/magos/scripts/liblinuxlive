@@ -1034,7 +1034,7 @@ modprobe_usb_modules()
    for b in $ATA_MODULES ;do
       if [ "$a" = "$b" ]
       then
-        echolog "loading module $b for ATA devices"
+        debug_log "loading module $b for ATA devices"
         modprobe_module $b
       fi
    done

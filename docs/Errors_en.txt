@@ -17,4 +17,3 @@ https://bugs.mageia.org/show_bug.cgi?id=10103 - VPN OpenL2TP does not work, bug 
 *) To add virtualbox and addons
 *) "mageia" can not be disabled while KDE is starting
 *) The Menu and the Desktop are not always updating automatic
-*) There may be problems with the IDE devices

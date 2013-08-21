@@ -45,6 +45,13 @@ lazarus-zeosdbo
 lazarus-sdpo
 lazarus-gifanim
 hugs98
+hugs98-alut
+hugs98-demos
+hugs98-glut
+hugs98-hgl
+hugs98-openal
+hugs98-opengl
+hugs98-x11
 monodevelop
 mseide-msegui
 fritzing

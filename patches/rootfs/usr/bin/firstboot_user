@@ -152,9 +152,14 @@ then
     if [ ! -f "~/.geometria/options.xml" ]
     then
       mkdir -p ~/.geometria
+      ver_geometria=3.1
+      if [ -f "/usr/share/geometria/version" ]
+      then
+        ver_geometria=`cat /usr/share/geometria/version`
+      fi
       echo '<?xml version="1.0" encoding="UTF-8"?>' >> ~/.geometria/options.xml
       echo '<options xmlns="http://geocentral.net">' >> ~/.geometria/options.xml
-      echo '<version>3.1</version>' >> ~/.geometria/options.xml
+      echo "<version>$ver_geometria</version>" >> ~/.geometria/options.xml
       echo '<font>' >> ~/.geometria/options.xml
       echo '<name>Sans-serif</name>' >> ~/.geometria/options.xml
       echo '<style>bold</style>' >> ~/.geometria/options.xml

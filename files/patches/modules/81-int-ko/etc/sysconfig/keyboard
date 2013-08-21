@@ -1,5 +1,0 @@
-XkbModel=pc105
-XkbLayout="kr(kr104)"
-KEYBOARD=kr
-XkbOptions=compose:rwin
-KEYTABLE=us

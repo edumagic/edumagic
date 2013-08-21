@@ -1,5 +1,0 @@
-XkbModel=pc105
-XkbLayout=nl
-KEYBOARD=nl
-KEYTABLE=nl-latin1
-XkbOptions=compose:rwin

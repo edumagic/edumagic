@@ -1,5 +1,0 @@
-XkbModel=pc105
-XkbLayout="sk(qwerty)"
-KEYBOARD=sk_qwerty
-KEYTABLE=sk-qwerty
-XkbOptions=compose:rwin

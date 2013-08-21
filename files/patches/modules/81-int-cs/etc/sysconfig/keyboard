@@ -1,5 +1,0 @@
-XkbModel=pc105
-XkbLayout="cz(qwerty)"
-KEYBOARD=cz_qwerty
-KEYTABLE=cz-lat2
-XkbOptions=compose:rwin

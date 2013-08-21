@@ -1,5 +1,0 @@
-XkbModel=pc105
-XkbLayout=no
-KEYBOARD=no
-KEYTABLE=no-latin1
-XkbOptions=compose:rwin

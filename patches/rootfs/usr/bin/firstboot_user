@@ -207,4 +207,18 @@ then
   fi
 fi
 
+#Create config for fet
+if [ "$LANG" = "Russian" ]
+then
+  if [ -f "/usr/bin/fet" ]
+  then
+    if [ ! -f "~/.config/fet/fettimetabling.conf" ]
+    then
+      mkdir -p ~/.config/fet
+      echo "[General]" >> ~/.config/fet/fettimetabling.conf
+      echo "Language=ru" >> ~/.config/fet/fettimetabling.conf
+    fi
+  fi
+fi
+
 exit 0

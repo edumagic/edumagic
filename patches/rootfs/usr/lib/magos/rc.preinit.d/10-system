@@ -87,6 +87,9 @@ sed -i "/NotShowIn=/d" usr/share/applications/gnome-search-tool.desktop
 sed -i "/NotShowIn=/d" usr/share/applications/scim-setup.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/kde4/krandrtray.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/kde4/kfind.desktop
+sed -i "/OnlyShowIn=/d" usr/share/applications/brasero-nautilus.desktop
+sed -i "/NoDisplay=/d" usr/share/applications/brasero-nautilus.desktop
+sed -i -e 's|Categories=.*|Categories=GTK;GNOME;AudioVideo;DiscBurning;|g' usr/share/applications/brasero-nautilus.desktop
 
 #Fix MIME for file-roller
 sed -i -e 's|application/x-ms-dos-executable;||g' usr/share/applications/file-roller.desktop

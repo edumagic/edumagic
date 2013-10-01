@@ -123,6 +123,12 @@ fi
 #else
 #  chroot . chkconfig --del network-up
 #fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable hostapd.service || chroot . chkconfig --del hostapd
+else
+  chroot . chkconfig --del hostapd
+fi
 umount proc
 
 echo $(basename $0)-$VER >> etc/once_boot_scripts

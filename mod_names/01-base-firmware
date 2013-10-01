@@ -13,3 +13,4 @@ iwlwifi-agn-ucode
 kernel-firmware-nonfree
 radeon-firmware
 kernel-firmware
+rtlwifi-firmware

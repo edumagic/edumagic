@@ -61,7 +61,6 @@ xine-ui
 pidgin
 libffmpeg-devel
 pidgin-plugin-mrim
-opera
 klavaro
 tuxtype
 itest-client
@@ -78,5 +77,5 @@ dosemu
 dosbox
 dosemu-freedos
 task-lamp
-fp-ide
+fp-ide-ru
 task-gambas3

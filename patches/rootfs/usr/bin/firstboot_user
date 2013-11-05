@@ -221,4 +221,16 @@ then
   fi
 fi
 
+#Create config for dosbox
+if [ "$LANG" = "Russian" ]
+then
+  if [ -f "/usr/bin/dosbox" ]
+  then
+    if [ -f "/usr/bin/dosbox-set-lang" ]
+    then
+      dosbox-set-lang ru
+    fi
+  fi
+fi
+
 exit 0

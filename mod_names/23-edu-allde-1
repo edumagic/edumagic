@@ -31,11 +31,6 @@ FreeBASIC
 basic256
 scratch
 kumir
-kumir-pluginstarter
-kumir-worlds-kuznechik
-kumir-worlds-painter
-kumir-worlds-turtle
-kumir-worlds-vodoley
 lazarus
 lazarus-bgra
 lazarus-inet
@@ -78,4 +73,5 @@ dosbox
 dosemu-freedos
 task-lamp
 fp-ide-ru
+fp-ide-en
 task-gambas3

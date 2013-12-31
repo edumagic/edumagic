@@ -13,4 +13,4 @@ httpfs
 vim-minimal
 vim-enhanced
 #rpm-build
-aum
+aum++

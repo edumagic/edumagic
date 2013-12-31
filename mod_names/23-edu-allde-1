@@ -26,6 +26,7 @@ kompozer-l10n-ru
 kompozer-myspell-ru
 bluefish
 geany
+#geany-plugins
 fpc
 FreeBASIC
 basic256
@@ -34,7 +35,7 @@ kumir
 lazarus
 lazarus-bgra
 lazarus-inet
-lazarus-lazpaint
+#lazarus-lazpaint
 lazarus-uniqueinstance
 lazarus-zeosdbo
 lazarus-sdpo
@@ -75,3 +76,4 @@ task-lamp
 fp-ide-ru
 fp-ide-en
 task-gambas3
+bwbasic

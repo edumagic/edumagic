@@ -88,6 +88,7 @@ sed -i "/NotShowIn=/d" usr/share/applications/scim-setup.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/kde4/krandrtray.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/kde4/kfind.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/brasero-nautilus.desktop
+sed -i "/OnlyShowIn=/d" usr/share/applications/xfburn.desktop
 sed -i "/NoDisplay=/d" usr/share/applications/brasero-nautilus.desktop
 sed -i -e 's|Categories=.*|Categories=GTK;GNOME;AudioVideo;DiscBurning;|g' usr/share/applications/brasero-nautilus.desktop
 

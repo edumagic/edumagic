@@ -14,6 +14,9 @@ ENABLED=yes
 
 sed -i s/'is_empty_hash_ref($previous_config); my $force = 1 if $first_run; $'/'is_empty_hash_ref($previous_config);'/ usr/share/harddrake/service_harddrake
 sed -i 's|my $ret; return 1 unless ( -f '\''/var/lock/subsys/local'\'' );$|my $ret;|' usr/lib/libDrakX/do_pkgs.pm
+#sed -i s/'#            sleep 4'/'^[[:space:]]*sleep[[:space:]]*4'/ usr/lib/libDrakX/modules.pm
+#sed -i s/'#    install_server('/'^[[:space:]]*install_server('/ usr/lib/libDrakX/Xconfig/card.pm
+#sed -i s/'#    Xconfig::various::setup_kms'/'^[[:space:]]*Xconfig::various::setup_kms'/ usr/lib/libDrakX/Xconfig/main.pm
 
 grep -q xdriver= proc/cmdline && XORG_DRIVER=$(cat proc/cmdline | awk -F xdriver= '{print $2}' | awk '{print $1}')
 if [ ! "$XORG_DRIVER" = "" ]
@@ -21,6 +24,9 @@ then
   rm -f etc/sysconfig/harddrake2/previous_hw 2>/dev/null
   sed -i s/'is_empty_hash_ref($previous_config);$'/'is_empty_hash_ref($previous_config); my $force = 1 if $first_run; '/ usr/share/harddrake/service_harddrake
   sed -i 's|my $ret;$|my $ret; return 1 unless ( -f '\''/var/lock/subsys/local'\'' );|' usr/lib/libDrakX/do_pkgs.pm
+#  sed -i s/'^[[:space:]]*sleep[[:space:]]*4'/'#            sleep 4'/ usr/lib/libDrakX/modules.pm
+#  sed -i s/'^[[:space:]]*install_server('/'#    install_server('/ usr/lib/libDrakX/Xconfig/card.pm
+#  sed -i s/'^[[:space:]]*Xconfig::various::setup_kms'/'#    Xconfig::various::setup_kms'/ usr/lib/libDrakX/Xconfig/main.pm
   VER=`cat /VERSION|awk '{print $2}'`
   ONCE=`cat etc/once_boot_scripts|grep $(basename $0)-$VER`
   if [ "$ONCE" = "" ]
@@ -48,6 +54,9 @@ for a in $(cmdline_value xvideo | tr , " " ) ;do
           sed -i -e "/Section \"Device\"/!b;:x;n;s/Driver.*/Driver \"vesa\"/;t;/Section/b;bx" etc/X11/xorg.conf
           sed -i s/'is_empty_hash_ref($previous_config);$'/'is_empty_hash_ref($previous_config); my $force = 1 if $first_run; '/ usr/share/harddrake/service_harddrake
           sed -i 's|my $ret;$|my $ret; return 1 unless ( -f '\''/var/lock/subsys/local'\'' );|' usr/lib/libDrakX/do_pkgs.pm
+#          sed -i s/'^[[:space:]]*sleep[[:space:]]*4'/'#            sleep 4'/ usr/lib/libDrakX/modules.pm
+#          sed -i s/'^[[:space:]]*install_server('/'#    install_server('/ usr/lib/libDrakX/Xconfig/card.pm
+#          sed -i s/'^[[:space:]]*Xconfig::various::setup_kms'/'#    Xconfig::various::setup_kms'/ usr/lib/libDrakX/Xconfig/main.pm
        ;;
    esac
 done

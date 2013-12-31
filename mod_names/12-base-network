@@ -1,6 +1,13 @@
 vpnpptp-allde
 wvdial
 remmina-1.0.0
+#remmina-plugins-common
+#remmina-plugins-gnome
+#remmina-plugins-nx
+#remmina-plugins-rdp
+#remmina-plugins-telepathy
+#remmina-plugins-vnc
+#remmina-plugins-xdmcp
 gigolo
 davfs2
 bind-utils

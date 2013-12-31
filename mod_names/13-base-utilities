@@ -10,6 +10,7 @@ fskbsetting
 msec-gui
 nut-server
 epdfview
+#qpdfview
 catfish
 djview4
 djvulibre
@@ -87,8 +88,10 @@ unionfs-utils
 dropbox-servicemenu
 cdrkit-isotools
 modem-manager-gui
-po4a
+#po4a
 grsync
 ext3grep
 foremost
 recoverjpeg
+udftools
+xfburn

@@ -122,12 +122,13 @@ then
    sed -i -e 's|root=/dev/ram0|root=/dev/ram0 unionfs|g' "$DESTDIR"/boot/grub4dos/menu.lst
    sed -i -e 's|root=/dev/ram0|root=/dev/ram0 unionfs|g' "$DESTDIR"/boot/syslinux/syslinux.cfg
    sed -i -e 's|root=/dev/ram0|root=/dev/ram0 unionfs|g' "$DESTDIR"/boot/syslinux/isolinux.cfg
-   echo "Disable splash=silent"
-   echo "Отключение splash=silent"
-   sed -i -e 's|splash=silent||g' "$DESTDIR"/boot/grub4dos/menu.lst
-   sed -i -e 's|splash=silent||g' "$DESTDIR"/boot/syslinux/syslinux.cfg
-   sed -i -e 's|splash=silent||g' "$DESTDIR"/boot/syslinux/isolinux.cfg
 fi
+
+echo "Disable plymouth and splash=silent"
+echo "Отключение plymouth и splash=silent"
+sed -i -e 's|splash=silent|plymouth.enable=0|g' "$DESTDIR"/boot/grub4dos/menu.lst
+sed -i -e 's|splash=silent|plymouth.enable=0|g' "$DESTDIR"/boot/syslinux/syslinux.cfg
+sed -i -e 's|splash=silent|plymouth.enable=0|g' "$DESTDIR"/boot/syslinux/isolinux.cfg
 
 if [ "$FULL_ISO" = "full" ]
 then

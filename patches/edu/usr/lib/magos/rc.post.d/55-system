@@ -1,0 +1,36 @@
+#!/bin/bash
+# Initial script for MagOS-Linux Live operating system
+# This script are launching before starting init from linux-live script.
+# Current dir allways must be set to root (/)
+# All system path must be relative, except initrd dirs
+
+export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
+
+ENABLED=yes
+[ "$ENABLED" != "yes" ] && exit 0
+
+VER=`cat /VERSION|awk '{print $2}'`
+ONCE=`cat etc/once_boot_scripts|grep $(basename $0)-$VER`
+if [ ! "$ONCE" = "" ]
+then
+  exit 0
+fi
+
+. /liblinuxlive
+. etc/sysconfig/MagOS
+
+LANG0=`cat etc/sysconfig/i18n|grep ru_RU`
+if [ "$LANG0" = "" ]
+then
+  LANG=English
+else
+  LANG=Russian
+fi
+
+if [ "$LANG" = "Russian" ]
+then
+  rm -f usr/share/peazip/res/lang/default.txt
+  cp -f usr/share/peazip/res/lang/ru.txt usr/share/peazip/res/lang/default.txt
+fi
+
+echo $(basename $0)-$VER >> etc/once_boot_scripts

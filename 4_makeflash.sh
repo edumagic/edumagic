@@ -124,11 +124,17 @@ then
    sed -i -e 's|root=/dev/ram0|root=/dev/ram0 unionfs|g' "$DESTDIR"/boot/syslinux/isolinux.cfg
 fi
 
-echo "Disable plymouth and splash=silent"
-echo "Отключение plymouth и splash=silent"
-sed -i -e 's|splash=silent|plymouth.enable=0|g' "$DESTDIR"/boot/grub4dos/menu.lst
-sed -i -e 's|splash=silent|plymouth.enable=0|g' "$DESTDIR"/boot/syslinux/syslinux.cfg
-sed -i -e 's|splash=silent|plymouth.enable=0|g' "$DESTDIR"/boot/syslinux/isolinux.cfg
+echo "Disable plymouth"
+echo "Отключение plymouth"
+sed -i -e 's|root=/dev/ram0|root=/dev/ram0 plymouth.enable=0|g' "$DESTDIR"/boot/grub4dos/menu.lst
+sed -i -e 's|root=/dev/ram0|root=/dev/ram0 plymouth.enable=0|g' "$DESTDIR"/boot/syslinux/syslinux.cfg
+sed -i -e 's|root=/dev/ram0|root=/dev/ram0 plymouth.enable=0|g' "$DESTDIR"/boot/syslinux/isolinux.cfg
+
+echo "Disable splash=silent"
+echo "Отключение splash=silent"
+sed -i -e 's|splash=silent||g' "$DESTDIR"/boot/grub4dos/menu.lst
+sed -i -e 's|splash=silent||g' "$DESTDIR"/boot/syslinux/syslinux.cfg
+sed -i -e 's|splash=silent||g' "$DESTDIR"/boot/syslinux/isolinux.cfg
 
 if [ "$FULL_ISO" = "full" ]
 then
@@ -191,11 +197,11 @@ mount -o bind /proc $ROOTFS_INITRD/proc || exit 1
 
 cp -p work/${FLASHNAME}_${VERREL}/VERSION $ROOTFS_INITRD/mnt/live || exit 1
 
-echo "Creating *map"
-echo "Cоздание *map"
-chroot $ROOTFS_INITRD /usr/local/bin/depmod || exit 1
-echo "Creating *map has been complete"
-echo "Cоздание *map завершено"
+#echo "Creating *map"
+#echo "Cоздание *map"
+#chroot $ROOTFS_INITRD /usr/local/bin/depmod || exit 1
+#echo "Creating *map has been complete"
+#echo "Cоздание *map завершено"
 
 chroot $ROOTFS_INITRD /usr/lib/magos/scripts/mkinitrd /boot/initrd.gz || exit 1
 mv $ROOTFS_INITRD/boot/initrd.gz "$MYPATH/$DESTDIR/MagOS" || exit 1
@@ -284,6 +290,16 @@ then
     sed -i -e 's|root=/dev/ram0|root=/dev/ram0 unionfs|g' "$DESTDIR_EDU"/boot/syslinux/syslinux.cfg
     sed -i -e 's|root=/dev/ram0|root=/dev/ram0 unionfs|g' "$DESTDIR_EDU"/boot/syslinux/isolinux.cfg
   fi
+  echo "Disable plymouth"
+  echo "Отключение plymouth"
+  sed -i -e 's|root=/dev/ram0|root=/dev/ram0 plymouth.enable=0|g' "$DESTDIR_EDU"/boot/grub4dos/menu.lst
+  sed -i -e 's|root=/dev/ram0|root=/dev/ram0 plymouth.enable=0|g' "$DESTDIR_EDU"/boot/syslinux/syslinux.cfg
+  sed -i -e 's|root=/dev/ram0|root=/dev/ram0 plymouth.enable=0|g' "$DESTDIR_EDU"/boot/syslinux/isolinux.cfg
+  echo "Disable splash=silent"
+  echo "Отключение splash=silent"
+  sed -i -e 's|splash=silent||g' "$DESTDIR_EDU"/boot/grub4dos/menu.lst
+  sed -i -e 's|splash=silent||g' "$DESTDIR_EDU"/boot/syslinux/syslinux.cfg
+  sed -i -e 's|splash=silent||g' "$DESTDIR_EDU"/boot/syslinux/isolinux.cfg
   mv -f $DESTDIR_EDU flash-edu/EduMagic_${VERREL}_${DISTRVERSION}
   echo "The script has completed work, there is edu version of system in a directory flash-edu, it's ready for installing :-)"
   echo "Работа скрипта завершена, в папке flash-edu лежит готовая к установке edu версия системы :-)"

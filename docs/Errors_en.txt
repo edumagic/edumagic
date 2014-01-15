@@ -1,17 +1,11 @@
 *) Warnings when building (full build log http://code.google.com/p/magicos/source/browse/trunk/docs/log_urpmi.txt):
-Additional information about package bcm43xx-fwcutter-006-9.mrc.mga2.i586
-You need to extract the firmware from the .sys file provided by your vendor.
-i.e bcm43xx-fwcutter -w /lib/firmware/ bcmwl5.sys
 WARNING: Activating non-hostonly initrd due to distro upgrade.
          Your initrd will be larger than needed for compatibility.
          You can disable this by setting DRACUT_SKIP_FORCED_NON_HOSTONLY=1
 *) There is a long opening menu in KDE
-*) Mageia 3 can not be used as a distribution, in which to build distro, because there is no unionfs, no aufs, which are necessary for build scripts - bug https://bugs.mageia.org/show_bug.cgi?id=8314 (Thomas Backlund already working on this bug)
 *) The distribution can not be build, based on Mageia 3, because there are bugs:
-https://bugs.mageia.org/show_bug.cgi?id=8314 - whole distro need unionfs or aufs (Thomas Backlund already working on this bug)
 https://bugs.mageia.org/show_bug.cgi?id=10103 - VPN OpenL2TP does not work, bug is open, no fix
 *) kernel 3.3.8 was used because a bug https://bugs.mageia.org/show_bug.cgi?id=10650 , which does not allow to use the newer kernels available for Mageia 2
-*) *map files are needed for distro, but depmod does not create *map: https://bugs.mageia.org/show_bug.cgi?id=10661 - bug is open, no fix (as a temporary solution has been used /usr/local/bin/depmod, which create *map)
 *) When a shutdown or reboot, then there is a bug https://bugs.mageia.org/show_bug.cgi?id=8322 , but nobody wanted to fix it
 *) Parameter xres=XxY don't work for free video drivers
 *) To add virtualbox and addons

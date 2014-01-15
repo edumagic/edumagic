@@ -237,6 +237,13 @@ then
     ln -s /usr/share/icons/gnome/48x48/devices/printer.png usr/share/pixmaps/printmgr.png
   fi
 fi
+if [ ! -f "usr/share/pixmaps/media-cdrom.png" ]
+then
+  if [ -f "usr/share/icons/nuoveXT2/48x48/devices/media-cdrom.png" ]
+  then
+    ln -s /usr/share/icons/nuoveXT2/48x48/devices/media-cdrom.png usr/share/pixmaps/media-cdrom.png
+  fi
+fi
 
 #update-desktop-database
 #update-mime-database usr/share/mime

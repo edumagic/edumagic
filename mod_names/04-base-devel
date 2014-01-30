@@ -6,7 +6,7 @@ rsync
 ntfs-3g
 suspend
 sshfs-fuse
-mkinitrd-devel
+#mkinitrd-devel
 libntfs10
 git
 httpfs

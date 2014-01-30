@@ -54,6 +54,8 @@ sed -i -e 's|OnlyShowIn=GNOME;XFCE;|OnlyShowIn=LXDE;GNOME;XFCE;|g' etc/xdg/autos
 sed -i -e 's|OnlyShowIn=GNOME;XFCE;|OnlyShowIn=LXDE;GNOME;XFCE|g' etc/xdg/autostart/bluetooth-applet.desktop
 sed -i -e 's|Categories=Video;|Categories=AudioVideo;Audio;AudioVideoEditing;GTK;X-MandrivaLinux-CrossDesktop;|g' usr/share/applications/bombono-dvd.desktop
 sed -i -e 's|peazip.desktop|PeaZip|g' usr/share/applications/peazip.desktop
+#For PulseAudio 3.x and 4.x
+sed -i -e 's|Exec=linphone|Exec=env PULSE_LATENCY_MSEC=60 linphone|g' usr/share/applications/linphone.desktop
 A=`cat etc/xdg/autostart/blueman.desktop | grep OnlyShowIn=KDE;`
 if [ "$A" = "" ]
 then

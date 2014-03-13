@@ -1,0 +1,231 @@
+#!/usr/bin/python3
+# Author: Dimitrios Glentadakis <dglent@free.fr>, 2014
+# Purpose: Configure manualy the autohint value for the fonts
+# License: GPLv3
+
+import sys
+from lxml import etree
+import os
+from PyQt4.QtGui import *
+from PyQt4.QtCore import *
+
+
+class Autohint(QDialog):
+    
+    def __init__(self, parent=None):
+        super(Autohint, self).__init__(parent)
+        home = os.getenv('HOME')
+        self.path = home+'/.config/fontconfig/fonts.conf'
+        if os.path.exists(home+'/.fonts.conf'):
+            notice = QMessageBox.information(self, '~/.fonts.conf found', 
+                                             '<a>$XDG_CONFIG_HOME/fontconfig/fonts.conf and ~/.fonts.conf</a><br/>'+
+                                             'is the conventional location for per-user font configuration,<br/>'+
+                                             'although the actual location is specified in the global fonts.conf file.<br/>'+
+                                             '<b>please note that ~/.fonts.conf is deprecated now.</b><br/>'+
+                                             'it will not be read by default in the future version.<br/>'+
+                                             'See: <a href="http://freedesktop.org/software/fontconfig/fontconfig-user.html">'+
+                                             'http://freedesktop.org/software/fontconfig/fontconfig-user.html</a>')
+        
+        self.data = []
+        self.fontsconfPresent = False
+        if os.path.exists(self.path):
+            readFile = open(self.path, 'r')
+            self.data = readFile.readlines()
+            readFile.close()
+            self.fontsconfPresent = True
+            
+
+        fontsLista=[]
+        self.fontDico = self.fonts()
+        if len(self.fontDico) >= 1:
+            for i in self.fontDico:
+                fontsLista.append(i)
+        
+        if 'autohint' not in self.fontDico:
+            self.autohintPresent = False
+        
+        self.listWidget = QListWidget()
+        self.listWidget.addItems(fontsLista)
+        
+        buttonLayout = QVBoxLayout()
+        self.buttonAdd = QPushButton('&Add...')
+        self.buttonEdit = QPushButton('&Edit...')
+        self.buttonClose = QPushButton('&Close...')
+        buttonLayout.addWidget(self.buttonAdd)
+        buttonLayout.addWidget(self.buttonEdit)
+        buttonLayout.addStretch()
+        buttonLayout.addWidget(self.buttonClose)
+        self.connect(self.buttonAdd, SIGNAL("clicked()"), self.add)
+        self.connect(self.buttonEdit, SIGNAL("clicked()"), self.edit)
+        self.connect(self.buttonClose, SIGNAL("clicked()"), self.accept)
+        self.labelPx = QLabel()
+        self.connect(self.listWidget, SIGNAL("itemSelectionChanged()"), self.output)
+        self.listWidget.setCurrentRow(0)
+        layout = QHBoxLayout()
+        vlayout = QVBoxLayout()
+        vlayout.addWidget(self.listWidget)        
+        vlayout.addWidget(self.labelPx)
+        self.output()
+        layout.addLayout(vlayout)
+        layout.addLayout(buttonLayout)
+        self.checkAutohint()
+        self.setLayout(layout)
+        self.setWindowTitle("fonts.conf")
+        
+    def checkAutohint(self):
+        if 'autohint' in self.fontDico:
+            self.buttonAdd.setEnabled(False)
+            self.buttonEdit.setEnabled(True)
+        else:
+            self.buttonEdit.setEnabled(False)
+        
+    def output(self):
+        dico = self.fontDico
+        row = self.listWidget.currentRow()
+        item = self.listWidget.item(row)
+        if self.fontsconfPresent:
+            fontConf = item.text()
+            if fontConf == 'autohint':
+                self.buttonEdit.setEnabled(True)
+            else:
+                self.buttonEdit.setEnabled(False)
+            
+            currentSet = dico[fontConf]
+            self.labelPx.setText('<b>Value:</b> '+currentSet)
+        
+    def add(self):
+        if self.fontsconfPresent and not self.autohintPresent:
+            reply = QMessageBox.question(self, "Add autohint fonts setting",
+                                         "Do you want to add Autohint setting "+
+                                         "in the {} ?".format(self.path),
+                                         QMessageBox.Yes|QMessageBox.No)
+            if reply == QMessageBox.Yes:
+                count = 0
+                for i in self.data:
+                    if i.count('match') >= 1:
+                        break
+                    count += 1
+                self.data.insert(count, '<match target="font">\n'+
+                                 ' <edit mode="assign" name="autohint">\n'+
+                                 '  <bool>true</bool>\n'+
+                                 ' </edit>\n'+
+                                 '</match>\n')
+                self.fontDico['autohint'] = 'true'
+                self.listWidget.addItem('autohint')
+                self.checkAutohint()
+                self.labelPx.setText('<b>Value:</b> '+self.fontDico['autohint'])
+                self.output()
+            else:
+                return
+        elif not self.fontsconfPresent:
+            reply = QMessageBox.question(self, "Add autohint fonts setting",
+                                         "Do you want to create file and add Autohint setting "+
+                                         "in the {} ?".format(self.path),
+                                         QMessageBox.Yes|QMessageBox.No)            
+            if reply == QMessageBox.Yes:
+                self.data.append('<?xml version="1.0"?><!DOCTYPE fontconfig SYSTEM "fonts.dtd">\n'+
+                                 '<fontconfig>\n'+
+                                 '<match target="font">\n'
+                                 ' <edit mode="assign" name="autohint">\n'
+                                 '  <bool>true</bool>\n'+
+                                 ' </edit>\n'
+                                 '</match>\n'+
+                                 '</fontconfig>\n')
+                self.fontDico['autohint'] = 'true'
+                self.listWidget.addItem('autohint')
+                self.checkAutohint()
+                self.labelPx.setText('<b>Value:</b> '+self.fontDico['autohint'])
+                self.output()
+                
+        else:
+            return
+        
+        
+    def edit(self):
+        row = self.listWidget.currentRow()
+        item = self.listWidget.item(row)
+        if item.text() != 'autohint':
+            self.labelPx.setText('Only "autohint" can be modified')
+            return
+        value = self.fontDico[item.text()]
+        valueBool = (value.capitalize())
+        if valueBool == 'True':
+            valueBool = True
+        elif valueBool == 'False':
+            valueBool = False
+        autohintCheckBox = QCheckBox('&Autohint')
+        autohintCheckBox.setChecked(valueBool)
+        okButton = QPushButton("&OK")
+        cancelButton = QPushButton("Cancel")
+        buttonLayout = QHBoxLayout()
+        buttonLayout.addStretch()
+        buttonLayout.addWidget(okButton)
+        buttonLayout.addWidget(cancelButton)
+        layout = QGridLayout()
+        layout.addWidget(autohintCheckBox, 0, 0)
+        layout.addLayout(buttonLayout, 3, 3, 1, 3)
+        form = QDialog()
+        form.setLayout(layout)
+        form.setMinimumSize(250,100)
+        self.connect(okButton, SIGNAL("clicked()"),
+                     form, SLOT("accept()"))
+        self.connect(cancelButton, SIGNAL("clicked()"),
+                     form, SLOT("reject()"))
+        form.setWindowTitle("Autohint Property")
+        if form.exec_():
+            checked = autohintCheckBox.isChecked()
+            tag='true'
+            if checked:
+                self.fontDico['autohint'] = 'true'
+            if not checked:
+                self.fontDico['autohint'] = 'false'
+                tag = 'false'
+            self.labelPx.setText('<b>Value:</b> '+self.fontDico['autohint'])
+            flagAutohint = False
+            count = 0
+            for xmltag in self.data:
+                if flagAutohint:
+                    if xmltag.count('true') >= 1:
+                        self.data[count] = xmltag.replace('true', tag)
+                    elif xmltag.count('false') >= 1:
+                        self.data[count] = xmltag.replace('false', tag)
+                    break
+                if xmltag.count('autohint'):
+                    flagAutohint = True
+                count += 1
+
+
+    def reject(self):
+        self.accept()
+
+
+    def accept(self):
+        if len(self.data) >= 1:
+            outFile = open(self.path, 'w')
+            outFile.writelines(self.data)
+            outFile.close()
+        QDialog.accept(self)
+        
+        
+    def fonts(self):
+        home = os.getenv('HOME')
+        fontsdico = {}
+        if self.fontsconfPresent:
+            tree = etree.parse(home+'/.config/fontconfig/fonts.conf')
+            fontslist = tree.findall('.//edit')
+            fontsdico = {}
+            for i in fontslist:
+                name = i.get('name')
+                try:
+                    value = i[0].text
+                except IndexError:
+                    value = 'None'
+                fontsdico[name]=value
+                
+        return fontsdico
+        
+        
+app = QApplication(sys.argv)
+form = Autohint()
+form.show()
+app.exec_()

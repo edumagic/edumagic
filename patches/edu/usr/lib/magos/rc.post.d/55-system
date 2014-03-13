@@ -24,4 +24,6 @@ then
   cp -f usr/share/peazip/res/lang/ru.txt usr/share/peazip/res/lang/default.txt
 fi
 
+usermod -G italc user
+
 echo $(basename $0)-$VER >> /etc/once_boot_scripts

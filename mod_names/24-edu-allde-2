@@ -18,6 +18,7 @@ kicad-locales-ru
 Gnupylot
 opencascade
 opendict
+opendict-lingvosoft
 pencil-planner
 deluge
 gchemcalc
@@ -63,7 +64,6 @@ netemul
 k3dsurf
 logisim
 numptyphysics
-game-editor
 kojo
 imagination
 ganttproject

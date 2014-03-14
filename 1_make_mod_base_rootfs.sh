@@ -158,9 +158,13 @@ then
 	  mount -o remount,prepend:$MOD_LINE=rw,mod:$MOD_PREV0=rr wiz_fly $ROOTFS
 	fi
 	MOD_PREV0=$MOD_LINE
+        #for imc (needs DISPLAY)
+        xhost +
 	urpmi $URPMI_PARAM --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
 	echo -ne \\n "---> OK."\\n
     done
+    #for imc (needs DISPLAY)
+    xhost -
 fi
 
 #Return after Enable Internet

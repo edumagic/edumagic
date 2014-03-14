@@ -167,8 +167,8 @@ for i in $(bin/busybox --help | grep -v Copyright | grep , | tr , " "); do
    ln -s busybox bin/$i 2>/dev/null
 done
 
-cp -f /usr/lib/libbdevid.so.* usr/lib   || exit 1
-cp -f /usr/lib/libnash.so.*   usr/lib   || exit 1
+#cp -f /usr/lib/libbdevid.so.* usr/lib   || exit 1
+#cp -f /usr/lib/libnash.so.*   usr/lib   || exit 1
 cp -f /lib/libfuse.*   usr/lib          || exit 1
 cp -f /lib/libulockmgr.*   usr/lib      || exit 1
 [ -f /usr/share/pci.ids ] && cp -f /usr/share/pci.ids      usr/share 

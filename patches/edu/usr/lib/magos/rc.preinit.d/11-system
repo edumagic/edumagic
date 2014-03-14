@@ -66,4 +66,6 @@ sed -i "/desktop:/d" usr/share/mime/packages/tupi.xml
 #update-desktop-database
 #update-mime-database usr/share/mime
 
+usermod -G italc user
+
 echo $(basename $0)-$VER >> etc/once_boot_scripts

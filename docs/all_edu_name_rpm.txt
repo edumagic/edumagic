@@ -145,6 +145,7 @@ bluej-oxygen-icons
 blueman
 bluez
 bluez-firmware
+bm
 bodr
 bombono-dvd
 bootloader-utils
@@ -339,7 +340,6 @@ easytag
 ebtables
 ecj
 ecj3
-eclipse-swt
 editobj2
 editres
 edugraphe
@@ -375,6 +375,11 @@ felix-osgi-obr
 felix-parent
 felix-shell
 felix-utils
+festival
+festlex-CMU
+festlex-POSLEX
+festvox-kallpc16k
+festvox-kallpc-common
 fet
 ffmpeg
 ffmpegthumbs
@@ -491,7 +496,6 @@ gambas3-gb-xml-xslt
 gambas3-ide
 gambas3-runtime
 gambas3-script
-game-editor
 gamin
 gamine
 gammu
@@ -756,6 +760,7 @@ ipw2200-firmware
 iso-codes
 isomaster
 isorelax
+italc
 italc-client
 italc-client-autostart
 italc-master
@@ -1136,7 +1141,6 @@ libdca0
 libdconf0
 libdevhelp3_0
 libdevmapper1.02
-libdevmapper-devel
 libdevmapper-event1.02
 libdigikamcore2
 libdigikamdatabase2
@@ -1178,12 +1182,12 @@ libedataserverui1
 libedit0
 libeiskaltdcpp2.2
 libelfutils1
-libelfutils-devel
 libenca0
 libenca-devel
 libenchant1
 libepub0
 libespeak1
+libeststring1.2
 libetpan16
 libevdocument3_4
 libevent5
@@ -1198,7 +1202,6 @@ libexosip2_7
 libexpat1
 libexpect5.43
 libext2fs2
-libext2fs-devel
 libexttextcat
 libexttextcat0
 libfaad2
@@ -1462,7 +1465,6 @@ libiptcdata0
 libiptcdata-i18n
 libiso9660_8
 libisofs6
-libitalc
 libiw29
 libjack0
 libjack-devel
@@ -1789,7 +1791,6 @@ libpangomm2.4_1
 libpangomm2.4-devel
 libpaper1
 libparted1
-libparted-devel
 libpathplan4
 libpcap1
 libpci3
@@ -1831,7 +1832,6 @@ libpoppler19
 libpoppler-glib8
 libpoppler-qt4-3
 libpopt0
-libpopt-devel
 libportaudio2
 libpostfix1
 libpostproc52
@@ -1928,7 +1928,9 @@ libquazip1
 libquicktime0
 libQupZilla1
 libqutim0
+libqutim-adiumchat1
 libqutim-adiumwebview0
+libqutim-simplecontactlist0
 libquvi7
 libquvi-scripts
 libqwt5
@@ -2028,6 +2030,7 @@ libsoup-gir2.4
 libsox1
 libspandsp2
 libspectre1
+libspeech_tools2.1.1
 libspeex1
 libspeex-devel
 libspreadsheet1.11.3
@@ -2094,7 +2097,6 @@ libtxc-dxtn
 libucl1
 libuClibc0.9.30.3
 libuClibc-zlib1
-libuClibc-zlib-devel
 libudev0
 libudev0-devel
 libudf0
@@ -2142,6 +2144,7 @@ libvorbisenc2
 libvorbisfile3
 libvpx1
 libvpx-devel
+libvreen0
 libvte2_90_9
 libvte9
 libwacom
@@ -2260,7 +2263,6 @@ libxt6
 libxtrap6
 libxtst6
 libxtst6-devel
-libxulrunner10.0.4
 libxv1
 libxvid4
 libxvid-devel
@@ -2428,6 +2430,7 @@ mesa
 mesa-demos
 metacity
 meta-task
+mgarepo
 Midnight-Commander
 migration-assistant
 million
@@ -2438,7 +2441,6 @@ minicom
 mjpegtools
 mkfontdir
 mkfontscale
-mkinitrd-devel
 mkxauth
 ml85p
 mlocate
@@ -2500,7 +2502,6 @@ mythes
 mythes-ru
 nail
 nanoxml
-nash
 nautilus
 ncurses
 ndiswrapper
@@ -2551,6 +2552,7 @@ opencascade
 openclass
 opencv-devel
 opendict
+opendict-lingvosoft
 openeuclide
 opengrade
 openl2tp
@@ -2872,6 +2874,7 @@ python3-setuptools
 python-beaker
 python-cairo
 python-chardet
+python-cheetah
 python-configobj
 python-cups
 python-curl
@@ -2977,6 +2980,8 @@ qupzilla
 qupzilla-core
 qupzilla-plugins
 qutim
+qutim-emoticons
+qutim-sounds
 radeon-firmware
 radeontool
 radiotray
@@ -3091,6 +3096,7 @@ soundwrapper
 sox
 soya
 spec-helper
+speech_tools
 speedtouch-firmware
 speedtouch-firmware-extractor
 spice-parent
@@ -3146,6 +3152,7 @@ system-config-samba
 system-config-samba-docs
 systemd
 systemd-sysvinit
+systemd-tools
 systemd-units
 sysvinit-legacy-tools
 t1lib-config
@@ -3176,7 +3183,6 @@ task-printing-okidata
 task-printing-scanning
 task-printing-server
 task-pulseaudio
-task-qutim
 task-scanning
 task-x11
 tcb
@@ -3231,7 +3237,6 @@ udisks2
 uidesigner
 umbrello
 unace
-unarj
 uniconvertor
 unionfs-utils
 unrar

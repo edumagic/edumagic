@@ -54,6 +54,7 @@ bitmap
 blueman
 bluez
 bluez-firmware
+bm
 bombono-dvd
 bootloader-utils
 bootsplash
@@ -209,6 +210,11 @@ expect
 ext3grep
 fbreader-common
 fbreader-gtk
+festival
+festlex-CMU
+festlex-POSLEX
+festvox-kallpc16k
+festvox-kallpc-common
 ffmpeg
 ffmpegthumbs
 fglrx-kernel-3.3.8-server-2.mga2
@@ -263,6 +269,7 @@ genhdlist2
 geoip
 gettext
 gettext-base
+gftp
 ghostscript
 ghostscript-common
 ghostscript-fonts
@@ -540,7 +547,6 @@ libavutil51
 libbabl0.1_0
 libblas3
 libblkid1
-libblkid-devel
 libbluez3
 libbluray1
 libbonobo
@@ -557,7 +563,6 @@ libbrasero-utils3_1
 libbs2b0
 libburn4
 libbzip2_1
-libbzip2-devel
 libcaca0
 libcairo2
 libcairo-gir1.0
@@ -621,7 +626,6 @@ libdc1394_22
 libdca0
 libdconf0
 libdevmapper1.02
-libdevmapper-devel
 libdevmapper-event1.02
 libdirac0
 libdirectfb1.5_0
@@ -657,10 +661,10 @@ libedataserverui1
 libedit0
 libeiskaltdcpp2.2
 libelfutils1
-libelfutils-devel
 libenca0
 libenchant1
 libepub0
+libeststring1.2
 libetpan16
 libevdocument3_4
 libevent5
@@ -675,7 +679,6 @@ libexosip2_7
 libexpat1
 libexpect5.43
 libext2fs2
-libext2fs-devel
 libexttextcat
 libexttextcat0
 libfaad2
@@ -1073,8 +1076,6 @@ libORBit2_0
 liborc0.4_0
 libortp8
 libosip2_7
-libossp_uuid16
-libossp_uuid-devel
 liboxygenstyle4
 liboxygenstyleconfig4
 libp11-kit0
@@ -1088,7 +1089,6 @@ libpango-gir1.0
 libpangomm2.4_1
 libpaper1
 libparted1
-libparted-devel
 libpathplan4
 libpcap1
 libpci3
@@ -1125,7 +1125,6 @@ libpoppler19
 libpoppler-glib8
 libpoppler-qt4-3
 libpopt0
-libpopt-devel
 libportaudio2
 libpostproc52
 libpowerdevilconfigcommonprivate4
@@ -1194,7 +1193,9 @@ libquadmath0
 libquicktime0
 libQupZilla1
 libqutim0
+libqutim-adiumchat1
 libqutim-adiumwebview0
+libqutim-simplecontactlist0
 libquvi7
 libquvi-scripts
 libraptor2_0
@@ -1261,6 +1262,7 @@ libsoup-gir2.4
 libsox1
 libspandsp2
 libspectre1
+libspeech_tools2.1.1
 libspeex1
 libsqlite3_0
 libssh2_1
@@ -1308,11 +1310,10 @@ libtotem-plparser17
 libtracker0.14_0
 libtwolame0
 libtxc-dxtn
+libucl1
 libuClibc0.9.30.3
 libuClibc-zlib1
-libuClibc-zlib-devel
 libudev0
-libudev0-devel
 libudftools1
 libudisks2_0
 libunistring0
@@ -1346,6 +1347,7 @@ libvorbis-devel
 libvorbisenc2
 libvorbisfile3
 libvpx1
+libvreen0
 libvte2_90_9
 libvte9
 libwacom
@@ -1539,6 +1541,7 @@ mesa
 mesa-demos
 metacity
 meta-task
+mgarepo
 Midnight-Commander
 migration-assistant
 min12xxw
@@ -1547,7 +1550,6 @@ minicom
 mjpegtools
 mkfontdir
 mkfontscale
-mkinitrd-devel
 mkxauth
 ml85p
 mlocate
@@ -1572,7 +1574,6 @@ myagent-im
 mythes
 mythes-ru
 nail
-nash
 nautilus
 ncurses
 ndiswrapper
@@ -1638,6 +1639,7 @@ pbmtozjs
 pciutils
 pcmanfm
 pcmciautils
+peazip
 pentaxpj
 perl
 perl-Authen-SASL
@@ -1784,6 +1786,7 @@ pygtk2.0-libglade
 pyorbit
 python
 python-cairo
+python-cheetah
 python-configobj
 python-cups
 python-curl
@@ -1794,6 +1797,7 @@ python-gi
 python-gnome-menus
 python-gobject
 python-gtksourceview
+python-httplib2
 python-imaging
 python-lxml
 python-m2crypto
@@ -1834,6 +1838,8 @@ qupzilla
 qupzilla-core
 qupzilla-plugins
 qutim
+qutim-emoticons
+qutim-sounds
 radeon-firmware
 radeontool
 radiotray
@@ -1905,6 +1911,7 @@ sound-theme-freedesktop
 soundwrapper
 sox
 spec-helper
+speech_tools
 speedtouch-firmware
 speedtouch-firmware-extractor
 sqlite3-tools
@@ -1938,6 +1945,7 @@ system-config-samba
 system-config-samba-docs
 systemd
 systemd-sysvinit
+systemd-tools
 systemd-units
 sysvinit-legacy-tools
 t1utils
@@ -1959,7 +1967,6 @@ task-printing-okidata
 task-printing-scanning
 task-printing-server
 task-pulseaudio
-task-qutim
 task-scanning
 task-x11
 tcb
@@ -1998,6 +2005,7 @@ unrar
 unzip
 update-alternatives
 upower
+upx
 urpmi
 urw-fonts
 usb_modeswitch

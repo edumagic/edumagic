@@ -269,7 +269,6 @@
       <Category>Chart</Category>
       <Category>ProjectManagement</Category>
       <Category>Finance</Category>
-      <Filename>freemind.desktop</Filename>
       <Filename>gcalctool.desktop</Filename>
       <Filename>kde4-Kontact.desktop</Filename>
       <Filename>jpilot.desktop</Filename>
@@ -295,7 +294,6 @@
     <Filename>gucharmap.desktop</Filename>
     <Separator/>
     <Filename>kde4-semantik.desktop</Filename>
-    <Filename>freemind.desktop</Filename>
     <Filename>mandriva-qcad.desktop</Filename>
     <Merge type="files"/>
     <Merge type="menus"/>
@@ -318,7 +316,6 @@
      </Or>
      <Category>Office</Category>
     </And>
-    <Filename>freemind.desktop</Filename>
     <Filename>kde4-semantik.desktop</Filename>
     <Filename>mandriva-qcad.desktop</Filename>
     <Filename>gucharmap.desktop</Filename>
@@ -840,7 +837,7 @@
       <Category>GNOME</Category>
       <Category>Dictionary</Category>
       <Category>Core</Category>
-      <Filename>mandriva-mucommander.desktop</Filename>
+      <Filename>mucommander.desktop</Filename>
       <Filename>mageia-opengrade.desktop</Filename>
      </Not>
     </And>
@@ -1121,7 +1118,7 @@
     <Separator/>
     <Filename>Midnight-Commander.desktop</Filename>
     <Filename>Midnight-Commander-root.desktop</Filename>
-    <Filename>mandriva-mucommander.desktop</Filename>
+    <Filename>mucommander.desktop</Filename>
     <Separator/>
     <Filename>gnome-shell.desktop</Filename>
     <Filename>nautilus.desktop</Filename>
@@ -1155,7 +1152,7 @@
     <Filename>kde4-krusader.desktop</Filename>
     <Filename>gparted.desktop</Filename>
     <Filename>catfish.desktop</Filename>
-    <Filename>mandriva-mucommander.desktop</Filename>
+    <Filename>mucommander.desktop</Filename>
     <Filename>kde4-krusader_root-mode.desktop</Filename>
    </Include>
   </Menu>

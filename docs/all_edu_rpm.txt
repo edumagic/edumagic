@@ -2487,7 +2487,7 @@ msv-msv-2009.1-9.mga1
 msv-xsdlib-2009.1-9.mga1
 mtink-1.0.16-6.mga2
 mtools-4.0.17-2.mga2
-mucommander-0.9.0-2.mrc.mga2
+mucommander-0.9.0-4.mrc.mga2
 multiarch-utils-1.0.13-1.mga1
 multiplicationstation-0.6.5-1.mga1
 mutagen-1.20-3.mga1
@@ -3237,6 +3237,7 @@ udisks2-1.93.0-2.mga2
 uidesigner-1.0-4.mrc.mga2
 umbrello-4.8.5-1.1.mga2
 unace-2.5-1.mrc.mga2
+unarj-2.65-4.mrc.mga2
 uniconvertor-1.1.5-2.mga2
 unionfs-utils-0.2.1-8.mrc.mga2
 unrar-4.20-1.mrc.mga2
@@ -3452,7 +3453,7 @@ xlsclients-1.1.2-1.mga2
 xmag-1.0.4-1.mga1
 xman-1.1.2-1.mga2
 xmessage-1.0.3-2.mga1
-xmind-3.4.1-9.mrc.mga2
+xmind-3.4.1-10.mrc.mga2
 xmlbeans-2.4.0-1.mga2
 xml-commons-apis12-1.2.04-6.mga1
 xml-commons-apis-1.4.01-6.mga2

@@ -2000,6 +2000,7 @@ udftools-1.0.0-0.b3.16.mga2
 udisks-1.0.4-6.mga2
 udisks2-1.93.0-2.mga2
 unace-2.5-1.mrc.mga2
+unarj-2.65-4.mrc.mga2
 unionfs-utils-0.2.1-8.mrc.mga2
 unrar-4.20-1.mrc.mga2
 unzip-6.0-4.1.mrc.mga2

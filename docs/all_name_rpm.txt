@@ -2000,6 +2000,7 @@ udftools
 udisks
 udisks2
 unace
+unarj
 unionfs-utils
 unrar
 unzip

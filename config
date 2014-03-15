@@ -81,4 +81,4 @@ INTERNET="yes"
 
 #Parameter for xvideo= ; parameter must be free or nonfree
 #Выбор значения для xvideo= ; может принимать значения free или nonfree
-XVIDEO="free"
+XVIDEO="nonfree"

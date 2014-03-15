@@ -35,7 +35,7 @@ rm -f usr/share/applications/scilab-cli.desktop
 rm -f usr/share/applications/scilab-adv-cli.desktop
 
 #Fix bug: https://bugs.mageia.org/show_bug.cgi?id=8421
-sed -i -e 's|italc.png|italc.xpm|g' usr/share/applications/italc.desktop
+#sed -i -e 's|italc.png|italc.xpm|g' usr/share/applications/italc.desktop
 
 sed -i -e 's|#Icon=gnome-terminal|Icon=gsharp.png|g' usr/share/applications/gsharp.desktop
 

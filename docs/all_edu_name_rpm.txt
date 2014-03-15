@@ -3237,6 +3237,7 @@ udisks2
 uidesigner
 umbrello
 unace
+unarj
 uniconvertor
 unionfs-utils
 unrar

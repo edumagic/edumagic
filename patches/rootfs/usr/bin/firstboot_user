@@ -117,15 +117,15 @@ fi
 #Create config for Phun
 if [ "$LANG" = "Russian" ]
 then
-  if [ -f "/opt/phun/config.cfg" ]
+  if [ -f "/usr/share/phun/config.cfg" ]
   then
-    A=`cat /opt/phun/config.cfg|grep $LANG`
+    A=`cat /usr/share/phun/config.cfg|grep $LANG`
     if [ "$A" = "" ]
     then
-      echo "" >> /opt/phun/config.cfg
-      echo "App -> {" >> /opt/phun/config.cfg
-      echo "    language = \"$LANG\";" >> /opt/phun/config.cfg
-      echo "    };" >> /opt/phun/config.cfg
+      echo "" >> /usr/share/phun/config.cfg
+      echo "App -> {" >> /usr/share/phun/config.cfg
+      echo "    language = \"$LANG\";" >> /usr/share/phun/config.cfg
+      echo "    };" >> /usr/share/phun/config.cfg
     fi
   fi
 fi

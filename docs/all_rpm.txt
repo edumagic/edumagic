@@ -67,6 +67,7 @@ busybox-static-1.19.3-1.1.mga2
 bzip2-1.0.6-1.mga2
 c2050-0.4-10.mga1
 c2070-0.99-10.mga1
+caffeine-2.4.1.498-1.mrc.mga2
 canberra-common-0.28-10.mga2
 canberra-gtk-0.28-10.mga2
 carl9170-firmware-1.9.4-1.mga2
@@ -225,6 +226,7 @@ filesystem-2.1.9-17.mga2
 filezilla-3.7.3-1.mga2
 findutils-4.5.10-1.mga2
 firefox-24.1.1-1.mga2
+firefox-ext-adblock-plus-2.0.3-1.mga2
 firefox-ru-24.1.1-1.mga2
 flac-1.2.1-10.mga2
 flac123-0.0.12-4.mrc.mga2
@@ -1045,6 +1047,7 @@ libnm-gtk0-0.9.4.1-1.mga2
 libnm-util2-0.9.4.0-4.mga2
 libnotify-0.7.5-1.mga2
 libnotify4-0.7.5-1.mga2
+libnotify-gir0.7-0.7.5-1.mga2
 libnspr4-4.10.2-1.mga2
 libnss3-3.15.3-1.mga2
 libntfs10-2.0.0-9.mga2
@@ -1822,6 +1825,7 @@ python-slip-dbus-0.2.20-1.mga2
 python-smbc-1.0.11-1.mga2
 python-sqlite2-2.5.5-3.mga1
 python-webkitgtk-1.1.8-2.mga2
+python-xlib-0.15-2.mga2
 qbittorrent-3.0.11-1.mrc.mga2
 qmmp-0.5.5-1.mrc.mga2
 qmmp-plugins-0.5.5-1.mrc.mga2

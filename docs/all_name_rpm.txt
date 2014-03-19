@@ -67,6 +67,7 @@ busybox-static
 bzip2
 c2050
 c2070
+caffeine
 canberra-common
 canberra-gtk
 carl9170-firmware
@@ -225,6 +226,7 @@ filesystem
 filezilla
 findutils
 firefox
+firefox-ext-adblock-plus
 firefox-ru
 flac
 flac123
@@ -1045,6 +1047,7 @@ libnm-gtk0
 libnm-util2
 libnotify
 libnotify4
+libnotify-gir0.7
 libnspr4
 libnss3
 libntfs10
@@ -1822,6 +1825,7 @@ python-slip-dbus
 python-smbc
 python-sqlite2
 python-webkitgtk
+python-xlib
 qbittorrent
 qmmp
 qmmp-plugins

@@ -10,7 +10,7 @@ then
   exit 0
 fi
 
-LANG0=`cat etc/sysconfig/i18n|grep ru_RU`
+LANG0=`cat /etc/sysconfig/i18n|grep ru_RU`
 if [ "$LANG0" = "" ]
 then
   LANG=English
@@ -20,8 +20,8 @@ fi
 
 if [ "$LANG" = "Russian" ]
 then
-  rm -f usr/share/peazip/res/lang/default.txt
-  cp -f usr/share/peazip/res/lang/ru.txt usr/share/peazip/res/lang/default.txt
+  rm -f /usr/share/peazip/res/lang/default.txt
+  cp -f /usr/share/peazip/res/lang/ru.txt /usr/share/peazip/res/lang/default.txt
 fi
 
 echo $(basename $0)-$VER >> /etc/once_boot_scripts

@@ -170,6 +170,7 @@ bzip2-1.0.6-1.mga2
 c2050-0.4-10.mga1
 c2070-0.99-10.mga1
 c3p0-0.9.2-0.5.pre1.1.mga2
+caffeine-2.4.1.498-1.mrc.mga2
 cal10n-0.7.4-2.mga2
 canberra-common-0.28-10.mga2
 canberra-gtk-0.28-10.mga2
@@ -392,6 +393,7 @@ filezilla-3.7.3-1.mga2
 findbugs-maven-plugin-2.3.2-1.mga2
 findutils-4.5.10-1.mga2
 firefox-24.1.1-1.mga2
+firefox-ext-adblock-plus-2.0.3-1.mga2
 firefox-ru-24.1.1-1.mga2
 fits-java-1.07.0-1.mga2
 flac-1.2.1-10.mga2
@@ -1716,6 +1718,7 @@ libnm-gtk0-0.9.4.1-1.mga2
 libnm-util2-0.9.4.0-4.mga2
 libnotify-0.7.5-1.mga2
 libnotify4-0.7.5-1.mga2
+libnotify-gir0.7-0.7.5-1.mga2
 libnspr4-4.10.2-1.mga2
 libnss3-3.15.3-1.mga2
 libntfs10-2.0.0-9.mga2

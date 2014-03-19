@@ -170,6 +170,7 @@ bzip2
 c2050
 c2070
 c3p0
+caffeine
 cal10n
 canberra-common
 canberra-gtk
@@ -392,6 +393,7 @@ filezilla
 findbugs-maven-plugin
 findutils
 firefox
+firefox-ext-adblock-plus
 firefox-ru
 fits-java
 flac
@@ -1716,6 +1718,7 @@ libnm-gtk0
 libnm-util2
 libnotify
 libnotify4
+libnotify-gir0.7
 libnspr4
 libnss3
 libntfs10

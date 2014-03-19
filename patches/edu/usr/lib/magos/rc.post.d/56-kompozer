@@ -1,0 +1,39 @@
+#!/bin/bash
+
+ENABLED=yes
+[ "$ENABLED" != "yes" ] && exit 0
+
+VER=`cat /mnt/live/VERSION|awk '{print $2}'`
+ONCE=`cat /etc/once_boot_scripts|grep $(basename $0)-$VER`
+if [ ! "$ONCE" = "" ]
+then
+  exit 0
+fi
+
+LANG0=`cat /etc/sysconfig/i18n|grep ru_RU`
+if [ "$LANG0" = "" ]
+then
+  LANG=English
+else
+  LANG=Russian
+fi
+
+if [ "$LANG" = "Russian" ]
+then
+  if [ -d "/usr/lib/kompozer/extensions/langpack-ru@kompozer.net" ]
+  then
+    ln -s /usr/lib/kompozer/extensions/langpack-ru@kompozer.net /usr/lib/kompozer/defaults/profile/extensions/langpack-ru@kompozer.net
+  else
+    ln -s /usr/lib64/kompozer/extensions/langpack-ru@kompozer.net /usr/lib64/kompozer/defaults/profile/extensions/langpack-ru@kompozer.net
+  fi
+  if [ -d "/usr/lib/kompozer/extensions/ru@dictionaries.addons.mozilla.org" ]
+  then
+    ln -s /usr/lib/kompozer/extensions/ru@dictionaries.addons.mozilla.org /usr/lib/kompozer/defaults/profile/extensions/ru@dictionaries.addons.mozilla.org
+  else
+    ln -s /usr/lib64/kompozer/extensions/ru@dictionaries.addons.mozilla.org /usr/lib64/kompozer/defaults/profile/extensions/ru@dictionaries.addons.mozilla.org
+  fi
+fi
+
+ln -s /usr/bin/www-browser /usr/bin/x-www-browser
+
+echo $(basename $0)-$VER >> /etc/once_boot_scripts

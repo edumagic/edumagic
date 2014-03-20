@@ -23,7 +23,7 @@
     14/20: iwlwifi-3945-ucode    #########################################################################################################
     15/20: speedtouch-firmware   #########################################################################################################
     16/20: radeon-firmware       #########################################################################################################
-/var/tmp/rpm-tmp.tdMhNh: line 2: /usr/sbin/bootloader-config: No such file or directory
+/var/tmp/rpm-tmp.IE0OUT: line 2: /usr/sbin/bootloader-config: No such file or directory
 
 
 устанавливается iwlwifi-agn-ucode-20121030-1.mga2.nonfree.noarch.rpm bcm43xx-fwcutter-006-9.mrc.mga2.i586.rpm rtlwifi-firmware-20121030-1.mga2.nonfree.noarch.rpm kernel-firmware-nonfree-20121030-1.mga2.nonfree.noarch.rpm из /media/VM/magicos-develop/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
@@ -523,7 +523,7 @@ I: *** Including module: shutdown ***
 I: Skipping program kexec as it cannot be found and is flagged to be optional
 I: *** Including modules done ***
 I: Wrote /boot/initrd-3.3.8-server-2.mga2.img:
-I: -rw------- 1 root root 14651716 Mar 19 13:27 /boot/initrd-3.3.8-server-2.mga2.img
+I: -rw------- 1 root root 14652799 Mar 19 19:15 /boot/initrd-3.3.8-server-2.mga2.img
 perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:
 	LANGUAGE = "ru_RU.UTF-8:ru",
@@ -606,7 +606,7 @@ I: *** Including module: shutdown ***
 I: Skipping program kexec as it cannot be found and is flagged to be optional
 I: *** Including modules done ***
 I: Wrote /boot/initrd-3.3.8-server-2.mga2.img:
-I: -rw------- 1 root root 15798820 Mar 19 13:27 /boot/initrd-3.3.8-server-2.mga2.img
+I: -rw------- 1 root root 15799453 Mar 19 19:15 /boot/initrd-3.3.8-server-2.mga2.img
 perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:
 	LANGUAGE = "ru_RU.UTF-8:ru",
@@ -873,7 +873,7 @@ perl: warning: Falling back to the standard locale ("C").
     12/57: gdk-pixbuf2.0         #########################################################################################################
     13/57: libgdk_pixbuf2.0_0-loaders-png15
                                  #########################################################################################################
-/var/tmp/rpm-tmp.2QeHEY: line 1: /usr/lib/gdk-pixbuf-2.0/bin/gdk-pixbuf-query-loaders: Нет такого файла или каталога
+/var/tmp/rpm-tmp.DLAANz: line 1: /usr/lib/gdk-pixbuf-2.0/bin/gdk-pixbuf-query-loaders: Нет такого файла или каталога
 предупреждение: %post(libgdk_pixbuf2.0_0-loaders-png15-2.26.1-1.mga2.i586) scriptlet failed, exit status 127
     14/57: libgdk_pixbuf2.0_0    #########################################################################################################
     15/57: libxcursor1           #########################################################################################################
@@ -952,7 +952,7 @@ nvidia-current.ko.xz:
  - Installation
    - Installing to /lib/modules/3.3.8-server-2.mga2/dkms/drivers/char/drm/
 
-depmod...........
+depmod............
 
 DKMS: install Completed.
     48/57: dkms-virtualbox       #########################################################################################################
@@ -1182,7 +1182,7 @@ wl.ko.xz:
  - Installation
    - Installing to /lib/modules/3.3.8-server-2.mga2/dkms/3rdparty/broadcom-wl/
 
-depmod............
+depmod.............
 
 DKMS: install Completed.
 ----------------------------------------------------------------------
@@ -1367,7 +1367,7 @@ nvidia173.ko.xz:
  - Installation
    - Installing to /lib/modules/3.3.8-server-2.mga2/dkms-binary/drivers/char/drm/
 
-depmod............
+depmod.............
 
 DKMS: install Completed.
 nvidia173, 173.14.36-1.mrc.mga2, 3.3.8-server-2.mga2, i586: installed 
@@ -1391,7 +1391,7 @@ nvidia-current.ko.xz:
  - Installation
    - Installing to /lib/modules/3.3.8-server-2.mga2/dkms-binary/drivers/char/drm/
 
-depmod............
+depmod.............
 
 DKMS: install Completed.
 nvidia-current, 295.71-1.mga2.nonfree, 3.3.8-server-2.mga2, i586: installed 
@@ -1411,7 +1411,7 @@ vboxvideo.ko.xz:
  - Installation
    - Installing to /lib/modules/3.3.8-server-2.mga2/dkms-binary/3rdparty/vbox/
 
-depmod............
+depmod.............
 
 DKMS: install Completed.
 vboxadditions, 4.1.24-1.mga2, 3.3.8-server-2.mga2, i586: installed 
@@ -3727,8 +3727,8 @@ use ndiswrapper -i <inffile.inf> as root to install driver
     54/68: bind-utils            #########################################################################################################
     55/68: aircrack-ng           #########################################################################################################
 [*] Downloading IEEE OUI file...
-[*] Error: Failed to download OUI list, aborting...
-предупреждение: %post(aircrack-ng-1.1-4.1.mga2.i586) scriptlet failed, exit status 1
+[*] Parsing OUI file...
+[*] Airodump-ng OUI file successfully updated
     56/68: dhcp-server           #########################################################################################################
     57/68: filezilla             #########################################################################################################
     58/68: gigolo                #########################################################################################################
@@ -3752,8 +3752,7 @@ use ndiswrapper -i <inffile.inf> as root to install driver
     67/68: xl2tpd                #########################################################################################################
     68/68: vpnpptp-allde         #########################################################################################################
 Пакеты unzip-6.0-4.1.mrc.mga2.i586, wget-1.13.4-2.mga2.i586, xkill-1.0.3-1.mga1.i586 уже установлен
-    http://mirror.yandex.ru/mageia/distrib/2/i586/media/core/release/libnotify-gir0.7-0.7.5-1.mga2.i586.rpm
-        0% завершено, скорость = --.-K/s                                                                                                                                                                                                                                 http://packages.mageialinux.ru/mageia2/RPMS/noarch/caffeine-2.4.1.498-1.mrc.mga2.noarch.rpm
+    http://packages.mageialinux.ru/mageia2/RPMS/noarch/caffeine-2.4.1.498-1.mrc.mga2.noarch.rpm
         0% завершено, скорость = --.-K/s                                                                                                                                                                                                                             
 
 устанавливается libsox1-14.3.2-3.mga2.i586.rpm zim-0.52-1.mga2.noarch.rpm cdrkit-isotools-1.1.11-1.mga1.i586.rpm liblpc10_1-1.5-12.mga1.i586.rpm file-roller-3.4.1-1.mga2.i586.rpm setserial-2.17-17.mga1.i586.rpm gnome-packagekit-common-3.4.0-1.mga2.i586.rpm mdadm-3.2.3-4.mga2.i586.rpm из /media/VM/magicos-develop/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
@@ -4077,8 +4076,7 @@ wins entry found in /etc/nsswitch.conf
   182/184: caffeine              #########################################################################################################
   183/184: fskbsetting           #########################################################################################################
   184/184: krusader              #########################################################################################################
-    http://mirror.yandex.ru/mageia/distrib/2/i586/media/core/release/firefox-ext-adblock-plus-2.0.3-1.mga2.noarch.rpm
-        0% завершено, скорость = --.-K/s                                                                                                                                                                                                                             
+
 
 устанавливается libktorrent4-1.2.0-1.mga2.i586.rpm libetpan16-1.1-2.mga2.i586.rpm libprotobuf6-2.4.1-1.mga2.i586.rpm compface-1.5.2-7.mga1.i586.rpm libktorrent-common-1.2.0-1.mga2.i586.rpm pilot-link-common-0.12.5-10.mga2.i586.rpm libcompface1-1.5.2-7.mga1.i586.rpm webserver-base-2.0-2.mga2.i586.rpm из /media/VM/magicos-develop/work/MagicOS_2/rootfs/var/cache/urpmi/rpms
 Подготовка...                    #########################################################################################################
@@ -4148,7 +4146,7 @@ the EULA, available at http://www.adobe.com/products/eulas/players/flash/
 Downloading from http://fpdownload.macromedia.com/get/flashplayer/pdc/11.2.202.327/flash-plugin-11.2.202.327-release.i386.rpm:
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 6741k    0 44635    0     0   135k      0  0:00:49 --:--:--  0:00:49  246k 17 6741k   17 1207k    0     0   909k      0  0:00:07  0:00:01  0:00:06 1019k 58 6741k   58 3947k    0     0  1721k      0  0:00:03  0:00:02  0:00:01 1837k 74 6741k   74 4995k    0     0  1508k      0  0:00:04  0:00:03  0:00:01 1576k 91 6741k   91 6191k    0     0  1441k      0  0:00:04  0:00:04 --:--:-- 1491k100 6741k  100 6741k    0     0  1426k      0  0:00:04  0:00:04 --:--:-- 1521k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  2 6741k    2  139k    0     0   373k      0  0:00:18 --:--:--  0:00:18  488k 26 6741k   26 1811k    0     0  1344k      0  0:00:05  0:00:01  0:00:04 1438k 49 6741k   49 3356k    0     0  1420k      0  0:00:04  0:00:02  0:00:02 1476k 75 6741k   75 5101k    0     0  1526k      0  0:00:04  0:00:03  0:00:01 1567k100 6741k  100 6741k    0     0  1595k      0  0:00:04  0:00:04 --:--:-- 1629k
     40/45: flash-player-plugin   #########################################################################################################
 Adobe Flash Player installation successful.
 
@@ -5854,7 +5852,7 @@ Therefore Mageia has been forced to remove the offending code.
   600/655: squid                 #########################################################################################################
 Generating a 1024 bit RSA private key
 ................++++++
-..++++++
+.......++++++
 writing new private key to '/etc/pki/tls/private/squid.pem'
 -----
 squid.service is not a native service, redirecting to /sbin/chkconfig.
@@ -6023,7 +6021,7 @@ bgrabitmappack.pas(16,30) Hint: Unit "BGRAStreamLayers" not used in BGRABitmapPa
 bgrabitmappack.pas(17,3) Hint: Unit "BGRATransform" not used in BGRABitmapPack
 bgrabitmappack.pas(17,18) Hint: Unit "BGRATypewriter" not used in BGRABitmapPack
 bgrabitmappack.pas(17,34) Hint: Unit "BGRAVectorize" not used in BGRABitmapPack
-70008 lines compiled, 2.9 sec 
+70008 lines compiled, 3.0 sec 
 1 warning(s) issued
 54 hint(s) issued
 Действие "Компиляция пакета BGRABitmapPack 7.2" завершено
@@ -6199,7 +6197,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-199 lines compiled, 6.3 sec 
+199 lines compiled, 7.1 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -6577,7 +6575,7 @@ synaser.pas(2322,36) Hint: Mixing signed expressions and longwords gives a 64bit
 synaser.pas(119,3) Hint: Unit "synafpc" not used in synaser
 sdposerial.pas(245,20) Warning: Symbol "Resume" is deprecated
 sdposerial.pas(136,24) Hint: Parameter "OnOff" not used
-5015 lines compiled, 0.3 sec 
+5015 lines compiled, 0.4 sec 
 5 warning(s) issued
 10 hint(s) issued
 1 note(s) issued
@@ -6665,7 +6663,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-207 lines compiled, 5.9 sec 
+207 lines compiled, 5.10 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -7293,7 +7291,7 @@ Compiling apps/ide/stringconsts.pas
 Compiling apps/ide/stringconsts_mfm.pas
 Linking apps/ide/mseide
 /usr/bin/ld: warning: link.res contains output sections; did you forget -T?
-543967 lines compiled, 14.1 sec 
+543967 lines compiled, 14.8 sec 
 Free Pascal Compiler version 2.6.2 [2013/07/07] for i386
 Copyright (c) 1993-2012 by Florian Klaempfl and others
 Target OS: Linux for i386
@@ -7373,7 +7371,7 @@ Compiling apps/ide/ru/msepropertyeditorsmodule_mfm.pas
 Compiling apps/ide/ru/msesysenvmanagereditor_mfm.pas
 Linking apps/ide/ru/libi18n_ru.so
 /usr/bin/ld: warning: link.res contains output sections; did you forget -T?
-34375 lines compiled, 0.7 sec 
+34375 lines compiled, 0.6 sec 
 Free Pascal Compiler version 2.6.2 [2013/07/07] for i386
 Copyright (c) 1993-2012 by Florian Klaempfl and others
 Target OS: Linux for i386
@@ -7448,7 +7446,7 @@ Compiling tools/i18n/messagesform.pas
 Compiling tools/i18n/messagesform_mfm.pas
 Linking tools/i18n/msei18n
 /usr/bin/ld: warning: link.res contains output sections; did you forget -T?
-101489 lines compiled, 2.9 sec 
+101489 lines compiled, 2.8 sec 
 Free Pascal Compiler version 2.6.2 [2013/07/07] for i386
 Copyright (c) 1993-2012 by Florian Klaempfl and others
 Target OS: Linux for i386
@@ -7643,7 +7641,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-208 lines compiled, 6.6 sec 
+208 lines compiled, 6.3 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -7859,7 +7857,7 @@ Compiling /usr/lib/lazarus/components/zcomponent/src/core/ZFunctionsStrings.pas
 Compiling /usr/lib/lazarus/components/zcomponent/src/core/ZFunctionsConvert.pas
 Compiling /usr/lib/lazarus/components/zcomponent/src/core/ZFunctionsOther.pas
 Compiling /usr/lib/lazarus/components/zcomponent/src/core/ZURL.pas
-29958 lines compiled, 0.5 sec 
+29958 lines compiled, 0.6 sec 
 5 warning(s) issued
 Действие "Компиляция пакета zcore 7.1" завершено
 TLazPackageGraph.CheckIfCurPkgOutDirNeedsCompile  Missing state file for zplain 7.1: /usr/lib/lazarus/components/zcomponent/packages/lazarus/lib/i386-linux/zplain.compiled
@@ -7971,7 +7969,7 @@ zplain.pas(12,64) Hint: Unit "ZPlainASAConstants" not used in zplain
 zplain.pas(13,3) Hint: Unit "ZPlainFirebirdDriver" not used in zplain
 zplain.pas(13,25) Hint: Unit "ZPlainFirebirdInterbaseConstants" not used in zplain
 zplain.pas(13,59) Hint: Unit "ZPlainDbLibConstants" not used in zplain
-34670 lines compiled, 0.6 sec 
+34670 lines compiled, 0.7 sec 
 5 warning(s) issued
 83 hint(s) issued
 1 note(s) issued
@@ -8251,7 +8249,7 @@ ZDbcASAStatement.pas(59,21) Hint: Unit "ZPlainASADriver" not used in ZDbcASAStat
 ZDbcASA.pas(61,3) Hint: Unit "ZPlainDriver" not used in ZDbcASA
 Compiling /usr/lib/lazarus/components/zcomponent/src/dbc/ZDbcPooled.pas
 ZDbcPooled.pas(891,82) Hint: Converting the operands to "Int64" before doing the multiply could prevent overflow errors.
-104124 lines compiled, 2.5 sec 
+104124 lines compiled, 2.7 sec 
 12 warning(s) issued
 144 hint(s) issued
 1 note(s) issued
@@ -8393,7 +8391,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-209 lines compiled, 7.4 sec 
+209 lines compiled, 7.7 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -8610,7 +8608,7 @@ Compiling lazarus.pp
 Compiling resource /usr/lib/lazarus/units/i386-linux/gtk2/lazarus.or
 Linking /usr/lib/lazarus/lazarus
 /usr/bin/ld: warning: /usr/lib/lazarus/link.res contains output sections; did you forget -T?
-210 lines compiled, 6.10 sec 
+210 lines compiled, 6.8 sec 
 make[2]: Выход из каталога `/usr/lib/lazarus/ide'
 make[1]: Выход из каталога `/usr/lib/lazarus/ide'
 make: Выход из каталога `/usr/lib/lazarus'
@@ -9129,8 +9127,8 @@ Script lazarus-miscellaneousoptions was finished.
   263/337: scilab                #########################################################################################################
   264/337: postfix               #########################################################################################################
 Generating a 1024 bit RSA private key
-........................++++++
-................++++++
+...........++++++
+....................++++++
 writing new private key to '/etc/pki/tls/private/postfix.pem'
 -----
 postfix.service is not a native service, redirecting to /sbin/chkconfig.
@@ -9266,15 +9264,15 @@ Once that's done, open a web browser and go to: http://localhost/wordpress/
   314/337: chemtool              #########################################################################################################
   315/337: gbrainy               #########################################################################################################
   316/337: italc-master          #########################################################################################################
-ср мар 19 15:20:45 2014: [INFO] Startup for user "root" with arguments ("/usr/bin/imc", "-role", "admin", "-createkeypair", "/etc/italc/keys")
-ср мар 19 15:20:45 2014: [INFO] ImcCore: creating new key pair in "/etc/italc/keys/private/admin/key" and "/etc/italc/keys/public/admin/key"
-ср мар 19 15:20:46 2014: [INFO] Shutdown
-ср мар 19 15:20:46 2014: [INFO] Startup for user "root" with arguments ("/usr/bin/imc", "-role", "supporter", "-createkeypair", "/etc/italc/keys")
-ср мар 19 15:20:46 2014: [INFO] ImcCore: creating new key pair in "/etc/italc/keys/private/supporter/key" and "/etc/italc/keys/public/supporter/key"
-ср мар 19 15:20:46 2014: [INFO] Shutdown
-ср мар 19 15:20:46 2014: [INFO] Startup for user "root" with arguments ("/usr/bin/imc", "-role", "teacher", "-createkeypair", "/etc/italc/keys")
-ср мар 19 15:20:46 2014: [INFO] ImcCore: creating new key pair in "/etc/italc/keys/private/teacher/key" and "/etc/italc/keys/public/teacher/key"
-ср мар 19 15:20:47 2014: [INFO] Shutdown
+ср мар 19 21:11:02 2014: [INFO] Startup for user "root" with arguments ("/usr/bin/imc", "-role", "admin", "-createkeypair", "/etc/italc/keys")
+ср мар 19 21:11:02 2014: [INFO] ImcCore: creating new key pair in "/etc/italc/keys/private/admin/key" and "/etc/italc/keys/public/admin/key"
+ср мар 19 21:11:03 2014: [INFO] Shutdown
+ср мар 19 21:11:03 2014: [INFO] Startup for user "root" with arguments ("/usr/bin/imc", "-role", "supporter", "-createkeypair", "/etc/italc/keys")
+ср мар 19 21:11:03 2014: [INFO] ImcCore: creating new key pair in "/etc/italc/keys/private/supporter/key" and "/etc/italc/keys/public/supporter/key"
+ср мар 19 21:11:03 2014: [INFO] Shutdown
+ср мар 19 21:11:03 2014: [INFO] Startup for user "root" with arguments ("/usr/bin/imc", "-role", "teacher", "-createkeypair", "/etc/italc/keys")
+ср мар 19 21:11:03 2014: [INFO] ImcCore: creating new key pair in "/etc/italc/keys/private/teacher/key" and "/etc/italc/keys/public/teacher/key"
+ср мар 19 21:11:03 2014: [INFO] Shutdown
 
 
 устанавливается opendict-lingvosoft-0.8-1.mrc.mga2.noarch.rpm opendict-0.6.3-9.22.mrc.mga2.noarch.rpm drgeo-13.10-7.mrc.mga2.noarch.rpm librecad-parts-1.0.2-1.mrc.mga2.noarch.rpm gcad3d-2.01-3.mrc.mga2.i586.rpm deluge-1.3.5-1.mrc.mga2.noarch.rpm euclide-0.6.6-3.mrc.mga2.noarch.rpm librecad-doc-1.0.2-1.mrc.mga2.noarch.rpm из /media/VM/magicos-develop/work/MagicOS_2/rootfs/var/cache/urpmi/rpms

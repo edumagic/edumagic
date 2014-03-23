@@ -250,4 +250,16 @@ fi
 #update-desktop-database
 #update-mime-database usr/share/mime
 
+#temporary fix cups for splix
+sed -i "/JobPrivateAccess default/d" etc/cups/cupsd.conf
+sed -i "/JobPrivateAccess default/d" etc/cups/cupsd.conf.default
+sed -i "/JobPrivateValues default/d" etc/cups/cupsd.conf
+sed -i "/JobPrivateValues default/d" etc/cups/cupsd.conf.default
+sed -i "/SubscriptionPrivateAccess default/d" etc/cups/cupsd.conf
+sed -i "/SubscriptionPrivateAccess default/d" etc/cups/cupsd.conf.default
+sed -i "/SubscriptionPrivateValues default/d" etc/cups/cupsd.conf
+sed -i "/SubscriptionPrivateValues default/d" etc/cups/cupsd.conf.default
+#temporary fix, because /usr/lib/cups/filter/rastertoqpdl was used from printer-driver-splix_2.0.0+svn315-0ubuntu1_i386.deb
+ln -s /usr/lib/libjbig.so usr/lib/libjbig.so.0
+
 echo $(basename $0)-$VER >> etc/once_boot_scripts

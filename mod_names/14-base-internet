@@ -2,9 +2,8 @@ eiskaltdcpp-qt
 firefox
 firefox-ru
 firefox-ext-adblock-plus
-phet-online
 flash-player-plugin
-flash-player-plugin-eula
+#flash-player-plugin-eula
 qbittorrent
 thunderbird
 thunderbird-ru
@@ -14,5 +13,4 @@ chromium-browser-stable
 apache-mod_userdir
 proftpd
 qupzilla
-b43-firmware-install
 claws-mail

@@ -1,7 +1,7 @@
 dkms-broadcom-wl
-dkms-fglrx-8.961-2.mga2.nonfree
+dkms-fglrx
 dkms-nvidia173
-dkms-nvidia96xx
-dkms-nvidia-current-295.71-1.mga2.nonfree
-dkms-vboxadditions-4.1.24
-dkms-virtualbox-4.1.24
+#dkms-nvidia96xx?
+dkms-nvidia-current
+dkms-vboxadditions
+dkms-virtualbox

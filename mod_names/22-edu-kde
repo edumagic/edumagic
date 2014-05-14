@@ -3,7 +3,6 @@ kdenlive
 kturtle
 kopete
 ktouch
-smathstudio
 kalgebra
 kbruch
 kig
@@ -30,13 +29,15 @@ kdevelop4
 pairs
 ktuberling
 qaquarelle
-klest-crossword
+#klest-crossword
+#klen-library
 rkward
 zhu3d
-shelk-test
+#shelk-test
 knetwalk
 umbrello
 fet
 million
-lazpaint-qt4
+#lazpaint-qt4
 qt4pas
+gwenview

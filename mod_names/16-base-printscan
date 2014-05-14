@@ -5,8 +5,7 @@ system-config-printer
 yagf
 aspell-en
 cuneiform-linux
-stylus-toolbox
-samsung-printscan
-#cups-filters
-#tesseract
-#tesseract-rus
+tesseract
+tesseract-rus
+xsane-gimp
+kipi-plugins-acquireimages

@@ -20,7 +20,7 @@ DATASIZE2=256
 
 #Base
 #База
-VERREL=2
+VERREL=5
 
 #The keys for the command mksquashfs when creating modules
 #Ключи для команды mksquashfs при создании модулей
@@ -51,12 +51,12 @@ FS_ROOTFS=unionfs
 
 #File system for the kernel of building distro: unionfs or aufs
 #Файловая система ядра собираемого дистрибутива: unionfs или aufs
-FS_KERNEL=unionfs
+FS_KERNEL=aufs
 
 #List of repositories
 #Список репозиториев
-DIST_MIRROR_0=http://mirror.yandex.ru/mageia/distrib/2/i586
-DIST_MIRROR_1=http://packages.mageialinux.ru/mageia2/i586
+DIST_MIRROR_0=http://mirror.yandex.ru/mageia/distrib/cauldron/i586
+#DIST_MIRROR_1=http://packages.mageialinux.ru/mageia2/i586
 #DIST_MIRROR_2=
 
 #Names of additional modules

@@ -51,7 +51,7 @@ rm -rf $MOD_PREV
 mkdir -p $MOD_PREV
 
 urpmi.addmedia --distrib --urpmi-root $MOD_PREV $DIST_MIRROR_0
-urpmi.addmedia --distrib --urpmi-root $MOD_PREV $DIST_MIRROR_1
+#urpmi.addmedia --distrib --urpmi-root $MOD_PREV $DIST_MIRROR_1
 #urpmi.addmedia --distrib --urpmi-root $MOD_PREV $DIST_MIRROR_2
 
 if [ -f urpmi.cfg ]

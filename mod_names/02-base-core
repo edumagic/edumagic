@@ -1,7 +1,7 @@
 basesystem
-kernel-server-latest-3.3.8
-kernel-server-devel-latest-3.3.8
-kernel-userspace-headers-3.3.8
+kernel-server-latest
+kernel-server-devel-latest
+kernel-userspace-headers
 locales
 locales-en
 locales-ru
@@ -14,7 +14,7 @@ expect
 man-pages
 man-pages-ru
 lsof
-cpufreq
+#cpufreq?
 at
 rpm-build
-dev-scripts
+#dev-scripts

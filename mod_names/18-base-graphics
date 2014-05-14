@@ -8,4 +8,5 @@ fonts-ttf-west_european
 gimp-plugin-wavelet-decompose
 gimp-plugin-wavelet-denoise
 manslide
-#ffdiaporama
+ffdiaporama
+autohint-onoff

@@ -29,7 +29,7 @@ x11-driver-video-nouveau
 x11-driver-video-nv
 x11-driver-video-openchrome
 x11-driver-video-r128
-x11-driver-video-radeonhd
+#x11-driver-video-radeonhd?
 x11-driver-video-s3
 x11-driver-video-s3virge
 x11-driver-video-savage
@@ -39,16 +39,16 @@ x11-driver-video-sisusb
 x11-driver-video-tdfx
 x11-driver-video-trident
 x11-driver-video-v4l
-x11-driver-video-vboxvideo-4.1.24
+x11-driver-video-vboxvideo
 x11-driver-video-vesa
 x11-driver-video-vmware
 x11-driver-video-fglrx
 x11-driver-video-nvidia173
-x11-driver-video-nvidia96xx
-x11-driver-video-nvidia-current-295.71
+#x11-driver-video-nvidia96xx?
+x11-driver-video-nvidia-current
 gpicview
 xterm
-mesa-8.0.4
+mesa
 scim-tables-ru
 scim-bridge-qt4
 x11-font-cyrillic
@@ -63,4 +63,4 @@ x11-font-bitstream-75dpi
 xorg-x11
 xsudo
 xsudo-sudoers
-Midnight-Commander
+mc-desktop

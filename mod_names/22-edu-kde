@@ -29,15 +29,17 @@ kdevelop4
 pairs
 ktuberling
 qaquarelle
-#klest-crossword
-#klen-library
+#klest-crossword (not imported; BUGS: no support non-Russian)
+#klen-library (not imported; BUGS: don't determine Russian)
 rkward
 zhu3d
-#shelk-test
+#shelk-test (not imported; BUGS: no support non-Russian)
 knetwalk
 umbrello
 fet
 million
-#lazpaint-qt4
+#lazpaint-qt4 (not imported)
 qt4pas
 gwenview
+katomic
+kroots

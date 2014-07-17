@@ -2,6 +2,7 @@ basesystem
 kernel-server-latest
 kernel-server-devel-latest
 kernel-userspace-headers
+broadcom-wl-kernel-server-latest
 locales
 locales-en
 locales-ru
@@ -14,7 +15,8 @@ expect
 man-pages
 man-pages-ru
 lsof
-#cpufreq?
 at
 rpm-build
-#dev-scripts
+#dev-scripts (not imported)
+fuse-exfat
+exfat-utils

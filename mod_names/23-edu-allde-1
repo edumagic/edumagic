@@ -38,13 +38,13 @@ scratch-media
 scratch-projects
 kumir
 lazarus
-#lazarus-bgra
-#lazarus-inet
-##lazarus-lazpaint
-#lazarus-uniqueinstance
-#lazarus-zeosdbo
-#lazarus-sdpo
-#lazarus-gifanim
+#lazarus-bgra (not imported)
+#lazarus-inet (not imported)
+#lazarus-lazpaint (not imported, it's buildrequires only)
+#lazarus-uniqueinstance (not imported)
+#lazarus-zeosdbo (not imported)
+#lazarus-sdpo (not imported)
+#lazarus-gifanim (not imported)
 hugs98
 hugs98-alut
 hugs98-demos

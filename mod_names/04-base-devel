@@ -1,6 +1,6 @@
 busybox-static
 dosfstools
-#reiser4progs?
+#reiser4progs (missing)
 reiserfsprogs
 rsync
 ntfs-3g
@@ -13,3 +13,5 @@ vim-enhanced
 package-build-service
 mgarepo
 bm
+cvs
+f2c

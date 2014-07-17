@@ -3,7 +3,7 @@ firefox
 firefox-ru
 firefox-ext-adblock-plus
 flash-player-plugin
-#flash-player-plugin-eula
+#flash-player-plugin-eula (add contents directly into distro or add nothing)
 qbittorrent
 thunderbird
 thunderbird-ru

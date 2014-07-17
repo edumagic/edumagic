@@ -54,7 +54,7 @@ kiosktool
 shotwell
 italc-master
 italc-client
-#italc-client-autostart
+#italc-client-autostart (add contents directly into distro or merge with Cauldron)
 qdevelop
 libqt4-devel
 qt4-linguist
@@ -68,13 +68,13 @@ geometria
 qosmic
 netemul
 logisim
-#numptyphysics
+numptyphysics
 kojo
 imagination
 ganttproject
 tkgate
 arduino
-#librxtx-devel
+#librxtx-devel (missing)
 freeplane
 opengrade
 planner

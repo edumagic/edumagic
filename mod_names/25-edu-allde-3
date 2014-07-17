@@ -1,4 +1,4 @@
-#freecad
+#freecad (not imported)
 poedit
 canta
 basetest
@@ -11,7 +11,7 @@ aoi
 tupi
 littlewizard
 sankore
-#rodovid
+rodovid
 gramps
 vym
 bluej
@@ -21,15 +21,21 @@ glade
 glade3
 uidesigner
 gnutu
-#tuxguitar
+#tuxguitar (BUGS: sound does not work and there are errors in code)
 ardesia
 openstereo
 laby
 pywords
 pysiogame
-#xdrawchem
-#mathwar
-#gperiodic
-#amaya
-#biogenesis
-#coolreader3
+mathwar
+#gperiodic (not imported)
+#amaya (not imported)
+biogenesis
+coolreader3
+mathmod
+douml
+golems
+nted
+plopp
+openteacher
+#myabcs (not imported)

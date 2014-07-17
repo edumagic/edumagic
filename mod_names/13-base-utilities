@@ -42,7 +42,7 @@ krename
 lha
 arj
 unace
-#unarj
+unarj
 dpkg
 biew
 ddrescue
@@ -94,3 +94,4 @@ udftools
 xfburn
 peazip
 caffeine
+tortoisehg

@@ -35,9 +35,11 @@ pulseaudio-module-zeroconf
 taglib-extras
 tano
 bombono-dvd
-#task-codec-audio
-#task-codec-video
+#task-codec-audio (move into new module)
+#task-codec-video (move into new module)
 xawtv
 steam
-#performous
+#performous (not imported)
 festival
+freetuxtv
+dvdstyler

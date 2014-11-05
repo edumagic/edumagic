@@ -26,7 +26,7 @@ devede
 k3b
 isomaster
 zim
-file-roller
+#file-roller
 filelight
 sweeper
 kdiff3
@@ -35,6 +35,7 @@ gxneur
 kfloppy
 hardinfo
 gnome-screenshot
+mate-screenshot
 d4x
 kdf
 krusader

@@ -28,20 +28,21 @@ fi
 
 #Fix: Unable to find a valid menu file "/usr/share/lxde/openbox/menu.xml"
 #http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=644756
-mkdir -p etc/skel/.config/openbox
-chmod 777 etc/skel/.config/openbox
-ln -s /usr/share/lxde/openbox/menu.xml etc/skel/.config/openbox/menu.xml
+#mkdir -p etc/skel/.config/openbox
+#chmod 777 etc/skel/.config/openbox
+#ln -s /usr/share/lxde/openbox/menu.xml etc/skel/.config/openbox/menu.xml
 
 #Fix bug https://bitbucket.org/carlmig/radio-tray/issue/146/dont-work-without-home-local-share
-mkdir -p etc/skel/.local
-chmod 777 etc/skel/.local
-mkdir -p etc/skel/.local/share
-chmod 777 etc/skel/.local/share
+#https://bugs.mageia.org/show_bug.cgi?id=13951
+#mkdir -p etc/skel/.local
+#chmod 777 etc/skel/.local
+#mkdir -p etc/skel/.local/share
+#chmod 777 etc/skel/.local/share
 
 #Fix bug http://code.google.com/p/mandriva-lxde/issues/detail?id=4
-mkdir -p etc/skel/.config
-chmod 777 etc/skel/.config
-mkdir -p etc/skel/.config/autostart
-chmod 777 etc/skel/.config/autostart
+#mkdir -p etc/skel/.config
+#chmod 777 etc/skel/.config
+#mkdir -p etc/skel/.config/autostart
+#chmod 777 etc/skel/.config/autostart
 
 echo $(basename $0)-$VER >> etc/once_boot_scripts

@@ -18,7 +18,7 @@ gnome-phone-manager
 wireshark
 wireshark-tools
 etherape
-wammu
+#wammu (crash)
 comgt
 dhcp-server
 dvb-apps

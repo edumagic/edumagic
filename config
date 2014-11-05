@@ -11,7 +11,7 @@ FLASHNAME=MagicOS
 
 #Kind of desired distro edu or noedu
 #Вид собираемого дистрибутива edu или noedu
-DISTR_KIND=edu
+DISTR_KIND=noedu
 
 #Size in MB for data and system changes for each profile
 #Размер в Мб для данных и изменений системы для каждого профиля
@@ -38,8 +38,8 @@ RPM_CACHE=cache
 #but it would not allow to rebuild modules again without already applied patches, and you must start building from the first script
 #ROOTFS_INITRD может быть равно $ROOTFS - это ускорит сборку и займет меньше дискового пространства,
 #но это не позволит пересобрать модули повторно без уже наложенных патчей, и придется начать сборку с самого начала
-ROOTFS_INITRD=$ROOTFS
-#ROOTFS_INITRD=$MOD_ROOTFS_DIR/rootfs_initrd
+#ROOTFS_INITRD=$ROOTFS
+ROOTFS_INITRD=$MOD_ROOTFS_DIR/rootfs_initrd
 
 #Parameters for urpmi
 #Параметры urpmi
@@ -56,7 +56,7 @@ FS_KERNEL=aufs
 #List of repositories
 #Список репозиториев
 DIST_MIRROR_0=http://mirror.yandex.ru/mageia/distrib/cauldron/i586
-#DIST_MIRROR_1=http://packages.mageialinux.ru/mageia2/i586
+DIST_MIRROR_1=http://linux.mageia.tk/repo/magicos/magicos5/i586
 #DIST_MIRROR_2=
 
 #Names of additional modules
@@ -82,3 +82,7 @@ INTERNET="yes"
 #Parameter for xvideo= ; parameter must be free or nonfree
 #Выбор значения для xvideo= ; может принимать значения free или nonfree
 XVIDEO="nonfree"
+
+#Виртуальное uname -r
+#Fake uname -r
+UNAME_R="3.17.2-server-1.mga5"

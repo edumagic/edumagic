@@ -1,6 +1,6 @@
 task-lxde
 lxde-ctrl-center
-lxrandr
+#lxrandr
 leafpad
 xarchiver
-lxtask
+#lxtask

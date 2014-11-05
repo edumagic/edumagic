@@ -47,7 +47,7 @@ else
   LANG=Russian
 fi
 
-#Create config for ManSlide
+Create config for ManSlide
 if [ -f "/usr/bin/manslide" ]
 then
   if [ ! -f "~/.manslide.cnf" ]
@@ -115,20 +115,20 @@ then
 fi
 
 #Create config for Phun
-if [ "$LANG" = "Russian" ]
-then
-  if [ -f "/usr/share/phun/config.cfg" ]
-  then
-    A=`cat /usr/share/phun/config.cfg|grep $LANG`
-    if [ "$A" = "" ]
-    then
-      echo "" >> /usr/share/phun/config.cfg
-      echo "App -> {" >> /usr/share/phun/config.cfg
-      echo "    language = \"$LANG\";" >> /usr/share/phun/config.cfg
-      echo "    };" >> /usr/share/phun/config.cfg
-    fi
-  fi
-fi
+#if [ "$LANG" = "Russian" ]
+#then
+#  if [ -f "/usr/share/phun/config.cfg" ]
+#  then
+#    A=`cat /usr/share/phun/config.cfg|grep $LANG`
+#    if [ "$A" = "" ]
+#    then
+#      echo "" >> /usr/share/phun/config.cfg
+#      echo "App -> {" >> /usr/share/phun/config.cfg
+#      echo "    language = \"$LANG\";" >> /usr/share/phun/config.cfg
+#      echo "    };" >> /usr/share/phun/config.cfg
+#    fi
+#  fi
+#fi
 
 #Create config for exe
 if [ "$LANG" = "Russian" ]
@@ -208,27 +208,42 @@ then
 fi
 
 #Create config for fet
-if [ "$LANG" = "Russian" ]
-then
-  if [ -f "/usr/bin/fet" ]
-  then
-    if [ ! -f "~/.config/fet/fettimetabling.conf" ]
-    then
-      mkdir -p ~/.config/fet
-      echo "[General]" >> ~/.config/fet/fettimetabling.conf
-      echo "Language=ru" >> ~/.config/fet/fettimetabling.conf
-    fi
-  fi
-fi
+#if [ "$LANG" = "Russian" ]
+#then
+#  if [ -f "/usr/bin/fet" ]
+#  then
+#    if [ ! -f "~/.config/fet/fettimetabling.conf" ]
+#    then
+#      mkdir -p ~/.config/fet
+#      echo "[General]" >> ~/.config/fet/fettimetabling.conf
+#      echo "Language=ru" >> ~/.config/fet/fettimetabling.conf
+#    fi
+#  fi
+#fi
 
 #Create config for dosbox
+#if [ "$LANG" = "Russian" ]
+#then
+#  if [ -f "/usr/bin/dosbox" ]
+#  then
+#    if [ -f "/usr/bin/dosbox-set-lang" ]
+#    then
+#      dosbox-set-lang ru
+#    fi
+#  fi
+#fi
+
+#Create config for dvdstyler
 if [ "$LANG" = "Russian" ]
 then
-  if [ -f "/usr/bin/dosbox" ]
+  if [ -f "/bin/dvdstyler" ]
   then
-    if [ -f "/usr/bin/dosbox-set-lang" ]
+    if [ ! -f "~/.dvdstyler" ]
     then
-      dosbox-set-lang ru
+      echo "[Interface]" >> ~/.dvdstyler
+      echo "DefAudioLanguage=RU" >> ~/.dvdstyler
+      echo "DefSubtitleLanguage=RU" >> ~/.dvdstyler
+      echo "LanguageCode=ru_RU" >> ~/.dvdstyler
     fi
   fi
 fi

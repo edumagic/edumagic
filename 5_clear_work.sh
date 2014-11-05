@@ -60,6 +60,8 @@ function umountbranches()
 
 umountbranches "$ROOTFS"
 
+rm -f ./uname
+
 #rm -rf work
 
 echo "The script has completed work"

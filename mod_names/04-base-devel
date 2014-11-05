@@ -6,7 +6,7 @@ rsync
 ntfs-3g
 suspend
 sshfs-fuse
-libntfs10
+#libntfs10
 git
 vim-minimal
 vim-enhanced
@@ -14,4 +14,3 @@ package-build-service
 mgarepo
 bm
 cvs
-f2c

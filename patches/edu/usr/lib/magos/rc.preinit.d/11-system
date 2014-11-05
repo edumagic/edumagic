@@ -47,7 +47,7 @@ rm -f usr/share/applications/squeak.desktop
 rm -f usr/share/applications/ilcontrast.desktop
 rm -f usr/share/applications/csg.desktop
 
-#Link for QDevelop
+#Link for QDevelop https://bugs.mageia.org/show_bug.cgi?id=13939
 if [ ! -f "usr/bin/ctags" ]
 then
   ln -s /usr/bin/exuberant-ctags usr/bin/ctags

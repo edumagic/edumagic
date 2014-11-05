@@ -6,6 +6,7 @@ tuxmath
 edugraphe
 lybniz
 xaos
+xaos-aalib
 librecad
 librecad-data
 librecad-doc
@@ -54,15 +55,16 @@ kiosktool
 shotwell
 italc-master
 italc-client
-#italc-client-autostart (add contents directly into distro or merge with Cauldron)
+italc-client-autostart
 qdevelop
+qdevelop-plugins
 libqt4-devel
 qt4-linguist
 qt4-designer
 ctags
 euclide
 openeuclide
-synfig
+synfigstudio
 codeblocks
 geometria
 qosmic

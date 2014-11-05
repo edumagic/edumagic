@@ -100,6 +100,24 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
       mount -o remount,prepend:$MOD_LINE=rw,mod:$MOD_PREV0=rr wiz_fly $ROOTFS
     fi
     MOD_PREV0=$MOD_LINE
+    #For fake uname -r (before module 03-base-kernel-dkms)
+#    if [ ! "$UNAME_R" = "" ]
+#    then
+#      if [ "$(basename $MOD)" = "03-base-kernel-dkms" ]
+#      then
+#        ln -s $UNAME_R $MOD_ROOTFS_DIR/02-base-core/usr/lib/modules/`uname -r`
+#      fi
+#    fi
+    #For fake uname -r (before module 03-base-kernel-dkms)
+#    if [ ! "$UNAME_R" = "" ]
+#    then
+#      if [ "$(basename $MOD)" = "02-base-core" ]
+#      then
+#	mv -f $MOD_ROOTFS_DIR/01-base-firmware/usr/bin/uname $MOD_ROOTFS_DIR/01-base-firmware/usr/bin/uname.tmp
+#	cp -f ./uname $MOD_ROOTFS_DIR/01-base-firmware/usr/bin/
+#	chmod a+x $MOD_ROOTFS_DIR/01-base-firmware/usr/bin/uname
+#      fi
+#    fi
     #For Enable Internet (in next module after 02-base-core, when resolv.conf was created)
     if [ "$INTERNET" = "yes" ]
     then
@@ -113,7 +131,7 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
     then
          if [ "$(basename $MOD)" = "02-base-core" ]
          then
-             urpmi $URPMI_PARAM --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v kernel-magos|grep -v "#"` ./kernel/* 2>&1| tee -a $MYPATH/work/log_urpmi.txt
+             urpmi $URPMI_PARAM --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` ./kernel/* 2>&1| tee -a $MYPATH/work/log_urpmi.txt
          else
              urpmi $URPMI_PARAM --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
          fi
@@ -122,12 +140,13 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
     fi
     if [ "$(basename $MOD)" = "03-base-kernel-dkms" ]
     then
-      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-      chroot $ROOTFS autokmods make 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-#      chroot $ROOTFS autokmods urpme_dkms 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-      chroot $ROOTFS autokmods install 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-      chroot $ROOTFS auto_gl_conf 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+#      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+#      chroot $ROOTFS autokmods make 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+#      chroot $ROOTFS autokmods install 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+#      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+       chroot $ROOTFS alternatives --set gl_conf /etc/ld.so.conf.d/GL/standard.conf 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+       chroot $ROOTFS ldconfig 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+#      chroot $ROOTFS auto_gl_conf 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
     fi
     echo -ne \\n "---> OK."\\n
 done
@@ -166,6 +185,15 @@ then
     #for imc (needs DISPLAY)
     xhost -
 fi
+
+#Return after fake uname -r
+#if [ ! "$UNAME_R" = "" ]
+#then
+#  if [ -f "$MOD_ROOTFS_DIR/01-base-firmware/usr/bin/uname.tmp" ]
+#  then
+#    mv -f $MOD_ROOTFS_DIR/01-base-firmware/usr/bin/uname.tmp $MOD_ROOTFS_DIR/01-base-firmware/usr/bin/uname
+#  fi
+#fi
 
 #Return after Enable Internet
 if [ "$INTERNET" = "yes" ]

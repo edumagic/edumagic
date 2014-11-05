@@ -2,7 +2,7 @@ basesystem
 kernel-server-latest
 kernel-server-devel-latest
 kernel-userspace-headers
-broadcom-wl-kernel-server-latest
+#broadcom-wl-kernel-server-latest
 locales
 locales-en
 locales-ru
@@ -17,6 +17,25 @@ man-pages-ru
 lsof
 at
 rpm-build
-#dev-scripts (not imported)
+#dev-scripts
 fuse-exfat
 exfat-utils
+firmware-tools
+radeon-firmware
+atmel-firmware
+bluez-firmware
+ipw2100-firmware
+ipw2200-firmware
+speedtouch-firmware
+speedtouch-firmware-extractor
+zd1211-firmware
+b43-fwcutter
+#bcm43xx-fwcutter (missing)
+iwlwifi-3945-ucode
+iwlwifi-4965-ucode
+iwlwifi-agn-ucode
+kernel-firmware-nonfree
+#radeon-firmware
+kernel-firmware
+rtlwifi-firmware
+ralink-firmware

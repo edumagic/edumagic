@@ -3,4 +3,4 @@ Name=firstboot_user
 Exec=firstboot_user
 Terminal=false
 Type=Application
-Categories=Application;Utility
+Categories=Application;Utility;

@@ -14,9 +14,10 @@ ENABLED=yes
 
 [ -z "$(cmdline_value autologin)" ] || AUTOLOGINUSER=$(cmdline_value autologin)
 [ -z "$AUTOLOGINUSER" ] && AUTOLOGINUSER=$(echo "$NEEDEDUSERS" | awk -F: '{print $1}')
-[ -z "$AUTOLOGINUSER" ] && AUTOLOGINUSER=$(grep :500:500: etc/passwd | awk -F: '{print $1}')
+[ -z "$AUTOLOGINUSER" ] && AUTOLOGINUSER=$(grep :500:1000: etc/passwd | awk -F: '{print $1}')
 [ "$AUTOLOGINUSER" = "none" ] && AUTOLOGINUSER=
 #sed -i s/^AutomaticLogin=.*/AutomaticLogin=$AUTOLOGINUSER/ etc/X11/gdm/custom.conf 2>/dev/null
+sed -i s/.*autologin=.*/autologin=$AUTOLOGINUSER/ etc/lxdm/lxdm.conf 2>/dev/null
 #sed -i s/^default_user[[:space:]].*/"default_user        $AUTOLOGINUSER"/ etc/X11/slim/slim.conf 2>/dev/null
 sed -i -e "s/#AutoLoginUser=.*/AutoLoginUser=$AUTOLOGINUSER/g" var/lib/mageia/kde4-profiles/Default/share/config/kdm/kdmrc 2>/dev/null
 sed -i -e "s/AutoLoginUser=.*/AutoLoginUser=$AUTOLOGINUSER/g" var/lib/mageia/kde4-profiles/Default/share/config/kdm/kdmrc 2>/dev/null

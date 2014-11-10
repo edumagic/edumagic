@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #Turning on sound for the first found the sound card by 80%
-pactl list | sed -n '/^Sink.*[0-9]$/p' | sed 's/^Sink\ #//g' | pactl set-sink-volume $? 52429
+LC_ALL=C pactl list | sed -n '/^Sink.*[0-9]$/p' | sed 's/^Sink\ #//g' | pactl set-sink-mute $? false
+LC_ALL=C pactl list | sed -n '/^Sink.*[0-9]$/p' | sed 's/^Sink\ #//g' | pactl set-sink-volume $? 52429
 
 #Remove from autostart to call this script
 rm ~/.config/autostart/firstboot_user.desktop
@@ -11,10 +12,10 @@ rm ~/.config/autostart/firstboot_user.desktop
 
 #Copy Desktop from KDE
 DIR=`echo $(kreadconfig --file $HOME/.config/user-dirs.dirs --key XDG_DESKTOP_DIR)|cut -d "\"" --fields=2|cut -d "/" --fields=2`
-if [ ! -f "$DIR/Home2.desktop" ]
-then
-  cp -f /usr/share/applications/kde4/Home2.desktop "$HOME/$DIR/"
-fi
+#if [ ! -f "$DIR/Home2.desktop" ]
+#then
+#  cp -f /usr/share/applications/kde4/Home2.desktop "$HOME/$DIR/"
+#fi
 if [ ! -f "$DIR/register.desktop" ]
 then
   cp -f /usr/share/dist/desktop-files/default/register.desktop "$HOME/$DIR/"
@@ -47,7 +48,7 @@ else
   LANG=Russian
 fi
 
-Create config for ManSlide
+#Create config for ManSlide
 if [ -f "/usr/bin/manslide" ]
 then
   if [ ! -f "~/.manslide.cnf" ]
@@ -247,5 +248,7 @@ then
     fi
   fi
 fi
+
+#cp -f /etc/xdg/lxpanel/LXDE/panels/panel ~/.config/lxpanel/LXDE/panels
 
 exit 0

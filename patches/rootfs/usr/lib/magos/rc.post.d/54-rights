@@ -3,6 +3,6 @@
 ENABLED=yes
 [ "$ENABLED" != "yes" ] && exit 0
 
-cd "/home/user/Рабочий стол"
-chmod +x ./*.desktop
-chown user:user ./*.desktop
+#cd "/home/user/Рабочий стол"
+#chmod +x ./*.desktop
+#chown user:user ./*.desktop

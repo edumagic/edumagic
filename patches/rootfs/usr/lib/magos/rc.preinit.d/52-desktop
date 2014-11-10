@@ -37,10 +37,10 @@ for a in $(cmdline_value desktop | tr , " " ) ;do
          echo -e "DISPLAYMANAGER=KDM\nDESKTOP=KDE4" >etc/sysconfig/desktop
        ;;
        gnome)
-         echo -e "DISPLAYMANAGER=GDM\nDESKTOP=MATE" >etc/sysconfig/desktop
+         echo -e "DISPLAYMANAGER=lxdm\nDESKTOP=MATE" >etc/sysconfig/desktop
        ;;
        lxde)
-         echo -e "DISPLAYMANAGER=slim\nDESKTOP=LXDE" >etc/sysconfig/desktop
+         echo -e "DISPLAYMANAGER=lxdm\nDESKTOP=LXDE" >etc/sysconfig/desktop
        ;;
        kdm)
          sed -i 's/DISPLAYMANAGER=.*/DISPLAYMANAGER=KDM/' etc/sysconfig/desktop
@@ -51,9 +51,23 @@ for a in $(cmdline_value desktop | tr , " " ) ;do
 #       slim)
 #         sed -i 's/DISPLAYMANAGER=.*/DISPLAYMANAGER=slim/' etc/sysconfig/desktop
 #       ;;
+       lxdm)
+         sed -i 's/DISPLAYMANAGER=.*/DISPLAYMANAGER=lxdm/' etc/sysconfig/desktop
+       ;;
        lan)
          sed -i s/ONBOOT=no/ONBOOT=yes/ etc/sysconfig/network-scripts/ifcfg-eth0 2>/dev/null
        ;;
    esac
 done
 
+#GDM3 default session fix
+#. etc/sysconfig/desktop
+#cat >etc/X11/dm/Sessions/00DEFAULT.desktop <<EOF
+#[Desktop Entry]
+#Encoding=UTF-8
+#Name=DEFAULT
+#Comment=Default MagOS Session
+#Exec=/usr/share/X11/xdm/Xsession $DESKTOP
+#Icon=
+#Type=Application
+#EOF

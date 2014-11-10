@@ -1,7 +1,5 @@
-#gksu-polkit
+lxdm
+gksu-polkit
 task-mate
 parcellite
-#gnome-calculator
 mate-calc
-#mate-settings-daemon-pulse
-#mate-media-pulse

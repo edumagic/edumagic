@@ -6,7 +6,7 @@ rsync
 ntfs-3g
 suspend
 sshfs-fuse
-#libntfs10
+#libntfs10 (deprecated)
 git
 vim-minimal
 vim-enhanced
@@ -14,3 +14,5 @@ package-build-service
 mgarepo
 bm
 cvs
+posixovl
+#httpfs (missing)

@@ -21,6 +21,7 @@ etherape
 #wammu (crash)
 comgt
 dhcp-server
+dhcp-client
 dvb-apps
 dvbsnoop
 dvbtune
@@ -39,3 +40,4 @@ zcip
 aircrack-ng
 gnome-nettool
 gftp
+wireless-tools

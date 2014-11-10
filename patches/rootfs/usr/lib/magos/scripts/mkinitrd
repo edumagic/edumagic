@@ -20,7 +20,7 @@ INIRAMDLIBS2="libelf.so.1 libglib-2.0.so.0 liblzo2.so.2 libm.so.6 libpcre.so.1 l
   libmount.so.1 libsmartcols.so.1 libfuse.so.2 libtinfo.so.5"
 
 # binaries for /bin
-INIRAMDBIN1="busybox.static lspci blkid blockdev"
+INIRAMDBIN1="busybox.static lspci blkid blockdev mount.posixovl"
 # binaries for /usr/bin
 INIRAMDBIN2='dosfsck fsck fsck.ext2 reiserfsck rsync losetup ntfsfix mksquashfs unsquashfs
   ntfs-3g.probe ntfs-3g fusermount mount.fuse ulockmgr_server resume sshfs shred cat ls dialog loadkeys unrar'
@@ -161,6 +161,7 @@ for a in $INIRAMDBIN2 ;do
 done
 
 mv bin/busybox.static bin/busybox || exit 1
+mv sbin/mount.posixovl sbin/posixovl || exit 1
 mv usr/bin/losetup usr/bin/losetup.real || exit 1
 
 # build links to busybox's functions from busybox's own help text

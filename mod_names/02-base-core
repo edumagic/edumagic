@@ -2,7 +2,6 @@ basesystem
 kernel-server-latest
 kernel-server-devel-latest
 kernel-userspace-headers
-#broadcom-wl-kernel-server-latest
 locales
 locales-en
 locales-ru
@@ -17,7 +16,7 @@ man-pages-ru
 lsof
 at
 rpm-build
-#dev-scripts
+#dev-scripts (deprecated)
 fuse-exfat
 exfat-utils
 firmware-tools
@@ -35,7 +34,6 @@ iwlwifi-3945-ucode
 iwlwifi-4965-ucode
 iwlwifi-agn-ucode
 kernel-firmware-nonfree
-#radeon-firmware
 kernel-firmware
 rtlwifi-firmware
 ralink-firmware

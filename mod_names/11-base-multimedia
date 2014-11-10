@@ -10,7 +10,6 @@ avidemux-qt
 avidemux-plugins
 easytag
 grip
-#gnome-mplayer
 qmmp
 radiotray
 tvtime
@@ -32,13 +31,13 @@ gstreamer0.10-pulse
 ld10k1
 pulseaudio-esound-compat
 pulseaudio-module-zeroconf
-#taglib-extras
+#taglib-extras (deprecated)
 #tano (crash)
 bombono-dvd
 #task-codec-audio (move into new module)
 #task-codec-video (move into new module)
 xawtv
-#steam
+#steam (many bugs)
 #performous (not imported)
 festival
 #freetuxtv (crash)

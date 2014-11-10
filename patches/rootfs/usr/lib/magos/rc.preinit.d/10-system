@@ -282,6 +282,15 @@ then
   fi
 fi
 
+#For PrintScreen in LXDE
+if [ ! -f "usr/bin/gnome-screenshot" ]
+then
+  if [ -f "usr/bin/mate-screenshot" ]
+  then
+    ln -s /usr/bin/mate-screenshot usr/bin/gnome-screenshot
+  fi
+fi
+
 #if [ ! -f "usr/share/pixmaps/media-cdrom.png" ]
 #then
 #  if [ -f "usr/share/icons/nuoveXT2/48x48/devices/media-cdrom.png" ]

@@ -1,7 +1,7 @@
 eiskaltdcpp-qt
 firefox
 firefox-ru
-#firefox-ext-adblock-plus
+#firefox-ext-adblock-plus (strange missing?)
 flash-player-plugin
 #flash-player-plugin-eula (add contents directly into distro or add nothing)
 qbittorrent

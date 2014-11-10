@@ -40,4 +40,5 @@ for a in $(echo $NEEDEDUSERS | tr ",;" " " ) ;do
         chroot . bin/chown -R $NEEDEDUSER.$NEEDEDUSER /home/$NEEDEDUSER
    fi
 done
+sed -i s'=^root:\*:=root::=' etc/shadow
 sed -i s=^root::=root:"$DEFAULTROOTPASSWD":= etc/shadow

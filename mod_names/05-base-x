@@ -1,4 +1,3 @@
-autologin
 task-x11
 x11-data-bitmaps
 x11-data-cursor-themes
@@ -58,7 +57,7 @@ x11-font-winitzki-cyrillic
 x11-server-common
 x11-server-xorg
 x11-driver-video-fglrx
-#x11-driver-video-nvidia173
+#x11-driver-video-nvidia173 (deprecated)
 x11-driver-video-nvidia304
 x11-driver-video-nvidia-current
 x11-driver-input-vmmouse

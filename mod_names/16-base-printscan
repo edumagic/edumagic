@@ -4,6 +4,7 @@ task-printing-scanning
 system-config-printer
 yagf
 aspell-en
+aspell-ru
 cuneiform-linux
 tesseract
 tesseract-rus

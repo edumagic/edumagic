@@ -11,7 +11,7 @@ FLASHNAME=MagicOS
 
 #Kind of desired distro edu or noedu
 #Вид собираемого дистрибутива edu или noedu
-DISTR_KIND=noedu
+DISTR_KIND=edu
 
 #Size in MB for data and system changes for each profile
 #Размер в Мб для данных и изменений системы для каждого профиля
@@ -85,4 +85,4 @@ XVIDEO="nonfree"
 
 #Виртуальное uname -r
 #Fake uname -r
-UNAME_R="3.17.2-server-1.mga5"
+#UNAME_R="3.17.2-server-1.mga5"

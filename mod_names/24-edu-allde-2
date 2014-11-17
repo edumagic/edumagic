@@ -3,7 +3,7 @@ wxmaxima
 scilab
 drgeo
 tuxmath
-edugraphe
+#edugraphe (crash)
 lybniz
 xaos
 xaos-aalib
@@ -38,17 +38,17 @@ solfege
 tuxwordsmith
 tuxmathscrabble
 multiplicationstation
-shutter
+#shutter (crash)
 scantailor
 gcad3d
 gamine
 projectlibre
 pitivi
-anjuta
-anjuta-extras
-libanjuta3-devel
-gcc-java
-vala
+#anjuta (gnome requires)
+#anjuta-extras (gnome requires)
+#libanjuta3-devel (gnome requires)
+#gcc-java (anjuta requires)
+#vala (anjuta requires)
 xaralx
 gnome-paint
 kiosktool
@@ -78,7 +78,7 @@ tkgate
 arduino
 #librxtx-devel (missing)
 freeplane
-opengrade
+#opengrade (crash)
 planner
 avogadro
 bk-emu

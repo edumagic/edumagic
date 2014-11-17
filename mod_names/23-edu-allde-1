@@ -11,7 +11,7 @@ pgadmin3
 flamerobin
 evolution
 mypaint
-pinta
+#pinta (crash)
 tuxpaint
 tuxpaint-stamps
 blender
@@ -55,10 +55,12 @@ hugs98-opengl
 hugs98-x11
 monodevelop
 mseide-msegui
+mseide-msegui-i18n
 fritzing
 drakguard-yandex-family-policy
 mucommander
 xine-ui
+xine-plugins
 pidgin
 pidgin-plugin-mrim
 klavaro

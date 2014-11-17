@@ -208,6 +208,19 @@ then
   fi
 fi
 
+#Create config for tuxtype
+if [ "$LANG" = "Russian" ]
+then
+  if [ -f "/usr/games/tuxtype" ]
+  then
+    if [ ! -f "~/.tuxtype/settings.txt" ]
+    then
+      mkdir -p ~/.tuxtype
+      echo "lang=russian" >> ~/.tuxtype/settings.txt
+    fi
+  fi
+fi
+
 #Create config for fet
 #if [ "$LANG" = "Russian" ]
 #then

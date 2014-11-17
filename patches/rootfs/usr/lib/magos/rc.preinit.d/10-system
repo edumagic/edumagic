@@ -68,11 +68,11 @@ if [ "$A" = "" ]
 then
   echo "OnlyShowIn=KDE;" >> usr/share/applications/kde4/systemsettings.desktop
 fi
-A=`cat usr/share/applications/kde4/kdesystemsettings.desktop | grep OnlyShowIn=KDE;`
-if [ "$A" = "" ]
-then
-  echo "OnlyShowIn=KDE;" >> usr/share/applications/kde4/kdesystemsettings.desktop
-fi
+#A=`cat usr/share/applications/kde4/kdesystemsettings.desktop | grep OnlyShowIn=KDE;`
+#if [ "$A" = "" ]
+#then
+#  echo "OnlyShowIn=KDE;" >> usr/share/applications/kde4/kdesystemsettings.desktop
+#fi
 #if [ -f "usr/bin/lxde-control-center" ]
 #  then
 #  A=`cat usr/share/applications/lxde-control-center.desktop | grep OnlyShowIn=LXDE;`
@@ -313,5 +313,8 @@ fi
 #sed -i "/SubscriptionPrivateValues default/d" etc/cups/cupsd.conf.default
 #temporary fix, because /usr/lib/cups/filter/rastertoqpdl was used from printer-driver-splix_2.0.0+svn315-0ubuntu1_i386.deb
 #ln -s /usr/lib/libjbig.so usr/lib/libjbig.so.0
+
+# for kdesystemsettings https://bugs.mageia.org/show_bug.cgi?id=13949
+sed -i 's|Exec=.*|Exec=systemsettings -caption "%c" %i|g' usr/share/applications/kde4/kdesystemsettings.desktop
 
 echo $(basename $0)-$VER >> etc/once_boot_scripts

@@ -12,7 +12,7 @@ ENABLED=yes
 . /liblinuxlive
 . etc/sysconfig/MagOS
 
-[ -z "$PARTITIONSMOUNTUID" ] && PARTITIONSMOUNTUID=500
+[ -z "$PARTITIONSMOUNTUID" ] && PARTITIONSMOUNTUID=1000
 FSCKFLAG=0
 
 #Find and use swap partition. If not, use window$ swapfile.

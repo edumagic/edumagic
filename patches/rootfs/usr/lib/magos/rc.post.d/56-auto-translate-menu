@@ -1,0 +1,123 @@
+#!/bin/bash
+
+# This script add missing GenericName if Comment exists and add missing Comment if GenericName exists
+# and works for [$LANGUAGE] also
+# Licence: GPLv3 or later
+# Author: Alexey Loginov <loginov.alex.valer@gmail.com>
+
+ENABLED=yes
+[ "$ENABLED" != "yes" ] && exit 0
+
+VER=`cat /mnt/live/VERSION|awk '{print $2}'`
+ONCE=`cat /etc/once_boot_scripts|grep $(basename $0)-$VER`
+if [ ! "$ONCE" = "" ]
+then
+  exit 0
+fi
+
+correct-file ()
+{
+cd $1
+#add Enter if somebody forgot
+printf "\n" >> "$2"
+#delete all empty lines
+sed -i '/^$/d' "$2"
+}
+
+auto-translate ()
+{
+cd $1
+for A in `ls -1|grep .desktop`
+do
+  if [ "$A" = "xfburn.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "konsole.desktop" ]
+  then
+    continue
+  fi
+  B0=`cat $A|grep "Comment="|cut -d "=" --fields=2`
+  B=`cat $A|grep "Comment\[$2\]"|cut -d "=" --fields=2`
+  C0=`cat $A|grep "GenericName="|cut -d "=" --fields=2`
+  C=`cat $A|grep "GenericName\[$2\]"|cut -d "=" --fields=2`
+  if [ "$B0" = "" ]
+  then
+    if [ ! "$C0" = "" ]
+    then
+       #echo "Add Comment=$C0 >> $DIRECTORY/$A"
+       correct-file $1 $A
+       echo "Comment=$C0" >> $A
+       if [ "$3" = "yes" ]
+       then
+         desktop-file-validate $A >> /tmp/auto-translate-menu.log
+       fi
+    fi
+  fi
+  if [ "$B" = "" ]
+  then
+    if [ ! "$C" = "" ]
+    then
+       #echo "Add Comment[$2]=$C >> $DIRECTORY/$A"
+       correct-file $1 $A
+       echo "Comment[$2]=$C" >> $A
+       if [ "$3" = "yes" ]
+       then
+         desktop-file-validate $A >> /var/log/auto-translate-menu.log
+       fi
+    fi
+  fi
+  if [ "$C0" = "" ]
+  then
+    if [ ! "$B0" = "" ]
+    then
+       #echo "Add GenericName=$B0 >> $DIRECTORY/$A"
+       correct-file $1 $A
+       echo "GenericName=$B0" >> $A
+       if [ "$3" = "yes" ]
+       then
+         desktop-file-validate $A >> /tmp/auto-translate-menu.log
+       fi
+    fi
+  fi
+  if [ "$C" = "" ]
+  then
+    if [ ! "$B" = "" ]
+    then
+       #echo "Add GenericName[$2]=$B >> $DIRECTORY/$A"
+       correct-file $1 $A
+       echo "GenericName[$2]=$B" >> $A
+       if [ "$3" = "yes" ]
+       then
+         desktop-file-validate $A >> /var/log/auto-translate-menu.log
+       fi
+    fi
+  fi
+done
+}
+
+echo "Start auto translation for Menu"
+
+LANGUAGE="ru"
+DEBUG=yes
+
+if [ "$DEBUG" = "yes" ]
+then
+  date >> /var/log/auto-translate-menu.log
+  date >> /var/log/auto-translate-menu-errors.log
+fi
+
+DIRECTORY="/usr/share/applications"
+auto-translate $DIRECTORY $LANGUAGE $DEBUG
+
+DIRECTORY="/usr/share/applications/kde4"
+auto-translate $DIRECTORY $LANGUAGE $DEBUG
+
+if [ "$DEBUG" = "yes" ]
+then
+  cat /var/log/auto-translate-menu.log|grep "error:"|grep -v "(will be fatal in the future):" >> /var/log/auto-translate-menu-errors.log
+fi
+
+echo "Auto translation for Menu was finished"
+
+echo $(basename $0)-$VER >> /etc/once_boot_scripts

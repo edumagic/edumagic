@@ -138,6 +138,9 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
     else
         urpmi $URPMI_PARAM --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
     fi
+#    fix error db-30971
+#    rm -f $MOD_ROOTFS_DIR/var/lib/rpm/__db.*
+#    chroot $ROOTFS rpm --rebuilddb
     if [ "$(basename $MOD)" = "03-base-kernel-dkms" ]
     then
 #      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
@@ -151,9 +154,9 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
     echo -ne \\n "---> OK."\\n
 done
 
-chroot $ROOTFS rpm -qa --queryformat '%{NAME}\n'|sort -u > $MYPATH/work/all_name_rpm.txt
-chroot $ROOTFS rpm -qa|sort -u > $MYPATH/work/all_rpm.txt
-
+# fix error db-30971
+#chroot $ROOTFS rpm -qa --queryformat '%{NAME}\n'|sort -u > $MYPATH/work/all_name_rpm.txt
+#chroot $ROOTFS rpm -qa|sort -u > $MYPATH/work/all_rpm.txt
 
 if [ "$DISTR_KIND" = "edu" ]
 then
@@ -179,7 +182,7 @@ then
 	MOD_PREV0=$MOD_LINE
         #for imc (needs DISPLAY)
         xhost +
-	urpmi $URPMI_PARAM --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+        urpmi $URPMI_PARAM --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
 	echo -ne \\n "---> OK."\\n
     done
     #for imc (needs DISPLAY)

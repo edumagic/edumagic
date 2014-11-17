@@ -324,7 +324,7 @@ fs_options()
    CODEPAGE=$(codepage)
 
    MUID=$(cmdline_value users | awk -F: '{print $2}')
-   [ "$MUID" = "" ] && MUID=500
+   [ "$MUID" = "" ] && MUID=1000
 
 
    if [ "$1" = "vfat" ]; then

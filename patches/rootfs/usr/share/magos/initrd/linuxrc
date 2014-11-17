@@ -53,8 +53,8 @@ echo -e "ext4\next3\next2\nvfat\n*" >/etc/filesystems
 mkdir -p $UNION $MEMORY
 
 MUID=$(cmdline_value users | awk -F: '{print $2}')
-[ "$MUID" = "" ] || sed -i s/:500:500:/:$MUID:$MUID:/g /etc/passwd
-[ "$MUID" = "" ] || sed -i s/:500:/:$MUID:/g /etc/group
+[ "$MUID" = "" ] || sed -i s/:1000:1000:/:$MUID:$MUID:/g /etc/passwd
+[ "$MUID" = "" ] || sed -i s/:1000:/:$MUID:/g /etc/group
 
 debug_shell
 

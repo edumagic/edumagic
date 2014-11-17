@@ -12,32 +12,16 @@ ENABLED=yes
 . /liblinuxlive
 
 rm -f etc/sysconfig/i18n
-ln -s /etc/sysconfig/language/default/i18n etc/sysconfig/i18n
+ln -s /etc/sysconfig/lang/default/i18n etc/sysconfig/i18n
 rm -f etc/sysconfig/keyboard
-ln -s /etc/sysconfig/language/default/keyboard etc/sysconfig/keyboard
+ln -s /etc/sysconfig/lang/default/keyboard etc/sysconfig/keyboard
 
-for a in $(cmdline_value language | tr , " " ) ;do
-#   case $a in
-#       english)
-  if [ -d "etc/sysconfig/language/$a" ]
+for a in $(cmdline_value lang | tr , " " ) ;do
+  if [ -d "etc/sysconfig/lang/$a" ]
   then
     rm -f etc/sysconfig/i18n
-    ln -s /etc/sysconfig/language/$a/i18n etc/sysconfig/i18n
+    ln -s /etc/sysconfig/lang/$a/i18n etc/sysconfig/i18n
     rm -f etc/sysconfig/keyboard
-    ln -s /etc/sysconfig/language/$a/keyboard etc/sysconfig/keyboard
+    ln -s /etc/sysconfig/lang/$a/keyboard etc/sysconfig/keyboard
   fi
-#       ;;
-#       russian)
-#         rm -f etc/sysconfig/i18n
-#         ln -s /etc/sysconfig/language/russian/i18n etc/sysconfig/i18n
-#         rm -f etc/sysconfig/keyboard
-#         ln -s /etc/sysconfig/language/russian/keyboard etc/sysconfig/keyboard
-#       ;;
-#       default)
-#         rm -f etc/sysconfig/i18n
-#         ln -s /etc/sysconfig/language/default/i18n etc/sysconfig/i18n
-#         rm -f etc/sysconfig/keyboard
-#         ln -s /etc/sysconfig/language/default/keyboard etc/sysconfig/keyboard
-#       ;;
-#   esac
 done

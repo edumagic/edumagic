@@ -17,7 +17,7 @@ USERGROUPS=audio,video,usb,lp
 . /liblinuxlive
 . etc/sysconfig/MagOS
 [ -f /tmp/.credential ] && . /tmp/.credential && rm -f /tmp/.credential
-[ -z "$NEEDEDUSERS" ] && NEEDEDUSERS="$DEFAULTUSER:500:$DEFAULTPASSWD"
+[ -z "$NEEDEDUSERS" ] && NEEDEDUSERS="$DEFAULTUSER:1000:$DEFAULTPASSWD"
 [ -z "$(cmdline_value users)" ] || NEEDEDUSERS=$(cmdline_value users)
 
 for a in $(echo $NEEDEDUSERS | tr ",;" " " ) ;do

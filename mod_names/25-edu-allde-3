@@ -24,7 +24,7 @@ uidesigner
 gnutu
 #tuxguitar (BUGS: sound does not work and there are errors in code)
 ardesia
-openstereo
+#openstereo (crash)
 laby
 pywords
 pysiogame
@@ -42,3 +42,4 @@ openteacher
 myabcs
 smathstudio
 #convertall (not imported)
+#physion (not imported)

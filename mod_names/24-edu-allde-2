@@ -1,6 +1,6 @@
 maxima
 wxmaxima
-scilab
+#scilab (brokendep)
 drgeo
 tuxmath
 #edugraphe (crash)
@@ -12,10 +12,10 @@ librecad-data
 librecad-doc
 librecad-parts
 librecad-plugins
-sweethome3d
-sweethome3d-3dmodels
-sweethome3d-javadoc
-sweethome3d-textures
+#sweethome3d (brokendep)
+#sweethome3d-3dmodels (brokendep)
+#sweethome3d-javadoc (brokendep)
+#sweethome3d-textures (brokendep)
 qcad
 kicad
 kicad-locales-ru
@@ -77,7 +77,7 @@ ganttproject
 tkgate
 arduino
 #librxtx-devel (missing)
-freeplane
+#freeplane (brokendep)
 #opengrade (crash)
 planner
 avogadro

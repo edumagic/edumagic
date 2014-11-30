@@ -155,8 +155,11 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
 done
 
 # fix error db-30971
-#chroot $ROOTFS rpm -qa --queryformat '%{NAME}\n'|sort -u > $MYPATH/work/all_name_rpm.txt
-#chroot $ROOTFS rpm -qa|sort -u > $MYPATH/work/all_rpm.txt
+if [ "$LISTS_PKGS_MAGICOS" = "yes" ]
+then
+  chroot $ROOTFS rpm -qa --queryformat '%{NAME}\n'|sort -u > $MYPATH/work/all_name_rpm.txt
+  chroot $ROOTFS rpm -qa|sort -u > $MYPATH/work/all_rpm.txt
+fi
 
 if [ "$DISTR_KIND" = "edu" ]
 then
@@ -364,19 +367,27 @@ fi
 
 echo "The file work/log_urpmi.txt contains installation log"
 echo "В файле work/log_urpmi.txt содержится лог установки"
-echo "File work/all_name_rpm.txt contains a list of all installed packages in the distro by name"
-echo "В файле work/all_name_rpm.txt содержится список всех установленных в дистрибутиве пакетов поимённо"
-echo "File work/all_rpm.txt contains a list of all installed packages in the distro"
-echo "В файле work/all_rpm.txt содержится список всех установленных в дистрибутиве пакетов"
+# fix error db-30971
+if [ "$LISTS_PKGS_MAGICOS" = "yes" ]
+then
+  echo "File work/all_name_rpm.txt contains a list of all installed packages in the distro by name"
+  echo "В файле work/all_name_rpm.txt содержится список всех установленных в дистрибутиве пакетов поимённо"
+  echo "File work/all_rpm.txt contains a list of all installed packages in the distro"
+  echo "В файле work/all_rpm.txt содержится список всех установленных в дистрибутиве пакетов"
+fi
 
 if [ "$DISTR_KIND" = "edu" ]
 then
-  chroot $ROOTFS rpm -qa --queryformat '%{NAME}\n'|sort -u > $MYPATH/work/all_edu_name_rpm.txt
-  chroot $ROOTFS rpm -qa|sort -u > $MYPATH/work/all_edu_rpm.txt
-  echo "File work/all_edu_name_rpm.txt contains a list of all installed packages in the edu version of distro by name"
-  echo "В файле work/all_edu_name_rpm.txt содержится список всех установленных в edu версии дистрибутива пакетов поимённо"
-  echo "File work/all_edu_rpm.txt contains a list of all installed packages in the edu version of distro"
-  echo "В файле work/all_edu_rpm.txt содержится список всех установленных в edu версии дистрибутива пакетов"
+  # fix error db-30971
+  if [ "$LISTS_PKGS_EDUMAGIC" = "yes" ]
+  then
+    chroot $ROOTFS rpm -qa --queryformat '%{NAME}\n'|sort -u > $MYPATH/work/all_edu_name_rpm.txt
+    chroot $ROOTFS rpm -qa|sort -u > $MYPATH/work/all_edu_rpm.txt
+    echo "File work/all_edu_name_rpm.txt contains a list of all installed packages in the edu version of distro by name"
+    echo "В файле work/all_edu_name_rpm.txt содержится список всех установленных в edu версии дистрибутива пакетов поимённо"
+    echo "File work/all_edu_rpm.txt contains a list of all installed packages in the edu version of distro"
+    echo "В файле work/all_edu_rpm.txt содержится список всех установленных в edu версии дистрибутива пакетов"
+  fi
 fi
 
 echo "The script has completed work"

@@ -9,7 +9,10 @@ export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
 ENABLED=yes
 [ "$ENABLED" != "yes" ] && exit 0
 
-. /liblinuxlive
+DEBUGMODE=no
+. /liblinuxlive 2>/dev/null || . /mnt/live/liblinuxlive
+debug_mode "$0" "$@"
+
 . etc/sysconfig/MagOS
 
 VER=`cat /VERSION|awk '{print $2}'`
@@ -21,6 +24,13 @@ fi
 
 mkdir -p proc
 mount -o rbind /proc proc
+# https://bugs.mageia.org/show_bug.cgi?id=14650
+if [ -x bin/systemd ]
+then
+  chroot . systemctl enable ModemManager.service || chroot . chkconfig --add ModemManager
+else
+  chroot . chkconfig --add ModemManager
+fi
 if [ -x bin/systemd ]
 then
   chroot . systemctl disable NetworkManager.service || chroot . chkconfig --del NetworkManager

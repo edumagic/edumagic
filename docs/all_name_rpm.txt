@@ -19,6 +19,7 @@ arj
 ark
 aspell
 aspell-en
+aspell-ru
 at
 atk1.0-common
 atmel-firmware
@@ -28,7 +29,6 @@ audacity
 autoconf
 autocorr-ru
 autohint-onoff
-autologin
 automake
 avidemux-plugins
 avidemux-qt
@@ -51,7 +51,7 @@ bootsplash
 brasero
 bridge-utils
 broadcom-wl-common
-broadcom-wl-kernel-3.17.2-server-3.mga5
+broadcom-wl-kernel-3.17.2-server-4.mga5
 broadcom-wl-kernel-server-latest
 btrfs-progs
 busybox-static
@@ -127,6 +127,7 @@ Default-kde4-config
 desktop-common-data
 desktop-file-utils
 devede
+dhcp-client
 dhcp-common
 dhcp-server
 dia
@@ -201,7 +202,7 @@ festvox-kallpc-common
 ffdiaporama
 ffmpeg
 ffmpegthumbs
-fglrx-kernel-3.17.2-server-3.mga5
+fglrx-kernel-3.17.2-server-4.mga5
 fglrx-kernel-server-latest
 file
 filelight
@@ -285,7 +286,6 @@ gnome-python-canvas
 gnome-python-extras
 gnome-python-gconf
 gnome-python-gnomevfs
-gnome-screenshot
 gnome-themes-standard
 gnome-vfs2
 gnome-video-effects
@@ -428,8 +428,8 @@ kdm
 keditbookmarks
 kernel-firmware
 kernel-firmware-nonfree
-kernel-server-3.17.2-3.mga5
-kernel-server-devel-3.17.2-3.mga5
+kernel-server-3.17.2-4.mga5
+kernel-server-devel-3.17.2-4.mga5
 kernel-server-devel-latest
 kernel-server-latest
 kernel-userspace-headers
@@ -1617,9 +1617,9 @@ nss_wins
 ntfs-3g
 nut
 nut-server
-nvidia304-kernel-3.17.2-server-3.mga5
+nvidia304-kernel-3.17.2-server-4.mga5
 nvidia304-kernel-server-latest
-nvidia-current-kernel-3.17.2-server-3.mga5
+nvidia-current-kernel-3.17.2-server-4.mga5
 nvidia-current-kernel-server-latest
 nxproxy
 obconf
@@ -1786,6 +1786,7 @@ polkit
 polkit-kde-agent-1
 poppler
 popt-data
+posixovl
 poster
 postgresql-jdbc
 postscript-ppds
@@ -2086,14 +2087,14 @@ usermode
 usermode-consoleonly
 util-linux
 v4l-utils
-vboxadditions-kernel-3.17.2-server-3.mga5
+vboxadditions-kernel-3.17.2-server-4.mga5
 vboxadditions-kernel-server-latest
 vcdimager
 viewres
 vim-common
 vim-enhanced
 vim-minimal
-virtualbox-kernel-3.17.2-server-3.mga5
+virtualbox-kernel-3.17.2-server-4.mga5
 virtualbox-kernel-server-latest
 vlc
 vlc-plugin-common
@@ -2114,6 +2115,7 @@ which
 whois
 wildmidi
 wireless-regdb
+wireless-tools
 wireshark
 wireshark-tools
 wvdial

@@ -7,7 +7,7 @@ veusz
 exe
 uniconvertor
 scidavis
-aoi
+#aoi (brokendep)
 tupi
 littlewizard
 sankore

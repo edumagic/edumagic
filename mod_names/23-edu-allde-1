@@ -5,7 +5,7 @@ lightlang-dict
 goldendict
 abiword
 gnumeric
-freemind
+#freemind (brokendep)
 afce
 pgadmin3
 flamerobin
@@ -155,5 +155,7 @@ gambas3-gb-xml-xslt
 gambas3-ide
 gambas3-runtime
 gambas3-script
+gambas3-gb-inotify
+gambas3-gb-markdown
 bwbasic
 phun

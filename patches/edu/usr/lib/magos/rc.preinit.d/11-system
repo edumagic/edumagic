@@ -9,6 +9,10 @@ export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
 ENABLED=yes
 [ "$ENABLED" != "yes" ] && exit 0
 
+DEBUGMODE=no
+. /liblinuxlive 2>/dev/null || . /mnt/live/liblinuxlive
+debug_mode "$0" "$@"
+
 VER=`cat /VERSION|awk '{print $2}'`
 ONCE=`cat etc/once_boot_scripts|grep $(basename $0)-$VER`
 if [ ! "$ONCE" = "" ]
@@ -16,7 +20,6 @@ then
   exit 0
 fi
 
-. /liblinuxlive
 . etc/sysconfig/MagOS
 
 #Optimization menu and correction desktop files
@@ -47,6 +50,33 @@ rm -f usr/share/applications/squeak.desktop
 #rm -f usr/share/applications/ilcontrast.desktop
 #rm -f usr/share/applications/csg.desktop
 
+#hide aqsis
+#rm -f usr/share/applications/aqsis.desktop
+#rm -f usr/share/applications/aqsl.desktop
+#rm -f usr/share/applications/aqsltell.desktop
+#rm -f usr/share/applications/eqsl.desktop
+#rm -f usr/share/applications/piqsl.desktop
+
+#sankore is buggy for LXDE with mcompmgr
+A=`cat usr/share/applications/sankore.desktop|grep NotShowIn|grep LXDE`
+if [ "$A" = "" ]
+then
+  echo "NotShowIn=LXDE;" >> usr/share/applications/sankore.desktop
+fi
+
+#ardesia is buggy for LXDE with mcompmgr
+A=`cat usr/share/applications/ardesia.desktop|grep NotShowIn|grep LXDE`
+if [ "$A" = "" ]
+then
+  echo "NotShowIn=LXDE;" >> usr/share/applications/ardesia.desktop
+fi
+
+# https://bugzilla.gnome.org/show_bug.cgi?id=740873
+#sed -i "s|^GenericName\[ru\]=.*|GenericName[ru]=Менеджер фотографий|g" usr/share/applications/shotwell.desktop
+#sed -i "s|^Comment\[ru\]=.*|Comment[ru]=Организовывайте ваши фотографии|g" usr/share/applications/shotwell.desktop
+
+sed -i "s|^Name\[ru\]=.*|Name[ru]=Tupi: Свободная 2D магия|g" usr/share/applications/tupi.desktop
+
 #Link for QDevelop https://bugs.mageia.org/show_bug.cgi?id=13939
 #if [ ! -f "usr/bin/ctags" ]
 #then
@@ -76,7 +106,7 @@ rm -f usr/share/applications/squeak.desktop
 #update-mime-database usr/share/mime
 
 # for tuxype https://bugs.mageia.org/show_bug.cgi?id=14558
-ln -s /usr/share/locale usr/share/games/locale
+#ln -s /usr/share/locale usr/share/games/locale
 
 # for ktuberling https://bugs.mageia.org/show_bug.cgi?id=14589
 sed -i 's|Exec=.*|Exec=ktuberling -caption "%c" %u|g' usr/share/applications/kde4/ktuberling.desktop

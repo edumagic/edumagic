@@ -8,6 +8,10 @@
 ENABLED=yes
 [ "$ENABLED" != "yes" ] && exit 0
 
+DEBUGMODE=no
+. /liblinuxlive 2>/dev/null || . /mnt/live/liblinuxlive
+debug_mode "$0" "$@"
+
 VER=`cat /mnt/live/VERSION|awk '{print $2}'`
 ONCE=`cat /etc/once_boot_scripts|grep $(basename $0)-$VER`
 if [ ! "$ONCE" = "" ]
@@ -96,9 +100,16 @@ do
 done
 }
 
-echo "Start auto translation for Menu"
+LANG0=`cat /etc/sysconfig/i18n|grep ru_RU`
+if [ "$LANG0" = "" ]
+then
+  LANGUAGE="en"
+else
+  LANGUAGE="ru"
+fi
 
-LANGUAGE="ru"
+echo "Start auto translation Menu for $LANGUAGE language"
+
 DEBUG=yes
 
 if [ "$DEBUG" = "yes" ]

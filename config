@@ -86,3 +86,8 @@ XVIDEO="nonfree"
 #Виртуальное uname -r
 #Fake uname -r
 #UNAME_R="3.17.2-server-1.mga5"
+
+#Вести ли списки пакетов
+#Create lists for packages
+LISTS_PKGS_MAGICOS="no"
+LISTS_PKGS_EDUMAGIC="yes"

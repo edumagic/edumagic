@@ -30,7 +30,7 @@ filelight
 sweeper
 kdiff3
 gparted
-gxneur
+#gxneur (gnome)
 kfloppy
 hardinfo
 mate-screenshot

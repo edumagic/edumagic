@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Radio Tray
+Name[ru]=Трей-радио
+GenericName=Online radios
+GenericName[ru]=Онлайн радио
+Comment=A simple music streaming player that lives on the system tray
+Comment[ru]=Простой музыкальный потоковый проигрыватель, который живёт в системном трее
+Terminal=false
+Exec=radiotray
+Icon=radiotray
+Type=Application
+Categories=AudioVideo;Audio;Player;GTK;

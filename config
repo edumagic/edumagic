@@ -47,7 +47,7 @@ URPMI_PARAM=" --noclean --download-all --auto --no-suggests --resume --no-verify
 
 #File system unionfs or aufs
 #Файловая система unionfs или aufs
-FS_ROOTFS=unionfs
+FS_ROOTFS=aufs
 
 #File system for the kernel of building distro: unionfs or aufs
 #Файловая система ядра собираемого дистрибутива: unionfs или aufs
@@ -89,5 +89,5 @@ XVIDEO="nonfree"
 
 #Вести ли списки пакетов
 #Create lists for packages
-LISTS_PKGS_MAGICOS="no"
+LISTS_PKGS_MAGICOS="yes"
 LISTS_PKGS_EDUMAGIC="yes"

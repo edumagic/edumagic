@@ -89,5 +89,5 @@ XVIDEO="nonfree"
 
 #Вести ли списки пакетов
 #Create lists for packages
-LISTS_PKGS_MAGICOS="yes"
+LISTS_PKGS_MAGICOS="no"
 LISTS_PKGS_EDUMAGIC="yes"

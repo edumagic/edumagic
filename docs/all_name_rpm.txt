@@ -9,6 +9,7 @@ adwaita-gtk2-theme
 adwaita-icon-theme
 aircrack-ng
 alsa-plugins-pulse-config
+alsa-utils
 aoss
 apache
 apache-mod_userdir
@@ -43,6 +44,7 @@ biew
 bind-utils
 binutils
 bitmap
+bluez
 bluez-firmware
 bm
 bombono-dvd
@@ -51,7 +53,7 @@ bootsplash
 brasero
 bridge-utils
 broadcom-wl-common
-broadcom-wl-kernel-3.17.2-server-4.mga5
+broadcom-wl-kernel-3.18.0-server-0.rc7.1.mga5
 broadcom-wl-kernel-server-latest
 btrfs-progs
 busybox-static
@@ -99,13 +101,18 @@ cuneiform-linux
 cups
 cups-common
 cups-drivers
+cups-drivers-capt
+cups-drivers-foo2kyo
 cups-drivers-foo2zjs
+cups-drivers-lbp660
 cups-drivers-lxx74
 cups-drivers-lz11
+cups-drivers-m2300w
 cups-drivers-magicolor2430dl
 cups-drivers-magicolor5430dl
 cups-drivers-magicolor5440dl
 cups-drivers-pegg
+cups-drivers-ptouch
 cups-drivers-splix
 cups-filesystem
 cups-filters
@@ -183,6 +190,7 @@ enchant
 engrampa
 eom
 epdfview
+epsoneplijs
 etcskel
 etherape
 ethtool
@@ -202,7 +210,7 @@ festvox-kallpc-common
 ffdiaporama
 ffmpeg
 ffmpegthumbs
-fglrx-kernel-3.17.2-server-4.mga5
+fglrx-kernel-3.18.0-server-0.rc7.1.mga5
 fglrx-kernel-server-latest
 file
 filelight
@@ -271,6 +279,7 @@ glib-gettextize
 glxinfo
 gmtk-i18n
 gnokii
+gnome-bluetooth
 gnome-desktop3
 gnome-doc-utils
 gnome-keyring
@@ -352,7 +361,6 @@ gutenprint-gimp2
 gutenprint-ijs
 gvfs
 gwenview
-gxneur
 gzip
 harddrake
 harddrake-ui
@@ -428,8 +436,8 @@ kdm
 keditbookmarks
 kernel-firmware
 kernel-firmware-nonfree
-kernel-server-3.17.2-4.mga5
-kernel-server-devel-3.17.2-4.mga5
+kernel-server-3.18.0-0.rc7.1.mga5
+kernel-server-devel-3.18.0-0.rc7.1.mga5
 kernel-server-devel-latest
 kernel-server-latest
 kernel-userspace-headers
@@ -516,11 +524,11 @@ libavahi-client3
 libavahi-common3
 libavahi-glib1
 libavc1394_0
-libavcodec55
-libavfilter4
-libavformat55
+libavcodec56
+libavfilter5
+libavformat56
 libavidemux
-libavutil52
+libavutil54
 libbabl0.1_0
 libbaloocore4
 libbaloofiles4
@@ -649,6 +657,7 @@ libenca0
 libenchant1
 libeot0
 libepub0
+libestr0
 libeststring1.2
 libetonyek0.1_1
 libetpan17
@@ -737,6 +746,7 @@ libglib2.0_0
 libglib2.0-devel
 libglib-gir2.0
 libglibmm2.4_1
+libgltf0
 libgme0
 libgmime2.6_0
 libgmp10
@@ -805,6 +815,7 @@ libgtksourceview-2.0_0
 libgtksourceview3.0_1
 libgtksourceview-gir3.0
 libgtkspell0
+libgtk-unico-engine
 libgtk+-x11-2.0_0
 libgtop2
 libgtop2.0_10
@@ -825,6 +836,7 @@ libhpip0
 libhunspell1.3_0
 libical1
 libicalss1
+libicalvcal1
 libice6
 libicu53
 libid3_3.8_3
@@ -960,6 +972,7 @@ liblm_sensors4
 liblo10k1_0
 liblockdev1
 liblog4cxx10
+liblogging0
 liblpc10_0
 liblpc2xml0
 liblqr0
@@ -998,11 +1011,11 @@ libmesaegl1
 libmesagl1
 libmesaglesv2_2
 libmesaglu1
-libmesaopenvg1
 libmicroblog4
 libmicrohttpd10
 libmikmod3
 libmimic0
+libminilzo0
 libminiupnpc10
 libminizip1
 libmjpegtools2.0_0
@@ -1063,6 +1076,7 @@ libodfgen1
 libogg0
 libokularcore5
 libopenal1
+libopencollada0
 libopencore-amr0
 libOpenEXR22
 libopenjpeg5
@@ -1076,6 +1090,7 @@ liborc0.4_0
 liborcus0.8_0
 libortp9
 libosip2_10
+liboxygen-gtk3
 liboxygenstyle4
 liboxygenstyleconfig4
 libp11-kit0
@@ -1122,7 +1137,7 @@ libpoppler-glib8
 libpoppler-qt4_4
 libpopt0
 libportaudio2
-libpostproc52
+libpostproc53
 libpowerdevilconfigcommonprivate4
 libpowerdevilcore0
 libpowerdevilui4
@@ -1160,8 +1175,13 @@ libqt5dbus5
 libqt5gui5
 libqt5multimedia5
 libqt5network5
+libqt5opengl5
 libqt5printsupport5
+libqt5qml5
+libqt5quick5
 libqt5sql5
+libqt5webkit5
+libqt5webkitwidgets5
 libqt5widgets5
 libqt5xml5
 libqtclucene5
@@ -1178,6 +1198,7 @@ libqtmultimediakit1
 libqtnetwork4
 libqtopengl4
 libqtscript4
+libqtscript5
 libqtsensors1
 libqtsingleapplication1
 libqtsql4
@@ -1234,6 +1255,7 @@ libsamplerate0
 libsane1
 libsane-hpaio1
 libsasl2_3
+libsbc1
 libschroedinger1.0_0
 libscim1.0_8
 libSDL1.2_0
@@ -1280,8 +1302,8 @@ libstdc++-devel
 libstreamanalyzer0
 libstreams0
 libsvn0
-libswresample0
-libswscaler2
+libswresample1
+libswscaler3
 libsyndication4
 libsysfs2
 libsystemd0
@@ -1365,6 +1387,7 @@ libwebkit-gir3.0
 libwebkitgtk1.0_0
 libwebkitgtk3.0_0
 libwebp5
+libwebpdemux1
 libwebrtc-audio-processing0
 libwildmidi1
 libwireshark5
@@ -1441,8 +1464,6 @@ libxml2-python
 libxml2-utils
 libxmu6
 libxmuu1
-libxneur17
-libxosd2
 libxp6
 libxpm4
 libxrandr2
@@ -1570,6 +1591,7 @@ mesa-demos
 meta-task
 mgarepo
 migration-assistant
+min12xxw
 mingetty
 minicom
 mjpegtools
@@ -1617,12 +1639,13 @@ nss_wins
 ntfs-3g
 nut
 nut-server
-nvidia304-kernel-3.17.2-server-4.mga5
+nvidia304-kernel-3.18.0-server-0.rc7.1.mga5
 nvidia304-kernel-server-latest
-nvidia-current-kernel-3.17.2-server-4.mga5
+nvidia-current-kernel-3.18.0-server-0.rc7.1.mga5
 nvidia-current-kernel-server-latest
 nxproxy
 obconf
+obexd
 oclock
 oki4linux
 okular
@@ -1636,6 +1659,7 @@ openssh-clients
 openssl
 ORBit2
 ossp
+oxygen-gtk3
 oxygen-icon-theme
 p11-kit
 p7zip
@@ -1651,6 +1675,7 @@ patch
 pavucontrol
 pbm2l2030
 pbm2lwxl
+pbmtozjs
 pciutils
 pcmanfm
 pcmciautils
@@ -1764,6 +1789,7 @@ perl-XML-Twig
 perl-XML-XQL
 perl-YAML
 perl-YAML-Tiny
+phonon
 phonon-vlc
 photorec
 pilot-link-common
@@ -1791,12 +1817,14 @@ poster
 postgresql-jdbc
 postscript-ppds
 powertop
+ppmtocpva
 ppmtomd
 ppp
 ppp-pppoatm
 pptp-linux
 prcsys
 preload
+printer-filters
 printer-testpages
 printer-tools
 printer-utils
@@ -1808,6 +1836,7 @@ psutils
 pulseaudio
 pulseaudio-client-config
 pulseaudio-esound-compat
+pulseaudio-module-bluetooth
 pulseaudio-module-gconf
 pulseaudio-module-x11
 pulseaudio-module-zeroconf
@@ -1865,7 +1894,6 @@ python-pyasn1
 python-pygments
 python-pyxb
 python-pyxdg
-python-pyxml
 python-qt4
 python-qt4-core
 python-qt4-dbus
@@ -1896,7 +1924,6 @@ qbittorrent
 qmmp
 qscintilla-i18n
 qt4-common
-qt4-database-plugin-sqlite
 qt4-qtdbus
 qt4-xmlpatterns
 qtbase5-common
@@ -1946,6 +1973,7 @@ rpm-mageia-setup-build
 rp-pppoe
 rstart
 rsync
+rsyslog
 rtkit
 rtlwifi-firmware
 ruby
@@ -1959,7 +1987,6 @@ samba-common
 samba-server
 samba-winbind
 sane-backends
-sane-backends-iscan
 saned
 sash
 scim
@@ -2087,14 +2114,14 @@ usermode
 usermode-consoleonly
 util-linux
 v4l-utils
-vboxadditions-kernel-3.17.2-server-4.mga5
+vboxadditions-kernel-3.18.0-server-0.rc7.1.mga5
 vboxadditions-kernel-server-latest
 vcdimager
 viewres
 vim-common
 vim-enhanced
 vim-minimal
-virtualbox-kernel-3.17.2-server-4.mga5
+virtualbox-kernel-3.18.0-server-0.rc7.1.mga5
 virtualbox-kernel-server-latest
 vlc
 vlc-plugin-common
@@ -2205,6 +2232,7 @@ x11-server-common
 x11-server-xephyr
 x11-server-xorg
 x11-tools
+x125
 xarchiver
 xauth
 xawtv
@@ -2254,7 +2282,6 @@ xmag
 xman
 xmessage
 xmodmap
-xneur
 xorg-x11
 xprop
 xrandr

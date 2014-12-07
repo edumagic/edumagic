@@ -73,7 +73,7 @@ lshw
 lvm2
 lxshortcut
 mdadm
-nss_mdns
+libnss-mdns2
 nss_wins
 open
 pcmciautils

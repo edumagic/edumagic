@@ -44,7 +44,7 @@ echo "Генерация файла зависимостей для модуля
 #--------------
      [ -f $DEPS_DIR/deps_$(basename $mod) ] && rm $DEPS_DIR/deps_$(basename $mod)
 
-     urpmq -d --no-suggests --urpmi-root=$MOD_PREV --root=$MOD_PREV `cat $mod|grep -v "#"` |sort -u > $DEPS_DIR/deps_$(basename $mod)
+     urpmq -d --no-recommends --urpmi-root=$MOD_PREV --root=$MOD_PREV `cat $mod|grep -v "#"` |sort -u > $DEPS_DIR/deps_$(basename $mod)
 #--------------
     echo -ne \\n "---> OK."\\n
 done

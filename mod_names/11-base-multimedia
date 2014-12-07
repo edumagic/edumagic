@@ -24,7 +24,7 @@ lame
 gecko-mediaplayer
 flac
 flac123
-alsa-plugins-pulseaudio
+libalsa-plugins-pulseaudio
 awesfx
 gstreamer0.10-cdparanoia
 gstreamer0.10-pulse

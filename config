@@ -43,7 +43,7 @@ ROOTFS_INITRD=$MOD_ROOTFS_DIR/rootfs_initrd
 
 #Parameters for urpmi
 #Параметры urpmi
-URPMI_PARAM=" --noclean --download-all --auto --no-suggests --resume --no-verify-rpm "
+URPMI_PARAM=" --noclean --download-all --auto --no-recommends --resume --no-verify-rpm "
 
 #File system unionfs or aufs
 #Файловая система unionfs или aufs

@@ -5,5 +5,5 @@
 -no-emul-boot
 -boot-info-table
 -boot-load-size 4 
--b magos.ldr
+-b magicos.ldr
 -graft-points

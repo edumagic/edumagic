@@ -100,24 +100,6 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
       mount -o remount,prepend:$MOD_LINE=rw,mod:$MOD_PREV0=rr wiz_fly $ROOTFS
     fi
     MOD_PREV0=$MOD_LINE
-    #For fake uname -r (before module 03-base-kernel-dkms)
-#    if [ ! "$UNAME_R" = "" ]
-#    then
-#      if [ "$(basename $MOD)" = "03-base-kernel-dkms" ]
-#      then
-#        ln -s $UNAME_R $MOD_ROOTFS_DIR/02-base-core/usr/lib/modules/`uname -r`
-#      fi
-#    fi
-    #For fake uname -r (before module 03-base-kernel-dkms)
-#    if [ ! "$UNAME_R" = "" ]
-#    then
-#      if [ "$(basename $MOD)" = "02-base-core" ]
-#      then
-#	mv -f $MOD_ROOTFS_DIR/01-base-firmware/usr/bin/uname $MOD_ROOTFS_DIR/01-base-firmware/usr/bin/uname.tmp
-#	cp -f ./uname $MOD_ROOTFS_DIR/01-base-firmware/usr/bin/
-#	chmod a+x $MOD_ROOTFS_DIR/01-base-firmware/usr/bin/uname
-#      fi
-#    fi
     #For Enable Internet (in next module after 02-base-core, when resolv.conf was created)
     if [ "$INTERNET" = "yes" ]
     then
@@ -138,23 +120,14 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
     else
         urpmi $URPMI_PARAM --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
     fi
-#    fix error db-30971
-#    rm -f $MOD_ROOTFS_DIR/var/lib/rpm/__db.*
-#    chroot $ROOTFS rpm --rebuilddb
     if [ "$(basename $MOD)" = "03-base-kernel-dkms" ]
     then
-#      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-#      chroot $ROOTFS autokmods make 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-#      chroot $ROOTFS autokmods install 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-#      chroot $ROOTFS autokmods clean 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
        chroot $ROOTFS alternatives --set gl_conf /etc/ld.so.conf.d/GL/standard.conf 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
        chroot $ROOTFS ldconfig 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-#      chroot $ROOTFS auto_gl_conf 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
     fi
     echo -ne \\n "---> OK."\\n
 done
 
-# fix error db-30971
 if [ "$LISTS_PKGS_MAGICOS" = "yes" ]
 then
   chroot $ROOTFS rpm -qa --queryformat '%{NAME}\n'|sort -u > $MYPATH/work/all_name_rpm.txt
@@ -192,20 +165,12 @@ then
     xhost -
 fi
 
-#Return after fake uname -r
-#if [ ! "$UNAME_R" = "" ]
-#then
-#  if [ -f "$MOD_ROOTFS_DIR/01-base-firmware/usr/bin/uname.tmp" ]
-#  then
-#    mv -f $MOD_ROOTFS_DIR/01-base-firmware/usr/bin/uname.tmp $MOD_ROOTFS_DIR/01-base-firmware/usr/bin/uname
-#  fi
-#fi
-
 #Return after Enable Internet
 if [ "$INTERNET" = "yes" ]
 then
   if [ -f "$MOD_ROOTFS_DIR/02-base-core/etc/resolv.conf.tmp" ]
   then
+    rm -f $MOD_ROOTFS_DIR/02-base-core/etc/resolv.conf
     mv -f $MOD_ROOTFS_DIR/02-base-core/etc/resolv.conf.tmp $MOD_ROOTFS_DIR/02-base-core/etc/resolv.conf
   fi
 fi
@@ -215,159 +180,9 @@ echo "Перенос rpms из $MOD_PREV/var/cache/urpmi/rpms в $RPM_CACHE"
 mkdir -p $RPM_CACHE
 mv -f $MOD_PREV/var/cache/urpmi/rpms/* $RPM_CACHE/ >/dev/null 2>&1
 
-#echo "Moving rpms from $ROOTFS/var/cache/urpmi/rpms into $RPM_CACHE"
-#echo "Перенос rpms из $ROOTFS/var/cache/urpmi/rpms в $RPM_CACHE"
-#mkdir -p $RPM_CACHE
-#mv -f $ROOTFS/var/cache/urpmi/rpms/* $RPM_CACHE/ >/dev/null 2>&1
-
-echo "Cut out unnecessary into an separate module"
-echo "Вырезаем лишнее в отдельный модуль"
-for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
-    echo "Cut out unnecessary into an separate module $ADD_MOD_NAME for the module $(basename $MOD)"
-    echo "Вырезаем лишнее в отдельный модуль $ADD_MOD_NAME для модуля $(basename $MOD)"
-    MOD_LINE=$MOD_ROOTFS_DIR/$(basename $MOD)
-    #Clear /tmp
-    rm -rf $MOD_LINE/tmp/*
-    MOV_DIR=usr/share/locale
-    if [ -d "$ROOTFS/$MOV_DIR" ]
-    then
-      mkdir -p $MOD_ROOTFS_DIR/$ADD_MOD_NAME/$MOV_DIR
-      for A in `ls -1 $ROOTFS/$MOV_DIR|grep -v ru|grep -v locale|grep -v l10n|grep -v CP1251|grep -v currency|grep -v KOI8-R|grep -v KOI8-U|grep -v ISO-8859-5|grep -v UTF-8` ;do
-	if [ -d $MOD_LINE/$MOV_DIR/$A ]
-	then
-	    cp -pfR $MOD_LINE/$MOV_DIR/$A $MOD_ROOTFS_DIR/$ADD_MOD_NAME/$MOV_DIR/
-	    rm -rf $MOD_LINE/$MOV_DIR/$A
-	fi
-      done
-    fi
-    MOV_DIR=usr/share/man
-    if [ -d "$ROOTFS/$MOV_DIR" ]
-    then
-      mkdir -p $MOD_ROOTFS_DIR/$ADD_MOD_NAME/$MOV_DIR
-      for A in `ls -1 $ROOTFS/$MOV_DIR|grep -v ru|grep -v locale|grep -v l10n|grep -v CP1251|grep -v currency|grep -v KOI8-R|grep -v KOI8-U|grep -v ISO-8859-5|grep -v UTF-8` ;do
-	if [ -d $MOD_LINE/$MOV_DIR/$A ]
-	then
-	    cp -pfR $MOD_LINE/$MOV_DIR/$A $MOD_ROOTFS_DIR/$ADD_MOD_NAME/$MOV_DIR/
-	    rm -rf $MOD_LINE/$MOV_DIR/$A
-	fi
-      done
-    fi
-    MOV_DIR=usr/share/doc
-    if [ -d "$ROOTFS/$MOV_DIR" ]
-    then
-      mkdir -p $MOD_ROOTFS_DIR/$ADD_MOD_NAME/$MOV_DIR
-      for A in `ls -1 $ROOTFS/$MOV_DIR` ;do
-	if [ -d $MOD_LINE/$MOV_DIR/$A ]
-	then
-	    cp -pfR $MOD_LINE/$MOV_DIR/$A $MOD_ROOTFS_DIR/$ADD_MOD_NAME/$MOV_DIR/
-	    rm -rf $MOD_LINE/$MOV_DIR/$A
-	fi
-      done
-    fi
-    MOV_DIR=usr/share/locale/locale
-    if [ -d "$ROOTFS/$MOV_DIR" ]
-    then
-      mkdir -p $MOD_ROOTFS_DIR/$ADD_MOD_NAME/$MOV_DIR
-      for A in `ls -1 $ROOTFS/$MOV_DIR|grep -v ru|grep -v locale|grep -v l10n|grep -v CP1251|grep -v currency|grep -v KOI8-R|grep -v KOI8-U|grep -v ISO-8859-5|grep -v UTF-8` ;do
-	if [ -d $MOD_LINE/$MOV_DIR/$A ]
-	then
-	    cp -pfR $MOD_LINE/$MOV_DIR/$A $MOD_ROOTFS_DIR/$ADD_MOD_NAME/$MOV_DIR/
-	    rm -rf $MOD_LINE/$MOV_DIR/$A
-	fi
-      done
-    fi
-    MOV_DIR=usr/share/locale/l10n
-    if [ -d "$ROOTFS/$MOV_DIR" ]
-    then
-      mkdir -p $MOD_ROOTFS_DIR/$ADD_MOD_NAME/$MOV_DIR
-      for A in `ls -1 $ROOTFS/$MOV_DIR|grep -v ru|grep -v locale|grep -v l10n|grep -v CP1251|grep -v currency|grep -v KOI8-R|grep -v KOI8-U|grep -v ISO-8859-5|grep -v UTF-8` ;do
-	if [ -d $MOD_LINE/$MOV_DIR/$A ]
-	then
-	    cp -pfR $MOD_LINE/$MOV_DIR/$A $MOD_ROOTFS_DIR/$ADD_MOD_NAME/$MOV_DIR/
-	    rm -rf $MOD_LINE/$MOV_DIR/$A
-	fi
-      done
-    fi
-    echo -ne \\n "---> OK."\\n
-done
-
-if [ "$DISTR_KIND" = "edu" ]
-then
-    echo "Cut out unnecessary into an separate module"
-    echo "Вырезаем лишнее в отдельный модуль"
-    for MOD in `ls -1 $MOD_NAMES_DIR/??-edu*` ;do
-        echo "Cut out unnecessary into an separate module $ADD_EDU_MOD_NAME for the module $(basename $MOD)"
-	echo "Вырезаем лишнее в отдельный модуль $ADD_EDU_MOD_NAME для модуля $(basename $MOD)"
-	MOD_LINE=$MOD_ROOTFS_DIR/$(basename $MOD)
-	#Clear /tmp
-        rm -rf $MOD_LINE/tmp/*
-	MOV_DIR=usr/share/locale
-	if [ -d "$ROOTFS/$MOV_DIR" ]
-	then
-	  mkdir -p $MOD_ROOTFS_DIR/$ADD_EDU_MOD_NAME/$MOV_DIR
-	  for A in `ls -1 $ROOTFS/$MOV_DIR|grep -v ru|grep -v locale|grep -v l10n|grep -v CP1251|grep -v currency|grep -v KOI8-R|grep -v KOI8-U|grep -v ISO-8859-5|grep -v UTF-8` ;do
-	    if [ -d $MOD_LINE/$MOV_DIR/$A ]
-	    then
-		cp -pfR $MOD_LINE/$MOV_DIR/$A $MOD_ROOTFS_DIR/$ADD_EDU_MOD_NAME/$MOV_DIR/
-		rm -rf $MOD_LINE/$MOV_DIR/$A
-	    fi
-	  done
-	fi
-	MOV_DIR=usr/share/man
-	if [ -d "$ROOTFS/$MOV_DIR" ]
-	then
-	  mkdir -p $MOD_ROOTFS_DIR/$ADD_EDU_MOD_NAME/$MOV_DIR
-	  for A in `ls -1 $ROOTFS/$MOV_DIR|grep -v ru|grep -v locale|grep -v l10n|grep -v CP1251|grep -v currency|grep -v KOI8-R|grep -v KOI8-U|grep -v ISO-8859-5|grep -v UTF-8` ;do
-	    if [ -d $MOD_LINE/$MOV_DIR/$A ]
-	    then
-		cp -pfR $MOD_LINE/$MOV_DIR/$A $MOD_ROOTFS_DIR/$ADD_EDU_MOD_NAME/$MOV_DIR/
-		rm -rf $MOD_LINE/$MOV_DIR/$A
-	    fi
-	  done
-	fi
-	MOV_DIR=usr/share/doc
-	if [ -d "$ROOTFS/$MOV_DIR" ]
-	then
-	  mkdir -p $MOD_ROOTFS_DIR/$ADD_EDU_MOD_NAME/$MOV_DIR
-	  for A in `ls -1 $ROOTFS/$MOV_DIR` ;do
-	    if [ -d $MOD_LINE/$MOV_DIR/$A ]
-	    then
-		cp -pfR $MOD_LINE/$MOV_DIR/$A $MOD_ROOTFS_DIR/$ADD_EDU_MOD_NAME/$MOV_DIR/
-		rm -rf $MOD_LINE/$MOV_DIR/$A
-	    fi
-	  done
-	fi
-	MOV_DIR=usr/share/locale/locale
-	if [ -d "$ROOTFS/$MOV_DIR" ]
-	then
-	  mkdir -p $MOD_ROOTFS_DIR/$ADD_EDU_MOD_NAME/$MOV_DIR
-	  for A in `ls -1 $ROOTFS/$MOV_DIR|grep -v ru|grep -v locale|grep -v l10n|grep -v CP1251|grep -v currency|grep -v KOI8-R|grep -v KOI8-U|grep -v ISO-8859-5|grep -v UTF-8` ;do
-	    if [ -d $MOD_LINE/$MOV_DIR/$A ]
-	    then
-		cp -pfR $MOD_LINE/$MOV_DIR/$A $MOD_ROOTFS_DIR/$ADD_EDU_MOD_NAME/$MOV_DIR/
-		rm -rf $MOD_LINE/$MOV_DIR/$A
-	    fi
-	  done
-	fi
-	MOV_DIR=usr/share/locale/l10n
-	if [ -d "$ROOTFS/$MOV_DIR" ]
-	then
-	  mkdir -p $MOD_ROOTFS_DIR/$ADD_EDU_MOD_NAME/$MOV_DIR
-	  for A in `ls -1 $ROOTFS/$MOV_DIR|grep -v ru|grep -v locale|grep -v l10n|grep -v CP1251|grep -v currency|grep -v KOI8-R|grep -v KOI8-U|grep -v ISO-8859-5|grep -v UTF-8` ;do
-	    if [ -d $MOD_LINE/$MOV_DIR/$A ]
-	    then
-		cp -pfR $MOD_LINE/$MOV_DIR/$A $MOD_ROOTFS_DIR/$ADD_EDU_MOD_NAME/$MOV_DIR/
-		rm -rf $MOD_LINE/$MOV_DIR/$A
-	    fi
-	  done
-	fi
-	echo -ne \\n "---> OK."\\n
-    done
-fi
-
 echo "The file work/log_urpmi.txt contains installation log"
 echo "В файле work/log_urpmi.txt содержится лог установки"
-# fix error db-30971
+
 if [ "$LISTS_PKGS_MAGICOS" = "yes" ]
 then
   echo "File work/all_name_rpm.txt contains a list of all installed packages in the distro by name"
@@ -378,7 +193,6 @@ fi
 
 if [ "$DISTR_KIND" = "edu" ]
 then
-  # fix error db-30971
   if [ "$LISTS_PKGS_EDUMAGIC" = "yes" ]
   then
     chroot $ROOTFS rpm -qa --queryformat '%{NAME}\n'|sort -u > $MYPATH/work/all_edu_name_rpm.txt

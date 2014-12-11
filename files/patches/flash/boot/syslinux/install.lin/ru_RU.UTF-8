@@ -2,14 +2,14 @@ Can't find device to install to.|Не могу определить устрой
 Make sure you run this script from a mounted device.|Убедитесь что вы запустили скрипт с нужного устройства|
 The disk|Устройство|
 is mounted with noexec parameter, trying to remount...|подключено с параметром noexec, попробую усправить|
-                        Welcome to MagOS boot installer                         |                      Скрипт для установки MagOS                        |
+                        Welcome to MagicOS boot installer                         |                      Скрипт для установки MagicOS                        |
 This installer will setup disk|Этот установщик настроит устройство|
-to boot only MagOS.|для загрузки только MagOS.|
+to boot only MagicOS.|для загрузки только MagicOS.|
 Warning! Master boot record (MBR) of|Предупреждение! Загрузочная запись (MBR)|
 will be overwritten.|будет изменена.|
 If you use|Если вы используете|
 to boot any existing operating system, it will not work|для загрузки другой операционной системы, то она загружаться не будет.|
-anymore. Only MagOS will boot from this device. Be careful!|С этого устройства будет загружаться только MagOS. Будьте внимательны!|
+anymore. Only MagicOS will boot from this device. Be careful!|С этого устройства будет загружаться только MagicOS. Будьте внимательны!|
 Press Enter to continue, or Ctrl+C to abort...|Нажмите Ввод для продолжения или Ctrl-C для отмены...|
 Flushing filesystem buffers, this may take a while...|Сброс буферов файловой системы, немного подождите...|
 Setting up MBR on|Настройка MBR на|

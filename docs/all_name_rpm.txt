@@ -53,7 +53,7 @@ bootsplash
 brasero
 bridge-utils
 broadcom-wl-common
-broadcom-wl-kernel-3.18.0-server-0.rc7.1.mga5
+broadcom-wl-kernel-3.18.0-server-1.mga5
 broadcom-wl-kernel-server-latest
 btrfs-progs
 busybox-static
@@ -210,7 +210,7 @@ festvox-kallpc-common
 ffdiaporama
 ffmpeg
 ffmpegthumbs
-fglrx-kernel-3.18.0-server-0.rc7.1.mga5
+fglrx-kernel-3.18.0-server-1.mga5
 fglrx-kernel-server-latest
 file
 filelight
@@ -223,7 +223,6 @@ firmware-tools
 flac
 flac123
 flash-player-plugin
-fm_scripts
 fontconfig
 fontpackages-filesystem
 fonts-dejavu-common
@@ -436,8 +435,8 @@ kdm
 keditbookmarks
 kernel-firmware
 kernel-firmware-nonfree
-kernel-server-3.18.0-0.rc7.1.mga5
-kernel-server-devel-3.18.0-0.rc7.1.mga5
+kernel-server-3.18.0-1.mga5
+kernel-server-devel-3.18.0-1.mga5
 kernel-server-devel-latest
 kernel-server-latest
 kernel-userspace-headers
@@ -852,6 +851,7 @@ libimlib2_1-filters
 libimlib2_1-loaders
 libimobiledevice
 libimobiledevice4
+libiniparser0
 libinput5
 libintl8
 libip4tc0
@@ -1019,6 +1019,7 @@ libminilzo0
 libminiupnpc10
 libminizip1
 libmjpegtools2.0_0
+libmm-glib0
 libmms0
 libmng2
 libmnl0
@@ -1522,7 +1523,6 @@ lxshortcut
 lxtask
 lxterminal
 m4
-magcc
 mageia-doc-common
 mageia-kde4-config-common
 mageia-kde-translation
@@ -1533,8 +1533,11 @@ mageia-theme-common
 mageia-theme-Default
 mageia-theme-Default-screensaver
 mageia-theme-kde-background
-magos-scripts
-magos-tools
+magicos-fmscripts
+magicos-magcc
+magicos-modmnger
+magicos-scripts
+magicos-tools
 mailcap
 make
 makedepend
@@ -1601,9 +1604,7 @@ mkxauth
 ml85p
 mlocate
 modemmanager
-modemmanager-glib
 modem-manager-gui
-mod_mnger
 monitor-edid
 mozo
 mpage
@@ -1639,9 +1640,9 @@ nss_wins
 ntfs-3g
 nut
 nut-server
-nvidia304-kernel-3.18.0-server-0.rc7.1.mga5
+nvidia304-kernel-3.18.0-server-1.mga5
 nvidia304-kernel-server-latest
-nvidia-current-kernel-3.18.0-server-0.rc7.1.mga5
+nvidia-current-kernel-3.18.0-server-1.mga5
 nvidia-current-kernel-server-latest
 nxproxy
 obconf
@@ -2114,14 +2115,15 @@ usermode
 usermode-consoleonly
 util-linux
 v4l-utils
-vboxadditions-kernel-3.18.0-server-0.rc7.1.mga5
+vboxadditions-kernel-3.18.0-server-1.mga5
 vboxadditions-kernel-server-latest
 vcdimager
 viewres
 vim-common
 vim-enhanced
 vim-minimal
-virtualbox-kernel-3.18.0-server-0.rc7.1.mga5
+virtualbox
+virtualbox-kernel-3.18.0-server-1.mga5
 virtualbox-kernel-server-latest
 vlc
 vlc-plugin-common

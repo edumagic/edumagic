@@ -45,10 +45,10 @@ del \%BOOTFLAG%
 cls
 
         echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-call :t_echo Welcome to MagOS boot installer
+call :t_echo Welcome to MagicOS boot installer
         echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         echo Install on disk %DISK%: !
-call :t_echo This installer will setup disk to boot only MagOS. Folders boot and Magos
+call :t_echo This installer will setup disk to boot only MagicOS. Folders boot and Magicos
 call :t_echo you must copy to destination drive manually. Run script only from dest. drive!
 call :t_echo Warning! Master Boot Record (MBR) of the device will be overwritten.
 call :t_echo If it is a partition on the same disk drive like your Windows installation
@@ -59,7 +59,7 @@ pause > nul
 
 cls
 call :t_echo Copying grub4dos files to boot drive ...
-copy /y ..\magos.ldr ..\..\..\magos.ldr
+copy /y ..\magicos.ldr ..\..\..\magicos.ldr
 
 if %OS% == Windows_NT goto setupNT
 goto setup95
@@ -75,7 +75,7 @@ pause
 call :t_echo Setting bootloader ...
 rem mbrfix /drive %DISKNUM% fixmbr /yes || goto error
 mbrfix /drive %DISKNUM% restorembr ..\mbr.bin /yes || goto error
-grubinst  --boot-file=magos.ldr --floppy=%DISKPART% (hd%DISKNUM%) || goto error
+grubinst  --boot-file=magicos.ldr --floppy=%DISKPART% (hd%DISKNUM%) || goto error
 mbrwiz /disk=%DISKNUM% /part=%DISKPART% /active=1 /confirm 
 goto setupDone
 
@@ -88,7 +88,7 @@ call :t_echo Disk should be bootable now. Installation finished.
 goto pauseit
 
 :readOnly
-call :t_echo You're starting MagOS installer from a read-only media. This will not work.
+call :t_echo You're starting MagicOS installer from a read-only media. This will not work.
 goto pauseit
 
 :error

@@ -64,56 +64,11 @@ echo "Preparing"
 echo "Подготовка"
 [ -d "$DESTDIR" ] && rm -fr "$DESTDIR"
 mkdir -p "$DESTDIR" || exit 1
-mkdir -p "$DESTDIR"/MagOS/{base,modules,optional,rootcopy}
-mkdir -p "$DESTDIR"/MagOS-Data/{changes,homes,modules,optional,rootcopy}
+mkdir -p "$DESTDIR"/MagicOS/{base,modules,optional,rootcopy}
+mkdir -p "$DESTDIR"/MagicOS-Data/{changes,homes,modules,optional,rootcopy}
 cp -pR files/patches/flash/* "$DESTDIR"/
 
 cd "$MYPATH"
-echo "Replacing names of iso images"
-echo "Замена названий iso образов"
-sed -i -e 's|CDLABEL="MagOSboot"|CDLABEL="MagicOSboot"|g' "$DESTDIR"/boot/grub4dos/install.lin/make_boot_iso.sh
-sed -i -e 's|CDLABEL="MagOS"|CDLABEL="MagicOS"|g' "$DESTDIR"/boot/grub4dos/install.lin/make_iso.sh
-sed -i -e 's|CDLABEL=MagOSboot|CDLABEL=MagicOSboot|g' "$DESTDIR"/boot/grub4dos/install.win/make_boot_iso.bat
-sed -i -e 's|CDLABEL=MagOS|CDLABEL=MagicOS|g' "$DESTDIR"/boot/grub4dos/install.win/make_iso.bat
-sed -i -e 's|CDLABEL="MagOSboot"|CDLABEL="MagicOSboot"|g' "$DESTDIR"/boot/syslinux/install.lin/make_boot_iso.sh
-sed -i -e 's|CDLABEL="MagOS"|CDLABEL="MagicOS"|g' "$DESTDIR"/boot/syslinux/install.lin/make_iso.sh
-sed -i -e 's|CDLABEL=MagOSboot|CDLABEL=MagicOSboot|g' "$DESTDIR"/boot/syslinux/install.win/make_boot_iso.bat
-sed -i -e 's|CDLABEL=MagOS|CDLABEL=MagicOS|g' "$DESTDIR"/boot/syslinux/install.win/make_iso.bat
-if [ -f "patches/flash/isolinux.cfg" ]
-then
-  cp -f patches/flash/isolinux.cfg $MYPATH/$DESTDIR/boot/syslinux/
-fi
-if [ -f "patches/flash/menu.lst" ]
-then
-  cp -f patches/flash/menu.lst $MYPATH/$DESTDIR/boot/grub4dos/
-fi
-if [ -f "patches/flash/syslinux.cfg" ]
-then
-  cp -f patches/flash/syslinux.cfg $MYPATH/$DESTDIR/boot/syslinux/
-fi
-if [ -f "patches/flash/MagOS.ini" ]
-then
-  cp -f patches/flash/MagOS.ini $MYPATH/$DESTDIR/MagOS-Data/
-fi
-
-#Fix bugs
-sed -i -e 's|KERNEL /boot/tools/reboot.c32|KERNEL /boot/syslinux/reboot.c32|g' "$DESTDIR"/boot/syslinux/isolinux.cfg
-cp -f "$DESTDIR"/boot/tools/lilo "$DESTDIR"/boot/tools/lilo.bat
-rm -f "$DESTDIR"/boot/tools/lilo
-cp -f "$DESTDIR"/boot/syslinux/syslinux "$DESTDIR"/boot/syslinux/syslinux.bat
-rm -f "$DESTDIR"/boot/syslinux/syslinux
-sed -i -e 's|lilo|lilo.bat|g' "$DESTDIR"/boot/grub4dos/install.lin/bootinst.sh
-sed -i -e 's|lilo|lilo.bat|g' "$DESTDIR"/boot/syslinux/install.lin/bootinst.sh
-sed -i -e 's|boot/syslinux/syslinux|boot/syslinux/syslinux.bat|g' "$DESTDIR"/boot/syslinux/install.lin/bootinst.sh
-
-if [ ! "$XVIDEO" = "" ]
-then
-   echo "An amendment to items of boot menu for xvideo=$XVIDEO"
-   echo "Внесение поправки для xvideo=$XVIDEO в пункты загрузочного меню"
-   sed -i -e "s|root=/dev/ram0|root=/dev/ram0 xvideo=$XVIDEO|g" "$DESTDIR"/boot/grub4dos/menu.lst
-   sed -i -e "s|root=/dev/ram0|root=/dev/ram0 xvideo=$XVIDEO|g" "$DESTDIR"/boot/syslinux/syslinux.cfg
-   sed -i -e "s|root=/dev/ram0|root=/dev/ram0 xvideo=$XVIDEO|g" "$DESTDIR"/boot/syslinux/isolinux.cfg
-fi
 
 if [ "$FS_KERNEL" = "unionfs" ]
 then
@@ -124,29 +79,7 @@ then
    sed -i -e 's|root=/dev/ram0|root=/dev/ram0 unionfs|g' "$DESTDIR"/boot/syslinux/isolinux.cfg
 fi
 
-echo "Disable plymouth"
-echo "Отключение plymouth"
-sed -i -e 's|root=/dev/ram0|root=/dev/ram0 plymouth.enable=0|g' "$DESTDIR"/boot/grub4dos/menu.lst
-sed -i -e 's|root=/dev/ram0|root=/dev/ram0 plymouth.enable=0|g' "$DESTDIR"/boot/syslinux/syslinux.cfg
-sed -i -e 's|root=/dev/ram0|root=/dev/ram0 plymouth.enable=0|g' "$DESTDIR"/boot/syslinux/isolinux.cfg
-
-echo "Disable splash=silent"
-echo "Отключение splash=silent"
-sed -i -e 's|splash=silent||g' "$DESTDIR"/boot/grub4dos/menu.lst
-sed -i -e 's|splash=silent||g' "$DESTDIR"/boot/syslinux/syslinux.cfg
-sed -i -e 's|splash=silent||g' "$DESTDIR"/boot/syslinux/isolinux.cfg
-
-if [ "$FULL_ISO" = "full" ]
-then
-   echo "Adding directory MagOS-Data into iso images"
-   echo "Добавление директории MagOS-Data в iso образы"
-   sed -i -e 's|boot=boot|MagOS-Data=MagOS-Data boot=boot|g' "$DESTDIR"/boot/grub4dos/install.win/make_iso.bat
-   sed -i -e 's|MagOS=../../../MagOS|MagOS=../../../MagOS MagOS-Data=../../../MagOS-Data|g' "$DESTDIR"/boot/grub4dos/install.lin/make_iso.sh
-   sed -i -e 's|boot=boot|MagOS-Data=MagOS-Data boot=boot|g' "$DESTDIR"/boot/syslinux/install.win/make_iso.bat
-   sed -i -e 's|MagOS=../../../MagOS|MagOS=../../../MagOS MagOS-Data=../../../MagOS-Data|g' "$DESTDIR"/boot/syslinux/install.lin/make_iso.sh
-fi
-
-echo $VERREL $DISTRVERSION  > "$DESTDIR"/MagOS/VERSION
+echo $VERREL $DISTRVERSION  > "$DESTDIR"/MagicOS/VERSION
 cd work/${FLASHNAME}_${VERREL}
 echo $VERREL $DISTRVERSION  > VERSION
 
@@ -183,7 +116,7 @@ echo "Создание ссылок на исходники ядра"
 cd "$ROOTFS_INITRD"/boot
 ln -sf $(ls -1 vmlinuz-*-* | sed 's|.*/||' | tail -1) vmlinuz || exit 1
 cd "$MYPATH"
-cp -L "$ROOTFS_INITRD"/boot/vmlinuz "$DESTDIR"/MagOS
+cp -L "$ROOTFS_INITRD"/boot/vmlinuz "$DESTDIR"/MagicOS
 echo "Patching $ROOTFS_INITRD"
 echo "Патчи $ROOTFS_INITRD"
 cp -pfR patches/rootfs/* $ROOTFS_INITRD/
@@ -197,14 +130,8 @@ mount -o bind /proc $ROOTFS_INITRD/proc || exit 1
 
 cp -p work/${FLASHNAME}_${VERREL}/VERSION $ROOTFS_INITRD/mnt/live || exit 1
 
-#echo "Creating *map"
-#echo "Cоздание *map"
-#chroot $ROOTFS_INITRD /usr/local/bin/depmod || exit 1
-#echo "Creating *map has been complete"
-#echo "Cоздание *map завершено"
-
-chroot $ROOTFS_INITRD /usr/lib/magos/scripts/mkinitrd /boot/initrd.gz || exit 1
-mv $ROOTFS_INITRD/boot/initrd.gz "$MYPATH/$DESTDIR/MagOS" || exit 1
+chroot $ROOTFS_INITRD /usr/lib/magicos/scripts/mkinitrd /boot/initrd.gz || exit 1
+mv $ROOTFS_INITRD/boot/initrd.gz "$MYPATH/$DESTDIR/MagicOS" || exit 1
 
 if [ ! $ROOTFS_INITRD = $ROOTFS ]
 then
@@ -218,17 +145,17 @@ fi
 echo "Copying modules"
 echo "Копирование модулей"
 cd "$MYPATH/work/${FLASHNAME}_${VERREL}" || exit 1
-rsync -a --exclude=*edu* *.$MODULEFORMAT $MYPATH/$DESTDIR/MagOS/base/
-cd "$MYPATH/$DESTDIR/MagOS/base"
+rsync -a --exclude=*edu* *.$MODULEFORMAT $MYPATH/$DESTDIR/MagicOS/base/
+cd "$MYPATH/$DESTDIR/MagicOS/base"
 chmod 444 *
 md5sum *.$MODULEFORMAT >MD5SUM
 
 cd "$MYPATH"
 echo "Creating files for data saving" 
 echo "Создание файлов для сохранения данных" 
-cd "$MYPATH"/$DESTDIR/MagOS-Data || exit 1
-[ "$DATASIZE1" != "" ] && dd if=/dev/zero of=MagOS_save1.img bs=1M count=$DATASIZE1 && mkfs.ext3 -F -j MagOS_save1.img >/dev/null 2>&1
-#[ "$DATASIZE2" != "" ] && dd if=/dev/zero of=MagOS_save2.img bs=1M count=$DATASIZE2 && mkfs.ext3 -F -j MagOS_save2.img >/dev/null 2>&1
+cd "$MYPATH"/$DESTDIR/MagicOS-Data || exit 1
+[ "$DATASIZE1" != "" ] && dd if=/dev/zero of=MagicOS_save1.img bs=1M count=$DATASIZE1 && mkfs.ext3 -F -j MagicOS_save1.img >/dev/null 2>&1
+#[ "$DATASIZE2" != "" ] && dd if=/dev/zero of=MagicOS_save2.img bs=1M count=$DATASIZE2 && mkfs.ext3 -F -j MagicOS_save2.img >/dev/null 2>&1
 
 cd "$MYPATH"
 
@@ -247,40 +174,32 @@ then
   mkdir -p "$DESTDIR_EDU" || exit 1
   cp -pfR "$DESTDIR"/* "$DESTDIR_EDU"/
   cd "$MYPATH/work/${FLASHNAME}_${VERREL}" || exit 1
-  cp -f *edu*.$MODULEFORMAT $MYPATH/$DESTDIR_EDU/MagOS/base/
-  cd "$MYPATH/$DESTDIR_EDU/MagOS/base"
+  cp -f *edu*.$MODULEFORMAT $MYPATH/$DESTDIR_EDU/MagicOS/base/
+  cd "$MYPATH/$DESTDIR_EDU/MagicOS/base"
   chmod 444 *
   md5sum *.$MODULEFORMAT >MD5SUM
   cd "$MYPATH"
-  echo "Replacing names of iso images"
-  echo "Замена названий iso образов"
-  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagicboot"|g' "$DESTDIR_EDU"/boot/grub4dos/install.lin/make_boot_iso.sh
-  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagic"|g' "$DESTDIR_EDU"/boot/grub4dos/install.lin/make_iso.sh
-  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagicboot\r|g' "$DESTDIR_EDU"/boot/grub4dos/install.win/make_boot_iso.bat
-  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagic\r|g' "$DESTDIR_EDU"/boot/grub4dos/install.win/make_iso.bat
-  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagicboot"|g' "$DESTDIR_EDU"/boot/syslinux/install.lin/make_boot_iso.sh
-  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagic"|g' "$DESTDIR_EDU"/boot/syslinux/install.lin/make_iso.sh
-  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagicboot\r|g' "$DESTDIR_EDU"/boot/syslinux/install.win/make_boot_iso.bat
-  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagic\r|g' "$DESTDIR_EDU"/boot/syslinux/install.win/make_iso.bat
-  if [ -f "patches/flash-edu/isolinux.cfg" ]
+#  echo "Replacing names of iso images"
+#  echo "Замена названий iso образов"
+#  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagicboot"|g' "$DESTDIR_EDU"/boot/grub4dos/install.lin/make_boot_iso.sh
+#  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagic"|g' "$DESTDIR_EDU"/boot/grub4dos/install.lin/make_iso.sh
+#  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagicboot\r|g' "$DESTDIR_EDU"/boot/grub4dos/install.win/make_boot_iso.bat
+#  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagic\r|g' "$DESTDIR_EDU"/boot/grub4dos/install.win/make_iso.bat
+#  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagicboot"|g' "$DESTDIR_EDU"/boot/syslinux/install.lin/make_boot_iso.sh
+#  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagic"|g' "$DESTDIR_EDU"/boot/syslinux/install.lin/make_iso.sh
+#  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagicboot\r|g' "$DESTDIR_EDU"/boot/syslinux/install.win/make_boot_iso.bat
+#  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagic\r|g' "$DESTDIR_EDU"/boot/syslinux/install.win/make_iso.bat
+  if [ -f "files/patches/flash-edu/isolinux.cfg" ]
   then
-    cp -f patches/flash-edu/isolinux.cfg $MYPATH/$DESTDIR_EDU/boot/syslinux/
+    cp -f files/patches/flash-edu/isolinux.cfg $MYPATH/$DESTDIR_EDU/boot/syslinux/
   fi
-  if [ -f "patches/flash-edu/menu.lst" ]
+  if [ -f "files/patches/flash-edu/menu.lst" ]
   then
-    cp -f patches/flash-edu/menu.lst $MYPATH/$DESTDIR_EDU/boot/grub4dos/
+    cp -f files/patches/flash-edu/menu.lst $MYPATH/$DESTDIR_EDU/boot/grub4dos/
   fi
-  if [ -f "patches/flash-edu/syslinux.cfg" ]
+  if [ -f "files/patches/flash-edu/syslinux.cfg" ]
   then
-    cp -f patches/flash-edu/syslinux.cfg $MYPATH/$DESTDIR_EDU/boot/syslinux/
-  fi
-  if [ ! "$XVIDEO" = "" ]
-  then
-    echo "An amendment to items of boot menu for xvideo=$XVIDEO"
-    echo "Внесение поправки для xvideo=$XVIDEO в пункты загрузочного меню"
-    sed -i -e "s|root=/dev/ram0|root=/dev/ram0 xvideo=$XVIDEO|g" "$DESTDIR_EDU"/boot/grub4dos/menu.lst
-    sed -i -e "s|root=/dev/ram0|root=/dev/ram0 xvideo=$XVIDEO|g" "$DESTDIR_EDU"/boot/syslinux/syslinux.cfg
-    sed -i -e "s|root=/dev/ram0|root=/dev/ram0 xvideo=$XVIDEO|g" "$DESTDIR_EDU"/boot/syslinux/isolinux.cfg
+    cp -f files/patches/flash-edu/syslinux.cfg $MYPATH/$DESTDIR_EDU/boot/syslinux/
   fi
   if [ "$FS_KERNEL" = "unionfs" ]
   then
@@ -290,16 +209,6 @@ then
     sed -i -e 's|root=/dev/ram0|root=/dev/ram0 unionfs|g' "$DESTDIR_EDU"/boot/syslinux/syslinux.cfg
     sed -i -e 's|root=/dev/ram0|root=/dev/ram0 unionfs|g' "$DESTDIR_EDU"/boot/syslinux/isolinux.cfg
   fi
-  echo "Disable plymouth"
-  echo "Отключение plymouth"
-  sed -i -e 's|root=/dev/ram0|root=/dev/ram0 plymouth.enable=0|g' "$DESTDIR_EDU"/boot/grub4dos/menu.lst
-  sed -i -e 's|root=/dev/ram0|root=/dev/ram0 plymouth.enable=0|g' "$DESTDIR_EDU"/boot/syslinux/syslinux.cfg
-  sed -i -e 's|root=/dev/ram0|root=/dev/ram0 plymouth.enable=0|g' "$DESTDIR_EDU"/boot/syslinux/isolinux.cfg
-  echo "Disable splash=silent"
-  echo "Отключение splash=silent"
-  sed -i -e 's|splash=silent||g' "$DESTDIR_EDU"/boot/grub4dos/menu.lst
-  sed -i -e 's|splash=silent||g' "$DESTDIR_EDU"/boot/syslinux/syslinux.cfg
-  sed -i -e 's|splash=silent||g' "$DESTDIR_EDU"/boot/syslinux/isolinux.cfg
   mv -f $DESTDIR_EDU flash-edu/EduMagic_${VERREL}_${DISTRVERSION}
   echo "The script has completed work, there is edu version of system in a directory flash-edu, it's ready for installing :-)"
   echo "Работа скрипта завершена, в папке flash-edu лежит готовая к установке edu версия системы :-)"

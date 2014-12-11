@@ -61,15 +61,15 @@ DIST_MIRROR_1=http://linux.mageia.tk/repo/magicos/magicos5/i586
 
 #Names of additional modules
 #Имена дополнительных модулей
-ADD_MOD_NAME=20-base-locales-man-doc
-ADD_EDU_MOD_NAME=21-edu-locales-man-doc
+#ADD_MOD_NAME=20-base-locales-man-doc
+#ADD_EDU_MOD_NAME=21-edu-locales-man-doc
 MOD_PATCH_MAGICOS=50-patch-magicos
 MOD_PATCH_EDUMAGIC=51-patch-edumagic
 MOD_PATCH_URPMI=00-patch-urpmi
 
-#If you want to write to disk directory MagOS-Date, then use full, otherwise use nofull
-#full или nofull в зависимости от того записывать ли на диск директорию MagOS-Data
-FULL_ISO=full
+#If you want to write to disk directory MagicOS-Date, then use full, otherwise use nofull
+#full или nofull в зависимости от того записывать ли на диск директорию MagicOS-Data
+#FULL_ISO=full
 
 #Preferred packages to be installed first (list them separated by spaces)
 #Предпочитаемые пакеты, ставящиеся в первую очередь (указать через пробел)
@@ -81,13 +81,13 @@ INTERNET="yes"
 
 #Parameter for xvideo= ; parameter must be free or nonfree
 #Выбор значения для xvideo= ; может принимать значения free или nonfree
-XVIDEO="nonfree"
+#XVIDEO="nonfree"
 
 #Виртуальное uname -r
 #Fake uname -r
 #UNAME_R="3.17.2-server-1.mga5"
 
-#Вести ли списки пакетов
-#Create lists for packages
+#Вести ли списки пакетов (error db-30971)
+#Create lists for packages (error db-30971)
 LISTS_PKGS_MAGICOS="no"
 LISTS_PKGS_EDUMAGIC="yes"

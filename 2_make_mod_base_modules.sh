@@ -73,14 +73,14 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
     echo -ne \\n "---> OK."\\n
 done
 
-if [ -d "$MOD_ROOTFS_DIR/$ADD_MOD_NAME" ]
-then
-  MOD_LINE=$MOD_ROOTFS_DIR/$ADD_MOD_NAME
-  echo "Creating XZM for the module $ADD_MOD_NAME"
-  echo "Создание XZM для модуля $ADD_MOD_NAME"
-  mksquashfs $MOD_LINE $MOD_LINE.$MODULEFORMAT $MKSQOPT
-  echo -ne \\n "---> OK."\\n
-fi
+#if [ -d "$MOD_ROOTFS_DIR/$ADD_MOD_NAME" ]
+#then
+#  MOD_LINE=$MOD_ROOTFS_DIR/$ADD_MOD_NAME
+#  echo "Creating XZM for the module $ADD_MOD_NAME"
+#  echo "Создание XZM для модуля $ADD_MOD_NAME"
+#  mksquashfs $MOD_LINE $MOD_LINE.$MODULEFORMAT $MKSQOPT
+#  echo -ne \\n "---> OK."\\n
+#fi
 
 if [ "$DISTR_KIND" = "edu" ]
 then
@@ -95,14 +95,14 @@ then
 	echo -ne \\n "---> OK."\\n
     done
 
-    if [ -d "$MOD_ROOTFS_DIR/$ADD_MOD_NAME" ]
-    then
-      MOD_LINE=$MOD_ROOTFS_DIR/$ADD_EDU_MOD_NAME
-      echo "Creating XZM for the module $ADD_EDU_MOD_NAME"
-      echo "Создание XZM для модуля $ADD_EDU_MOD_NAME"
-      mksquashfs $MOD_LINE $MOD_LINE.$MODULEFORMAT $MKSQOPT
-      echo -ne \\n "---> OK."\\n
-    fi
+#    if [ -d "$MOD_ROOTFS_DIR/$ADD_MOD_NAME" ]
+#    then
+#      MOD_LINE=$MOD_ROOTFS_DIR/$ADD_EDU_MOD_NAME
+#      echo "Creating XZM for the module $ADD_EDU_MOD_NAME"
+#      echo "Создание XZM для модуля $ADD_EDU_MOD_NAME"
+#      mksquashfs $MOD_LINE $MOD_LINE.$MODULEFORMAT $MKSQOPT
+#      echo -ne \\n "---> OK."\\n
+#    fi
 fi
 
 echo "The script has completed work"

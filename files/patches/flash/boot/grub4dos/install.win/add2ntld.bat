@@ -2,7 +2,7 @@
 set TRANSLATE=ru.nls
 cls
         echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-call :t_echo Welcome to MagOS boot installer
+call :t_echo Welcome to MagicOS boot installer
         echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         echo.
 call :t_echo This installer will add Grub4dos loader to Windows 2k/XP loader.
@@ -15,9 +15,9 @@ cls
 call :t_echo Changing attributes of c:\boot.ini ...
 attrib -S -H  c:\boot.ini
 call :t_echo Adding grub4dos to c:\boot.ini ...
-        echo c:\magos.ldr=MagOS Linux >> c:\boot.ini
+        echo c:\magicos.ldr=MagicOS Linux >> c:\boot.ini
 call :t_echo Copying grub4dos loader  to c:\ ...
-copy /y ..\magos.ldr c:\magos.ldr
+copy /y ..\magicos.ldr c:\magicos.ldr
 call :t_echo Changing back attributes of c:\boot.ini ...
 attrib +S +H  c:\boot.ini
 call :t_echo Done. Check files and reboot. Press enter.

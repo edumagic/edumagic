@@ -1,7 +1,7 @@
 #!/bin/bash
 # ---------------------------------------------------
 # Script to create bootable ISO in Linux
-# usage: make_iso.sh [ /tmp/MagOS.iso ]
+# usage: make_iso.sh [ /tmp/MagicOS.iso ]
 # author: Tomas M. <http://www.linux-live.org>
 # ---------------------------------------------------
 
@@ -25,7 +25,7 @@ if [ "$1" = "--help" -o "$1" = "-h" ]; then
   exit
 fi
 
-CDLABEL="MagOSboot"
+CDLABEL="MagicOSboot"
 
 cd $(dirname $0)
 SUGGEST=$(readlink -f ../../../../$CDLABEL.iso)
@@ -36,4 +36,4 @@ read ISONAME
 mkisofs -o "$ISONAME" -v -J -R -D -A "$CDLABEL" -V "$CDLABEL" \
 -no-emul-boot -boot-info-table -boot-load-size 4 \
 -b boot/syslinux/isolinux.bin -c boot/syslinux/isolinux.boot \
--graft-points MagOS/vmlinuz=../../../MagOS/vmlinuz MagOS/initrd.gz=../../../MagOS/initrd.gz boot=../../../boot isolinux.cfg=../isolinux.cfg
+-graft-points MagicOS/vmlinuz=../../../MagicOS/vmlinuz MagicOS/initrd.gz=../../../MagicOS/initrd.gz boot=../../../boot isolinux.cfg=../isolinux.cfg

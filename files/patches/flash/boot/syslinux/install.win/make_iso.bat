@@ -6,10 +6,10 @@ REM  author: Tomas M. <http://www.linux-live.org>
 REM  ----------------------------------------------------
 
 cd ..\..\..\
-set CDLABEL=MagOS
+set CDLABEL=MagicOS
 set ISOPATH=..
-if exist "..\MagOS" set ISOPATH=c:
-boot\tools\WIN\mkisofs.exe @boot\syslinux\iso_conf -o "%ISOPATH%\%CDLABEL%.iso" -A "%CDLABEL%" -V "%CDLABEL%" -m '*_save*' MagOS=MagOS boot=boot isolinux.cfg=boot/syslinux/isolinux.cfg
+if exist "..\MagicOS" set ISOPATH=c:
+boot\tools\WIN\mkisofs.exe @boot\syslinux\iso_conf -o "%ISOPATH%\%CDLABEL%.iso" -A "%CDLABEL%" -V "%CDLABEL%" -m '*_save*' MagicOS=MagicOS MagicOS-Data=MagicOS-Data boot=boot isolinux.cfg=boot/syslinux/isolinux.cfg
 echo.
 echo New ISO should be created now. See %ISOPATH%\%CDLABEL%.iso
 

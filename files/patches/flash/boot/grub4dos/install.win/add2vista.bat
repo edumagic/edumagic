@@ -9,7 +9,7 @@ Set BCDEDIT=C:\Windows\System32\bcdedit.exe
 Set SED=%RUND%\boot\tools\win\sed.exe
 
         echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-call :t_echo Welcome to MagOS boot installer
+call :t_echo Welcome to MagicOS boot installer
         echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         echo.
 call :t_echo This installer will add Grub4dos loader to Windows Vista/7 loader.
@@ -21,15 +21,15 @@ pause > nul
 cls
 
 call :t_echo Copying grub4dos files to boot drive ...
-copy /y %RUND%\boot\grub4dos\magos.ldr %RUND%\magos.ldr
+copy /y %RUND%\boot\grub4dos\magicos.ldr %RUND%\magicos.ldr
 
 call :t_echo Setting bootloader ...
-%BCDEDIT% /create /d "MagOS Linux" /application bootsector |  %SED% s/^.*{/{/ | %SED% s/}.*$/}/ >%TEMP%\grub4dos.id
+%BCDEDIT% /create /d "MagicOS Linux" /application bootsector |  %SED% s/^.*{/{/ | %SED% s/}.*$/}/ >%TEMP%\grub4dos.id
 for /f %%A in (%TEMP%\grub4dos.id) do set guid=%%A
 echo GUID = %guid%
 
 %BCDEDIT% /set %guid% device partition=%RUND%
-%BCDEDIT% /set %guid% path \boot\grub4dos\magos.mbr
+%BCDEDIT% /set %guid% path \boot\grub4dos\magicos.mbr
 %BCDEDIT% /displayorder %guid% /addlast
 
 call :t_echo Done. Check files and reboot. Press enter.

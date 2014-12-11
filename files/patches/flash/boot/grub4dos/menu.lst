@@ -9,46 +9,43 @@
 color black/cyan yellow/cyan
 splashimage /boot/grub4dos/boot_xpm.gz
 
-timeout 30
+timeout 10
 default 0
 
-title MagOS_Clean
-#find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
-kernel /MagOS/vmlinuz  root=/dev/ram0 rw vga=791 quiet
-initrd /MagOS/initrd.gz
+title MagicOS_Home_profile_LXDE
+#find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
+kernel /MagicOS/vmlinuz  root=/dev/ram0 plymouth.enable=0 xvideo=nonfree rw vga=791 quiet changes=MagicOS_save1.img desktop=lxde
+initrd /MagicOS/initrd.gz
 
-title MagOS_Home_profile
-#find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
-kernel /MagOS/vmlinuz  root=/dev/ram0 rw vga=791 quiet changes=MagOS_save1.img splash=silent
-initrd /MagOS/initrd.gz
+title MagicOS_Home_profile_MATE
+#find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
+kernel /MagicOS/vmlinuz root=/dev/ram0 plymouth.enable=0 xvideo=nonfree rw vga=788 quiet changes=MagicOS_save1.img desktop=mate
+initrd /MagicOS/initrd.gz
 
-title MagOS_Work_profile
-#find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
-kernel /MagOS/vmlinuz  root=/dev/ram0 rw vga=791 quiet changes=MagOS_save2.img splash=silent
-initrd /MagOS/initrd.gz
+title MagicOS_Home_profile_KDE
+#find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
+kernel /MagicOS/vmlinuz  root=/dev/ram0 plymouth.enable=0 xvideo=nonfree rw vga=788 quiet changes=MagicOS_save1.img desktop=kde
+initrd /MagicOS/initrd.gz
 
-title MagOS_Gnome
-#find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
-kernel /MagOS/vmlinuz root=/dev/ram0 rw vga=788 quiet desktop=gnome
-initrd /MagOS/initrd.gz
+title MagicOS_Clean_LXDE
+#find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
+kernel /MagicOS/vmlinuz  root=/dev/ram0 plymouth.enable=0 xvideo=nonfree rw vga=791 quiet desktop=lxde
+initrd /MagicOS/initrd.gz
 
-title MagOS_LXDE
-#find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
-kernel /MagOS/vmlinuz  root=/dev/ram0 rw vga=788 quiet desktop=lxde
-initrd /MagOS/initrd.gz
+title MagicOS_Clean_MATE
+#find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
+kernel /MagicOS/vmlinuz root=/dev/ram0 plymouth.enable=0 xvideo=nonfree rw vga=788 quiet desktop=mate
+initrd /MagicOS/initrd.gz
 
-title MagOS_failsafe
-#find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
-kernel /MagOS/vmlinuz root=/dev/ram0 rw noapic nolapic acpi=off nopat no3ddesktop xdriver=free noload=/modules/
-initrd /MagOS/initrd.gz
+title MagicOS_Clean_KDE
+#find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
+kernel /MagicOS/vmlinuz  root=/dev/ram0 plymouth.enable=0 xvideo=nonfree rw vga=788 quiet desktop=kde
+initrd /MagicOS/initrd.gz
 
-title MagOS_copy2ram
-#find --set-root --ignore-floppies --ignore-cd /MagOS/MagOS.sgn
-kernel /MagOS/vmlinuz root=/dev/ram0 rw vga=791 quiet copy2ram ramsize=80%
-initrd /MagOS/initrd.gz
-
-title MagOS_netlive
-kernel /boot/tools/ipxe.krn
+title MagicOS_failsafe_LXDE
+#find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
+kernel /MagicOS/vmlinuz root=/dev/ram0 plymouth.enable=0 xvideo=nonfree rw noapic nolapic acpi=off nopat xdriver=vesa noload=/modules/ desktop=lxde
+initrd /MagicOS/initrd.gz
 
 title Memtest
 kernel /boot/tools/memtest
@@ -69,7 +66,7 @@ find --set-root --ignore-floppies --ignore-cd /ntldr
 chainloader /ntldr
 savedefault --wait=2
 
-title Windows VISTA
+title Windows VISTA/SEVEN/EIGTH
 find --set-root --ignore-floppies --ignore-cd /bootmgr
 map () (hd0)
 map (hd0) ()
@@ -83,21 +80,5 @@ find --set-root /io.sys
 chainloader /io.sys
 savedefault --wait=2
 
-#title NTpasswd
-#find --set-root /boot/extra/ntpasswd_080802.iso
-#map /boot/extra/ntpasswd_080802.iso (0xff) || map --mem /boot/extra/ntpasswd_080802.iso (0xff)
-#map --hook
-#chainloader (0xff)
-
-#title Victoria 3.5
-#find --set-root --ignore-floppies /boot/extra/vic35.img
-#map --mem /boot/extra/vic35.img (fd0)
-#map --hook
-#chainloader (fd0)+1
-#rootnoverify (fd0)
-
 title Reboot
 reboot
-
-
-

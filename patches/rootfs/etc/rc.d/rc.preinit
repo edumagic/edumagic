@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# magosctl      Helper script for MagOS Linux Live.
+# magicosctl      Helper script for MagicOS Linux Live.
 #
 # Authors:	Mikhail Zaripov <m3for@mail.ru>
 #
@@ -12,10 +12,10 @@ debug_log "starting /etc/rc.d/rc.preinit"
 debug_shell
 
 # We have to launch some rc scripts
-for a in usr/lib/magos/rc.preinit/* ;do
+for a in usr/lib/magicos/rc.preinit/* ;do
    [ -x $a ] && $a 2>/dev/null
 done
-for a in usr/lib/magos/rc.preinit.d/* ;do
+for a in usr/lib/magicos/rc.preinit.d/* ;do
    [ -x $a ] && $a 2>/dev/null &
 done
 

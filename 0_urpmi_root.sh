@@ -61,8 +61,6 @@ then
   urpmi.update -a --urpmi-root $MOD_PREV
 fi
 
-#./fakeuname -r $UNAME_R
-
 echo "The script has completed work"
 echo "Работа скрипта завершена"
 exit 0

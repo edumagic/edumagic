@@ -24,9 +24,9 @@ fi
 #Link for Readme.odt on Desktop
 if [ ! -f "$DIR/Readme.odt" ]
 then
-  if [ -f "/usr/share/magos/Readme.odt" ]
+  if [ -f "/usr/share/magicos/Readme.odt" ]
   then
-    cp -f /usr/share/magos/Readme.odt "$HOME/$DIR/"
+    cp -f /usr/share/magicos/Readme.odt "$HOME/$DIR/"
   fi
 fi
 

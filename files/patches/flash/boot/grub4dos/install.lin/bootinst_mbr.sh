@@ -44,15 +44,15 @@ NUM=${TARGET:${#MBR}}
 
 clear
 t_echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
-t_echo "                        Welcome to MagOS boot installer                         "
+t_echo "                        Welcome to MagicOS boot installer                         "
 t_echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
 echo
-t_echo "This installer will setup disk" $TARGET "to boot only MagOS."
+t_echo "This installer will setup disk" $TARGET "to boot only MagicOS."
 if [ "$MBR" != "$TARGET" ]; then
    t_echo
    t_echo "Warning! Master boot record (MBR) of" $MBR "will be overwritten."
    t_echo "If you use" $MBR "to boot any existing operating system, it will not work"
-   t_echo "anymore. Only MagOS will boot from this device. Be careful!"
+   t_echo "anymore. Only MagicOS will boot from this device. Be careful!"
 fi
 t_echo
 t_echo "Press Enter to continue, or Ctrl+C to abort..."
@@ -65,7 +65,7 @@ sync
 cd ../
 
 t_echo "Copying grub4dos files on" $TARGET...
-cp -f magos.ldr ../../
+cp -f magicos.ldr ../../
 
 if [ "$MBR" != "$TARGET" ]; then
    t_echo "Saving old MBR ..."

@@ -1,0 +1,49 @@
+#!/bin/bash
+# Initial script for MagicOS-Linux Live operating system
+# This script are launching before starting init from linux-live script.
+# Current dir allways must be set to root (/)
+# All system path must be relative, except initrd dirs
+
+export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
+
+ENABLED=yes
+[ "$ENABLED" != "yes" ] && exit 0
+
+DEBUGMODE=no
+. /liblinuxlive 2>/dev/null || . /mnt/live/liblinuxlive
+#debug_mode "$0" "$@"
+
+. etc/sysconfig/MagicOS
+
+[ -z "$PARTITIONSMOUNTUID" ] && PARTITIONSMOUNTUID=1000
+FSCKFLAG=0
+
+#Find and use swap partition. If not, use window$ swapfile.
+if [ "$(cmdline_parameter findswap)" ] ;then
+    sed -i /FINDSWAP/d etc/fstab
+    debug_log "Find linux native partitions"
+    FSWAP=$(blkid -t TYPE="swap" -l | awk -F: '{print $1}')
+    if [ "$FSWAP" ] ;then 
+       echo "$FSWAP none swap defaults 0 0 #FINDSWAP" >> etc/fstab
+    else
+       debug_log "Capturing windows swapfile"
+       FSWAP=$(find_in_computer /pagefile.sys /$UNION/mnt/windows)
+       if [ "$FSWAP" ] ;then
+          if [ -f "$FSWAP" ] ;then
+             mkswap "$FSWAP"
+             DSWAP=$(dirname $FSWAP)
+             DEV=$(grep /$UNION/mnt/windows /proc/mounts | awk '{ print $1 }')
+             DEVTYPE=$(blkid $DEV -s TYPE | awk -F\" '{print $2}' )
+             if [ "$DSWAP" = "/$UNION/mnt/windows" -a -b "$DEV" ] ;then
+                DEVOPTS=$(fs_options $DEV fstab),uid=$PARTITIONSMOUNTUID
+                echo "$DEV /mnt/windows $DEVTYPE $DEVOPTS 0 $FSCKFLAG # FINDSWAP" >>etc/fstab
+                umount /$UNION/mnt/windows 2>/dev/null
+             fi
+             echo "$FSWAP none swap defaults 0 0 # FINDSWAP" | sed s-/$UNION-- >> etc/fstab
+          fi
+       fi
+    fi
+fi
+
+#Enable compcache if it is needed
+#[ "$(grep " swap " etc/fstab)$(echo $SERVICESNOSTART | grep compcache)" = "" ] && chroot . chkconfig --add compcache >/dev/null 2<&1

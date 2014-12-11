@@ -1,0 +1,24 @@
+#!/bin/bash
+
+ENABLED=yes
+[ "$ENABLED" != "yes" ] && exit 0
+
+DEBUGMODE=no
+. /liblinuxlive 2>/dev/null || . /mnt/live/liblinuxlive
+#debug_mode "$0" "$@"
+
+VER=`cat /mnt/live/VERSION|awk '{print $2}'`
+ONCE=`cat /etc/once_boot_scripts|grep $(basename $0)-$VER`
+if [ ! "$ONCE" = "" ]
+then
+  exit 0
+fi
+
+ln -s /usr/bin/consolehelper /usr/bin/urpmi
+ln -s /etc/pam.d/mageia-simple-auth /etc/pam.d/urpmi
+ln -s /usr/bin/consolehelper /usr/bin/urpme
+ln -s /etc/pam.d/mageia-simple-auth /etc/pam.d/urpme
+
+ln -s /usr/lib/kde4/libexec/kdesu /usr/bin/
+
+echo $(basename $0)-$VER >> /etc/once_boot_scripts

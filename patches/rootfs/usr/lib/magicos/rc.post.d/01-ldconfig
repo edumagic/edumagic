@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# magicosctl      Helper script for MagicOS Linux Live.
+#
+# Authors:	Mikhail Zaripov <m3for@mail.ru>
+#
+ENABLED=yes
+[ "$ENABLED" != "yes" ] && exit 0
+
+DEBUGMODE=no
+. /liblinuxlive 2>/dev/null || . /mnt/live/liblinuxlive
+#debug_mode "$0" "$@"
+
+[ -f /etc/sysconfig/MagicOS ] && . /etc/sysconfig/MagicOS
+[ "$RUNLDCONFIG" = "yes" ] && /sbin/ldconfig

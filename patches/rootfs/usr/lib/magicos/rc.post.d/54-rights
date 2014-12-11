@@ -1,0 +1,18 @@
+#!/bin/bash
+
+ENABLED=yes
+[ "$ENABLED" != "yes" ] && exit 0
+
+DEBUGMODE=no
+. /liblinuxlive 2>/dev/null || . /mnt/live/liblinuxlive
+#debug_mode "$0" "$@"
+
+cd "/home/user/Рабочий стол"
+chmod +x ./*.desktop
+chown user:user ./*.desktop
+
+if [ ! -d "/run/media/user" ]
+then
+  mkdir -p /run/media/user
+  chown -hR user:user /run/media
+fi

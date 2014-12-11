@@ -6,12 +6,12 @@
 #  (at your option) any later version.
 
 [Unit]
-Description=/etc/rc.d/rc.local Compatibility for MagOS
-ConditionPathExists=/etc/rc.d/rc.local.MagOS
+Description=/etc/rc.d/rc.local Compatibility for MagicOS
+ConditionPathExists=/etc/rc.d/rc.local.MagicOS
 
 [Service]
 Type=forking
-ExecStart=/etc/rc.d/rc.local.MagOS start
+ExecStart=/etc/rc.d/rc.local.MagicOS start
 TimeoutSec=0
 StandardOutput=tty
 RemainAfterExit=yes

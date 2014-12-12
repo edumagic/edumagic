@@ -59,7 +59,6 @@ basesystem
 basesystem-minimal
 basetest
 bash
-basic256
 bc
 beesu
 biew
@@ -91,11 +90,10 @@ bootsplash
 brasero
 bridge-utils
 broadcom-wl-common
-broadcom-wl-kernel-3.18.0-server-0.rc6.1.mga5
+broadcom-wl-kernel-3.18.0-server-1.mga5
 broadcom-wl-kernel-server-latest
 btrfs-progs
 busybox-static
-bwbasic
 bzip2
 c2050
 c2070
@@ -120,16 +118,12 @@ chbg
 cheese
 chemical-mime-data
 chemtool
-childsplay
-childsplay-sounds-ru
 chkconfig
 chromium-browser-stable
 cifs-utils
 cjet
-clamav
-clamav-db
-clamtk
 claws-mail
+clisp
 clutter-gtk-i18n
 clutter-i18n
 cmake
@@ -252,7 +246,6 @@ easychem
 easytag
 ebtables
 ecj
-ecl
 editobj2
 editres
 eiskaltdcpp
@@ -288,7 +281,7 @@ fet
 ffdiaporama
 ffmpeg
 ffmpegthumbs
-fglrx-kernel-3.18.0-server-0.rc6.1.mga5
+fglrx-kernel-3.18.0-server-1.mga5
 fglrx-kernel-server-latest
 file
 filelight
@@ -301,10 +294,8 @@ firmware-tools
 flac
 flac123
 flam3
-flamerobin
 flash-player-plugin
 fluidsynth
-fm_scripts
 fontconfig
 fontpackages-filesystem
 fonts-dejavu-common
@@ -321,9 +312,7 @@ fortune-mod
 fpc
 fpc-src
 fpgui
-fp-ide-en
 fp-ide-ru
-freebasic
 freehdl
 freerdp
 frei0r
@@ -544,7 +533,6 @@ gnupylot
 gnutu
 gobject-introspection
 goffice
-goldendict
 golems
 goocanvas2-i18n
 goocanvas-i18n
@@ -657,6 +645,7 @@ indilib
 info
 info-install
 initscripts
+inkscape
 iproute2
 ipset
 iptables
@@ -725,8 +714,8 @@ kdm
 keditbookmarks
 kernel-firmware
 kernel-firmware-nonfree
-kernel-server-3.18.0-0.rc6.1.mga5
-kernel-server-devel-3.18.0-0.rc6.1.mga5
+kernel-server-3.18.0-1.mga5
+kernel-server-devel-3.18.0-1.mga5
 kernel-server-devel-latest
 kernel-server-latest
 kernel-userspace-headers
@@ -791,7 +780,6 @@ kwordquiz
 kwrite
 laby
 lame
-lazarus
 lbxproxy
 ld10k1
 ldetect
@@ -844,7 +832,6 @@ libastro1
 libasyncns0
 libatasmart4
 libatk1.0_0
-libatk1.0-devel
 libatk-bridge2.0_0
 libatk-gir1.0
 libatkmm1.6_1
@@ -935,7 +922,6 @@ libchamplain-gtk0.12_0
 libcheese-gtk23
 libchm0
 libchromaprint0
-libclamav6
 libcln6
 libclucene-contribs-lib2
 libclucene-core2
@@ -1058,9 +1044,10 @@ libfaad2
 libfam0
 libfame0.9_1
 libfarstream0.1_0
-libfbclient2
 libfbembed2
+libfcgi0
 libffado2
+libffcall0
 libffi6
 libffi-devel
 libfftw3
@@ -1229,7 +1216,6 @@ libgstreamer-plugins-base-gir1.0
 libgsturidownloader1.0_0
 libgstwayland1.0_0
 libgtk+2.0_0
-libgtk+2.0-devel
 libgtk2-theme-engines
 libgtk+3_0
 libgtkdatabox0.9.2_0
@@ -1297,6 +1283,7 @@ libimobiledevice
 libimobiledevice4
 libinchi1
 libindi0
+libiniparser0
 libinput5
 libintl8
 libiodbc2
@@ -1375,13 +1362,13 @@ libkerfuffle4
 libkexiv2
 libkexiv2_11
 libkeyutils1
-libkface2
+libkface3
 libkface-common
 libkfile4
 libkfilemetadata4
 libkfontinst4
 libkfontinstui4
-libkgeomap1
+libkgeomap2
 libkgeomap-common
 libkgetcore4
 libkholidays4
@@ -1522,7 +1509,6 @@ libmesagl1-devel
 libmesaglesv2_2
 libmesaglu1
 libmesaglu1-devel
-libmesaopenvg1
 libmicroblog4
 libmicrohttpd10
 libmikmod3
@@ -1534,6 +1520,7 @@ libminizip1
 libmjpegtools2.0_0
 libmlt++3
 libmlt6
+libmm-glib0
 libmms0
 libmng2
 libmnl0
@@ -1649,7 +1636,6 @@ libpam0
 libpam_userpass1
 libpango1.0_0
 libpango1.0_0-modules
-libpango1.0-devel
 libpango-gir1.0
 libpangomm2.4_1
 libpangox1.0_0
@@ -1723,7 +1709,6 @@ libpulseaudio-devel
 libpulsecommon5.0
 libpulsecore5.0
 libpulseglib20
-libpurple0
 libpx0
 libpyglib2.0_0
 libpython2.7
@@ -2171,7 +2156,6 @@ libzlib1
 libzlib-devel
 libzvbi0
 libzziplib0
-lightlang
 lightlang-dict
 lightlang-sounds
 linphone
@@ -2213,7 +2197,6 @@ lxtask
 lxterminal
 lybniz
 m4
-magcc
 mageia-doc-common
 mageia-kde4-config-common
 mageia-kde-translation
@@ -2224,8 +2207,11 @@ mageia-theme-common
 mageia-theme-Default
 mageia-theme-Default-screensaver
 mageia-theme-kde-background
-magos-scripts
-magos-tools
+magicos-fmscripts
+magicos-magcc
+magicos-modmnger
+magicos-scripts
+magicos-tools
 mailcap
 make
 makedepend
@@ -2276,7 +2262,7 @@ mate-utils-common
 mathmod
 mathwar
 maxima
-maxima-runtime-ecl
+maxima-runtime-clisp
 mc
 mc-desktop
 mcpp
@@ -2307,9 +2293,7 @@ mlocate
 mlt
 mlt-kdenlive
 modemmanager
-modemmanager-glib
 modem-manager-gui
-mod_mnger
 monitor-edid
 mono
 mono-basic
@@ -2344,7 +2328,6 @@ multiplicationstation
 mutagen
 myabcs
 myagent-im
-mypaint
 mythes
 mythes-ru
 nail
@@ -2371,9 +2354,9 @@ ntfs-3g
 numptyphysics
 nut
 nut-server
-nvidia304-kernel-3.18.0-server-0.rc6.1.mga5
+nvidia304-kernel-3.18.0-server-1.mga5
 nvidia304-kernel-server-latest
-nvidia-current-kernel-3.18.0-server-0.rc6.1.mga5
+nvidia-current-kernel-3.18.0-server-1.mga5
 nvidia-current-kernel-server-latest
 nxproxy
 obconf
@@ -2386,7 +2369,6 @@ open
 openal
 openbabel
 openbox
-opencascade
 openclass
 opendict
 opendict-lingvosoft
@@ -2397,6 +2379,7 @@ openshot
 openssh
 openssh-clients
 openssl
+openteacher
 ORBit2
 orc
 ossp
@@ -2424,7 +2407,6 @@ pciutils
 pcmanfm
 pcmciautils
 pcre
-pdksh
 peazip
 pencil-planner
 pentaxpj
@@ -2453,6 +2435,7 @@ perl-Curses-UI
 perl-Data-Dump
 perl-Data-Flow
 perl-Date-Calc
+perl-Date-Manip
 perl-DBD-mysql
 perl-DBI
 perl-Devel-Leak
@@ -2468,7 +2451,6 @@ perl-ExtUtils-PkgConfig
 perl-File-BaseDir
 perl-File-chdir
 perl-File-DesktopEntry
-perl-File-Find-Rule
 perl-File-FnMatch
 perl-File-Listing
 perl-File-MimeInfo
@@ -2539,6 +2521,7 @@ perl-Net-Telnet
 perl-Number-Compare
 perl-Pango
 perl-Parse-EDID
+perl-Parse-Yapp
 perl-PDF-API2
 perl-Probe-Perl
 perl-Proc-Daemon
@@ -2546,6 +2529,8 @@ perl-Proc-WaitStat
 perl-String-CRC32
 perl-String-ShellQuote
 perl-Sub-Uplevel
+perl-SVG
+perl-SVG-Parser
 perl-SVN
 perl-Term-ReadKey
 perl-Test-Script
@@ -2565,13 +2550,16 @@ perl-WWW-RobotRules
 perl-XML-LibXML
 perl-XML-NamespaceSupport
 perl-XML-Parser
+perl-XML-RegExp
 perl-XML-SAX
 perl-XML-SAX-Base
 perl-XML-Twig
 perl-XML-XPath
+perl-XML-XQL
 perl-YAML
 perl-YAML-Tiny
 pgadmin3
+phonon
 phonon-devel
 phonon-gstreamer
 phonon-gstreamer-common
@@ -2606,10 +2594,6 @@ php-xmlreader
 php-xmlwriter
 php-zlib
 phun
-pidgin
-pidgin-i18n
-pidgin-plugin-mrim
-pidgin-plugins
 pilot-link-common
 pinentry
 pinentry-qt4
@@ -2790,6 +2774,7 @@ qt4-common
 qt4-database-plugin-mysql
 qt4-database-plugin-sqlite
 qt4-designer
+qt4-designer-plugin-phonon
 qt4-designer-plugin-qt3support
 qt4-designer-plugin-webkit
 qt4-graphicssystems-plugin
@@ -2870,7 +2855,6 @@ samba-common
 samba-server
 samba-winbind
 sane-backends
-sane-backends-iscan
 saned
 sankore
 sash
@@ -3010,7 +2994,6 @@ timezone
 timezone-java
 TiMidity++
 timidity-patch-freepats
-tix
 tk
 tkgate
 tkinter
@@ -3056,7 +3039,7 @@ usermode
 usermode-consoleonly
 util-linux
 v4l-utils
-vboxadditions-kernel-3.18.0-server-0.rc6.1.mga5
+vboxadditions-kernel-3.18.0-server-1.mga5
 vboxadditions-kernel-server-latest
 vcdimager
 veusz
@@ -3064,7 +3047,8 @@ viewres
 vim-common
 vim-enhanced
 vim-minimal
-virtualbox-kernel-3.18.0-server-0.rc6.1.mga5
+virtualbox
+virtualbox-kernel-3.18.0-server-1.mga5
 virtualbox-kernel-server-latest
 virtuoso-opensource
 vlc

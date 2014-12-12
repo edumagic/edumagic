@@ -10,4 +10,4 @@ nvidia-current-kernel-server-latest
 #dkms-vboxadditions
 vboxadditions-kernel-server-latest
 #dkms-virtualbox
-virtualbox-kernel-server-latest
+#virtualbox-kernel-server-latest

@@ -179,16 +179,16 @@ then
   chmod 444 *
   md5sum *.$MODULEFORMAT >MD5SUM
   cd "$MYPATH"
-#  echo "Replacing names of iso images"
-#  echo "Замена названий iso образов"
-#  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagicboot"|g' "$DESTDIR_EDU"/boot/grub4dos/install.lin/make_boot_iso.sh
-#  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagic"|g' "$DESTDIR_EDU"/boot/grub4dos/install.lin/make_iso.sh
-#  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagicboot\r|g' "$DESTDIR_EDU"/boot/grub4dos/install.win/make_boot_iso.bat
-#  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagic\r|g' "$DESTDIR_EDU"/boot/grub4dos/install.win/make_iso.bat
-#  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagicboot"|g' "$DESTDIR_EDU"/boot/syslinux/install.lin/make_boot_iso.sh
-#  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagic"|g' "$DESTDIR_EDU"/boot/syslinux/install.lin/make_iso.sh
-#  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagicboot\r|g' "$DESTDIR_EDU"/boot/syslinux/install.win/make_boot_iso.bat
-#  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagic\r|g' "$DESTDIR_EDU"/boot/syslinux/install.win/make_iso.bat
+  echo "Replacing names of iso images"
+  echo "Замена названий iso образов"
+  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagicboot"|g' "$DESTDIR_EDU"/boot/grub4dos/install.lin/make_boot_iso.sh
+  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagic"|g' "$DESTDIR_EDU"/boot/grub4dos/install.lin/make_iso.sh
+  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagicboot\r|g' "$DESTDIR_EDU"/boot/grub4dos/install.win/make_boot_iso.bat
+  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagic\r|g' "$DESTDIR_EDU"/boot/grub4dos/install.win/make_iso.bat
+  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagicboot"|g' "$DESTDIR_EDU"/boot/syslinux/install.lin/make_boot_iso.sh
+  sed -i -e 's|CDLABEL=".*."|CDLABEL="EduMagic"|g' "$DESTDIR_EDU"/boot/syslinux/install.lin/make_iso.sh
+  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagicboot\r|g' "$DESTDIR_EDU"/boot/syslinux/install.win/make_boot_iso.bat
+  sed -i -e 's|CDLABEL=.*.|CDLABEL=EduMagic\r|g' "$DESTDIR_EDU"/boot/syslinux/install.win/make_iso.bat
   if [ -f "files/patches/flash-edu/isolinux.cfg" ]
   then
     cp -f files/patches/flash-edu/isolinux.cfg $MYPATH/$DESTDIR_EDU/boot/syslinux/

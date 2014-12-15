@@ -1,10 +1,12 @@
 #!/bin/bash
-
+#
+# Initial script for MagicOS-Linux Live operating system.
 # This script add missing GenericName if Comment exists and add missing Comment if GenericName exists
-# and works for [$LANGUAGE] also
-# Licence: GPLv3 or later
-# Author: Alexey Loginov <loginov.alex.valer@gmail.com>
-
+# and works for [$LANGUAGE] also.
+# License: GPL last version. Лицензия: GPL последней версии.
+# Author: Alexey Loginov.
+# Автор: Алексей Логинов.
+#
 ENABLED=yes
 [ "$ENABLED" != "yes" ] && exit 0
 

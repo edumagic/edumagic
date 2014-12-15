@@ -1,5 +1,10 @@
 #!/bin/bash
-
+#
+# Initial script for MagicOS-Linux Live operating system.
+# License: GPL last version. Лицензия: GPL последней версии.
+# Author: Alexey Loginov.
+# Автор: Алексей Логинов.
+#
 #Turning on sound for the first found the sound card by 80%
 LC_ALL=C pactl list | sed -n '/^Sink.*[0-9]$/p' | sed 's/^Sink\ #//g' | pactl set-sink-mute $? false
 LC_ALL=C pactl list | sed -n '/^Sink.*[0-9]$/p' | sed 's/^Sink\ #//g' | pactl set-sink-volume $? 52429
@@ -7,21 +12,9 @@ LC_ALL=C pactl list | sed -n '/^Sink.*[0-9]$/p' | sed 's/^Sink\ #//g' | pactl se
 #Remove from autostart to call this script
 rm ~/.config/autostart/firstboot_user.desktop
 
-#fix xterm non-latin locale problem (xterm non-latin font view error)
-#xrdb ~/.Xdefaults
-
-#Copy Desktop from KDE
 DIR=`echo $(kreadconfig --file $HOME/.config/user-dirs.dirs --key XDG_DESKTOP_DIR)|cut -d "\"" --fields=2|cut -d "/" --fields=2`
-#if [ ! -f "$DIR/Home2.desktop" ]
-#then
-#  cp -f /usr/share/applications/kde4/Home2.desktop "$HOME/$DIR/"
-#fi
-if [ ! -f "$DIR/register.desktop" ]
-then
-  cp -f /usr/share/dist/desktop-files/default/register.desktop "$HOME/$DIR/"
-fi
 
-#Link for Readme.odt on Desktop
+#Link for Readme.odt on the Desktop
 if [ ! -f "$DIR/Readme.odt" ]
 then
   if [ -f "/usr/share/magicos/Readme.odt" ]
@@ -30,7 +23,7 @@ then
   fi
 fi
 
-#Link for MagCC on Desktop
+#Link for MagCC on the Desktop
 if [ ! -f "$DIR/magcc.desktop" ]
 then
   if [ -f "/usr/share/applications/magcc.desktop" ]
@@ -114,22 +107,6 @@ then
     fi
   fi
 fi
-
-#Create config for Phun
-#if [ "$LANG" = "Russian" ]
-#then
-#  if [ -f "/usr/share/phun/config.cfg" ]
-#  then
-#    A=`cat /usr/share/phun/config.cfg|grep $LANG`
-#    if [ "$A" = "" ]
-#    then
-#      echo "" >> /usr/share/phun/config.cfg
-#      echo "App -> {" >> /usr/share/phun/config.cfg
-#      echo "    language = \"$LANG\";" >> /usr/share/phun/config.cfg
-#      echo "    };" >> /usr/share/phun/config.cfg
-#    fi
-#  fi
-#fi
 
 #Create config for exe
 if [ "$LANG" = "Russian" ]
@@ -221,32 +198,6 @@ then
   fi
 fi
 
-#Create config for fet
-#if [ "$LANG" = "Russian" ]
-#then
-#  if [ -f "/usr/bin/fet" ]
-#  then
-#    if [ ! -f "~/.config/fet/fettimetabling.conf" ]
-#    then
-#      mkdir -p ~/.config/fet
-#      echo "[General]" >> ~/.config/fet/fettimetabling.conf
-#      echo "Language=ru" >> ~/.config/fet/fettimetabling.conf
-#    fi
-#  fi
-#fi
-
-#Create config for dosbox
-#if [ "$LANG" = "Russian" ]
-#then
-#  if [ -f "/usr/bin/dosbox" ]
-#  then
-#    if [ -f "/usr/bin/dosbox-set-lang" ]
-#    then
-#      dosbox-set-lang ru
-#    fi
-#  fi
-#fi
-
 #Create config for dvdstyler
 if [ "$LANG" = "Russian" ]
 then
@@ -261,7 +212,5 @@ then
     fi
   fi
 fi
-
-#cp -f /etc/xdg/lxpanel/LXDE/panels/panel ~/.config/lxpanel/LXDE/panels
 
 exit 0

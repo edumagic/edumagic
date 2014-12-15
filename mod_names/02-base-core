@@ -16,7 +16,6 @@ man-pages-ru
 lsof
 at
 rpm-build
-#dev-scripts (deprecated)
 fuse-exfat
 exfat-utils
 firmware-tools

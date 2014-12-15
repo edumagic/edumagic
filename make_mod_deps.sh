@@ -4,8 +4,8 @@
 # Лицензия: GPL последней версии
 # Description: Generate files with requires for modules
 # Описание: Генерирует файлы с зависимостями пакетов модулей
-# Author: Goroshkin Anton
-# Автор: Горошкин Антон
+# Authors: Goroshkin Anton, Alexey Loginov
+# Авторы: Горошкин Антон, Логинов Алексей
 
 if [ "`id -u`" != "0" ] ;then
   echo "Need root permissions"

@@ -1,9 +1,13 @@
 #!/bin/bash
-# Initial script for MagicOS-Linux Live operating system
+#
+# Initial script for MagicOS-Linux Live operating system.
 # This script are launching before starting init from linux-live script.
-# Current dir allways must be set to root (/)
-# All system path must be relative, except initrd dirs
-
+# Current dir allways must be set to root (/).
+# All system path must be relative, except initrd dirs.
+# License: GPL last version. Лицензия: GPL последней версии.
+# Authors: Alexandr Betkher, Anton Goroshkin, Mikhail Zaripov, Alexey Loginov.
+# Авторы: Александр Бетхер, Антон Горошкин, Михаил Зарипов, Алексей Логинов.
+#
 export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
 
 ENABLED=yes
@@ -19,9 +23,7 @@ DEBUGMODE=no
 [ -z "$AUTOLOGINUSER" ] && AUTOLOGINUSER=$(echo "$NEEDEDUSERS" | awk -F: '{print $1}')
 [ -z "$AUTOLOGINUSER" ] && AUTOLOGINUSER=$(grep :1000:1000: etc/passwd | awk -F: '{print $1}')
 [ "$AUTOLOGINUSER" = "none" ] && AUTOLOGINUSER=
-#sed -i s/^AutomaticLogin=.*/AutomaticLogin=$AUTOLOGINUSER/ etc/X11/gdm/custom.conf 2>/dev/null
 sed -i s/.*autologin=.*/autologin=$AUTOLOGINUSER/ etc/lxdm/lxdm.conf 2>/dev/null
-#sed -i s/^default_user[[:space:]].*/"default_user        $AUTOLOGINUSER"/ etc/X11/slim/slim.conf 2>/dev/null
 sed -i -e "s/#AutoLoginUser=.*/AutoLoginUser=$AUTOLOGINUSER/g" var/lib/mageia/kde4-profiles/Default/share/config/kdm/kdmrc 2>/dev/null
 sed -i -e "s/AutoLoginUser=.*/AutoLoginUser=$AUTOLOGINUSER/g" var/lib/mageia/kde4-profiles/Default/share/config/kdm/kdmrc 2>/dev/null
 sed -i -e "s/#AutoLoginEnable=.*/AutoLoginEnable=true/g" var/lib/mageia/kde4-profiles/Default/share/config/kdm/kdmrc 2>/dev/null

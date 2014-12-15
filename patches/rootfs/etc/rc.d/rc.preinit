@@ -2,7 +2,7 @@
 #
 # magicosctl      Helper script for MagicOS Linux Live.
 #
-# Authors:	Mikhail Zaripov <m3for@mail.ru>
+# Authors:        Mikhail Zaripov <m3for@mail.ru>
 #
 
 export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin

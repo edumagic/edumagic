@@ -43,11 +43,6 @@ gcad3d
 gamine
 projectlibre
 pitivi
-#anjuta (gnome requires)
-#anjuta-extras (gnome requires)
-#libanjuta3-devel (gnome requires)
-#gcc-java (anjuta requires)
-#vala (anjuta requires)
 xaralx
 gnome-paint
 kiosktool

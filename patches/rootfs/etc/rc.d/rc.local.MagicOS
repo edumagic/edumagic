@@ -2,7 +2,7 @@
 #
 # magicosctl      Helper script for MagicOS Linux Live.
 #
-# Authors:	Mikhail Zaripov <m3for@mail.ru>
+# Authors:        Mikhail Zaripov <m3for@mail.ru>
 #
 # chkconfig: 345 25 75
 # description:  Do some actions for MagicOS Linux live run properly. It must be enabled.

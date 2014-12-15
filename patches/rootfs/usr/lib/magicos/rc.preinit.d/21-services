@@ -1,9 +1,13 @@
 #!/bin/bash
-# Initial script for MagicOS-Linux Live operating system
+#
+# Initial script for MagicOS-Linux Live operating system.
 # This script are launching before starting init from linux-live script.
-# Current dir allways must be set to root (/)
-# All system path must be relative, except initrd dirs
-
+# Current dir allways must be set to root (/).
+# All system path must be relative, except initrd dirs.
+# License: GPL last version. Лицензия: GPL последней версии.
+# Authors: Alexandr Betkher, Anton Goroshkin, Mikhail Zaripov, Alexey Loginov.
+# Авторы: Александр Бетхер, Антон Горошкин, Михаил Зарипов, Алексей Логинов.
+#
 export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
 
 ENABLED=yes
@@ -24,13 +28,6 @@ fi
 
 mkdir -p proc
 mount -o rbind /proc proc
-# https://bugs.mageia.org/show_bug.cgi?id=14650
-#if [ -x bin/systemd ]
-#then
-#  chroot . systemctl enable ModemManager.service || chroot . chkconfig --add ModemManager
-#else
-#  chroot . chkconfig --add ModemManager
-#fi
 if [ -x bin/systemd ]
 then
   chroot . systemctl disable NetworkManager.service || chroot . chkconfig --del NetworkManager
@@ -85,12 +82,6 @@ then
 else
   chroot . chkconfig --del proftpd
 fi
-#if [ -x bin/systemd ]
-#then
-#  chroot . systemctl disable reboot.service || chroot . chkconfig --del reboot
-#else
-#  chroot . chkconfig --del reboot
-#fi
 if [ -x bin/systemd ]
 then
   chroot . systemctl disable systemd-readahead-collect.service || chroot . chkconfig --del systemd-readahead-collect
@@ -103,12 +94,6 @@ then
 else
   chroot . chkconfig --del systemd-readahead-replay
 fi
-#if [ -x bin/systemd ]
-#then
-#  chroot . systemctl disable halt.service || chroot . chkconfig --del halt
-#else
-#  chroot . chkconfig --del halt
-#fi
 if [ -x bin/systemd ]
 then
   chroot . systemctl disable upsd.service || chroot . chkconfig --del upsd
@@ -127,12 +112,6 @@ then
 else
   chroot . chkconfig --del mysqld
 fi
-#if [ -x bin/systemd ]
-#then
-#  chroot . systemctl disable network-up.service || chroot . chkconfig --del network-up
-#else
-#  chroot . chkconfig --del network-up
-#fi
 if [ -x bin/systemd ]
 then
   chroot . systemctl disable hostapd.service || chroot . chkconfig --del hostapd

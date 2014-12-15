@@ -155,7 +155,6 @@ echo "Creating files for data saving"
 echo "Создание файлов для сохранения данных" 
 cd "$MYPATH"/$DESTDIR/MagicOS-Data || exit 1
 [ "$DATASIZE1" != "" ] && dd if=/dev/zero of=MagicOS_save1.img bs=1M count=$DATASIZE1 && mkfs.ext3 -F -j MagicOS_save1.img >/dev/null 2>&1
-#[ "$DATASIZE2" != "" ] && dd if=/dev/zero of=MagicOS_save2.img bs=1M count=$DATASIZE2 && mkfs.ext3 -F -j MagicOS_save2.img >/dev/null 2>&1
 
 cd "$MYPATH"
 
@@ -219,7 +218,6 @@ cd "$MYPATH"
 echo "Copying documents *.txt in directory docs"
 echo "Копирование документов *.txt в директорию docs"
 mkdir -p "$MYPATH"/docs
-#rm -f "$MYPATH"/docs/*
 cp -f "$MYPATH"/work/*.txt "$MYPATH"/docs/
 cd "$MYPATH"/docs
 tr -d '\r' < log_urpmi.txt > log_urpmi.txt.tmp

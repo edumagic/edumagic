@@ -1,8 +1,9 @@
 #!/bin/bash
 #
-# magicosctl      Helper script for MagicOS Linux Live.
-#
-# Authors:	Anton Goroshkin <http://magos-linux.ru>
+# Initial script for MagicOS-Linux Live operating system.
+# License: GPL last version. Лицензия: GPL последней версии.
+# Authors: Alexandr Betkher, Anton Goroshkin, Mikhail Zaripov, Alexey Loginov.
+# Авторы: Александр Бетхер, Антон Горошкин, Михаил Зарипов, Алексей Логинов.
 #
 ENABLED=yes
 [ "$ENABLED" != "yes" ] && exit 0

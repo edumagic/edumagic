@@ -16,7 +16,6 @@ DISTR_KIND=edu
 #Size in MB for data and system changes for each profile
 #Размер в Мб для данных и изменений системы для каждого профиля
 DATASIZE1=512
-DATASIZE2=256
 
 #Base
 #База
@@ -44,6 +43,7 @@ ROOTFS_INITRD=$MOD_ROOTFS_DIR/rootfs_initrd
 #Parameters for urpmi
 #Параметры urpmi
 URPMI_PARAM=" --noclean --download-all --auto --no-recommends --resume --no-verify-rpm "
+URPMI_PARAM_CODECS=" --noclean --download-all --auto --resume --no-verify-rpm "
 
 #File system unionfs or aufs
 #Файловая система unionfs или aufs
@@ -57,19 +57,12 @@ FS_KERNEL=aufs
 #Список репозиториев
 DIST_MIRROR_0=http://mirror.yandex.ru/mageia/distrib/cauldron/i586
 DIST_MIRROR_1=http://linux.mageia.tk/repo/magicos/magicos5/i586
-#DIST_MIRROR_2=
 
 #Names of additional modules
 #Имена дополнительных модулей
-#ADD_MOD_NAME=20-base-locales-man-doc
-#ADD_EDU_MOD_NAME=21-edu-locales-man-doc
 MOD_PATCH_MAGICOS=50-patch-magicos
 MOD_PATCH_EDUMAGIC=51-patch-edumagic
 MOD_PATCH_URPMI=00-patch-urpmi
-
-#If you want to write to disk directory MagicOS-Date, then use full, otherwise use nofull
-#full или nofull в зависимости от того записывать ли на диск директорию MagicOS-Data
-#FULL_ISO=full
 
 #Preferred packages to be installed first (list them separated by spaces)
 #Предпочитаемые пакеты, ставящиеся в первую очередь (указать через пробел)
@@ -78,14 +71,6 @@ PREFER=""
 #Enable or Disable Internet (yes/no) in building distro
 #Включить или выключить Интернет (yes/no) внутри собираемого дистрибутива
 INTERNET="yes"
-
-#Parameter for xvideo= ; parameter must be free or nonfree
-#Выбор значения для xvideo= ; может принимать значения free или nonfree
-#XVIDEO="nonfree"
-
-#Виртуальное uname -r
-#Fake uname -r
-#UNAME_R="3.17.2-server-1.mga5"
 
 #Вести ли списки пакетов (error db-30971)
 #Create lists for packages (error db-30971)

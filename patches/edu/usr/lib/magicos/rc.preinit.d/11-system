@@ -1,9 +1,13 @@
 #!/bin/bash
-# Initial script for MagicOS-Linux Live operating system
+#
+# Initial script for MagicOS-Linux Live operating system.
 # This script are launching before starting init from linux-live script.
-# Current dir allways must be set to root (/)
-# All system path must be relative, except initrd dirs
-
+# Current dir allways must be set to root (/).
+# All system path must be relative, except initrd dirs.
+# License: GPL last version. Лицензия: GPL последней версии.
+# Author: Alexey Loginov.
+# Автор: Алексей Логинов.
+#
 export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
 
 ENABLED=yes
@@ -22,40 +26,7 @@ fi
 
 . etc/sysconfig/MagicOS
 
-#Optimization menu and correction desktop files
-#sed -i "/OnlyShowIn=/d" usr/share/applications/evolution-settings.desktop
-#sed -i -e 's|Icon=evolution|Icon=/usr/share/icons/hicolor/48x48/apps/evolution.png|g' usr/share/applications/evolution-settings.desktop
-#sed -i -e 's|Icon=evolution|Icon=/usr/share/icons/hicolor/48x48/apps/evolution.png|g' usr/share/applications/evolution.desktop
-#sed -i -e 's|Icon=thunderbird|Icon=/usr/share/icons/hicolor/48x48/apps/thunderbird.png|g' usr/share/applications/thunderbird.desktop
-#sed -i -e 's|Categories=Office|Categories=Office;X-MandrivaLinux-Office-Wordprocessors;|g' usr/share/applications/rodovid.desktop
-#sed -i -e 's|Categories=GTK;Office;Science;|Categories=Office;X-MandrivaLinux-Office-Wordprocessors;|g' usr/share/applications/gramps.desktop
-#sed -i -e 's|Icon=cantor|Icon=/usr/share/icons/hicolor/48x48/apps/cantor.png|g' usr/share/applications/kde4/cantor.desktop
-#Fix bug https://bugs.mageia.org/show_bug.cgi?id=10649
-#sed -i -e 's|  ||g' usr/share/applications/zhu3d.desktop
-
-#Fix bug: https://bugs.mageia.org/show_bug.cgi?id=6055
-#rm -f usr/share/applications/scilab-cli.desktop
-#rm -f usr/share/applications/scilab-adv-cli.desktop
-
-#Fix bug: https://bugs.mageia.org/show_bug.cgi?id=8421
-#sed -i -e 's|italc.png|italc.xpm|g' usr/share/applications/italc.desktop
-
-#sed -i -e 's|#Icon=gnome-terminal|Icon=gsharp.png|g' usr/share/applications/gsharp.desktop
-
-#Fix bug: https://bugs.mageia.org/show_bug.cgi?id=8423
-#sed -i "/Icon=/d" usr/share/applications/edugraphe.desktop
-#echo "Icon=edugraphe" >> usr/share/applications/edugraphe.desktop
-
 rm -f usr/share/applications/squeak.desktop
-#rm -f usr/share/applications/ilcontrast.desktop
-#rm -f usr/share/applications/csg.desktop
-
-#hide aqsis
-#rm -f usr/share/applications/aqsis.desktop
-#rm -f usr/share/applications/aqsl.desktop
-#rm -f usr/share/applications/aqsltell.desktop
-#rm -f usr/share/applications/eqsl.desktop
-#rm -f usr/share/applications/piqsl.desktop
 
 #sankore is buggy for LXDE with mcompmgr
 A=`cat usr/share/applications/sankore.desktop|grep NotShowIn|grep LXDE`
@@ -71,42 +42,10 @@ then
   echo "NotShowIn=LXDE;" >> usr/share/applications/ardesia.desktop
 fi
 
-# https://bugzilla.gnome.org/show_bug.cgi?id=740873
-#sed -i "s|^GenericName\[ru\]=.*|GenericName[ru]=Менеджер фотографий|g" usr/share/applications/shotwell.desktop
-#sed -i "s|^Comment\[ru\]=.*|Comment[ru]=Организовывайте ваши фотографии|g" usr/share/applications/shotwell.desktop
-
 sed -i "s|^Name\[ru\]=.*|Name[ru]=Tupi: Свободная 2D магия|g" usr/share/applications/tupi.desktop
-
-#Link for QDevelop https://bugs.mageia.org/show_bug.cgi?id=13939
-#if [ ! -f "usr/bin/ctags" ]
-#then
-#  ln -s /usr/bin/exuberant-ctags usr/bin/ctags
-#fi
-
-#Fix for "Без имени" and for Basic for geany
-#sed -i -e 's|{untitled}|untitled|g' usr/share/geany/templates/files/program.pas
-#touch usr/share/geany/templates/files/program.bas
-
-#Fix MIME
-#sed -i -e 's|<mime-info>|<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">|g' usr/share/mime/packages/freemind.xml
-#sed -i "/MimeType/d" usr/share/applications/mandriva-mucommander.desktop
-#https://bugs.mageia.org/show_bug.cgi?id=10640
-#sed -i "/desktop:/d" usr/share/mime/packages/tupi.xml
-
-##For edugraphe
-#if [ ! -f "usr/share/pixmaps/office-chart-area-focus-peak-node.png" ]
-#then
-#  if [ -f "usr/share/icons/oxygen/48x48/actions/office-chart-area-focus-peak-node.png" ]
-#  then
-#    ln -s /usr/share/icons/oxygen/48x48/actions/office-chart-area-focus-peak-node.png usr/share/pixmaps/office-chart-area-focus-peak-node.png
-#  fi
-#fi
 
 #update-desktop-database
 #update-mime-database usr/share/mime
-
-# for tuxype https://bugs.mageia.org/show_bug.cgi?id=14558
-#ln -s /usr/share/locale usr/share/games/locale
 
 # for ktuberling https://bugs.mageia.org/show_bug.cgi?id=14589
 sed -i 's|Exec=.*|Exec=ktuberling -caption "%c" %u|g' usr/share/applications/kde4/ktuberling.desktop

@@ -1,5 +1,10 @@
 #!/bin/bash
-
+#
+# Initial script for MagicOS-Linux Live operating system.
+# License: GPL last version. Лицензия: GPL последней версии.
+# Author: Alexey Loginov.
+# Автор: Алексей Логинов.
+#
 ENABLED=yes
 [ "$ENABLED" != "yes" ] && exit 0
 

@@ -1,7 +1,10 @@
 #!/bin/bash
-# License: GPL last version. Лицензия : GPL последней версии
-# Written: Mikhail Zaripov. Написано: Михаил Зарипов
-
+#
+# Create initrd for MagicOS.
+# License: GPL last version. Лицензия: GPL последней версии.
+# Authors: Alexandr Betkher, Anton Goroshkin, Mikhail Zaripov, Alexey Loginov.
+# Авторы: Александр Бетхер, Антон Горошкин, Михаил Зарипов, Алексей Логинов.
+#
 export PATH=/usr/lib/magicos/scripts:$PATH
 
 . liblinuxlive || exit 1
@@ -67,6 +70,7 @@ function copy_lib()
  if ! [ -f $2/$REALLIB ] ;then echo "$1 - file $REALLIB not found" ; return ;fi
  ln -sf $REALLIB $2/$LIBNAME
 }
+
 # Copy binaries
 # $1 - filename
 # $2 - destination dir

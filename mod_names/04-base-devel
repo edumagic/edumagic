@@ -6,7 +6,6 @@ rsync
 ntfs-3g
 suspend
 sshfs-fuse
-#libntfs10 (deprecated)
 git
 vim-minimal
 vim-enhanced

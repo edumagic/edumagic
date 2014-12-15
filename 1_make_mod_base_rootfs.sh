@@ -118,7 +118,12 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
              urpmi $URPMI_PARAM --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
          fi
     else
-        urpmi $URPMI_PARAM --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+        if [ ! "$(basename $MOD)" = "21-base-codecs" ]
+        then
+           urpmi $URPMI_PARAM --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+        else
+           urpmi $URPMI_PARAM_CODECS --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
+        fi
     fi
     if [ "$(basename $MOD)" = "03-base-kernel-dkms" ]
     then

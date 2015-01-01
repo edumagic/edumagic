@@ -60,16 +60,16 @@ mkdir -p $ROOTFS
 
 rm -f $MOD_ROOTFS_DIR/*patch*.$MODULEFORMAT
 
-MOD_LINE=patches/rootfs
-echo "Creating XZM for the module $MOD_PATCH_MAGICOS"
-echo "Создание XZM для модуля $MOD_PATCH_MAGICOS"
-mksquashfs $MOD_LINE $MOD_ROOTFS_DIR/$MOD_PATCH_MAGICOS.$MODULEFORMAT $MKSQOPT
-echo -ne \\n "---> OK."\\n
-
 MOD_LINE=$MOD_PREV
 echo "Creating XZM for the module $MOD_PATCH_URPMI"
 echo "Создание XZM для модуля $MOD_PATCH_URPMI"
 mksquashfs $MOD_LINE $MOD_ROOTFS_DIR/$MOD_PATCH_URPMI.$MODULEFORMAT $MKSQOPT
+echo -ne \\n "---> OK."\\n
+
+MOD_LINE=patches/rootfs
+echo "Creating XZM for the module $MOD_PATCH_MAGICOS"
+echo "Создание XZM для модуля $MOD_PATCH_MAGICOS"
+mksquashfs $MOD_LINE $MOD_ROOTFS_DIR/$MOD_PATCH_MAGICOS.$MODULEFORMAT $MKSQOPT
 echo -ne \\n "---> OK."\\n
 
 DISTRVERSION=$(date +%Y%m%d)
@@ -80,6 +80,7 @@ then
     echo "Copying modules"
     echo "Копирование модулей"
     cd "$MYPATH/work/${FLASHNAME}_${VERREL}" || exit 1
+    rm -f $MYPATH/$DESTDIR/$FLASHNAME/base/*patch*.$MODULEFORMAT
     cp -f $MOD_PATCH_MAGICOS.$MODULEFORMAT $MYPATH/$DESTDIR/$FLASHNAME/base/
     cp -f $MOD_PATCH_URPMI.$MODULEFORMAT $MYPATH/$DESTDIR/$FLASHNAME/base/
     cd "$MYPATH/$DESTDIR/$FLASHNAME/base"
@@ -96,7 +97,6 @@ then
     echo "Создание XZM для модуля $MOD_PATCH_EDUMAGIC"
     mksquashfs $MOD_LINE $MOD_ROOTFS_DIR/$MOD_PATCH_EDUMAGIC.$MODULEFORMAT $MKSQOPT
     echo -ne \\n "---> OK."\\n
-
     DISTRVERSION=$(date +%Y%m%d)
     DESTDIR_EDU=flash-edu/${FLASHNAME}_${VERREL}_${DISTRVERSION}
 fi
@@ -111,6 +111,7 @@ then
     echo "Copying modules"
     echo "Копирование модулей"
     cd "$MYPATH/work/${FLASHNAME}_${VERREL}" || exit 1
+    rm -f $MYPATH/$DESTDIR_EDU/$FLASHNAME/base/*patch*.$MODULEFORMAT
     cp -f *patch*.$MODULEFORMAT $MYPATH/$DESTDIR_EDU/$FLASHNAME/base/
     cd "$MYPATH/$DESTDIR_EDU/$FLASHNAME/base"
     chmod 444 *

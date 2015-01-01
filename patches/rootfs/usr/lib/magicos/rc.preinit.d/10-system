@@ -202,6 +202,9 @@ sed -i "s|^Name\[ru\]=.*|Name[ru]=Gpicview - просмотр изображен
 
 sed -i "s|^Name\[ru\]=.*|Name[ru]=KSysGuard - системный монитор|g" usr/share/applications/kde4/ksysguard.desktop
 
+#https://bugs.mageia.org/show_bug.cgi?id=14846
+sed -i 's|log.$name|$name.log|g' usr/lib/python2.7/site-packages/BuildManager/package.py
+
 #update-desktop-database
 #update-mime-database usr/share/mime
 

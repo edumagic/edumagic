@@ -76,14 +76,14 @@ done
 if [ "$DISTR_KIND" = "edu" ]
 then
     for MOD in `ls -1 $MOD_NAMES_DIR/??-edu*` ;do
-	MOD_LINE=$MOD_ROOTFS_DIR/$(basename $MOD)
-	echo "Moving rpms for the module $(basename $MOD) into $RPM_CACHE"
-	echo "Перенос rpms для модуля $(basename $MOD) в $RPM_CACHE"
-	mv -f $MOD_LINE/var/cache/urpmi/rpms/* $RPM_CACHE/ 2>/dev/null
-	echo "Creating XZM for the module $(basename $MOD)"
-	echo "Создание XZM для модуля $(basename $MOD)"
-	mksquashfs $MOD_LINE $MOD_LINE.$MODULEFORMAT $MKSQOPT
-	echo -ne \\n "---> OK."\\n
+        MOD_LINE=$MOD_ROOTFS_DIR/$(basename $MOD)
+        echo "Moving rpms for the module $(basename $MOD) into $RPM_CACHE"
+        echo "Перенос rpms для модуля $(basename $MOD) в $RPM_CACHE"
+        mv -f $MOD_LINE/var/cache/urpmi/rpms/* $RPM_CACHE/ 2>/dev/null
+        echo "Creating XZM for the module $(basename $MOD)"
+        echo "Создание XZM для модуля $(basename $MOD)"
+        mksquashfs $MOD_LINE $MOD_LINE.$MODULEFORMAT $MKSQOPT
+        echo -ne \\n "---> OK."\\n
     done
 fi
 

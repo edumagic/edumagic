@@ -58,6 +58,10 @@ then
   fi
 fi
 
+rm -rf /tmp/building
+mkdir -p /tmp/building
+mv -f /var/lib/rpm/__db.* /tmp/building/
+
 if [ ! -d $ROOTFS ]
 then
     mkdir -p $ROOTFS
@@ -100,13 +104,13 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
       mount -o remount,prepend:$MOD_LINE=rw,mod:$MOD_PREV0=rr wiz_fly $ROOTFS
     fi
     MOD_PREV0=$MOD_LINE
-    #For Enable Internet (in next module after 02-base-core, when resolv.conf was created)
+    #For Enable Internet (in the next module after 01-base-system, when resolv.conf was created)
     if [ "$INTERNET" = "yes" ]
     then
-      if [ "$(basename $MOD)" = "03-base-kernel-dkms" ]
+      if [ "$(basename $MOD)" = "02-base-core" ]
       then
-	mv -f $MOD_ROOTFS_DIR/02-base-core/etc/resolv.conf $MOD_ROOTFS_DIR/02-base-core/etc/resolv.conf.tmp
-	cp -f /etc/resolv.conf $MOD_ROOTFS_DIR/02-base-core/etc/
+        mv -f $MOD_ROOTFS_DIR/01-base-system/etc/resolv.conf $MOD_ROOTFS_DIR/01-base-system/etc/resolv.conf.tmp
+        cp -f /etc/resolv.conf $MOD_ROOTFS_DIR/01-base-system/etc/
       fi
     fi
     if [ ! "$DIR_KERNEL" = "" ]
@@ -125,7 +129,9 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
            urpmi $URPMI_PARAM_CODECS --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
         fi
     fi
-    if [ "$(basename $MOD)" = "03-base-kernel-dkms" ]
+    #rpm -qa helps to write rpm database on disk
+    chroot $ROOTFS rpm -qa > /dev/null 2>&1
+    if [ "$(basename $MOD)" = "05-base-x" ]
     then
        chroot $ROOTFS alternatives --set gl_conf /etc/ld.so.conf.d/GL/standard.conf 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
        chroot $ROOTFS ldconfig 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
@@ -143,40 +149,49 @@ if [ "$DISTR_KIND" = "edu" ]
 then
     for MOD in `ls -1 $MOD_NAMES_DIR/??-edu*` ;do
         echo "Generating rootfs for the module $(basename $MOD)"
-	echo "Генерация rootfs для модуля $(basename $MOD)"
-	if [ -d $MOD_ROOTFS_DIR/$(basename $MOD) ] ;then
-	    echo "...directory already created"
-	    echo "...директория уже создана"
-	else
-	    mkdir -p $MOD_ROOTFS_DIR/$(basename $MOD)
-	fi
+        echo "Генерация rootfs для модуля $(basename $MOD)"
+        if [ -d $MOD_ROOTFS_DIR/$(basename $MOD) ] ;then
+            echo "...directory already created"
+            echo "...директория уже создана"
+        else
+            mkdir -p $MOD_ROOTFS_DIR/$(basename $MOD)
+        fi
 
-	MOD_LINE=$MOD_ROOTFS_DIR/$(basename $MOD)
-	if [ "$FS_ROOTFS" = "unionfs" ]
-	then
-	  mount -o remount,rw,add=$MOD_LINE=rw,mode=$MOD_PREV0=ro wiz_fly $ROOTFS
-	fi
-	if [ "$FS_ROOTFS" = "aufs" ]
-	then
-	  mount -o remount,prepend:$MOD_LINE=rw,mod:$MOD_PREV0=rr wiz_fly $ROOTFS
-	fi
-	MOD_PREV0=$MOD_LINE
-        #for imc (needs DISPLAY)
-        xhost +
+        MOD_LINE=$MOD_ROOTFS_DIR/$(basename $MOD)
+        if [ "$FS_ROOTFS" = "unionfs" ]
+        then
+          mount -o remount,rw,add=$MOD_LINE=rw,mode=$MOD_PREV0=ro wiz_fly $ROOTFS
+        fi
+        if [ "$FS_ROOTFS" = "aufs" ]
+        then
+          mount -o remount,prepend:$MOD_LINE=rw,mod:$MOD_PREV0=rr wiz_fly $ROOTFS
+        fi
+        MOD_PREV0=$MOD_LINE
         urpmi $URPMI_PARAM --urpmi-root=$ROOTFS --root=$ROOTFS --prefer="$PREFER" `cat $MOD|grep -v "#"` 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-	echo -ne \\n "---> OK."\\n
+        #rpm -qa helps to write rpm database on disk
+        chroot $ROOTFS rpm -qa > /dev/null 2>&1
+        echo -ne \\n "---> OK."\\n
     done
-    #for imc (needs DISPLAY)
-    xhost -
+fi
+
+#In the end to remount on empty directory
+mkdir -p $MOD_ROOTFS_DIR/empty > /dev/null 2>&1
+if [ "$FS_ROOTFS" = "unionfs" ]
+then
+  mount -o remount,rw,add=$MOD_ROOTFS_DIR/empty=rw,mode=$MOD_PREV0=ro wiz_fly $ROOTFS
+fi
+if [ "$FS_ROOTFS" = "aufs" ]
+then
+  mount -o remount,prepend:$MOD_ROOTFS_DIR/empty=rw,mod:$MOD_PREV0=rr wiz_fly $ROOTFS
 fi
 
 #Return after Enable Internet
 if [ "$INTERNET" = "yes" ]
 then
-  if [ -f "$MOD_ROOTFS_DIR/02-base-core/etc/resolv.conf.tmp" ]
+  if [ -f "$MOD_ROOTFS_DIR/01-base-system/etc/resolv.conf.tmp" ]
   then
-    rm -f $MOD_ROOTFS_DIR/02-base-core/etc/resolv.conf
-    mv -f $MOD_ROOTFS_DIR/02-base-core/etc/resolv.conf.tmp $MOD_ROOTFS_DIR/02-base-core/etc/resolv.conf
+    rm -f $MOD_ROOTFS_DIR/01-base-system/etc/resolv.conf
+    mv -f $MOD_ROOTFS_DIR/01-base-system/etc/resolv.conf.tmp $MOD_ROOTFS_DIR/01-base-system/etc/resolv.conf
   fi
 fi
 
@@ -208,6 +223,9 @@ then
     echo "В файле work/all_edu_rpm.txt содержится список всех установленных в edu версии дистрибутива пакетов"
   fi
 fi
+
+cp -f /tmp/building/* /var/lib/rpm/
+rm -rf /tmp/building
 
 echo "The script has completed work"
 echo "Работа скрипта завершена"

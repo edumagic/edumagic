@@ -24,7 +24,6 @@ lame
 gecko-mediaplayer
 flac
 flac123
-libalsa-plugins-pulseaudio
 awesfx
 gstreamer0.10-cdparanoia
 gstreamer0.10-pulse
@@ -38,3 +37,4 @@ festival
 #freetuxtv (crash)
 dvdstyler
 alsa-utils
+libalsa-plugins-pulseaudio

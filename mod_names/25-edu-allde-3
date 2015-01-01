@@ -7,7 +7,7 @@ veusz
 exe
 uniconvertor
 scidavis
-#aoi (brokendep)
+aoi
 tupi
 littlewizard
 sankore
@@ -23,6 +23,7 @@ glade3
 uidesigner
 gnutu
 ardesia
+vlc-plugin-theora
 #openstereo (crash)
 laby
 pywords
@@ -42,3 +43,19 @@ myabcs
 smathstudio
 #convertall (not imported)
 #physion (not imported)
+pinta
+italc-master
+italc-client
+italc-client-autostart
+blender
+evolution
+clamtk
+freemind
+tuxpaint
+tuxpaint-stamps
+geany
+geany-plugins
+gcompris
+gcompris-music
+gcompris-boards
+gcompris-sounds-ru

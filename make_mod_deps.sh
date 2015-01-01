@@ -41,13 +41,11 @@ mkdir -p $DEPS_DIR
 for mod in `ls -1 $MOD_NAMES_DIR/??-*` ;do
 echo "Generating file with requires for the module $(basename $mod)"
 echo "Генерация файла зависимостей для модуля $(basename $mod)"
-#--------------
      [ -f $DEPS_DIR/deps_$(basename $mod) ] && rm $DEPS_DIR/deps_$(basename $mod)
-
      urpmq -d --no-recommends --urpmi-root=$MOD_PREV --root=$MOD_PREV `cat $mod|grep -v "#"` |sort -u > $DEPS_DIR/deps_$(basename $mod)
-#--------------
-    echo -ne \\n "---> OK."\\n
+     echo -ne \\n "---> OK."\\n
 done
+
 cat $DEPS_DIR/deps_* |sort -u > $DEPS_DIR/full_deps
 
 echo "The script has completed work. See requires in directory $DEPS_DIR"

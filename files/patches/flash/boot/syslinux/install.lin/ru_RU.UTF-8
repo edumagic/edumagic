@@ -1,7 +1,7 @@
 Can't find device to install to.|Не могу определить устройство для установки|
 Make sure you run this script from a mounted device.|Убедитесь что вы запустили скрипт с нужного устройства|
 The disk|Устройство|
-is mounted with noexec parameter, trying to remount...|подключено с параметром noexec, попробую усправить|
+is mounted with noexec parameter, trying to remount...|подключено с параметром noexec, попробую исправить|
                         Welcome to MagicOS boot installer                         |                      Скрипт для установки MagicOS                        |
 This installer will setup disk|Этот установщик настроит устройство|
 to boot only MagicOS.|для загрузки только MagicOS.|
@@ -18,7 +18,7 @@ Updating MBR on|Замена MBR на|
 Setting up boot record for|Настройка загрузочного сектора для|
 Disk|Устройство|
 should be bootable now. Installation finished.|теперь должно быть загрузочным. Установка завершена.|
-Read the information above and then press Enter to exit...|Прочтите информацию и нажмите Вввод для завершения...|
+Read the information above and then press Enter to exit...|Прочтите информацию и нажмите Ввод для завершения...|
 This script will create bootable ISO|Этот скрипт создаст загрузочный ISO образ|
 Target ISO file name|Укажите имя ISO образа|
 Hit enter for|Нажмите Ввод чтобы выбрать|

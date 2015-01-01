@@ -74,5 +74,5 @@ INTERNET="yes"
 
 #Вести ли списки пакетов (error db-30971)
 #Create lists for packages (error db-30971)
-LISTS_PKGS_MAGICOS="no"
+LISTS_PKGS_MAGICOS="yes"
 LISTS_PKGS_EDUMAGIC="yes"

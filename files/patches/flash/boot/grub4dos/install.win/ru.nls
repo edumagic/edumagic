@@ -20,7 +20,7 @@ Warning! Master Boot Record (MBR) of the device will be overwritten.@Предупрежде
 If it is a partition on the same disk drive like your Windows installation@Если на этом диске установлена Window$ то загружаться она больше не будет.
 then your Windows will not boot anymore. Be careful!@Будьте предельно внимательны!
 Disk should be bootable now. Installation finished.@ Установка завершена. Диск теперь должен быть загружаемым.
-You are starting MagicOS installer from a read-only media. This will not work.@Устройство открыто только на чтение. Установщик невозможна. 
+You are starting MagicOS installer from a read-only media. This will not work.@Устройство открыто только на чтение. Установка невозможна. 
 Something went wrong. Aborting ...@Что-то пошло не так. Отмена ...
 Error: can't find out current drive letter@Ошибка: не могу определить букву диска.
 Read the information above and then press any key to exit...@Прочтите информацию и нажмите любую кнопку для закрытия окна...

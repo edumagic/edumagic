@@ -43,6 +43,4 @@ then
   fi
 fi
 
-ln -s /usr/bin/www-browser /usr/bin/x-www-browser
-
 echo $(basename $0)-$VER >> /etc/once_boot_scripts

@@ -148,7 +148,7 @@ cd "$MYPATH/work/${FLASHNAME}_${VERREL}" || exit 1
 rsync -a --exclude=*edu* *.$MODULEFORMAT $MYPATH/$DESTDIR/MagicOS/base/
 cd "$MYPATH/$DESTDIR/MagicOS/base"
 chmod 444 *
-md5sum *.$MODULEFORMAT >MD5SUM
+md5sum *.$MODULEFORMAT > MD5SUM
 
 cd "$MYPATH"
 echo "Creating files for data saving" 
@@ -176,7 +176,7 @@ then
   cp -f *edu*.$MODULEFORMAT $MYPATH/$DESTDIR_EDU/MagicOS/base/
   cd "$MYPATH/$DESTDIR_EDU/MagicOS/base"
   chmod 444 *
-  md5sum *.$MODULEFORMAT >MD5SUM
+  md5sum *.$MODULEFORMAT > MD5SUM
   cd "$MYPATH"
   echo "Replacing names of iso images"
   echo "Замена названий iso образов"

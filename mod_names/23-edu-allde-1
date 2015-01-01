@@ -1,20 +1,13 @@
-clamtk
 lightlang
 lightlang-sounds
 lightlang-dict
 goldendict
 abiword
 gnumeric
-#freemind (brokendep)
 afce
 pgadmin3
 flamerobin
-evolution
 mypaint
-#pinta (crash)
-tuxpaint
-tuxpaint-stamps
-blender
 yafaray-blender
 k3d
 scribus
@@ -25,17 +18,10 @@ kompozer
 kompozer-ru
 kompozer-myspell-ru
 bluefish
-geany
-geany-plugins
 fpc
 freebasic
 basic256
 scratch
-scratch-help
-scratch-i18n
-scratch-image
-scratch-media
-scratch-projects
 kumir
 lazarus
 #lazarus-bgra (not imported)
@@ -68,10 +54,6 @@ tuxtype
 itest-client
 itest-server
 openclass
-gcompris
-gcompris-music
-gcompris-boards
-gcompris-sounds-ru
 childsplay
 childsplay-sounds-ru
 geogebra
@@ -82,6 +64,8 @@ dosbox
 task-lamp
 fp-ide-ru
 fp-ide-en
+bwbasic
+phun
 gambas3-devel
 gambas3-examples
 gambas3-gb-args
@@ -157,5 +141,3 @@ gambas3-runtime
 gambas3-script
 gambas3-gb-inotify
 gambas3-gb-markdown
-bwbasic
-phun

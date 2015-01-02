@@ -44,7 +44,7 @@ initrd /MagicOS/initrd.gz
 
 title MagicOS_failsafe_LXDE
 #find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
-kernel /MagicOS/vmlinuz root=/dev/ram0 plymouth.enable=0 xvideo=nonfree rw noapic nolapic acpi=off nopat xdriver=vesa noload=/modules/ desktop=lxde
+kernel /MagicOS/vmlinuz root=/dev/ram0 plymouth.enable=0 xvideo=free rw noapic nolapic acpi=off nopat xdriver=vesa noload=/modules/ desktop=lxde
 initrd /MagicOS/initrd.gz
 
 title Memtest

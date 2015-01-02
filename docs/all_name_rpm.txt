@@ -53,7 +53,7 @@ bootsplash
 brasero
 bridge-utils
 broadcom-wl-common
-broadcom-wl-kernel-3.18.0-server-1.mga5
+broadcom-wl-kernel-3.18.1-server-3.mga5
 broadcom-wl-kernel-server-latest
 btrfs-progs
 busybox-static
@@ -211,7 +211,7 @@ ffdiaporama
 ffmpeg
 ffmpeg2theora
 ffmpegthumbs
-fglrx-kernel-3.18.0-server-1.mga5
+fglrx-kernel-3.18.1-server-3.mga5
 fglrx-kernel-server-latest
 file
 filelight
@@ -325,7 +325,6 @@ gstreamer0.10-cdparanoia
 gstreamer0.10-dirac
 gstreamer0.10-faad
 gstreamer0.10-ffmpeg
-gstreamer0.10-lame
 gstreamer0.10-mms
 gstreamer0.10-musepack
 gstreamer0.10-plugins-bad
@@ -338,9 +337,7 @@ gstreamer0.10-resindvd
 gstreamer0.10-soup
 gstreamer0.10-tools
 gstreamer0.10-voip
-gstreamer0.10-xvid
 gstreamer1.0-a52dec
-gstreamer1.0-amrnb
 gstreamer1.0-cdio
 gstreamer1.0-cdparanoia
 gstreamer1.0-dv
@@ -349,7 +346,6 @@ gstreamer1.0-flac
 gstreamer1.0-gme
 gstreamer1.0-gsm
 gstreamer1.0-gstclutter
-gstreamer1.0-lame
 gstreamer1.0-libav
 gstreamer1.0-mms
 gstreamer1.0-mpeg
@@ -364,7 +360,6 @@ gstreamer1.0-tools
 gstreamer1.0-twolame
 gstreamer1.0-vp8
 gstreamer1.0-wavpack
-gstreamer1.0-x264
 gtk+2.0
 gtk2-theme-engines
 gtk+3.0
@@ -461,8 +456,8 @@ kdm
 keditbookmarks
 kernel-firmware
 kernel-firmware-nonfree
-kernel-server-3.18.0-1.mga5
-kernel-server-devel-3.18.0-1.mga5
+kernel-server-3.18.1-3.mga5
+kernel-server-devel-3.18.1-3.mga5
 kernel-server-devel-latest
 kernel-server-latest
 kernel-userspace-headers
@@ -640,7 +635,6 @@ libdbusmenu-qt2
 libdc1394_22
 libdca0
 libdcaenc0
-libdca-tools
 libdconf1
 libdevmapper1.02
 libdevmapper-event1.02
@@ -1048,7 +1042,7 @@ libmicrohttpd10
 libmikmod3
 libmimic0
 libminilzo0
-libminiupnpc10
+libminiupnpc12
 libminizip1
 libmjpegtools2.0_0
 libmm-glib0
@@ -1246,9 +1240,6 @@ libquadmath0
 libquicktime
 libquicktime0
 libquicktime-dv
-libquicktime-faad
-libquicktime-lame
-libquicktime-x264
 libQupZilla1
 libqutim0
 libqutim-adiumchat1
@@ -1680,9 +1671,9 @@ nss_wins
 ntfs-3g
 nut
 nut-server
-nvidia304-kernel-3.18.0-server-1.mga5
+nvidia304-kernel-3.18.1-server-3.mga5
 nvidia304-kernel-server-latest
-nvidia-current-kernel-3.18.0-server-1.mga5
+nvidia-current-kernel-3.18.1-server-3.mga5
 nvidia-current-kernel-server-latest
 nxproxy
 obconf
@@ -1970,6 +1961,7 @@ qt4-xmlpatterns
 qtbase5-common
 qtbase5-database-plugin-sqlite
 qt-recordmydesktop
+qttranslations5
 qtwebkit-qmlplugin
 qupzilla
 qupzilla-core
@@ -2158,7 +2150,7 @@ usermode
 usermode-consoleonly
 util-linux
 v4l-utils
-vboxadditions-kernel-3.18.0-server-1.mga5
+vboxadditions-kernel-3.18.1-server-3.mga5
 vboxadditions-kernel-server-latest
 vcdimager
 viewres
@@ -2166,7 +2158,8 @@ vim-common
 vim-enhanced
 vim-minimal
 virtualbox
-virtualbox-kernel-3.18.0-server-1.mga5
+virtualbox-guest-additions
+virtualbox-kernel-3.18.1-server-3.mga5
 virtualbox-kernel-server-latest
 vlc
 vlc-plugin-common
@@ -2279,7 +2272,6 @@ x11-server-xephyr
 x11-server-xorg
 x11-tools
 x125
-x264
 xarchiver
 xauth
 xawtv

@@ -14,37 +14,37 @@ default 0
 
 title EduMagic_Home_profile_LXDE
 #find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
-kernel /MagicOS/vmlinuz  root=/dev/ram0 rw vga=791 quiet changes=MagicOS_save1.img desktop=lxde
+kernel /MagicOS/vmlinuz  root=/dev/ram0 plymouth.enable=0 xvideo=nonfree rw vga=791 quiet changes=MagicOS_save1.img desktop=lxde
 initrd /MagicOS/initrd.gz
 
 title EduMagic_Home_profile_MATE
 #find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
-kernel /MagicOS/vmlinuz root=/dev/ram0 rw vga=788 quiet changes=MagicOS_save1.img desktop=mate
+kernel /MagicOS/vmlinuz root=/dev/ram0 plymouth.enable=0 xvideo=nonfree rw vga=788 quiet changes=MagicOS_save1.img desktop=mate
 initrd /MagicOS/initrd.gz
 
 title EduMagic_Home_profile_KDE
 #find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
-kernel /MagicOS/vmlinuz  root=/dev/ram0 rw vga=788 quiet changes=MagicOS_save1.img desktop=kde
+kernel /MagicOS/vmlinuz  root=/dev/ram0 plymouth.enable=0 xvideo=nonfree rw vga=788 quiet changes=MagicOS_save1.img desktop=kde
 initrd /MagicOS/initrd.gz
 
 title EduMagic_Clean_LXDE
 #find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
-kernel /MagicOS/vmlinuz  root=/dev/ram0 rw vga=791 quiet desktop=lxde
+kernel /MagicOS/vmlinuz  root=/dev/ram0 plymouth.enable=0 xvideo=nonfree rw vga=791 quiet desktop=lxde
 initrd /MagicOS/initrd.gz
 
 title EduMagic_Clean_MATE
 #find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
-kernel /MagicOS/vmlinuz root=/dev/ram0 rw vga=788 quiet desktop=mate
+kernel /MagicOS/vmlinuz root=/dev/ram0 plymouth.enable=0 xvideo=nonfree rw vga=788 quiet desktop=mate
 initrd /MagicOS/initrd.gz
 
 title EduMagic_Clean_KDE
 #find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
-kernel /MagicOS/vmlinuz  root=/dev/ram0 rw vga=788 quiet desktop=kde
+kernel /MagicOS/vmlinuz  root=/dev/ram0 plymouth.enable=0 xvideo=nonfree plymouth.enable=0 xvideo=nonfree rw vga=788 quiet desktop=kde
 initrd /MagicOS/initrd.gz
 
 title EduMagic_failsafe_LXDE
 #find --set-root --ignore-floppies --ignore-cd /MagicOS/MagicOS.sgn
-kernel /MagicOS/vmlinuz root=/dev/ram0 rw noapic nolapic acpi=off nopat xdriver=vesa noload=/modules/ desktop=lxde
+kernel /MagicOS/vmlinuz root=/dev/ram0 plymouth.enable=0 xvideo=free rw noapic nolapic acpi=off nopat xdriver=vesa noload=/modules/ desktop=lxde
 initrd /MagicOS/initrd.gz
 
 title Memtest

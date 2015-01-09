@@ -12,9 +12,12 @@ DEBUGMODE=no
 . /liblinuxlive 2>/dev/null || . /mnt/live/liblinuxlive
 #debug_mode "$0" "$@"
 
-cd "/home/user/Рабочий стол"
-chmod +x ./*.desktop
-chown user:user ./*.desktop
+if [ -d "/home/user/Рабочий стол" ]
+then
+  cd "/home/user/Рабочий стол"
+  chmod +x ./*.desktop
+  chown user:user ./*.desktop
+fi
 
 if [ ! -d "/run/media/user" ]
 then

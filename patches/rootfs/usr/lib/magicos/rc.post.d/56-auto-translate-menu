@@ -112,7 +112,7 @@ fi
 
 echo "Start auto translation Menu for $LANGUAGE language"
 
-DEBUG=yes
+DEBUG=no
 
 if [ "$DEBUG" = "yes" ]
 then

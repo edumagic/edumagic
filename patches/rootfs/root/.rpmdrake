@@ -1,7 +1,7 @@
-dont_show_selections 
+dont_show_selections
 compute_updates 1
 mode by_group
-max_info_in_descr 
+max_info_in_descr
 mandrivaupdate_width 0
 auto_select 0
 tree_mode all
@@ -10,7 +10,7 @@ NVR_searches 0
 tree_flat 0
 filter all
 clean_cache 0
-mandrakeupdate_wanted_categories 
+mandrakeupdate_wanted_categories
 use_regexp 0
 ignore_debug_media 0
 changelog_first_config 0

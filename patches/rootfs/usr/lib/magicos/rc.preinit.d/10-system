@@ -52,28 +52,31 @@ rm -f usr/share/applications/lxinput.desktop
 rm -f usr/share/applications/lxsession-edit.desktop
 rm -f usr/share/applications/lxsession-default-apps.desktop
 rm -f usr/share/applications/pcmanfm-desktop-pref.desktop
-A=`cat usr/share/applications/kde4/systemsettings.desktop | grep OnlyShowIn=KDE;`
 #https://bugs.mageia.org/show_bug.cgi?id=13949
-sed -i 's|Exec=.*|Exec=systemsettings -caption "%c" %i|g' usr/share/applications/kde4/kdesystemsettings.desktop
+#sed -i 's|Exec=.*|Exec=systemsettings -caption "%c" %i|g' usr/share/applications/kde4/kdesystemsettings.desktop
 
-sed -i "/OnlyShowIn=/d" usr/share/applications/qt-recordmydesktop.desktop
+#sed -i "/OnlyShowIn=/d" usr/share/applications/qt-recordmydesktop.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/caja.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/mate-dictionary.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/mate-screenshot.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/mate-search-tool.desktop
 sed -i "/NotShowIn=/d" usr/share/applications/scim-setup.desktop
+sed -i "/NotShowIn=/d" usr/share/applications/mageia-lxrandr.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/kde4/krandrtray.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/kde4/kfind.desktop
 
 #Fix MIME for engrampa
 sed -i -e 's|application/x-ms-dos-executable;||g' usr/share/applications/engrampa.desktop
-sed -i -e 's|application/x-rpm;||g' usr/share/applications/engrampa.desktop
+#sed -i -e 's|application/x-rpm;||g' usr/share/applications/engrampa.desktop
 
 #Correction mcc
 sed -i -e "s|'Snapshots',|#'Snapshots',|g" usr/libexec/drakconf
 sed -i -e 's|"Mageia Update",|#"Mageia Update",|g' usr/libexec/drakconf
 sed -i -e 's|"Boot Config",|#"Boot Config",|g' usr/libexec/drakconf
 sed -i -e 's|"3D",|#"3D",|g' usr/libexec/drakconf
+
+#https://bugs.mageia.org/show_bug.cgi?id=13837
+sed -i -e 's|"Security Level",|#"Security Level",|g' usr/libexec/drakconf
 
 #Correction lxde-ctrl-center
 if [ -f "usr/bin/lxde-ctrl-center" ]
@@ -82,6 +85,7 @@ then
   sed -i "/drakrpm-update/d" usr/share/lxde-ctrl-center/items/advanced
   sed -i "/drakedm/d" usr/share/lxde-ctrl-center/items/x0005x
   sed -i "/drakedm/d" usr/share/lxde-ctrl-center/items/advanced
+  sed -i 's|"logdrake-mdk.png"},|"logdrake-mdk.png"}|g' usr/share/lxde-ctrl-center/items/x0005x
 fi
 
 #Add lxde-ctrl-center to LXPanel
@@ -177,7 +181,7 @@ fi
 A=`cat usr/share/applications/kde4/konsole.desktop|grep Comment`
 if [ "$A" = "" ]
 then
-  sed -i "s|Name=Konsole|Name=Konsole\nComment=Konsole\nComment[ru]=Консоль|g" usr/share/applications/kde4/konsole.desktop
+  sed -i "s|Name=Konsole|Name=Konsole\nComment=Konsole\nComment[ru]=Эмулятор терминала|g" usr/share/applications/kde4/konsole.desktop
 fi
 
 A=`cat usr/share/applications/xfburn.desktop|grep GenericName`
@@ -186,24 +190,33 @@ then
   sed -i "s|Name=Xfburn|Name=Xfburn\nGenericName=CD and DVD burning application\nGenericName[ru]=Приложение для записи CD и DVD|g" usr/share/applications/xfburn.desktop
 fi
 
-A=`cat usr/share/applications/hardinfo.desktop|grep Comment`
-if [ "$A" = "" ]
-then
-   echo "Comment=System Information" >> usr/share/applications/hardinfo.desktop
-fi
+#A=`cat usr/share/applications/hardinfo.desktop|grep Comment`
+#if [ "$A" = "" ]
+#then
+#   echo "Comment=System Information" >> usr/share/applications/hardinfo.desktop
+#fi
 
-A=`cat usr/share/applications/hardinfo.desktop|grep GenericName`
-if [ "$A" = "" ]
-then
-   echo "GenericName=Hardware Information" >> usr/share/applications/hardinfo.desktop
-fi
+#A=`cat usr/share/applications/hardinfo.desktop|grep GenericName`
+#if [ "$A" = "" ]
+#then
+#   echo "GenericName=Hardware Information" >> usr/share/applications/hardinfo.desktop
+#fi
 
 sed -i "s|^Name\[ru\]=.*|Name[ru]=Gpicview - просмотр изображений|g" usr/share/applications/gpicview.desktop
 
 sed -i "s|^Name\[ru\]=.*|Name[ru]=KSysGuard - системный монитор|g" usr/share/applications/kde4/ksysguard.desktop
 
+#fix GenericName for gigolo
+sed -i "/GenericName/d" usr/share/applications/gigolo.desktop
+echo "GenericName=Frontend for GIO/GVFS" >> usr/share/applications/gigolo.desktop
+echo "GenericName[ru]=Интерфейс для GIO/GVFS" >> usr/share/applications/gigolo.desktop
+
 #https://bugs.mageia.org/show_bug.cgi?id=14846
 sed -i 's|log.$name|$name.log|g' usr/lib/python2.7/site-packages/BuildManager/package.py
+
+#delete untranslatable java desktop files
+rm -f `find usr/share/applications/java*jconsole.desktop`
+rm -f `find usr/share/applications/java*policytool.desktop`
 
 #update-desktop-database
 #update-mime-database usr/share/mime

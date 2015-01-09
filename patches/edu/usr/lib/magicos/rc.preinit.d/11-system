@@ -42,19 +42,19 @@ then
   echo "NotShowIn=LXDE;" >> usr/share/applications/ardesia.desktop
 fi
 
-sed -i "s|^Name\[ru\]=.*|Name[ru]=Tupi: Свободная 2D магия|g" usr/share/applications/tupi.desktop
+#sed -i "s|^Name\[ru\]=.*|Name[ru]=Tupi: Свободная 2D магия|g" usr/share/applications/tupi.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/xfce4-terminal.desktop
 
-#update-desktop-database
-#update-mime-database usr/share/mime
-
 # for ktuberling https://bugs.mageia.org/show_bug.cgi?id=14589
-sed -i 's|Exec=.*|Exec=ktuberling -caption "%c" %u|g' usr/share/applications/kde4/ktuberling.desktop
+#sed -i 's|Exec=.*|Exec=ktuberling -caption "%c" %u|g' usr/share/applications/kde4/ktuberling.desktop
 
 # for clamtk https://bugs.mageia.org/show_bug.cgi?id=14505
 ln -s /usr/share/icons/oxygen/48x48/categories/preferences-system.png usr/share/pixmaps/preferences-system.png
 ln -s /usr/share/icons/oxygen/48x48/places/network-workgroup.png usr/share/pixmaps/network-workgroup.png
 
 usermod -G italc user
+
+#update-desktop-database
+#update-mime-database usr/share/mime
 
 echo $(basename $0)-$VER >> etc/once_boot_scripts

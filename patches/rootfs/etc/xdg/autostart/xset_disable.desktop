@@ -3,4 +3,4 @@ Name=xset_disable
 Exec=xset_disable
 Terminal=false
 Type=Application
-Categories=Application;Utility;
+Categories=Utility;

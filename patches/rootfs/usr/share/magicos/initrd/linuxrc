@@ -14,7 +14,7 @@ mount -n -o remount,rw /         # for the case we forgot rw boot option
 
 . liblinuxlive # it requires proc to be mounted
 
-header "starting Linux Live scripts <http://www.linux-live.org/>"
+header "starting Linux Live scripts <http://www.linux-live.org>"
 
 # Don't print kernel messages to konsole now.
 # Syslog will reset printk settings, no need to remember it here anymore.

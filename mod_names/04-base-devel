@@ -15,3 +15,6 @@ bm
 cvs
 posixovl
 #httpfs (missing)
+acl
+attr
+aufs-tools

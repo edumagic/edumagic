@@ -4,3 +4,4 @@ samba-server
 samba-winbind
 #system-config-nfs (missing)
 #system-config-samba (missing)
+nfs-utils

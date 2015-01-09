@@ -21,4 +21,3 @@ DEBUGMODE=no
 
 [ $(cmdline_parameter depmod) ] && DEPMOD="yes"
 [ "$DEPMOD" = "yes" ] && chroot . sbin/depmod -a
-

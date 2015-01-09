@@ -85,7 +85,7 @@ then
     cp -f $MOD_PATCH_URPMI.$MODULEFORMAT $MYPATH/$DESTDIR/$FLASHNAME/base/
     cd "$MYPATH/$DESTDIR/$FLASHNAME/base"
     chmod 444 *
-    md5sum *.$MODULEFORMAT >MD5SUM
+    md5sum *.$MODULEFORMAT > MD5SUM
 fi
 
 cd "$MYPATH"
@@ -115,7 +115,7 @@ then
     cp -f *patch*.$MODULEFORMAT $MYPATH/$DESTDIR_EDU/$FLASHNAME/base/
     cd "$MYPATH/$DESTDIR_EDU/$FLASHNAME/base"
     chmod 444 *
-    md5sum *.$MODULEFORMAT >MD5SUM
+    md5sum *.$MODULEFORMAT > MD5SUM
 fi
 
 echo "The script has completed work"

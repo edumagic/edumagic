@@ -118,6 +118,18 @@ then
 else
   chroot . chkconfig --del hostapd
 fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable ntpd.service || chroot . chkconfig --del ntpd
+else
+  chroot . chkconfig --del ntpd
+fi
+if [ -x bin/systemd ]
+then
+  chroot . systemctl disable sshd.service || chroot . chkconfig --del sshd
+else
+  chroot . chkconfig --del sshd
+fi
 umount proc
 
 echo $(basename $0)-$VER >> etc/once_boot_scripts

@@ -131,11 +131,6 @@ for MOD in `ls -1 $MOD_NAMES_DIR/??-base*` ;do
     fi
     #rpm -qa helps to write rpm database on disk
     chroot $ROOTFS rpm -qa > /dev/null 2>&1
-#    if [ "$(basename $MOD)" = "05-base-x" ]
-#    then
-#       chroot $ROOTFS alternatives --set gl_conf /etc/ld.so.conf.d/GL/standard.conf 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-#       chroot $ROOTFS ldconfig 2>&1 | tee -a $MYPATH/work/log_urpmi.txt
-#    fi
     echo -ne \\n "---> OK."\\n
 done
 

@@ -26,7 +26,9 @@ atk1.0-common
 atmel-firmware
 atril
 at-spi2-core
+attr
 audacity
+aufs-tools
 autoconf
 autocorr-ru
 autohint-onoff
@@ -41,6 +43,7 @@ bash
 bc
 beesu
 biew
+bind
 bind-utils
 binutils
 bitmap
@@ -53,7 +56,7 @@ bootsplash
 brasero
 bridge-utils
 broadcom-wl-common
-broadcom-wl-kernel-3.18.1-server-3.mga5
+broadcom-wl-kernel-3.18.1-server-4.mga5
 broadcom-wl-kernel-server-latest
 btrfs-progs
 busybox-static
@@ -211,7 +214,7 @@ ffdiaporama
 ffmpeg
 ffmpeg2theora
 ffmpegthumbs
-fglrx-kernel-3.18.1-server-3.mga5
+fglrx-kernel-3.18.1-server-4.mga5
 fglrx-kernel-server-latest
 file
 filelight
@@ -296,6 +299,7 @@ gnome-python-extras
 gnome-python-gconf
 gnome-python-gnomevfs
 gnome-themes-standard
+gnome-user-docs
 gnome-vfs2
 gnome-video-effects
 gnu-free-fonts-common
@@ -325,6 +329,7 @@ gstreamer0.10-cdparanoia
 gstreamer0.10-dirac
 gstreamer0.10-faad
 gstreamer0.10-ffmpeg
+gstreamer0.10-lame
 gstreamer0.10-mms
 gstreamer0.10-musepack
 gstreamer0.10-plugins-bad
@@ -337,15 +342,19 @@ gstreamer0.10-resindvd
 gstreamer0.10-soup
 gstreamer0.10-tools
 gstreamer0.10-voip
+gstreamer0.10-xvid
 gstreamer1.0-a52dec
+gstreamer1.0-amrnb
 gstreamer1.0-cdio
 gstreamer1.0-cdparanoia
 gstreamer1.0-dv
+gstreamer1.0-faad
 gstreamer1.0-farstream
 gstreamer1.0-flac
 gstreamer1.0-gme
 gstreamer1.0-gsm
 gstreamer1.0-gstclutter
+gstreamer1.0-lame
 gstreamer1.0-libav
 gstreamer1.0-mms
 gstreamer1.0-mpeg
@@ -360,6 +369,7 @@ gstreamer1.0-tools
 gstreamer1.0-twolame
 gstreamer1.0-vp8
 gstreamer1.0-wavpack
+gstreamer1.0-x264
 gtk+2.0
 gtk2-theme-engines
 gtk+3.0
@@ -456,8 +466,8 @@ kdm
 keditbookmarks
 kernel-firmware
 kernel-firmware-nonfree
-kernel-server-3.18.1-3.mga5
-kernel-server-devel-3.18.1-3.mga5
+kernel-server-3.18.1-4.mga5
+kernel-server-devel-3.18.1-4.mga5
 kernel-server-devel-latest
 kernel-server-latest
 kernel-userspace-headers
@@ -635,6 +645,7 @@ libdbusmenu-qt2
 libdc1394_22
 libdca0
 libdcaenc0
+libdca-tools
 libdconf1
 libdevmapper1.02
 libdevmapper-event1.02
@@ -1083,6 +1094,7 @@ libnetpbm11
 libnet-snmp30
 libnettle4
 libnfnetlink0
+libnfsidmap0
 libnice10
 libnl3_200
 libnl3-config
@@ -1118,6 +1130,7 @@ liborc0.4_0
 liborcus0.8_0
 libortp9
 libosip2_10
+liboxygen-gtk
 liboxygen-gtk3
 liboxygenstyle4
 liboxygenstyleconfig4
@@ -1240,6 +1253,9 @@ libquadmath0
 libquicktime
 libquicktime0
 libquicktime-dv
+libquicktime-faad
+libquicktime-lame
+libquicktime-x264
 libQupZilla1
 libqutim0
 libqutim-adiumchat1
@@ -1553,6 +1569,7 @@ lxtask
 lxterminal
 m4
 mageia-doc-common
+mageia-doc-mcc-ru
 mageia-kde4-config-common
 mageia-kde-translation
 mageia-lxde-config-Default
@@ -1659,6 +1676,7 @@ netpbm
 netprofile
 net-snmp-mibs
 net-tools
+nfs-utils
 nmap
 normalize
 notification-daemon
@@ -1669,11 +1687,13 @@ nss-myhostname
 nss_tcb
 nss_wins
 ntfs-3g
+ntp
+ntp-client
 nut
 nut-server
-nvidia304-kernel-3.18.1-server-3.mga5
+nvidia304-kernel-3.18.1-server-4.mga5
 nvidia304-kernel-server-latest
-nvidia-current-kernel-3.18.1-server-3.mga5
+nvidia-current-kernel-3.18.1-server-4.mga5
 nvidia-current-kernel-server-latest
 nxproxy
 obconf
@@ -1688,9 +1708,11 @@ openl2tp
 openldap
 openssh
 openssh-clients
+openssh-server
 openssl
 ORBit2
 ossp
+oxygen-gtk
 oxygen-gtk3
 oxygen-icon-theme
 p11-kit
@@ -1715,18 +1737,12 @@ pcre
 peazip
 pentaxpj
 perl
-perl-AnyEvent
-perl-AnyEvent-AIO
-perl-AnyEvent-BDB
 perl-Authen-SASL
 perl-base
-perl-BDB
 perl-Cairo
 perl-Cairo-GObject
-perl-common-sense
 perl-Config-IniFiles
 perl-Convert-ASN1
-perl-Coro
 perl-Curses
 perl-Curses-UI
 perl-Data-Dump
@@ -1737,8 +1753,6 @@ perl-Digest-SHA1
 perl-Dpkg
 perl-Encode-Locale
 perl-Error
-perl-EV
-perl-Event
 perl-ExtUtils-Depends
 perl-ExtUtils-PkgConfig
 perl-File-BaseDir
@@ -1761,7 +1775,6 @@ perl-Gtk3-Helper
 perl-Gtk3-Notify
 perl-Gtk3-SimpleList
 perl-Gtk3-WebKit
-perl-Guard
 perl-HTML-Parser
 perl-HTML-Tagset
 perl-HTTP-Cookies
@@ -1769,7 +1782,6 @@ perl-HTTP-Daemon
 perl-HTTP-Date
 perl-HTTP-Message
 perl-HTTP-Negotiate
-perl-IO-AIO
 perl-IO-HTML
 perl-IO-Socket-SSL
 perl-IPC-Signal
@@ -1963,6 +1975,7 @@ qtbase5-database-plugin-sqlite
 qt-recordmydesktop
 qttranslations5
 qtwebkit-qmlplugin
+quota
 qupzilla
 qupzilla-core
 qupzilla-plugins
@@ -2042,6 +2055,7 @@ shared-mime-info
 sharutils
 shorewall
 shorewall-core
+shorewall-ipv6
 simple-scan
 smi-tools
 smplayer
@@ -2150,7 +2164,7 @@ usermode
 usermode-consoleonly
 util-linux
 v4l-utils
-vboxadditions-kernel-3.18.1-server-3.mga5
+vboxadditions-kernel-3.18.1-server-4.mga5
 vboxadditions-kernel-server-latest
 vcdimager
 viewres
@@ -2159,7 +2173,7 @@ vim-enhanced
 vim-minimal
 virtualbox
 virtualbox-guest-additions
-virtualbox-kernel-3.18.1-server-3.mga5
+virtualbox-kernel-3.18.1-server-4.mga5
 virtualbox-kernel-server-latest
 vlc
 vlc-plugin-common
@@ -2272,6 +2286,7 @@ x11-server-xephyr
 x11-server-xorg
 x11-tools
 x125
+x264
 xarchiver
 xauth
 xawtv

@@ -1,7 +1,9 @@
 [Desktop Entry]
 Name=Gdb
-Comment=The GNU debugger
-Comment[ru]=Отладчик GNU
+GenericName=The GNU debugger
+GenericName[ru]=Отладчик GNU
+Comment=The GNU project debugger
+Comment[ru]=GNU отладчик проектов
 Exec=gdb --tui
 Icon=development_section
 Terminal=true

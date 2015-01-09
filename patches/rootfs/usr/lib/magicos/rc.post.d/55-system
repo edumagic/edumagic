@@ -27,6 +27,7 @@ else
   LANG=Russian
 fi
 
+#configure peazip
 if [ "$LANG" = "Russian" ]
 then
   rm -f /usr/share/peazip/res/lang/default.txt

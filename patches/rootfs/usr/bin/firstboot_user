@@ -154,15 +154,14 @@ if [ "$LANG" = "Russian" ]
 then
   if [ -f "/usr/bin/qcad" ]
   then
-    if [ ! -f "~/.qt/qcadrc" ]
+    if [ ! -f "~/.config/QCAD/QCAD3.conf" ]
     then
-      mkdir -p ~/.qt
-      echo "[Appearance]" >> ~/.qt/qcadrc
-      echo "Language=ru" >> ~/.qt/qcadrc
-      echo "LanguageCmd=ru" >> ~/.qt/qcadrc
-      echo "" >> ~/.qt/qcadrc
-      echo "[Defaults]" >> ~/.qt/qcadrc
-      echo "Unit=Millimeter" >> ~/.qt/qcadrc
+      mkdir -p ~/.config/QCAD
+      echo "[Language]" >> ~/.config/QCAD/QCAD3.conf
+      echo "UiLanguage=ru" >> ~/.config/QCAD/QCAD3.conf
+      echo "" >> ~/.config/QCAD/QCAD3.conf
+      echo "[Application]" >> ~/.config/QCAD/QCAD3.conf
+      echo "Version=03060200" >> ~/.config/QCAD/QCAD3.conf
     fi
   fi
 fi
@@ -211,6 +210,28 @@ then
       echo "LanguageCode=ru_RU" >> ~/.dvdstyler
     fi
   fi
+fi
+
+#Create config for smplayer
+if [ ! -f "~/.config/smplayer/smplayer.ini" ]
+then
+  mkdir -p ~/.config/smplayer
+  echo "[smplayer]" >> ~/.config/smplayer/smplayer.ini
+  echo "check_if_upgraded=false" >> ~/.config/smplayer/smplayer.ini
+  echo "" >> ~/.config/smplayer/smplayer.ini
+  echo "[update_checker]" >> ~/.config/smplayer/smplayer.ini
+  echo "enabled=false" >> ~/.config/smplayer/smplayer.ini
+fi
+
+#Create config for acetoneiso
+if [ ! -f "~/.acetoneiso/acetoneiso.conf" ]
+then
+  mkdir -p ~/.acetoneiso
+  echo "ISO_FROM_FOLDER = standard" >> ~/.acetoneiso/acetoneiso.conf
+  echo "PLAYER = vlc" >> ~/.acetoneiso/acetoneiso.conf
+  echo "FILE_BROWSER = nofilemanager" >> ~/.acetoneiso/acetoneiso.conf
+  echo "DB = /home/$USER" >> ~/.acetoneiso/acetoneiso.conf
+  echo "recursive = norecursive" >> ~/.acetoneiso/acetoneiso.conf
 fi
 
 exit 0

@@ -21,6 +21,57 @@ then
   exit 0
 fi
 
+check-nodisplay ()
+{
+NODISPLAY=false
+X1=`cat $1|grep "NoDisplay=true"`
+if [ ! "$X1" = "" ]
+then
+  NODISPLAY=true
+  #echo "$A has NoDisplay=true"
+fi
+}
+
+needs-genericname ()
+{
+NEEDS_GENERICNAME=true
+X1=`cat $1|grep "NotShowIn"|grep "KDE"`
+if [ ! "$X1" = "" ]
+then
+  NEEDS_GENERICNAME=false
+  #echo "$1 has NotShowIn=KDE"
+  return
+fi
+X2=`cat $1|grep "OnlyShowIn"|grep "LXDE"`
+if [ ! "$X2" = "" ]
+then
+  NEEDS_GENERICNAME=false
+  #echo "$1 has OnlyShowIn=LXDE"
+  return
+fi
+X3=`cat $1|grep "OnlyShowIn"|grep "MATE"`
+if [ ! "$X3" = "" ]
+then
+  NEEDS_GENERICNAME=false
+  #echo "$1 has OnlyShowIn=MATE"
+  return
+fi
+X4=`cat $1|grep "OnlyShowIn"|grep "GNOME"`
+if [ ! "$X4" = "" ]
+then
+  NEEDS_GENERICNAME=false
+  #echo "$1 has OnlyShowIn=GNOME"
+  return
+fi
+X5=`cat $1|grep "OnlyShowIn"|grep "XFCE"`
+if [ ! "$X5" = "" ]
+then
+  NEEDS_GENERICNAME=false
+  #echo "$1 has OnlyShowIn=XFCE"
+  return
+fi
+}
+
 correct-file ()
 {
 cd $1
@@ -40,6 +91,47 @@ do
     continue
   fi
   if [ "$A" = "konsole.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "fp-ide-ru.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "qutim.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "smplayer.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "vlc.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "ktorrent.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "lazarus.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "mc-desktop-root.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "mc-desktop.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "smathstudio.desktop" ]
+  then
+    continue
+  fi
+  check-nodisplay $A
+  if [ "$NODISPLAY" = "true" ]
   then
     continue
   fi
@@ -77,6 +169,11 @@ do
   then
     if [ ! "$B0" = "" ]
     then
+       needs-genericname $A
+       if [ "$NEEDS_GENERICNAME" = "false" ]
+       then
+         continue
+       fi
        #echo "Add GenericName=$B0 >> $DIRECTORY/$A"
        correct-file $1 $A
        echo "GenericName=$B0" >> $A
@@ -112,7 +209,7 @@ fi
 
 echo "Start auto translation Menu for $LANGUAGE language"
 
-DEBUG=no
+DEBUG=yes
 
 if [ "$DEBUG" = "yes" ]
 then

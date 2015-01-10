@@ -61,7 +61,7 @@ sed -i "/OnlyShowIn=/d" usr/share/applications/mate-dictionary.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/mate-screenshot.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/mate-search-tool.desktop
 sed -i "/NotShowIn=/d" usr/share/applications/scim-setup.desktop
-sed -i "/NotShowIn=/d" usr/share/applications/mageia-lxrandr.desktop
+#sed -i "/NotShowIn=/d" usr/share/applications/mageia-lxrandr.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/kde4/krandrtray.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/kde4/kfind.desktop
 
@@ -178,6 +178,20 @@ then
    echo "Comment=Mageia Network Center" >> usr/share/applications/draknetcenter.desktop
 fi
 
+A=`cat usr/share/applications/kde4/Help.desktop|grep Comment`
+if [ "$A" = "" ]
+then
+   echo "Comment=Help for KDE" >> usr/share/applications/kde4/Help.desktop
+   echo "Comment[ru]=Справка для KDE" >> usr/share/applications/kde4/Help.desktop
+fi
+
+A=`cat usr/share/applications/kde4/Help.desktop|grep GenericName`
+if [ "$A" = "" ]
+then
+   echo "GenericName=KDE Help" >> usr/share/applications/kde4/Help.desktop
+   echo "GenericName[ru]=Справка KDE" >> usr/share/applications/kde4/Help.desktop
+fi
+
 A=`cat usr/share/applications/kde4/konsole.desktop|grep Comment`
 if [ "$A" = "" ]
 then
@@ -205,6 +219,12 @@ fi
 sed -i "s|^Name\[ru\]=.*|Name[ru]=Gpicview - просмотр изображений|g" usr/share/applications/gpicview.desktop
 
 sed -i "s|^Name\[ru\]=.*|Name[ru]=KSysGuard - системный монитор|g" usr/share/applications/kde4/ksysguard.desktop
+
+#fixed drakconf desktop
+sed -i "s|^Comment=.*|Comment=Set of Mageia tools|g" usr/share/applications/mageia-drakconf.desktop
+sed -i "s|^Comment\[ru\]=.*|Comment[ru]=Набор инструментов Mageia|g" usr/share/applications/mageia-drakconf.desktop
+echo "GenericName=Mageia Control Center (MCC)" >> usr/share/applications/mageia-drakconf.desktop
+echo "GenericName[ru]=Центр управления Mageia (MCC)" >> usr/share/applications/mageia-drakconf.desktop
 
 #fix GenericName for gigolo
 sed -i "/GenericName/d" usr/share/applications/gigolo.desktop

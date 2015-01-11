@@ -722,8 +722,7 @@ hplip-gui
 hplip-hpijs
 hplip-hpijs-ppds
 hplip-model-data
-hsqldb
-hsqldb-lib
+hsqldb1
 html2text
 htop
 hugs98
@@ -2365,6 +2364,7 @@ locales-en
 locales-ru
 lockdev
 log4j
+log4j12
 logisim
 logrotate
 lpsolve

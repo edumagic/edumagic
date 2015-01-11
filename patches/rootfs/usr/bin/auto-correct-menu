@@ -1,0 +1,270 @@
+#!/bin/bash
+#
+# This script add missing GenericName if Comment exists and add missing Comment if GenericName exists
+# and works for [$LANGUAGE] also.
+# License: GPL last version. Лицензия: GPL последней версии.
+# Author: Alexey Loginov.
+# Автор: Алексей Логинов.
+#
+
+check-nodisplay ()
+{
+NODISPLAY=false
+X1=`cat $1|grep "NoDisplay=true"`
+if [ ! "$X1" = "" ]
+then
+  NODISPLAY=true
+  if [ "$DEBUG" = "yes" ]
+  then
+    echo "$A has NoDisplay=true, correction is unneeded" >> /var/log/auto-correct-menu.log
+  fi
+fi
+}
+
+needs-genericname ()
+{
+NEEDS_GENERICNAME=true
+X1=`cat $1|grep "NotShowIn"|grep "KDE"`
+if [ ! "$X1" = "" ]
+then
+  NEEDS_GENERICNAME=false
+  if [ "$DEBUG" = "yes" ]
+  then
+    echo "$1 has NotShowIn=KDE, GenericName is not mandatory" >> /var/log/auto-correct-menu.log
+  fi
+  return
+fi
+X2=`cat $1|grep "OnlyShowIn"|grep "LXDE"`
+if [ ! "$X2" = "" ]
+then
+  NEEDS_GENERICNAME=false
+  if [ "$DEBUG" = "yes" ]
+  then
+    echo "$1 has OnlyShowIn=LXDE, GenericName is not mandatory" >> /var/log/auto-correct-menu.log
+  fi
+  return
+fi
+X3=`cat $1|grep "OnlyShowIn"|grep "MATE"`
+if [ ! "$X3" = "" ]
+then
+  NEEDS_GENERICNAME=false
+  if [ "$DEBUG" = "yes" ]
+  then
+    echo "$1 has OnlyShowIn=MATE, GenericName is not mandatory" >> /var/log/auto-correct-menu.log
+  fi
+  return
+fi
+X4=`cat $1|grep "OnlyShowIn"|grep "GNOME"`
+if [ ! "$X4" = "" ]
+then
+  NEEDS_GENERICNAME=false
+  if [ "$DEBUG" = "yes" ]
+  then
+    echo "$1 has OnlyShowIn=GNOME, GenericName is not mandatory" >> /var/log/auto-correct-menu.log
+  fi
+  return
+fi
+X5=`cat $1|grep "OnlyShowIn"|grep "XFCE"`
+if [ ! "$X5" = "" ]
+then
+  NEEDS_GENERICNAME=false
+  if [ "$DEBUG" = "yes" ]
+  then
+    echo "$1 has OnlyShowIn=XFCE, GenericName is not mandatory" >> /var/log/auto-correct-menu.log
+  fi
+  return
+fi
+}
+
+correct-file ()
+{
+cd $1
+#add Enter if somebody forgot
+printf "\n" >> "$2"
+#delete all empty lines
+sed -i '/^$/d' "$2"
+}
+
+auto-correct-desktop-files ()
+{
+cd $1
+for A in `ls -1|grep .desktop`
+do
+  #manual correction (no support in this script)
+  if [ "$A" = "xfburn.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "konsole.desktop" ]
+  then
+    continue
+  fi
+  #corrected, but present (strange)
+#  if [ "$A" = "fp-ide-ru.desktop" ]
+#  then
+#    continue
+#  fi
+#  if [ "$A" = "qutim.desktop" ]
+#  then
+#    continue
+#  fi
+#  if [ "$A" = "smplayer.desktop" ]
+#  then
+#    continue
+#  fi
+#  if [ "$A" = "vlc.desktop" ]
+#  then
+#    continue
+#  fi
+#  if [ "$A" = "ktorrent.desktop" ]
+#  then
+#    continue
+#  fi
+  #correction is unneeded (exceptions)
+  if [ "$A" = "lazarus.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "mc-desktop-root.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "mc-desktop.desktop" ]
+  then
+    continue
+  fi
+  if [ "$A" = "smathstudio.desktop" ]
+  then
+    continue
+  fi
+  check-nodisplay $A
+  if [ "$NODISPLAY" = "true" ]
+  then
+    continue
+  fi
+  B0=`cat $A|grep "Comment="|cut -d "=" --fields=2`
+  B=`cat $A|grep "Comment\[$2\]"|cut -d "=" --fields=2`
+  C0=`cat $A|grep "GenericName="|cut -d "=" --fields=2`
+  C=`cat $A|grep "GenericName\[$2\]"|cut -d "=" --fields=2`
+  if [ "$B0" = "" ]
+  then
+    if [ ! "$C0" = "" ]
+    then
+       if [ "$DEBUG" = "yes" ]
+       then
+         echo "Added Comment=$C0 >> $DIRECTORY/$A" >> /var/log/auto-correct-menu.log
+       fi
+       correct-file $1 $A
+       echo "Comment=$C0" >> $A
+       if [ "$3" = "yes" ]
+       then
+         desktop-file-validate $A >> /tmp/auto-correct-menu.log
+       fi
+    fi
+  fi
+  if [ "$B" = "" ]
+  then
+    if [ ! "$C" = "" ]
+    then
+       if [ "$DEBUG" = "yes" ]
+       then
+         echo "Added Comment[$2]=$C >> $DIRECTORY/$A" >> /var/log/auto-correct-menu.log
+       fi
+       correct-file $1 $A
+       echo "Comment[$2]=$C" >> $A
+       if [ "$3" = "yes" ]
+       then
+         desktop-file-validate $A >> /var/log/auto-correct-menu.log
+       fi
+    fi
+  fi
+  if [ "$C0" = "" ]
+  then
+    if [ ! "$B0" = "" ]
+    then
+       needs-genericname $A
+       if [ "$NEEDS_GENERICNAME" = "false" ]
+       then
+         continue
+       fi
+       if [ "$DEBUG" = "yes" ]
+       then
+         echo "Added GenericName=$B0 >> $DIRECTORY/$A" >> /var/log/auto-correct-menu.log
+       fi
+       correct-file $1 $A
+       echo "GenericName=$B0" >> $A
+       if [ "$3" = "yes" ]
+       then
+         desktop-file-validate $A >> /tmp/auto-correct-menu.log
+       fi
+    fi
+  fi
+  if [ "$C" = "" ]
+  then
+    if [ ! "$B" = "" ]
+    then
+       if [ "$DEBUG" = "yes" ]
+       then
+         echo "Added GenericName[$2]=$B >> $DIRECTORY/$A" >> /var/log/auto-correct-menu.log
+       fi
+       correct-file $1 $A
+       echo "GenericName[$2]=$B" >> $A
+       if [ "$3" = "yes" ]
+       then
+         desktop-file-validate $A >> /var/log/auto-correct-menu.log
+       fi
+    fi
+  fi
+done
+}
+
+LANG0=`cat /etc/sysconfig/i18n|grep ru_RU`
+if [ "$LANG0" = "" ]
+then
+  LANGUAGE="en"
+else
+  LANGUAGE="ru"
+fi
+
+if [ "$1" = "debug" ]
+then
+  DEBUG=yes
+else
+  DEBUG=no
+fi
+
+if [ "$DEBUG" = "yes" ]
+then
+  echo "Start auto correction Menu for $LANGUAGE language (debug mode)"
+else
+  echo "Start auto correction Menu for $LANGUAGE language"
+fi
+
+if [ "$DEBUG" = "yes" ]
+then
+  date >> /var/log/auto-correct-menu.log
+  date >> /var/log/auto-correct-menu-errors.log
+fi
+
+DIRECTORY="/usr/share/applications"
+auto-correct-desktop-files $DIRECTORY $LANGUAGE $DEBUG
+
+DIRECTORY="/usr/share/applications/kde4"
+auto-correct-desktop-files $DIRECTORY $LANGUAGE $DEBUG
+
+if [ "$DEBUG" = "yes" ]
+then
+  cat /var/log/auto-correct-menu.log|grep "error:"|grep -v "(will be fatal in the future):" >> /var/log/auto-correct-menu-errors.log
+fi
+
+if [ "$DEBUG" = "yes" ]
+then
+  echo "Auto correction for Menu was finished (debug mode)"
+else
+  echo "Auto correction for Menu was finished"
+fi
+
+if [ "$DEBUG" = "yes" ]
+then
+  echo "Please read /var/log/auto-correct-menu.log and /var/log/auto-correct-menu-errors.log for debug information"
+fi

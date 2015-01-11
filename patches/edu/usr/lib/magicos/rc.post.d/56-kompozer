@@ -31,15 +31,44 @@ if [ "$LANG" = "Russian" ]
 then
   if [ -d "/usr/lib/kompozer/extensions/langpack-ru@kompozer.net" ]
   then
+    rm -f /usr/lib/kompozer/defaults/profile/extensions/langpack-ru@kompozer.net
+    rm -f /usr/lib/kompozer/defaults/profile/extensions/langpack-en-US@kompozer.net
     ln -s /usr/lib/kompozer/extensions/langpack-ru@kompozer.net /usr/lib/kompozer/defaults/profile/extensions/langpack-ru@kompozer.net
   else
+    rm -f /usr/lib64/kompozer/defaults/profile/extensions/langpack-ru@kompozer.net
+    rm -f /usr/lib64/kompozer/defaults/profile/extensions/langpack-en-US@kompozer.net
     ln -s /usr/lib64/kompozer/extensions/langpack-ru@kompozer.net /usr/lib64/kompozer/defaults/profile/extensions/langpack-ru@kompozer.net
   fi
   if [ -d "/usr/lib/kompozer/extensions/ru@dictionaries.addons.mozilla.org" ]
   then
+    rm -f /usr/lib/kompozer/defaults/profile/extensions/ru@dictionaries.addons.mozilla.org
+    rm -f /usr/lib/kompozer/defaults/profile/extensions/en-US@dictionaries.addons.mozilla.org
     ln -s /usr/lib/kompozer/extensions/ru@dictionaries.addons.mozilla.org /usr/lib/kompozer/defaults/profile/extensions/ru@dictionaries.addons.mozilla.org
   else
+    rm -f /usr/lib64/kompozer/defaults/profile/extensions/ru@dictionaries.addons.mozilla.org
+    rm -f /usr/lib64/kompozer/defaults/profile/extensions/en-US@dictionaries.addons.mozilla.org
     ln -s /usr/lib64/kompozer/extensions/ru@dictionaries.addons.mozilla.org /usr/lib64/kompozer/defaults/profile/extensions/ru@dictionaries.addons.mozilla.org
+  fi
+else
+  if [ -d "/usr/lib/kompozer/extensions/langpack-en-US@kompozer.net" ]
+  then
+    rm -f /usr/lib/kompozer/defaults/profile/extensions/langpack-ru@kompozer.net
+    rm -f /usr/lib/kompozer/defaults/profile/extensions/langpack-en-US@kompozer.net
+    ln -s /usr/lib/kompozer/extensions/langpack-en-US@kompozer.net /usr/lib/kompozer/defaults/profile/extensions/langpack-en-US@kompozer.net
+  else
+    rm -f /usr/lib64/kompozer/defaults/profile/extensions/langpack-ru@kompozer.net
+    rm -f /usr/lib64/kompozer/defaults/profile/extensions/langpack-en-US@kompozer.net
+    ln -s /usr/lib64/kompozer/extensions/langpack-en-US@kompozer.net /usr/lib64/kompozer/defaults/profile/extensions/langpack-en-US@kompozer.net
+  fi
+  if [ -d "/usr/lib/kompozer/extensions/en-US@dictionaries.addons.mozilla.org" ]
+  then
+    rm -f /usr/lib/kompozer/defaults/profile/extensions/ru@dictionaries.addons.mozilla.org
+    rm -f /usr/lib/kompozer/defaults/profile/extensions/en-US@dictionaries.addons.mozilla.org
+    ln -s /usr/lib/kompozer/extensions/en-US@dictionaries.addons.mozilla.org /usr/lib/kompozer/defaults/profile/extensions/en-US@dictionaries.addons.mozilla.org
+  else
+    rm -f /usr/lib64/kompozer/defaults/profile/extensions/ru@dictionaries.addons.mozilla.org
+    rm -f /usr/lib64/kompozer/defaults/profile/extensions/en-US@dictionaries.addons.mozilla.org
+    ln -s /usr/lib64/kompozer/extensions/en-US@dictionaries.addons.mozilla.org /usr/lib64/kompozer/defaults/profile/extensions/en-US@dictionaries.addons.mozilla.org
   fi
 fi
 

@@ -49,7 +49,6 @@ aspell
 aspell-en
 aspell-ru
 at
-atinject
 atk1.0-common
 atmel-firmware
 atomix
@@ -80,7 +79,6 @@ basic256
 batik
 batik-squiggle
 bc
-bean-validation-api
 bea-stax
 bea-stax-api
 beesu
@@ -117,7 +115,7 @@ bouncycastle-pkix
 brasero
 bridge-utils
 broadcom-wl-common
-broadcom-wl-kernel-3.18.1-server-4.mga5
+broadcom-wl-kernel-3.18.2-server-1.mga5
 broadcom-wl-kernel-server-latest
 bsf
 bsh
@@ -138,7 +136,6 @@ cantor
 catfish
 ccp
 cdialog
-cdi-api
 cdparanoia
 cdrdao
 cdrkit
@@ -160,7 +157,6 @@ cjet
 clamav
 clamav-db
 clamtk
-classmate
 claws-mail
 clisp
 clutter-gtk-i18n
@@ -169,7 +165,6 @@ cmake
 codeblocks
 cogl-i18n
 colord
-color-filesystem
 comgt
 common-licenses
 compface
@@ -285,7 +280,6 @@ dwz
 e2fsprogs
 easychem
 easymock
-easytag
 ebtables
 ecj
 eclipse-equinox-osgi
@@ -329,7 +323,7 @@ ffdiaporama
 ffmpeg
 ffmpeg2theora
 ffmpegthumbs
-fglrx-kernel-3.18.1-server-4.mga5
+fglrx-kernel-3.18.2-server-1.mga5
 fglrx-kernel-server-latest
 file
 filelight
@@ -523,7 +517,6 @@ genhdlist2
 geogebra
 geoip-database
 geometria
-geronimo-annotation
 geronimo-jms
 gettext
 gettext-base
@@ -709,11 +702,6 @@ hawtjni
 hdparm
 hexedit
 hfsutils
-hibernate4-core
-hibernate4-entitymanager
-hibernate4-envers
-hibernate-commons-annotations
-hibernate-jpa-2.1-api
 hicolor-icon-theme
 hostapd
 hostname
@@ -737,7 +725,6 @@ hunspell
 hunspell-ru
 hyphen
 hyphen-ru
-icc-profiles-openicc
 iceauth
 icedtea-web
 ico
@@ -780,7 +767,6 @@ jai-imageio-core
 jakarta-commons-httpclient
 jakarta-oro
 jama
-jandex
 jansi
 jansi-native
 jasper
@@ -791,19 +777,8 @@ java3d
 javahelp2
 javamail
 javapackages-tools
-javassist
 jaxen
-jboss-ejb-3.1-api
-jboss-interceptors-1.1-api
-jboss-jacc-1.4-api
-jboss-jaxrpc-1.1-api
-jboss-logging
-jboss-logging-tools
-jboss-servlet-3.0-api
-jboss-transaction-1.1-api
-jboss-transaction-1.2-api
 jcip-annotations
-jdeparser
 jdom
 jdom2
 jettison
@@ -866,8 +841,8 @@ kdm
 keditbookmarks
 kernel-firmware
 kernel-firmware-nonfree
-kernel-server-3.18.1-4.mga5
-kernel-server-devel-3.18.1-4.mga5
+kernel-server-3.18.2-1.mga5
+kernel-server-devel-3.18.2-1.mga5
 kernel-server-devel-latest
 kernel-server-latest
 kernel-userspace-headers
@@ -901,6 +876,8 @@ knetwalk
 kojo
 kolourpaint
 kompozer
+kompozer-en_US
+kompozer-myspell-en_US
 kompozer-myspell-ru
 kompozer-ru
 konqueror
@@ -1199,7 +1176,6 @@ libexif12
 libexif12-common
 libexiv2_13
 libexo1_0
-libexosip2_10
 libexpat1
 libexpat-devel
 libexpect5.43
@@ -1439,7 +1415,6 @@ libice6
 libice-devel
 libicu53
 libicu-devel
-libid3_3.8_3
 libid3tag0
 libIDL2_0
 libidn11
@@ -1626,7 +1601,6 @@ libleptonica4
 liblftp0
 liblilv0_0
 liblink-grammar4
-liblinphone5
 liblirc0
 libllvm3.5
 liblm_sensors4
@@ -1637,7 +1611,6 @@ liblog4j12-java
 liblogging0
 libloudmouth-1_0
 liblpc10_0
-liblpc2xml0
 liblqr0
 liblrmi0
 libltdl7
@@ -1797,7 +1770,6 @@ liborc-devel
 liborcus0.8_0
 libortp9
 liboscar1
-libosip2_10
 libosmgpsmap1.0_0
 libosmgpsmap-gir1.0
 libosp5
@@ -2353,7 +2325,6 @@ libzziplib0
 lightlang
 lightlang-dict
 lightlang-sounds
-linphone
 listres
 littlewizard
 lm1100
@@ -2395,6 +2366,7 @@ lxterminal
 lybniz
 m4
 mageia-doc-common
+mageia-doc-mcc-en
 mageia-doc-mcc-ru
 mageia-kde4-config-common
 mageia-kde-translation
@@ -2479,7 +2451,6 @@ mgarepo
 migration-assistant
 million
 min12xxw
-mingetty
 ming-utils
 minicom
 mjpegtools
@@ -2562,9 +2533,9 @@ ntp-client
 numptyphysics
 nut
 nut-server
-nvidia304-kernel-3.18.1-server-4.mga5
+nvidia304-kernel-3.18.2-server-1.mga5
 nvidia304-kernel-server-latest
-nvidia-current-kernel-3.18.1-server-4.mga5
+nvidia-current-kernel-3.18.2-server-1.mga5
 nvidia-current-kernel-server-latest
 nxproxy
 obconf
@@ -3275,7 +3246,7 @@ usermode
 usermode-consoleonly
 util-linux
 v4l-utils
-vboxadditions-kernel-3.18.1-server-4.mga5
+vboxadditions-kernel-3.18.2-server-1.mga5
 vboxadditions-kernel-server-latest
 vcdimager
 vecmath
@@ -3286,7 +3257,7 @@ vim-enhanced
 vim-minimal
 virtualbox
 virtualbox-guest-additions
-virtualbox-kernel-3.18.1-server-4.mga5
+virtualbox-kernel-3.18.2-server-1.mga5
 virtualbox-kernel-server-latest
 virtuoso-opensource
 vlc

@@ -19,6 +19,13 @@ then
   chown user:user ./*.desktop
 fi
 
+if [ -d "/home/user/Desktop" ]
+then
+  cd "/home/user/Desktop"
+  chmod +x ./*.desktop
+  chown user:user ./*.desktop
+fi
+
 if [ ! -d "/run/media/user" ]
 then
   mkdir -p /run/media/user

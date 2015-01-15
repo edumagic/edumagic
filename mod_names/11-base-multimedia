@@ -8,7 +8,6 @@ aoss
 audacity
 avidemux-qt
 avidemux-plugins
-easytag
 grip
 qmmp
 radiotray
@@ -34,7 +33,6 @@ pulseaudio-module-zeroconf
 bombono-dvd
 xawtv
 festival
-#freetuxtv (crash)
 dvdstyler
 alsa-utils
 libalsa-plugins-pulseaudio

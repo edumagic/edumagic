@@ -56,7 +56,7 @@ bootsplash
 brasero
 bridge-utils
 broadcom-wl-common
-broadcom-wl-kernel-3.18.1-server-4.mga5
+broadcom-wl-kernel-3.18.2-server-1.mga5
 broadcom-wl-kernel-server-latest
 btrfs-progs
 busybox-static
@@ -182,7 +182,6 @@ dvd+rw-tools
 dvdstyler
 dwz
 e2fsprogs
-easytag
 ebtables
 editres
 eiskaltdcpp
@@ -214,7 +213,7 @@ ffdiaporama
 ffmpeg
 ffmpeg2theora
 ffmpegthumbs
-fglrx-kernel-3.18.1-server-4.mga5
+fglrx-kernel-3.18.2-server-1.mga5
 fglrx-kernel-server-latest
 file
 filelight
@@ -466,8 +465,8 @@ kdm
 keditbookmarks
 kernel-firmware
 kernel-firmware-nonfree
-kernel-server-3.18.1-4.mga5
-kernel-server-devel-3.18.1-4.mga5
+kernel-server-3.18.2-1.mga5
+kernel-server-devel-3.18.2-1.mga5
 kernel-server-devel-latest
 kernel-server-latest
 kernel-userspace-headers
@@ -702,7 +701,6 @@ libexif12
 libexif12-common
 libexiv2_13
 libexo1_0
-libexosip2_10
 libexpat1
 libexpect5.43
 libext2fs2
@@ -874,7 +872,6 @@ libicalss1
 libicalvcal1
 libice6
 libicu53
-libid3_3.8_3
 libid3tag0
 libIDL2_0
 libidn11
@@ -900,7 +897,6 @@ libiptcdata-i18n
 libiso9660_9
 libisofs6
 libiw30
-libixml2
 libjack0
 libjasper1
 libjavascriptcore-gir3.0
@@ -1002,7 +998,6 @@ liblensfun0
 libleptonica4
 liblftp0
 liblilv0_0
-liblinphone5
 liblirc0
 libllvm3.5
 liblm_sensors4
@@ -1011,7 +1006,6 @@ liblockdev1
 liblog4cxx10
 liblogging0
 liblpc10_0
-liblpc2xml0
 liblqr0
 liblrmi0
 libltdl7
@@ -1042,7 +1036,6 @@ libmatroska6
 libmbim4
 libmcpp0
 libmediaart1.0_0
-libmediastreamer3
 libmenu-cache3
 libmesaegl1
 libmesagl1
@@ -1128,8 +1121,6 @@ libopusfile0
 libORBit2_0
 liborc0.4_0
 liborcus0.8_0
-libortp9
-libosip2_10
 liboxygen-gtk
 liboxygen-gtk3
 liboxygenstyle4
@@ -1334,7 +1325,6 @@ libsoup2.4_1
 libsoup-gir2.4
 libsoup-i18n
 libsox2
-libspandsp2
 libspectre1
 libspeech_tools2.1.1
 libspeex1
@@ -1369,7 +1359,6 @@ libthai0
 libtheora0
 libtheoradec1
 libtheoraenc1
-libthreadutil6
 libthreadweaver4
 libtiff5
 libtirpc
@@ -1389,7 +1378,6 @@ libudftools1
 libudisks2_0
 libunique1.0_0
 libunistring2
-libupnp6
 libupower-glib3
 libupsclient1
 libusb1.0_0
@@ -1535,7 +1523,6 @@ libzlib1
 libzlib-devel
 libzvbi0
 libzziplib0
-linphone
 listres
 lm1100
 lm_sensors
@@ -1569,6 +1556,7 @@ lxtask
 lxterminal
 m4
 mageia-doc-common
+mageia-doc-mcc-en
 mageia-doc-mcc-ru
 mageia-kde4-config-common
 mageia-kde-translation
@@ -1641,7 +1629,6 @@ meta-task
 mgarepo
 migration-assistant
 min12xxw
-mingetty
 minicom
 mjpegtools
 mkfontdir
@@ -1691,9 +1678,9 @@ ntp
 ntp-client
 nut
 nut-server
-nvidia304-kernel-3.18.1-server-4.mga5
+nvidia304-kernel-3.18.2-server-1.mga5
 nvidia304-kernel-server-latest
-nvidia-current-kernel-3.18.1-server-4.mga5
+nvidia-current-kernel-3.18.2-server-1.mga5
 nvidia-current-kernel-server-latest
 nxproxy
 obconf
@@ -2164,7 +2151,7 @@ usermode
 usermode-consoleonly
 util-linux
 v4l-utils
-vboxadditions-kernel-3.18.1-server-4.mga5
+vboxadditions-kernel-3.18.2-server-1.mga5
 vboxadditions-kernel-server-latest
 vcdimager
 viewres
@@ -2173,7 +2160,7 @@ vim-enhanced
 vim-minimal
 virtualbox
 virtualbox-guest-additions
-virtualbox-kernel-3.18.1-server-4.mga5
+virtualbox-kernel-3.18.2-server-1.mga5
 virtualbox-kernel-server-latest
 vlc
 vlc-plugin-common

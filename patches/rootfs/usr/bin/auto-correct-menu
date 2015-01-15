@@ -99,27 +99,6 @@ do
   then
     continue
   fi
-  #corrected, but present (strange)
-#  if [ "$A" = "fp-ide-ru.desktop" ]
-#  then
-#    continue
-#  fi
-#  if [ "$A" = "qutim.desktop" ]
-#  then
-#    continue
-#  fi
-#  if [ "$A" = "smplayer.desktop" ]
-#  then
-#    continue
-#  fi
-#  if [ "$A" = "vlc.desktop" ]
-#  then
-#    continue
-#  fi
-#  if [ "$A" = "ktorrent.desktop" ]
-#  then
-#    continue
-#  fi
   #correction is unneeded (exceptions)
   if [ "$A" = "lazarus.desktop" ]
   then
@@ -259,9 +238,9 @@ fi
 
 if [ "$DEBUG" = "yes" ]
 then
-  echo "Auto correction for Menu was finished (debug mode)"
+  echo "Auto correction Menu was finished (debug mode)"
 else
-  echo "Auto correction for Menu was finished"
+  echo "Auto correction Menu was finished"
 fi
 
 if [ "$DEBUG" = "yes" ]

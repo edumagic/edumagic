@@ -52,18 +52,15 @@ rm -f usr/share/applications/lxinput.desktop
 rm -f usr/share/applications/lxsession-edit.desktop
 rm -f usr/share/applications/lxsession-default-apps.desktop
 rm -f usr/share/applications/pcmanfm-desktop-pref.desktop
-#https://bugs.mageia.org/show_bug.cgi?id=13949
-#sed -i 's|Exec=.*|Exec=systemsettings -caption "%c" %i|g' usr/share/applications/kde4/kdesystemsettings.desktop
 
-#sed -i "/OnlyShowIn=/d" usr/share/applications/qt-recordmydesktop.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/caja.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/mate-dictionary.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/mate-screenshot.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/mate-search-tool.desktop
 sed -i "/NotShowIn=/d" usr/share/applications/scim-setup.desktop
-#sed -i "/NotShowIn=/d" usr/share/applications/mageia-lxrandr.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/kde4/krandrtray.desktop
 sed -i "/OnlyShowIn=/d" usr/share/applications/kde4/kfind.desktop
+sed -i "/OnlyShowIn=/d" usr/share/applications/kde4/kmix.desktop
 
 #Fix MIME for engrampa
 sed -i -e 's|application/x-ms-dos-executable;||g' usr/share/applications/engrampa.desktop
@@ -130,11 +127,11 @@ ln -s /usr/share/mga/backgrounds/default.png usr/share/wallpapers/Mageia/content
 ln -s /usr/share/mga/backgrounds/default.png usr/share/wallpapers/Mageia/contents/images/1920x1440.png
 
 #Fix https://bugs.mageia.org/show_bug.cgi?id=10224
-A=`cat etc/rc.d/rc.local|grep loadkeys|grep ru`
-if [ "$A" = "" ]
-then
-  echo "loadkeys -u ru" >> etc/rc.d/rc.local
-fi
+#A=`cat etc/rc.d/rc.local|grep loadkeys|grep ru`
+#if [ "$A" = "" ]
+#then
+#  echo "loadkeys -u ru" >> etc/rc.d/rc.local
+#fi
 
 #For mate-screenshot
 if [ ! -f "usr/share/pixmaps/applets-screenshooter.png" ]
@@ -204,18 +201,6 @@ then
   sed -i "s|Name=Xfburn|Name=Xfburn\nGenericName=CD and DVD burning application\nGenericName[ru]=Приложение для записи CD и DVD|g" usr/share/applications/xfburn.desktop
 fi
 
-#A=`cat usr/share/applications/hardinfo.desktop|grep Comment`
-#if [ "$A" = "" ]
-#then
-#   echo "Comment=System Information" >> usr/share/applications/hardinfo.desktop
-#fi
-
-#A=`cat usr/share/applications/hardinfo.desktop|grep GenericName`
-#if [ "$A" = "" ]
-#then
-#   echo "GenericName=Hardware Information" >> usr/share/applications/hardinfo.desktop
-#fi
-
 sed -i "s|^Name\[ru\]=.*|Name[ru]=Gpicview - просмотр изображений|g" usr/share/applications/gpicview.desktop
 
 sed -i "s|^Name\[ru\]=.*|Name[ru]=KSysGuard - системный монитор|g" usr/share/applications/kde4/ksysguard.desktop
@@ -237,6 +222,9 @@ sed -i 's|log.$name|$name.log|g' usr/lib/python2.7/site-packages/BuildManager/pa
 #delete untranslatable java desktop files
 rm -f `find usr/share/applications/java*jconsole.desktop`
 rm -f `find usr/share/applications/java*policytool.desktop`
+
+#add missing Enter
+sed -i 's|gprintf "Checking for new hardware"|gprintf "Checking for new hardware"\n    gprintf "\\n"|g' etc/rc.d/init.d/mandrake_everytime
 
 #update-desktop-database
 #update-mime-database usr/share/mime

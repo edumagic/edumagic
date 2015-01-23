@@ -45,3 +45,4 @@ gnome-bluetooth
 bind
 ntp
 openssh-server
+b43-firmware-install

@@ -13,7 +13,7 @@ librecad-doc
 librecad-parts
 librecad-plugins
 sweethome3d
-sweethome3d-3dmodels
+#sweethome3d-3dmodels (big size)
 sweethome3d-javadoc
 sweethome3d-textures
 qcad
@@ -76,3 +76,4 @@ bk-emu
 bk-terak-emu
 dansguardian
 dansguardian-children-blacklists
+#lives (crash)

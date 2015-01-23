@@ -41,7 +41,7 @@ plopp
 openteacher
 myabcs
 smathstudio
-#convertall (not imported)
+convertall
 #physion (not imported)
 pinta
 italc-master
@@ -52,9 +52,9 @@ evolution
 clamtk
 freemind
 tuxpaint
-tuxpaint-stamps
+#tuxpaint-stamps (big size)
 geany
-geany-plugins
+#geany-plugins (big size)
 gcompris
 gcompris-music
 gcompris-boards

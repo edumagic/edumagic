@@ -71,9 +71,9 @@ if [ "$MBR" != "$TARGET" ]; then
    t_echo "Saving old MBR ..."
    dd if=$MBR of=backup.mbr count=1 2>/dev/null
    t_echo "Setting up MBR on" $MBR...
-   ./bootlace.com --no-backup-mbr --time-out=0 $MBR
+   ./bootlace.com.bat --no-backup-mbr --time-out=0 $MBR
 else
-    echo ./bootlace.com --floppy $TARGET
+    echo ./bootlace.com.bat --floppy $TARGET
 fi
 
 t_echo "Disk" $TARGET "should be bootable now. Installation finished."

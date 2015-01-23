@@ -81,7 +81,7 @@ goto setupDone
 
 :setup95
 call :t_echo Setting bootloader ...
-bootlace.com --no-backup-mbr --time-out=0 %DISK%:
+bootlace.com.bat --no-backup-mbr --time-out=0 %DISK%:
 
 :setupDone
 call :t_echo Disk should be bootable now. Installation finished.

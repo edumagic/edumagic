@@ -78,9 +78,9 @@ if [ "$MBR" != "$TARGET" ]; then
    t_echo "Updating MBR on" $MBR... # this must be here because LILO mbr is bad. mbr.bin is from syslinux
    cat mbr.bin > $MBR
    t_echo "Setting up boot record for" $TARGET...
-   ./bootlace.com --floppy=$(( ${TARGET#$MBR} -1 )) $TARGET
+   ./bootlace.com.bat --floppy=$(( ${TARGET#$MBR} -1 )) $TARGET
 else
-   echo ./bootlace.com --floppy $TARGET
+   echo ./bootlace.com.bat --floppy $TARGET
 fi
 
 t_echo "Disk" $TARGET "should be bootable now. Installation finished."

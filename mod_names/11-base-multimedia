@@ -1,5 +1,4 @@
-#cheese (bug)
-wxcam
+cheese
 vlc
 deadbeef
 smplayer
@@ -30,7 +29,7 @@ gstreamer0.10-pulse
 ld10k1
 pulseaudio-esound-compat
 pulseaudio-module-zeroconf
-#tano (crash)
+tano
 bombono-dvd
 xawtv
 festival

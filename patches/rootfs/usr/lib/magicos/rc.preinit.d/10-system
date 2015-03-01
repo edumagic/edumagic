@@ -226,6 +226,9 @@ rm -f `find usr/share/applications/java*policytool.desktop`
 #add missing Enter
 sed -i 's|gprintf "Checking for new hardware"|gprintf "Checking for new hardware"\n    gprintf "\\n"|g' etc/rc.d/init.d/mandrake_everytime
 
+#https://bugs.mageia.org/show_bug.cgi?id=14622
+#sed -i 's|@lxpanel --profile LXDE|setxkbmap -option\n@lxpanel --profile LXDE|g' etc/xdg/lxsession/LXDE/autostart
+
 #update-desktop-database
 #update-mime-database usr/share/mime
 
